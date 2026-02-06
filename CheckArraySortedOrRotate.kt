@@ -22,7 +22,7 @@ fun checkArraySortedOrRotateBF(array : Array<Int>) {
 
     val n = array.size
     val bArray = array.clone()
-    bArray.sort() // O(N Log N) its Higher then O(N^2)
+    bArray.sort() // O(N Log N) its Lower then O(N^2)
     println(bArray[n-1])
 
     for (k in 0 until n) {
