@@ -71,6 +71,7 @@ fun removeDuplicateFromSortedArrayOP(array: Array<Int>) {
 
     for (i in 1 until size) {
         if (current != array[i]) {
+            array[count] = array[i]
             count++
         }
         current = array[i]
