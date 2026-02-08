@@ -1,3 +1,5 @@
+package array_traversals
+
 fun main() {
     val array = arrayOf(11,4,24,56,12,75,1,5,87,15,65)
     findSmallestOrLargestOP(array)
