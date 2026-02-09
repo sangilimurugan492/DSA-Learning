@@ -1,6 +1,10 @@
 package two_pointer_technique
 
-
+/**
+ * https://leetcode.com/problems/remove-element/description/
+ * Remove Element In Array
+ *
+ */
 fun main() {
     println("Brute Force Approach")
     removeElementInArrayBF(intArrayOf(3,2,2,3), 3)
@@ -9,8 +13,6 @@ fun main() {
 }
 
 /**
- * https://leetcode.com/problems/remove-element/description/
- * Remove Element In Array
  * Input: nums = [3,2,2,3], val = 3
  * Output: 2, nums = [2,2,_,_]
  * Explanation: Your function should return k = 2, with the first two elements of nums being 2.
@@ -37,12 +39,11 @@ fun removeElementInArrayBF(intArray: IntArray, element : Int) {
 }
 
 /**
- * Remove Element In Array
  * Input: nums = [3,2,2,3], val = 3
  * Output: 2, nums = [2,2,_,_]
  * Explanation: Your function should return k = 2, with the first two elements of nums being 2.
  * It does not matter what you leave beyond the returned k (hence they are underscores).
- * Time Complexity O(N^2)
+ * Time Complexity O(N)
  * Space Complexity O(N)
  */
 fun removeElementInArrayOP(intArray: IntArray, element : Int) {
