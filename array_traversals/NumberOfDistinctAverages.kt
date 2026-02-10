@@ -11,38 +11,57 @@ package array_traversals
  */
 
 fun main() {
-    findDistinctAverageBF(arrayOf(4,1,4,0,3,5))
+//    findDistinctAverageBF(arrayOf(4,1,4,0,3,5))
+    findDistinctAverageOP(intArrayOf(4,1,4,0,3,5))
 }
 
 /**
- *
+ * Without Sorting
+ * Time Complexity O(N^2)
+ * Space Complexity O(N) all allocated spaces are less than N
  */
 fun findDistinctAverageBF(array: Array<Int?>) {
-    val resultSet = mutableSetOf<Float>()
-    for (i in array.indices) {
+    val resultSet = mutableSetOf<Double>()
+    for (i in 0..array.size/2-1) {
         resultSet.add(findSmallestOrLargest(array))
     }
+    println(resultSet.size)
 }
 
-fun findSmallestOrLargest(value : Array<Int?>) : Float {
+fun findSmallestOrLargest(value : Array<Int?>) : Double {
     var smallest = value[0]
     var largest = value[0]
     var smallIndex = 0
     var largeInde = 0
 
-    for (i in 1..<value.size) {
-        if (value[i] != null && smallest != null && value[i]!! < smallest) {
-            smallest = value[i]
-            smallIndex = i
-        }
+    for (i in value.indices) {
+        if (value[i] != null) {
+            if (smallest == null && largest == null) {
+                smallest = value[i]
+                largest = value[i]
+            }
+            if (value[i] != null && smallest != null && value[i]!! < smallest) {
+                smallest = value[i]
+                smallIndex = i
+            }
 
-        if (value[i] != null && largest != null && value[i]!! > largest) {
-            largest = value[i]
-            largeInde = i
+            if (value[i] != null && largest != null && value[i]!! > largest) {
+                largest = value[i]
+                largeInde = i
+            }
         }
     }
     value[smallIndex] = null
     value[largeInde] = null
-    var total = smallest
-    return ((smallest?.let { 0 } + largest?.let { 0 })/2).toFloat()
+    return(smallest!!.toDouble()+ largest!!.toDouble())/2.0
+}
+
+
+fun findDistinctAverageOP(value: IntArray) {
+    value.sort()
+    val resultSet = mutableSetOf<Double>()
+    for (i in 0 until  value.size/2) {
+        resultSet.add((value[i].toDouble() + value[value.size - (i+1)])/2)
+    }
+    println(resultSet.size)
 }
