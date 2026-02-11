@@ -2,7 +2,7 @@ package array_hashing_technique
 
 
 fun main() {
-//    countNumberOfPairsBF(intArrayOf(1,2,2,1), 1)
+    countNumberOfPairsBF(intArrayOf(1,2,2,1), 1)
     countNumberOfPairsOP(intArrayOf(1,2,2,1), 1)
 }
 /**
