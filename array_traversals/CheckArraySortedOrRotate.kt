@@ -21,15 +21,12 @@ fun main() {
  */
 
 fun checkArraySortedOrRotateBF(array : Array<Int>) {
-
     val n = array.size
     val bArray = array.clone()
     bArray.sort() // O(N Log N) its Lower then O(N^2)
     println(bArray[n-1])
-
     for (k in 0 until n) {
         var isMatch = true
-
         for(i in 0 until n) {
             if (array[i] != bArray[(i+k) % n]) {
                 isMatch = false
@@ -40,7 +37,6 @@ fun checkArraySortedOrRotateBF(array : Array<Int>) {
             println("Is Sorted Array")
         }
     }
-
 }
 
 /**
