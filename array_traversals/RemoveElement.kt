@@ -52,4 +52,3 @@ fun removeElementOP(nums: IntArray, `val`: Int) : Int {
     }
     return count // New length of the array
 }
-}
