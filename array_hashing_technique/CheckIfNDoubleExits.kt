@@ -24,11 +24,14 @@ package array_hashing_technique
  */
 
 fun main() {
-//    println(checkIFNDoubleExistsBF(intArrayOf(-20,8,-6,-14,0,-19,14,4)))
+    println(checkIFNDoubleExistsBF(intArrayOf(-20,8,-6,-14,0,-19,14,4)))
     println(checkIFNDoubleExistsOP(intArrayOf(7,1,14,11)))
 }
 
-
+/**
+ * Time Complexity O(N^2)
+ * Space Complexity O(1)
+ */
 fun checkIFNDoubleExistsBF(nums: IntArray) : Boolean {
     for (i in nums.indices) {
         for (j in nums.indices) {
@@ -40,13 +43,17 @@ fun checkIFNDoubleExistsBF(nums: IntArray) : Boolean {
     return false
 }
 
+/**
+ * Time Complexity O(N)
+ * Space Complexity O(N) - Using extra Set for storing the value
+ */
 fun checkIFNDoubleExistsOP(nums: IntArray) : Boolean {
-    val map = mutableSetOf<Int>()
+    val set = mutableSetOf<Int>()
     for (i in nums) {
-        if (map.contains(2 * i) || (i % 2 == 0 && map.contains(i / 2))) {
+        if (set.contains(2 * i) || (i % 2 == 0 && set.contains(i / 2))) {
             return true
         }
-        map.add(i)
+        set.add(i)
     }
     return false
 }
