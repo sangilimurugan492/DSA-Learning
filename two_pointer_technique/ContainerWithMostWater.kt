@@ -59,7 +59,7 @@ fun containerWithMostWaterOP(heights: IntArray): Int {
         if (heights[left] <= heights[right]) {
             left++
         } else {
-            right --
+            right--
         }
     }
 

@@ -37,7 +37,6 @@ fun sortColorsDutchFlagBF(array : IntArray) {
            }
         }
     }
-
     array.forEach {
         print("$it ")
     }
@@ -48,8 +47,6 @@ fun sortColorsDutchFlagBF(array : IntArray) {
  * Dutch National Flag or Sort Colors
  * Time Complexity O(N / 2) => O(N)
  * Space Complexity O(N)
- * Input: nums = [1,0,2,1,2,0]
- * Output: [0,0,1,1,2,2]
  *
  */
 fun sortColorsDutchFlagOP(array : IntArray) {
