@@ -5,13 +5,13 @@ package two_pointer_technique
  */
 fun main() {
     println("Brute Force Approach")
-    val result = twoSumLevelTwoWithSortedArrayBF(intArrayOf(2,7,4,5,9,11,15), 9)
+    val result = twoSumLevelTwoWithSortedArrayBF(intArrayOf(2,7,11,15), 9)
     result.forEach {
         println(it)
     }
 
     println("Optimal Approach")
-    val resultOP = twoSumLevelTwoWithSortedArrayOP(intArrayOf(2,7,4,5,9,11,15), 9)
+    val resultOP = twoSumLevelTwoWithSortedArrayOP(intArrayOf(2,7,11,15), 9)
     resultOP.forEach {
         println(it)
     }
@@ -49,15 +49,18 @@ fun twoSumLevelTwoWithSortedArrayBF(numbers: IntArray, target: Int) : IntArray {
  */
 
 fun twoSumLevelTwoWithSortedArrayOP(numbers: IntArray, target: Int) : IntArray {
-    val resultMap = mutableMapOf<Int, Int>()
-    resultMap.put(numbers[0], 0)
+    var left = 0
+    var right = numbers.size - 1
+    var sum: Int
 
-    for(i in 1 until numbers.size) {
-        if (resultMap.containsKey(target - numbers[i])) {
-            val index = resultMap.get((target - numbers[i]))
-            return intArrayOf(index!!, i)
+    while (left < right) {
+        sum = numbers[left] + numbers[right]
+        if (sum > target) {
+            right--
+        } else if(sum < target) {
+            left++
         } else {
-            resultMap[numbers[i]] = i
+            return intArrayOf(left, right)
         }
     }
 
