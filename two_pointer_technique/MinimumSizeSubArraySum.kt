@@ -1,5 +1,7 @@
 package two_pointer_technique
 
+import java.util.*
+
 /**
  * https://leetcode.com/problems/minimum-size-subarray-sum/description/
  *
@@ -20,12 +22,50 @@ package two_pointer_technique
  * Output: 0
  */
 fun main() {
-
+    println(minimumSizeSubArraySumBF(213, intArrayOf(12,28,83,4,25,26,25,2,25,25,25,12)))
 }
 
 /**
- *
+ * Time Complexity O(N^2)
+ * Space Complexity O(1)
  */
-fun minimumSizeSubArraySum() : Int {
+fun minimumSizeSubArraySumBF(target: Int, nums: IntArray) : Int {
+    var minLen = Int.MAX_VALUE
+    val n = nums.size
 
+    for (i in 0 until n) {
+        var currentSum = 0
+        for (j in i until n) {
+            currentSum += nums[j]
+            if (currentSum >= target) {
+                minLen = minOf(minLen, j - i + 1)
+                break // Found the shortest subarray starting at i
+            }
+        }
+    }
+
+    return if (minLen == Int.MAX_VALUE) 0 else minLen
+}
+
+/**
+ * Time Complexity O(N)
+ * Space Complexity O(1)
+ */
+fun minimumSizeSubArraySumOP(target: Int, nums: IntArray) : Int {
+    var minLen = Int.MAX_VALUE
+    var left = 0
+    var currentSum = 0
+
+    for (right in nums.indices) {
+        currentSum += nums[right]
+
+        // Try to shrink the window from the left as much as possible
+        while (currentSum >= target) {
+            minLen = minOf(minLen, right - left + 1)
+            currentSum -= nums[left]
+            left++
+        }
+    }
+
+    return if (minLen == Int.MAX_VALUE) 0 else minLen
 }
