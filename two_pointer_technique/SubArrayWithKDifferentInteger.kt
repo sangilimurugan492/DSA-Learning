@@ -60,6 +60,7 @@ fun subarraysWithKDistinctBF(nums: IntArray, k: Int): Int {
 fun subarraysWithKDistinctOP(nums: IntArray, k: Int): Int {
     return atMostK(nums, k) - atMostK(nums, k - 1)
 }
+
 private fun atMostK(nums: IntArray, k: Int): Int {
     var ans = 0
     val n = nums.size
