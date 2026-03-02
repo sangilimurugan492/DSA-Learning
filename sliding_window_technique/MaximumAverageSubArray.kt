@@ -1,7 +1,5 @@
 package sliding_window_technique
 
-import kotlin.math.round
-
 /**
  * https://leetcode.com/problems/maximum-average-subarray-i/description/
  * 643. Maximum Average Subarray I
