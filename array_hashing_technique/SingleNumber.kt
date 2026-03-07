@@ -64,6 +64,10 @@ fun singleNumberOP(nums: IntArray): Int {
     return set.iterator().next()
 }
 
+/**
+ * Time Complexity O(N)
+ * Space Complexity O(1)
+ */
 fun singleNumberOP1(nums: IntArray): Int {
     var result = 0
     for (num in nums) {
