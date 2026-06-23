@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="63e6e312-ba97-461c-9408-efe0eb739fb1" name="Changes" comment="Added Frequency Of Element">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DSA-Learning.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GreedyAlgorithm/AssignCookies.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GreedyAlgorithm/IntervalGroups.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GreedyAlgorithm/NonOverlappingIntervals.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LetterAndCombinationPhoneNumber.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_hashing_technique/CheckIfNDoubleExits.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_hashing_technique/ContainsDuplicates.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_hashing_technique/CountDistinctElements.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_hashing_technique/CountTheNumberOfPairs.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_hashing_technique/FindTheDifferenceBetweenTwoArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_hashing_technique/FindingFairPairs.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_hashing_technique/FindingPairsWithCertainSum.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_hashing_technique/IntersectionOfTwoArrays.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_hashing_technique/SingleNumber.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_hashing_technique/TwoSumLevelOneWithoutSortedArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/BestTimeToBuyAndSellStockI.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/CheckArraySortedOrRotate.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/CountFrequencyOfElement.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/CountNegativesInMatrix.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/FindDupplicateNumber.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/FindMaximumConsecutiveOnes.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/FindSecondLargestOrSmallestElement.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/FindSmallestOrLargest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/FindingPivotIndex.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/FirstRepeatingElement.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/HeightChecker.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/IntegerToRoman.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/LeadersInArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/LongestPalidromString.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/MajorityOfElements.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/MaximumSubArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/MedianOfTwoSortedSubArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/MinimumAbsoluteDifference.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/MissingNumberInArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/NumberOfDistinctAverages.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/PrefixSumQuery.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/RemoveDuplicateFromSortedArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/RemoveDuplicateseTWO.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/RemoveElement.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/ReplaceGratestElementOnRight.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/ReverseAString.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/ReverseAnArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/RunningSum1DArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/SortedSquares.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/StringToInteger.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/TestProblem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_traversals/ZigZagConversionString.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/double_linked_list/DListNode.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/double_linked_list/FlatternDoubleLLMultiLevel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/double_linked_list/LeastFrequentlyUsedLFU.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/double_linked_list/LeastRecentlyUsedLRU.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list/ConvertSortedListToBinarySearchTree.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list/DesignHashSet.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list/LinkedListBinaryToInteger.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list/ListNode.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list/MyLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list/Node.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list/PatiotionList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list/RemoveDuplicatesFromSortedListII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list/RemoveNthNodeFromLast.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list/ReorderList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list/ReverseLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list/ReverseLinkedListII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list/ReverseLinkedListKGroup.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list/RotateLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linked_list/SwapNodesInPairs.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DSA-Learning/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DSA-Learning/.idea/DSA-Learning.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DSA-Learning/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DSA-Learning/.idea/libraries/KotlinJavaRuntime.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DSA-Learning/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DSA-Learning/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DSA-Learning/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DSA-Learning/META-INF/DSA-Learning.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DSA-Learning/META-INF/DSA-Learning.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulation/AddBinary.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulation/AddDigits.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulation/AddString.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulation/FizzBuzz.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulation/SpiralMatrix.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulation/SpiralMatrixII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simulation/TextJustification.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sliding_window_technique/FruitsIntoBaskets.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sliding_window_technique/GrumpyBookStoreOwner.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sliding_window_technique/LongestSubArrayAfterDeletingOne.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sliding_window_technique/MaximumAverageSubArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/BackspaceStringCompare.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/BoatsToSave.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/ContainerWithMostWater.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/FindAllAnagramInString.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/FourSum.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/IntersectionTwoArrayII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/IsSubSequence.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/LongestPalindromSubString.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/LongestRepeatingCharcterReplacement.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/LongestSubStringWithoutRepeatingCharacter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/MergeSortedArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/MinimumPairRemovaltoSortArrayI.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/MinimumSizeSubArraySum.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/MoveZerosToEnd.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/PermutationInString.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/RemoveElementInAnArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/SortColorsDutchNationalFlag.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/StringCompression.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/SubArrayWithKDifferentInteger.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/ThreeSum.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/ThreeSumCloset.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/TrappingRainWaterI.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/TwoSumLevelTwoWithSortedArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_pointer_technique/ValidPalindrom.kt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sangilimurugan492&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/sangilimurugan492/DSA-Learning.git&quot;,
+    &quot;accountId&quot;: &quot;443e7056-a5cd-4bb7-b545-cfb885996896&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="39HR6FsuiDRAz0VNuhhGpl3172q" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.TestJavaProblem.executor": "Run",
+    "Application.TestProblem.executor": "Run",
+    "Kotlin.AddBinaryKt.executor": "Debug",
+    "Kotlin.AddDigitsKt.executor": "Run",
+    "Kotlin.AddStringKt.executor": "Run",
+    "Kotlin.AddTowNumbersKt.executor": "Run",
+    "Kotlin.AssignCookiesKt.executor": "Run",
+    "Kotlin.BestTimeToBuyAndSellStockIKt.executor": "Debug",
+    "Kotlin.BoatsToSaveKt.executor": "Run",
+    "Kotlin.CheckArraySortedOrRotateKt.executor": "Debug",
+    "Kotlin.CheckIfNDoubleExitsKt.executor": "Run",
+    "Kotlin.ContainerWithMostWaterKt.executor": "Run",
+    "Kotlin.CountDistinctElementsKt.executor": "Run",
+    "Kotlin.CountFrequencyOfElementKt.executor": "Run",
+    "Kotlin.CountNegativesInMatrixKt.executor": "Debug",
+    "Kotlin.CountTheNumberOfPairsKt.executor": "Debug",
+    "Kotlin.FindAllAnagramInStringKt.executor": "Run",
+    "Kotlin.FindMinimumInRotatedSortedArrayKt.executor": "Run",
+    "Kotlin.FindingPairsWithCertainSumKt.executor": "Run",
+    "Kotlin.FindingPivotIndexKt.executor": "Run",
+    "Kotlin.FirstRepeatingElementKt.executor": "Run",
+    "Kotlin.FizzBuzzKt.executor": "Run",
+    "Kotlin.FlatternDoubleLLMultiLevelKt.executor": "Run",
+    "Kotlin.FruitsIntoBasketsKt.executor": "Run",
+    "Kotlin.GrumpyBookStoreOwnerKt.executor": "Run",
+    "Kotlin.HeightCheckerKt.executor": "Debug",
+    "Kotlin.IntegerToRomanKt.executor": "Run",
+    "Kotlin.IntersectionTwoArrayIIKt.executor": "Run",
+    "Kotlin.IntervalGroupsKt.executor": "Run",
+    "Kotlin.IsSubSequenceKt.executor": "Run",
+    "Kotlin.LeadersInArrayKt.executor": "Run",
+    "Kotlin.LeastFrequentlyUsedLFUKt.executor": "Run",
+    "Kotlin.LeastRecentlyUsedLRUKt.executor": "Run",
+    "Kotlin.LetterAndCombinationPhoneNumberKt.executor": "Run",
+    "Kotlin.LinkedListBinaryToIntegerKt.executor": "Run",
+    "Kotlin.LongestPalidromStringKt.executor": "Debug",
+    "Kotlin.LongestPalindromSubStringKt.executor": "Run",
+    "Kotlin.LongestRepeatingCharcterReplacementKt.executor": "Run",
+    "Kotlin.LongestSubArrayAfterDeletingOneKt.executor": "Run",
+    "Kotlin.LongestSubStringWithoutRepeatingCharacterKt.executor": "Run",
+    "Kotlin.LongestValidParenthesesKt.executor": "Run",
+    "Kotlin.MajorityOfElementsKt.executor": "Run",
+    "Kotlin.MaximumAverageSubArrayKt.executor": "Run",
+    "Kotlin.MedianOfTwoSortedSubArrayKt.executor": "Run",
+    "Kotlin.MinimumPairRemovaltoSortArrayIKt.executor": "Run",
+    "Kotlin.MinimumSizeSubArraySumKt.executor": "Run",
+    "Kotlin.MissingNumberInArrayKt.executor": "Run",
+    "Kotlin.MyLinkedListKt.executor": "Run",
+    "Kotlin.NonOverlappingIntervalsKt.executor": "Run",
+    "Kotlin.PatiotionListKt.executor": "Run",
+    "Kotlin.PermutationInStringKt.executor": "Run",
+    "Kotlin.PlusOneKt.executor": "Debug",
+    "Kotlin.RemoveElementInAnArrayKt.executor": "Run",
+    "Kotlin.RemoveElementKt.executor": "Run",
+    "Kotlin.RemoveNthNodeFromLastKt.executor": "Debug",
+    "Kotlin.ReplaceGratestElementOnRightKt.executor": "Run",
+    "Kotlin.ReverseLinkedListIIKt.executor": "Debug",
+    "Kotlin.ReverseLinkedListKGroupKt.executor": "Run",
+    "Kotlin.ReverseLinkedListKt.executor": "Run",
+    "Kotlin.RotateLinkedListKt.executor": "Run",
+    "Kotlin.RunningSum1DArrayKt.executor": "Run",
+    "Kotlin.SearchInsertPositionKt.executor": "Run",
+    "Kotlin.SortColorsDutchNationalFlagKt.executor": "Run",
+    "Kotlin.SortedSquaresKt.executor": "Run",
+    "Kotlin.SortingTestKt.executor": "Run",
+    "Kotlin.SpiralMatrixIIKt.executor": "Run",
+    "Kotlin.SpiralMatrixKt.executor": "Run",
+    "Kotlin.StringCompressionKt.executor": "Run",
+    "Kotlin.StringToIntegerKt.executor": "Run",
+    "Kotlin.SubArrayWithKDifferentIntegerKt.executor": "Debug",
+    "Kotlin.TextJustificationKt.executor": "Run",
+    "Kotlin.ThreeSumKt.executor": "Run",
+    "Kotlin.TrappingRainWaterIKt.executor": "Run",
+    "Kotlin.TwoSumLevelTwoWithSortedArrayKt.executor": "Run",
+    "Kotlin.ValidParenthesesKt.executor": "Run",
+    "Kotlin.ZigZagConversionStringKt.executor": "Coverage",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/d2c-sangili.murugan/IdeaProjects/Learning/simulation",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/simulation" />
+      <recent name="$PROJECT_DIR$/two_pointer_technique" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/BackTracking" />
+      <recent name="$PROJECT_DIR$/simulation" />
+      <recent name="$PROJECT_DIR$/two_pointer_technique" />
+      <recent name="$PROJECT_DIR$/array_hashing_technique" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Kotlin.PlusOneKt">
+    <configuration name="simulation.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="filePath" value="$PROJECT_DIR$/simulation/bin/simulation.dart" />
+      <option name="workingDirectory" value="$PROJECT_DIR$/simulation" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FindAllAnagramInStringKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.two_pointer.FindAllAnagramInStringKt" />
+      <module name="Learning" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FindMinimumInRotatedSortedArrayKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array_traversals.binary_search.FindMinimumInRotatedSortedArrayKt" />
+      <module name="Learning" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LongestValidParenthesesKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="stack.LongestValidParenthesesKt" />
+      <module name="Learning" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlusOneKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="DSA.interview_problem.PlusOneKt" />
+      <module name="Learning" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SortingTestKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="sorting.SortingTestKt" />
+      <module name="Learning" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.PlusOneKt" />
+        <item itemvalue="Kotlin.FindAllAnagramInStringKt" />
+        <item itemvalue="Kotlin.FindMinimumInRotatedSortedArrayKt" />
+        <item itemvalue="Kotlin.SortingTestKt" />
+        <item itemvalue="Kotlin.LongestValidParenthesesKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="63e6e312-ba97-461c-9408-efe0eb739fb1" name="Changes" comment="" />
+      <created>1770350833365</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1770350833365</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Added Frequency Of Element">
+      <option name="closed" value="true" />
+      <created>1770351035878</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1770351035878</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added Frequency Of Element" />
+    <MESSAGE value="First" />
+    <option name="LAST_COMMIT_MESSAGE" value="First" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="kotlin-function">
+          <url>file://$PROJECT_DIR$/DSA/interview_problem/PlusOne.kt</url>
+          <line>45</line>
+          <properties method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Learning$ZigZagConversionStringKt.ic" NAME="ZigZagConversionStringKt Coverage Results" MODIFIED="1772600950334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+  </component>
+</project>
