@@ -14,7 +14,7 @@
 | 7-8 | Jetpack Compose (All Levels) | 36 | Graphs, Backtracking, Greedy, Simulation | [Link](Week7-8_Jetpack_Compose.md) |
 | 9 | DSA Intensive | 18 | DP, Sorting, Matrix, Hard problems | [Link](Week9_DSA_Intensive.md) |
 | 10 | SOLID + Design Patterns + System Design | 18 | Mixed review | [Link](Week10_Design_Patterns_System_Design.md) |
-| 11 | Flutter + Firebase + WebRTC + Testing | 18 | Mixed review | [Link](Week11_Specialized_Topics.md) |
+| 11 | Flutter + KMP + Firebase + WebRTC + Testing | 18 | Mixed review | [Link](Week11_Specialized_Topics.md) |
 | 12 | Behavioral + Mock Interviews + Java | 18 | Hard + Timed | [Link](Week12_Mock_Interviews_Behavioral.md) |
 
 ---
@@ -70,6 +70,14 @@
 | Intermediate | [Analytics](../firebase_questions/intermediate/Analytics.md), [CloudFunctions](../firebase_questions/intermediate/CloudFunctions.md), [FCM](../firebase_questions/intermediate/FCM.md), [RemoteConfig](../firebase_questions/intermediate/RemoteConfig.md), [SecurityRules](../firebase_questions/intermediate/SecurityRules.md) | 🟡 | 11 |
 | Advanced | [AppCheck](../firebase_questions/advanced/AppCheck.md), [Architecture](../firebase_questions/advanced/Architecture.md), [Cost](../firebase_questions/advanced/CostOptimization.md), [Performance](../firebase_questions/advanced/Performance.md), [Scaling](../firebase_questions/advanced/Scaling.md) | 🟡 | 11 |
 | Scenarios | [DataModeling](../firebase_questions/scenario_based/DataModelingScenarios.md), [Performance](../firebase_questions/scenario_based/PerformanceScenarios.md), [Security](../firebase_questions/scenario_based/SecurityScenarios.md) | 🟡 | 11 |
+
+### KMP (Kotlin Multiplatform)
+| Level | Files | Priority | Week |
+|-------|-------|----------|------|
+| Beginner | [Basics](../kmp_questions/beginner/Basics.md), [ProjectSetup](../kmp_questions/beginner/ProjectSetup.md), [CommonCode](../kmp_questions/beginner/CommonCode.md), [ExpectActual](../kmp_questions/beginner/ExpectActual.md), [PlatformSpecific](../kmp_questions/beginner/PlatformSpecific.md) | 🔴 | 11 |
+| Intermediate | [Architecture](../kmp_questions/intermediate/Architecture.md), [Networking](../kmp_questions/intermediate/Networking.md), [Database](../kmp_questions/intermediate/Database.md), [DI](../kmp_questions/intermediate/DependencyInjection.md), [Coroutines](../kmp_questions/intermediate/Coroutines.md), [Testing](../kmp_questions/intermediate/Testing.md) | 🔴 | 11 |
+| Advanced | [ComposeMultiplatform](../kmp_questions/advanced/ComposeMultiplatform.md), [Performance](../kmp_questions/advanced/Performance.md), [CICD](../kmp_questions/advanced/CICD.md), [LibraryDev](../kmp_questions/advanced/LibraryDevelopment.md), [Migration](../kmp_questions/advanced/Migration.md) | 🟡 | 11 |
+| Scenarios | [KMPScenarios](../kmp_questions/scenario_based/KMPScenarios.md) | 🟡 | 11 |
 
 ### Other Topics
 | Topic | Files | Priority | Week |

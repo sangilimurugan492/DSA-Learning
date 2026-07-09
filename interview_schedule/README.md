@@ -1,7 +1,7 @@
 # 📚 Interview Preparation Schedule — 12 Week Roadmap
 
 > **Commitment:** 2 hrs/day (Mon–Fri) + 4 hrs/day (Sat–Sun) = **18 hrs/week**
-> **Total:** 216 hours over 12 weeks | **DSA Problems:** ~170 | **Topics:** 36 folders, 250+ files
+> **Total:** 216 hours over 12 weeks | **DSA Problems:** ~170 | **Topics:** 37 folders, 270+ files
 
 ---
 
@@ -15,7 +15,7 @@
 | 7-8 | Jetpack Compose (All Levels) | 32 files | Graphs, Backtracking, Greedy, Simulation | [Week7-8](Week7-8_Jetpack_Compose.md) |
 | 9 | DSA Intensive | 50+ files | DP (1D, 2D, Subsequence), Sorting, Matrix | [Week9](Week9_DSA_Intensive.md) |
 | 10 | SOLID + Design Patterns + System Design | 19+ files | Mixed DSA review (medium/hard) | [Week10](Week10_Design_Patterns_System_Design.md) |
-| 11 | Flutter + Firebase + WebRTC + Testing | 62 files | Mixed DSA review (medium/hard) | [Week11](Week11_Specialized_Topics.md) |
+| 11 | Flutter + KMP + Firebase + WebRTC + Testing | 79 files | Mixed DSA review (medium/hard) | [Week11](Week11_Specialized_Topics.md) |
 | 12 | Behavioral + Mock Interviews + Final Review | 25+ files | Hard DSA + timed practice | [Week12](Week12_Mock_Interviews_Behavioral.md) |
 
 ---
@@ -105,6 +105,10 @@
 - 🟡 `firebase_questions/scenario_based/` — DataModeling, Performance, Security scenarios
 - 🟡 `webrtc_questions/` — WebRTCBasics, AndroidWebRTC, WebRTCScenarios
 - 🟡 `testing_questions/` — UnitTesting, Espresso, Mockito, TDD, ComposeTesting, TestingScenarios
+- 🔴 `kmp_questions/beginner/` — Basics, ProjectSetup, CommonCode, ExpectActual, PlatformSpecific
+- 🔴 `kmp_questions/intermediate/` — Architecture, Networking, Database, DependencyInjection, Coroutines, Testing
+- 🟡 `kmp_questions/advanced/` — ComposeMultiplatform, Performance, CICD, LibraryDevelopment, Migration
+- 🟡 `kmp_questions/scenario_based/` — KMPScenarios
 - 🔴 DSA: Mixed review (medium/hard) — 2 problems/day
 
 ### Week 12: Mock Interviews + Behavioral
@@ -175,6 +179,7 @@
 - [ ] Firebase (18 files)
 - [ ] WebRTC (4 files)
 - [ ] Testing (7 files)
+- [ ] KMP (17 files)
 - [ ] DSA: Mixed review (~10 problems)
 
 ### Week 12: Mock Interviews + Behavioral

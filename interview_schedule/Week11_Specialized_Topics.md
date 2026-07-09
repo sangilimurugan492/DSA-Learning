@@ -1,4 +1,4 @@
-# Week 11: Flutter + Firebase + WebRTC + Testing
+# Week 11: Flutter + KMP + Firebase + WebRTC + Testing
 
 > **Duration:** 1 week | **Hours:** 18 hrs | **DSA Problems:** ~10 (mixed review)
 
@@ -14,7 +14,7 @@
 | Thu | 2hr | 🟡 [Flutter Riverpod](../flutter_questions/state_management/Riverpod.md) + [GetX](../flutter_questions/state_management/GetX.md) + [Comparison](../flutter_questions/state_management/Comparison.md) | 2 mixed hard |
 | Fri | 2hr | 🟡 [Flutter Intermediate](../flutter_questions/intermediate/) — Animations, CustomWidgets, HTTP, Firebase, Testing + [Advanced](../flutter_questions/advanced/) — Architecture, CICD, DI, Internals, Performance, PlatformChannels | 2 mixed hard |
 | Sat | 4hr | 🟡 [Firebase Beginner](../firebase_questions/beginner/) + [Intermediate](../firebase_questions/intermediate/) + [Advanced](../firebase_questions/advanced/) + [Scenarios](../firebase_questions/scenario_based/) | 2 mixed review |
-| Sun | 4hr | 🟡 [WebRTC](../webrtc_questions/) + [Testing](../testing_questions/) + [Flutter Scenarios](../flutter_questions/scenario_based/) + [Flutter SM Best Practices](../flutter_questions/state_management/BestPractices.md) | 2 mixed review |
+| Sun | 4hr | 🟡 [WebRTC](../webrtc_questions/) + [Testing](../testing_questions/) + [Flutter Scenarios](../flutter_questions/scenario_based/) + [Flutter SM Best Practices](../flutter_questions/state_management/BestPractices.md) + 🔴 [KMP Basics](../kmp_questions/beginner/Basics.md) + [KMP Architecture](../kmp_questions/intermediate/Architecture.md) | 2 mixed review |
 
 ---
 
@@ -105,6 +105,27 @@
 | [Data Modeling](../firebase_questions/scenario_based/DataModelingScenarios.md) | NoSQL design, denormalization |
 | [Performance](../firebase_questions/scenario_based/PerformanceScenarios.md) | Query optimization, caching |
 | [Security](../firebase_questions/scenario_based/SecurityScenarios.md) | Rule design, access control |
+
+### KMP (17 files) 🔴
+| File | Key Concepts |
+|------|-------------|
+| [Basics](../kmp_questions/beginner/Basics.md) | KMP overview, commonMain, targets, Kotlin/Native |
+| [Project Setup](../kmp_questions/beginner/ProjectSetup.md) | Gradle config, iOS targets, CocoaPods, framework |
+| [Common Code](../kmp_questions/beginner/CommonCode.md) | Shared models, business logic, validation |
+| [Expect/Actual](../kmp_questions/beginner/ExpectActual.md) | expect/actual mechanism, typealias, annotations |
+| [Platform Specific](../kmp_questions/beginner/PlatformSpecific.md) | Android/iOS APIs, Swift interop, threading |
+| [Architecture](../kmp_questions/intermediate/Architecture.md) | MVVM, Clean Architecture, shared ViewModels |
+| [Networking](../kmp_questions/intermediate/Networking.md) | Ktor, engines, auth, retry, WebSocket |
+| [Database](../kmp_questions/intermediate/Database.md) | SQLDelight, Room KMP, migrations, transactions |
+| [Dependency Injection](../kmp_questions/intermediate/DependencyInjection.md) | Koin, Kotlin Inject, manual DI |
+| [Coroutines](../kmp_questions/intermediate/Coroutines.md) | StateFlow, SharedFlow, Dispatchers, iOS interop |
+| [Testing](../kmp_questions/intermediate/Testing.md) | commonTest, fakes, Turbine, MockEngine |
+| [Compose Multiplatform](../kmp_questions/advanced/ComposeMultiplatform.md) | Shared UI, navigation, theming, UIKit interop |
+| [Performance](../kmp_questions/advanced/Performance.md) | Build optimization, binary size, memory leaks |
+| [CICD](../kmp_questions/advanced/CICD.md) | GitHub Actions, macOS runners, XCFramework |
+| [Library Development](../kmp_questions/advanced/LibraryDevelopment.md) | Publishing, API design, binary compatibility |
+| [Migration](../kmp_questions/advanced/Migration.md) | Android→KMP, Retrofit→Ktor, Room→SQLDelight |
+| [KMP Scenarios](../kmp_questions/scenario_based/KMPScenarios.md) | Real-world problems, debugging, architecture |
 
 ### WebRTC (4 files) 🟡
 | File | Key Concepts |
