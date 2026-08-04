@@ -43,7 +43,6 @@ fun main() {
 fun findPivotIndexBF(nums: IntArray) : Int {
 
     val n = nums.size
-    var pivotIndex = -1
     var sumLeft = 0
     var sumRight: Int
     for (i in nums.indices) {
@@ -58,11 +57,11 @@ fun findPivotIndexBF(nums: IntArray) : Int {
             return i
         }
     }
-    return pivotIndex
+    return -1
 }
 
 /**
- * Brute Force Method
+ * Optimal Method
  * Time Complexity O(N)
  * Space Complexity O(N)
  * Time taken in leetcode : 1 ms

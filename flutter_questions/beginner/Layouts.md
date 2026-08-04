@@ -406,6 +406,144 @@ ListView(
 
 ---
 
+## Q8: What is `ClipRRect`, `ClipOval`, and `ClipPath`?
+
+```dart
+// ClipRRect — clip to rounded rectangle
+ClipRRect(
+  borderRadius: BorderRadius.circular(16),
+  child: Image.network('https://example.com/photo.jpg'),
+)
+
+// ClipOval — clip to oval/circle
+ClipOval(
+  child: SizedBox(
+    width: 100,
+    height: 100,
+    child: Image.network('https://example.com/avatar.jpg', fit: BoxFit.cover),
+  ),
+)
+
+// ClipPath — clip to custom path
+ClipPath(
+  clipper: MyCustomClipper(),
+  child: Container(
+    width: 200,
+    height: 100,
+    color: Colors.blue,
+  ),
+)
+
+class MyCustomClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    final path = Path();
+    path.moveTo(0, 0);
+    path.lineTo(size.width, 0);
+    path.lineTo(size.width / 2, size.height);
+    path.close();
+    return path;
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
+}
+```
+
+> **Performance:** Clipping is expensive — it uses `saveLayer` internally. For simple rounded corners, prefer `Container` with `BoxDecoration(borderRadius:)` instead of `ClipRRect` — it's cheaper.
+
+---
+
+## Q9: What is `FittedBox` and how does it differ from `FractionallySizedBox`?
+
+```dart
+// FittedBox — scales child to fit within bounds
+const FittedBox(
+  fit: BoxFit.scaleDown,  // Scale down only (never up)
+  child: Text('Long text that might overflow'),
+)
+
+// BoxFit options:
+// fill       — stretch to fill (distorts)
+// contain    — fit entirely (letterbox)
+// cover      — fill, crop overflow
+// fitWidth   — fit width, crop height
+// fitHeight  — fit height, crop width
+// scaleDown  — contain, but never scale up
+// none       — no scaling (overflow)
+
+// FractionallySizedBox — size as percentage of parent
+FractionallySizedBox(
+  widthFactor: 0.8,   // 80% of parent width
+  heightFactor: 0.5,  // 50% of parent height
+  child: Container(color: Colors.blue),
+)
+
+// AspectRatio — fixed width:height ratio
+AspectRatio(
+  aspectRatio: 16 / 9,
+  child: Container(color: Colors.red),
+)
+```
+
+| Widget | Purpose | Scales Content? |
+|--------|---------|-----------------|
+| `FittedBox` | Fit child into bounds | ✅ Yes |
+| `FractionallySizedBox` | Size as % of parent | ❌ No |
+| `AspectRatio` | Fixed ratio | ❌ No |
+| `SizedBox` | Fixed size | ❌ No |
+
+> **Use `FittedBox`** when text or content might overflow and you want it to shrink-to-fit. Use `FractionallySizedBox` for responsive percentage-based layouts.
+
+---
+
+## Q10: What is `SliverFillRemaining` and `SliverToBoxAdapter`?
+
+```dart
+// SliverToBoxAdapter — wrap a non-sliver widget in a sliver
+CustomScrollView(
+  slivers: [
+    SliverToBoxAdapter(child: const Text('Header')),  // Non-sliver → sliver
+    SliverList(delegate: SliverChildBuilderDelegate(
+      (context, index) => ListTile(title: Text('Item $index')),
+      childCount: 20,
+    )),
+    SliverToBoxAdapter(child: const Text('Footer')),
+  ],
+)
+
+// SliverFillRemaining — fill remaining space in CustomScrollView
+CustomScrollView(
+  slivers: [
+    SliverAppBar(title: const Text('App Bar')),
+    SliverList(delegate: SliverChildBuilderDelegate(
+      (context, index) => ListTile(title: Text('Item $index')),
+      childCount: 5,
+    )),
+    // Fills remaining space — useful for loading spinners at bottom
+    SliverFillRemaining(
+      hasScrollBody: false,  // Don't scroll the child
+      child: const Center(child: CircularProgressIndicator()),
+    ),
+  ],
+)
+
+// SliverFillViewport — full-screen pages
+SliverFillViewport(
+  delegate: SliverChildBuilderDelegate(
+    (context, index) => Container(
+      color: Colors.primaries[index],
+      child: Center(child: Text('Page $index')),
+    ),
+    childCount: 5,
+  ),
+)
+```
+
+> **Key:** `SliverToBoxAdapter` is the bridge between regular widgets and slivers. Use it when you need to place a single non-sliver widget (like `Text`, `Container`, `Image`) inside a `CustomScrollView`.
+
+---
+
 ## 🔗 Related Topics
 - [Widgets](Widgets.md)
 - [Basics](Basics.md)

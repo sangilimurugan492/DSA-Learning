@@ -4,148 +4,413 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63e6e312-ba97-461c-9408-efe0eb739fb1" name="Changes" comment="Added All Mobile related Topic and Interview Preparation Concepts.">
+    <list default="true" id="63e6e312-ba97-461c-9408-efe0eb739fb1" name="Changes" comment="Added All problems with explanation.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/BackTracking/CombinationSum.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/BackTracking/LetterAndCombinationPhoneNumber.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/BackTracking/Permutations.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/BackTracking/Subsets.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/BackTracking/WordSearch.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/binary_search/FindMinimumInRotatedSortedArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/binary_search/MedianOfTwoSortedSubArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/binary_search/SearchInRotatedSortedArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/bit_manipulation/SingleNumber.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/bit_manipulation/SingleNumberII.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/complement_search/FindingPairsWithCertainSum.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/complement_search/TwoSumII.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/complement_search/TwoSumLevelOneWithoutSortedArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/frequency_count/CountTheNumberOfPairs.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/frequency_count/FindingFairPairs.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/frequency_count/TopKFrequentElements.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/AssignCookies.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/BestTimeToBuyAndSellStockI.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/BestTimeToBuyAndSellStockII.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/Candy.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/GasStation.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/InsertInterval.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/IntervalGroups.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/JumpGame.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/JumpGameII.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/LemonadeChange.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/MeetingRooms.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/MergeIntervals.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/MinimumArrowsToBurstBalloons.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/NonOverlappingIntervals.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/PartitionLabels.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/QueueReconstructionByHeight.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/TaskScheduler.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/WiggleSubsequence.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/hashset_lookup/CheckIfNDoubleExits.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/hashset_lookup/ContainsDuplicates.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/hashset_lookup/CountDistinctElements.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/hashset_lookup/LongestConsecutiveSequence.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/hashset_lookup/ValidSudoku.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/kadane_algorithm/MaximumProductSubarray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/kadane_algorithm/MaximumSubArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/kadane_algorithm/MaximumSumCircularSubarray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/CheckArraySortedOrRotate.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/CountFrequencyOfElement.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/CountNegativesInMatrix.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/FindMaximumConsecutiveOnes.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/FindSecondLargestOrSmallestElement.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/FindSmallestOrLargest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/FindingPivotIndex.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/FirstRepeatingElement.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/HeightChecker.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/LeadersInArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/MinimumAbsoluteDifference.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/NumberOfDistinctAverages.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/ReverseAString.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/ReverseAnArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/matrix/GameOfLife.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/matrix/RotateImage.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/matrix/SetMatrixZeroes.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/matrix/SpiralMatrix.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/prefix_sum/ContiguousArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/prefix_sum/PrefixSumQuery.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/prefix_sum/ProductOfArrayExceptSelf.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/prefix_sum/RunningSum1DArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/prefix_sum/SubarraySumEqualsK.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/set_operations/FindTheDifferenceBetweenTwoArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/set_operations/GroupAnagrams.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/set_operations/IntersectionOfTwoArrays.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/sliding_window/FindAllAnagramsInString.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/sliding_window/FruitsIntoBaskets.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/sliding_window/GrumpyBookStoreOwner.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/sliding_window/LongestRepeatingCharacterReplacement.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/sliding_window/LongestSubArrayAfterDeletingOne.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/sliding_window/LongestSubstringWithoutRepeatingCharacters.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/sliding_window/MaximumAverageSubArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/sliding_window/MinimumWindowSubstring.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/sliding_window/PermutationInString.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/string_parsing/IntegerToRoman.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/string_parsing/LongestPalidromString.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/string_parsing/StringToInteger.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/string_parsing/ZigZagConversionString.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/BackspaceStringCompare.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/BoatsToSave.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/ContainerWithMostWater.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/CountNumberOfNiceSubarrays.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/FindAllAnagramInString.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/FourSum.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/IntersectionTwoArrayII.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/IsSubSequence.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/KSumPairs.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/LongestPalindromSubString.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/LongestRepeatingCharcterReplacement.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/LongestSubStringWithoutRepeatingCharacter.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/MaxConsecutiveOnesIII.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/MergeSortedArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/MinimumPairRemovaltoSortArrayI.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/MinimumSizeSubArraySum.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/MoveZerosToEnd.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/PermutationInString.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/RemoveElementInAnArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/SortColorsDutchNationalFlag.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/StringCompression.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/SubArrayWithKDifferentInteger.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/ThreeSum.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/ThreeSumCloset.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/TrappingRainWaterI.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/TwoSumLessThanK.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/TwoSumLevelTwoWithSortedArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/ValidPalindrom.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer_inplace/NextPermutation.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer_inplace/RemoveDuplicateFromSortedArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer_inplace/RemoveDuplicateseTWO.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer_inplace/RemoveElement.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer_inplace/ReplaceGratestElementOnRight.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer_inplace/RotateArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer_inplace/SortedSquares.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/voting_floyd/FindDupplicateNumber.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/voting_floyd/MajorityElementII.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/voting_floyd/MajorityOfElements.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/voting_floyd/MissingNumberInArray.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/heap/FindMedianFromDataStream.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/heap/KthLargestElement.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/heap/MergeKSortedLists.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/heap/TopKFrequentElements.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/interview_problem/PlusOne.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/simulation/AddBinary.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/stack/CarFleet.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/stack/DailyTemperatures.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/stack/EvaluateReversePolishNotation.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/stack/LargestRectangleInHistogram.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/stack/LongestValidParentheses.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/stack/MinStack.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/stack/MinimumParentheseToRemove.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/stack/NextGreaterElementI.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/stack/NextGreaterElementII.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/stack/OnlineStockSpan.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/stack/ValidParentheses.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/trie/ImplementTrie.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/complement_search/two_sum_ii/TwoSumII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/complement_search/two_sum_ii/TwoSumII.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/best_time_to_buy_and_sell_stock_ii/BestTimeToBuyAndSellStockII.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/greedy/best_time_to_buy_and_sell_stock_ii/BestTimeToBuyAndSellStockII.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/count_negatives_in_matrix/CountNegativesInMatrix.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/count_negatives_in_matrix/CountNegativesInMatrix.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/finding_pivot_index/FindingPivotIndex.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/finding_pivot_index/FindingPivotIndex.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/four_sum/FourSum.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/four_sum/FourSum.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/three_sum_closet/ThreeSumCloset.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/three_sum_closet/ThreeSumCloset.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/circular/CircularLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/circular/JosephusProblem.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/circular/SortedInsertInCircularLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/circular/SplitCircularLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/DListNode.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/DeleteNodeInDoublyLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/FindPairsWithGivenSum.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/FlatternDoubleLLMultiLevel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/InsertNodeInDoublyLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/LeastFrequentlyUsedLFU.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/LeastRecentlyUsedLRU.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/RemoveDuplicatesFromSortedDLL.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/ReverseDoublyLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/AddTwoNumbers.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/ConvertSortedListToBinarySearchTree.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/CopyListWithRandomPointer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/DeleteNodeInLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/DesignHashSet.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/IntersectionOfTwoLinkedLists.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/LinkedListBinaryToInteger.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/LinkedListCycle.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/LinkedListCycleII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/ListNode.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/MergeKSortedLists.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/MergeTwoSortedLists.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/MiddleOfLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/MyLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/Node.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/PalindromeLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/PatiotionList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/RemoveDuplicatesFromSortedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/RemoveDuplicatesFromSortedListII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/RemoveNthNodeFromLast.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/ReorderList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/ReverseLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/ReverseLinkedListII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/ReverseLinkedListKGroup.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/RotateLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/SortList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/SwapNodesInPairs.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/simulation/AddDigits.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/simulation/AddString.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/simulation/FizzBuzz.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/simulation/SpiralMatrix.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/simulation/SpiralMatrixII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/simulation/TextJustification.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/trie/WordSearchII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/advanced/CICD.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/advanced/CICD.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/advanced/CustomViews.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/advanced/CustomViews.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/advanced/DependencyInjection.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/advanced/DependencyInjection.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/advanced/Performance.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/advanced/Performance.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/advanced/Security.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/advanced/Security.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/advanced/Testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/advanced/Testing.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/beginner/ActivityLifecycle.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/beginner/ActivityLifecycle.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/beginner/Basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/beginner/FragmentLifecycle.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/beginner/FragmentLifecycle.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/beginner/Intents.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/beginner/Intents.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/beginner/Permissions.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/beginner/Permissions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/beginner/RecyclerView.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/beginner/RecyclerView.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/beginner/UILayouts.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/beginner/UILayouts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/intermediate/ArchitecturePatterns.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/intermediate/ArchitecturePatterns.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/intermediate/DataBinding.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/intermediate/DataBinding.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/intermediate/Navigation.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/intermediate/Navigation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/intermediate/Retrofit.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/intermediate/Retrofit.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/intermediate/RoomDatabase.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/intermediate/RoomDatabase.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/intermediate/ViewModelLiveData.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/intermediate/ViewModelLiveData.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/intermediate/WorkManager.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/intermediate/WorkManager.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/scenario_based/UIScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/scenario_based/UIScenarios.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/DartBasics.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/DartBasics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Layouts.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Layouts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Navigation.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Navigation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/StateManagement.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/StateManagement.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Widgets.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Widgets.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interview_schedule/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/interview_schedule/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interview_schedule/Week1-2_Fundamentals.md" beforeDir="false" afterPath="$PROJECT_DIR$/interview_schedule/Week1-2_Fundamentals.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interview_schedule/Week3-4_Android_Core.md" beforeDir="false" afterPath="$PROJECT_DIR$/interview_schedule/Week3-4_Android_Core.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interview_schedule/Week5-6_Advanced_Android.md" beforeDir="false" afterPath="$PROJECT_DIR$/interview_schedule/Week5-6_Advanced_Android.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interview_schedule/Week7-8_Jetpack_Compose.md" beforeDir="false" afterPath="$PROJECT_DIR$/interview_schedule/Week7-8_Jetpack_Compose.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetpack_compose_questions/advanced/Testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/jetpack_compose_questions/advanced/Testing.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetpack_compose_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/jetpack_compose_questions/beginner/Basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetpack_compose_questions/beginner/Composables.md" beforeDir="false" afterPath="$PROJECT_DIR$/jetpack_compose_questions/beginner/Composables.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetpack_compose_questions/beginner/Modifiers.md" beforeDir="false" afterPath="$PROJECT_DIR$/jetpack_compose_questions/beginner/Modifiers.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetpack_compose_questions/beginner/State.md" beforeDir="false" afterPath="$PROJECT_DIR$/jetpack_compose_questions/beginner/State.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetpack_compose_questions/intermediate/StateManagement.md" beforeDir="false" afterPath="$PROJECT_DIR$/jetpack_compose_questions/intermediate/StateManagement.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetpack_compose_questions/intermediate/Theming.md" beforeDir="false" afterPath="$PROJECT_DIR$/jetpack_compose_questions/intermediate/Theming.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/advanced/Coroutines.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/advanced/Coroutines.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/advanced/DSL.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/advanced/DSL.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/advanced/DelegatedProperties.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/advanced/DelegatedProperties.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/advanced/Flows.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/advanced/Flows.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/advanced/Generics.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/advanced/Generics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/advanced/ReflectionAndAnnotations.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/advanced/ReflectionAndAnnotations.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/advanced/ValueClasses.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/advanced/ValueClasses.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/Arrays.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/Arrays.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/Basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/ControlFlow.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/ControlFlow.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/ExceptionHandling.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/ExceptionHandling.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/Functions.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/Functions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/NullSafety.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/NullSafety.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/StringTemplates.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/StringTemplates.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/TypeChecksAndSmartCasts.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/TypeChecksAndSmartCasts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/VariablesAndDataTypes.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/VariablesAndDataTypes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/Collections.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/Collections.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/DataAndSealedClasses.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/DataAndSealedClasses.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/Extensions.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/Extensions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/InlineAndReified.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/InlineAndReified.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/LambdasAndHigherOrderFunctions.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/LambdasAndHigherOrderFunctions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/OOP.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/OOP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/OperatorOverloading.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/OperatorOverloading.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/ScopeFunctions.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/ScopeFunctions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/scenario_based/ConcurrencyScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/scenario_based/ConcurrencyScenarios.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Learning/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/complement_search/TwoSumIIKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/complement_search/TwoSumIIKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/BackTracking/CombinationSumKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/BackTracking/LetterAndCombinationPhoneNumberKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/BackTracking/PermutationsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/BackTracking/SubsetsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/BackTracking/WordSearchKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/interview_problem/PlusOneKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/META-INF/Learning.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/META-INF/Learning.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/advanced/CICD.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/advanced/CICD.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/advanced/CustomViews.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/advanced/CustomViews.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/advanced/DependencyInjection.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/advanced/DependencyInjection.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/advanced/Performance.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/advanced/Performance.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/advanced/Security.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/advanced/Security.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/advanced/Testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/advanced/Testing.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/beginner/ActivityLifecycle.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/beginner/ActivityLifecycle.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/beginner/Basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/beginner/FragmentLifecycle.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/beginner/FragmentLifecycle.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/beginner/Intents.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/beginner/Intents.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/beginner/Permissions.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/beginner/Permissions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/beginner/RecyclerView.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/beginner/RecyclerView.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/beginner/UILayouts.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/beginner/UILayouts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/intermediate/ArchitecturePatterns.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/intermediate/ArchitecturePatterns.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/intermediate/DataBinding.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/intermediate/DataBinding.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/intermediate/Navigation.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/intermediate/Navigation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/intermediate/Retrofit.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/intermediate/Retrofit.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/intermediate/RoomDatabase.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/intermediate/RoomDatabase.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/intermediate/ViewModelLiveData.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/intermediate/ViewModelLiveData.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/intermediate/WorkManager.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/intermediate/WorkManager.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/scenario_based/UIScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/scenario_based/UIScenarios.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/binary_search/FindMinimumInRotatedSortedArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/binary_search/MedianOfTwoSortedSubArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/binary_search/SearchInRotatedSortedArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/bit_manipulation/SingleNumberIIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/bit_manipulation/SingleNumberKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/complement_search/TwoSumIIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/complement_search/TwoSumLevelOneWithoutSortedArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/frequency_count/CountTheNumberOfPairsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/frequency_count/FindingFairPairsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/frequency_count/TopKFrequentElementsKt$topKFrequentBruteForce$$inlined$sortedByDescending$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/frequency_count/TopKFrequentElementsKt$topKFrequentSort$$inlined$sortedByDescending$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/frequency_count/TopKFrequentElementsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/AssignCookiesKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/BestTimeToBuyAndSellStockIIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/BestTimeToBuyAndSellStockIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/CandyKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/GasStationKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/InsertIntervalKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/IntervalGroupsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/JumpGameIIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/JumpGameKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/LemonadeChangeKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/MeetingRoomsKt$canAttendMeetings$$inlined$sortBy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/MeetingRoomsKt$minMeetingRooms$$inlined$sortBy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/MeetingRoomsKt$minMeetingRoomsHeap$$inlined$sortBy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/MeetingRoomsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/MergeIntervalsKt$mergeBruteForce$$inlined$sortedBy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/MergeIntervalsKt$mergeOptimal$$inlined$sortBy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/MergeIntervalsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/MinimumArrowsToBurstBalloonsKt$findMinArrowShots$$inlined$sortBy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/MinimumArrowsToBurstBalloonsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/NonOverlappingIntervalsKt$eraseOverlapIntervals$$inlined$sortBy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/NonOverlappingIntervalsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/PartitionLabelsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/QueueReconstructionByHeightKt$reconstructQueue$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/QueueReconstructionByHeightKt$reconstructQueue$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/QueueReconstructionByHeightKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/TaskSchedulerKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/greedy/WiggleSubsequenceKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/hashset_lookup/CheckIfNDoubleExitsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/hashset_lookup/ContainsDuplicatesKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/hashset_lookup/LongestConsecutiveSequenceKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/hashset_lookup/ValidSudokuKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/kadane_algorithm/MaximumProductSubarrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/kadane_algorithm/MaximumSubArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/kadane_algorithm/MaximumSumCircularSubarrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/CheckArraySortedOrRotateKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/CountFrequencyOfElementKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/CountNegativesInMatrixKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/FindMaximumConsecutiveOnesKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/FindSecondLargestOrSmallestElementKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/FindSmallestOrLargestKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/FindingPivotIndexKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/FirstRepeatingElementKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/HeightCheckerKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/LeadersInArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/MinimumAbsoluteDifferenceKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/NumberOfDistinctAveragesKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/ReverseAStringKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/ReverseAnArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/matrix/GameOfLifeKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/matrix/RotateImageKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/matrix/SetMatrixZeroesKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/matrix/SpiralMatrixKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/prefix_sum/ContiguousArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/prefix_sum/NumArray.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/prefix_sum/PrefixSumQueryKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/prefix_sum/ProductOfArrayExceptSelfKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/prefix_sum/RunningSum1DArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/prefix_sum/SubarraySumEqualsKKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/set_operations/FindTheDifferenceBetweenTwoArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/set_operations/GroupAnagramsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/set_operations/IntersectionOfTwoArraysKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/sliding_window/FindAllAnagramsInStringKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/sliding_window/FruitsIntoBasketsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/sliding_window/GrumpyBookStoreOwnerKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/sliding_window/LongestRepeatingCharacterReplacementKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/sliding_window/LongestSubArrayAfterDeletingOneKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/sliding_window/LongestSubstringWithoutRepeatingCharactersKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/sliding_window/MaximumAverageSubArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/sliding_window/MinimumWindowSubstringKt$minWindowBruteForce$$inlined$groupingBy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/sliding_window/MinimumWindowSubstringKt$minWindowSlidingWindow$$inlined$groupingBy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/sliding_window/MinimumWindowSubstringKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/sliding_window/PermutationInStringKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/string_parsing/IntegerToRomanKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/string_parsing/LongestPalidromStringKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/string_parsing/StringToIntegerKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/string_parsing/ZigZagConversionStringKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/BackspaceStringCompareKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/BoatsToSaveKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/ContainerWithMostWaterKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/CountNumberOfNiceSubarraysKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/FindAllAnagramInStringKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/FourSumKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/KSumPairsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/LongestPalindromSubStringKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/LongestRepeatingCharcterReplacementKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/LongestSubStringWithoutRepeatingCharacterKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/MaxConsecutiveOnesIIIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/MergeSortedArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/MinimumSizeSubArraySumKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/MoveZerosToEndKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/PermutationInStringKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/RemoveElementInAnArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/SortColorsDutchNationalFlagKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/SubArrayWithKDifferentIntegerKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/ThreeSumClosetKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/ThreeSumKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/TrappingRainWaterIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/TwoSumLessThanKKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/TwoSumLevelTwoWithSortedArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/ValidPalindromKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer_inplace/NextPermutationKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer_inplace/RemoveDuplicateFromSortedArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer_inplace/RemoveDuplicateseTWOKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer_inplace/RemoveElementKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer_inplace/ReplaceGratestElementOnRightKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer_inplace/RotateArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer_inplace/SortedSquaresKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/voting_floyd/FindDupplicateNumberKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/voting_floyd/MajorityElementIIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/voting_floyd/MajorityOfElementsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/voting_floyd/MissingNumberInArrayKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array_traversals/simulation/AddBinaryKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/DartBasics.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/DartBasics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Layouts.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Layouts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Navigation.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Navigation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/StateManagement.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/StateManagement.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Widgets.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Widgets.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/heap/FindMedianFromDataStreamKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/heap/KthLargestElementKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/heap/ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/heap/MedianFinder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/heap/MergeKSortedListsKt$mergeKLists$$inlined$compareBy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/heap/MergeKSortedListsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/heap/TopKFrequentElementsKt$topKFrequentHeap$$inlined$compareBy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/heap/TopKFrequentElementsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week1-2_Fundamentals.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week1-2_Fundamentals.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week3-4_Android_Core.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week3-4_Android_Core.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week5-6_Advanced_Android.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week5-6_Advanced_Android.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week7-8_Jetpack_Compose.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week7-8_Jetpack_Compose.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/jetpack_compose_questions/advanced/Testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/jetpack_compose_questions/advanced/Testing.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/jetpack_compose_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/jetpack_compose_questions/beginner/Basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/jetpack_compose_questions/beginner/Composables.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/jetpack_compose_questions/beginner/Composables.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/jetpack_compose_questions/beginner/Modifiers.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/jetpack_compose_questions/beginner/Modifiers.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/jetpack_compose_questions/beginner/State.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/jetpack_compose_questions/beginner/State.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/jetpack_compose_questions/intermediate/StateManagement.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/jetpack_compose_questions/intermediate/StateManagement.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/jetpack_compose_questions/intermediate/Theming.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/jetpack_compose_questions/intermediate/Theming.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/advanced/Coroutines.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/advanced/Coroutines.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/advanced/DSL.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/advanced/DSL.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/advanced/DelegatedProperties.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/advanced/DelegatedProperties.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/advanced/Flows.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/advanced/Flows.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/advanced/Generics.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/advanced/Generics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/advanced/ReflectionAndAnnotations.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/advanced/ReflectionAndAnnotations.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/advanced/ValueClasses.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/advanced/ValueClasses.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/Arrays.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/Arrays.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/Basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/ControlFlow.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/ControlFlow.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/ExceptionHandling.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/ExceptionHandling.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/Functions.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/Functions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/NullSafety.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/NullSafety.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/StringTemplates.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/StringTemplates.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/TypeChecksAndSmartCasts.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/TypeChecksAndSmartCasts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/VariablesAndDataTypes.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/VariablesAndDataTypes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/Collections.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/Collections.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/DataAndSealedClasses.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/DataAndSealedClasses.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/Extensions.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/Extensions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/InlineAndReified.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/InlineAndReified.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/LambdasAndHigherOrderFunctions.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/LambdasAndHigherOrderFunctions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/OOP.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/OOP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/OperatorOverloading.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/OperatorOverloading.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/ScopeFunctions.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/intermediate/ScopeFunctions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/scenario_based/ConcurrencyScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/scenario_based/ConcurrencyScenarios.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/circular/CListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/circular/CSCNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/circular/CSplitNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/circular/CircularLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/circular/CircularLinkedListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/circular/CircularLinkedListSplit.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/circular/JosephusProblemKt$josephusSimulation$JNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/circular/JosephusProblemKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/circular/SortedCircularLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/circular/SortedInsertInCircularLinkedListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/circular/SplitCircularLinkedListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/DListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/DListNodeWithChild.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/DeleteNodeInDoublyLinkedListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/FindPairsWithGivenSumKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/FlatternDoubleLLMultiLevelKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/InsertNodeInDoublyLinkedListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/LFUCache$DLList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/LFUCache$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/LFUCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/LFUCache2$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/LFUCache2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/LRUCache$Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/LRUCache.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/LeastFrequentlyUsedLFUKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/LeastRecentlyUsedLRUKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/RemoveDuplicatesFromSortedDLLKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/double/ReverseDoublyLinkedListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/AddTwoNumbersKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/ConvertSortedListToBinarySearchTreeKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/CopyListWithRandomPointerKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/DeleteNodeInLinkedListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/IntersectionOfTwoLinkedListsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/LinkedListBinaryToIntegerKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/LinkedListCycleIIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/LinkedListCycleKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/ListNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/MergeKSortedListsKt$mergeKListsHeap$$inlined$compareBy$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/MergeKSortedListsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/MergeTwoSortedListsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/MiddleOfLinkedListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/MyHashSet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/MyLinkedList.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/MyLinkedListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/Node.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/NodeRandom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/PalindromeLinkedListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/PatiotionListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/RemoveDuplicatesFromSortedListIIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/RemoveDuplicatesFromSortedListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/RemoveNthNodeFromLastKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/ReorderListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/ReverseLinkedListIIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/ReverseLinkedListKGroupKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/ReverseLinkedListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/RotateLinkedListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/Solution.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/SortListKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/SwapNodesInPairsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/TreeNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/simulation/SpiralMatrixIIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/simulation/SpiralMatrixKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/simulation/TextJustificationKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/stack/CarFleetKt$carFleetBruteForce$$inlined$sortedByDescending$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/stack/CarFleetKt$carFleetStack$$inlined$sortedByDescending$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/stack/CarFleetKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/stack/DailyTemperaturesKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/stack/EvaluateReversePolishNotationKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/stack/LargestRectangleInHistogramKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/stack/LongestValidParenthesesKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/stack/MinStack.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/stack/MinStackKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/stack/MinimumParentheseToRemoveKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/stack/NextGreaterElementIIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/stack/NextGreaterElementIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/stack/OnlineStockSpanKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/stack/StockSpanner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/stack/ValidParenthesesKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/trie/ImplementTrieKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/trie/Trie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/trie/TrieNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/trie/WordSearchIIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/trie/WordTrieNode.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +429,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lesson1" />
+        <entry key="$PROJECT_DIR$" value="Interview_preparation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -198,7 +463,8 @@
     &quot;Kotlin.AddStringKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.AddTowNumbersKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.AssignCookiesKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.BestTimeToBuyAndSellStockIIKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.BestTimeToBuyAndSellStockIIKt (1).executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.BestTimeToBuyAndSellStockIIKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.BestTimeToBuyAndSellStockIKt.executor&quot;: &quot;Debug&quot;,
     &quot;Kotlin.BoatsToSaveKt.executor&quot;: &quot;Run&quot;,
     &quot;Kotlin.CheckArraySortedOrRotateKt.executor&quot;: &quot;Debug&quot;,
@@ -274,7 +540,7 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Interview__preparation&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Problem__explanation&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/d2c-sangili.murugan/IdeaProjects/Learning/simulation&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
@@ -295,21 +561,21 @@
       <recent name="$PROJECT_DIR$/array_hashing_technique" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.JumpGameKt">
+  <component name="RunManager" selected="Kotlin.BestTimeToBuyAndSellStockIIKt (1)">
     <configuration name="simulation.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="filePath" value="$PROJECT_DIR$/simulation/bin/simulation.dart" />
       <option name="workingDirectory" value="$PROJECT_DIR$/simulation" />
       <method v="2" />
     </configuration>
-    <configuration name="BestTimeToBuyAndSellStockIIKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="array.greedy.BestTimeToBuyAndSellStockIIKt" />
+    <configuration name="BestTimeToBuyAndSellStockIIKt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.greedy.best_time_to_buy_and_sell_stock_ii.BestTimeToBuyAndSellStockIIKt" />
       <module name="Learning" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FindAllAnagramInStringKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="array.two_pointer.FindAllAnagramInStringKt" />
+    <configuration name="BestTimeToBuyAndSellStockIIKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.greedy.BestTimeToBuyAndSellStockIIKt" />
       <module name="Learning" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -338,11 +604,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.JumpGameKt" />
+        <item itemvalue="Kotlin.BestTimeToBuyAndSellStockIIKt (1)" />
         <item itemvalue="Kotlin.BestTimeToBuyAndSellStockIIKt" />
+        <item itemvalue="Kotlin.JumpGameKt" />
         <item itemvalue="Kotlin.TwoSumIIKt" />
         <item itemvalue="Kotlin.PlusOneKt" />
-        <item itemvalue="Kotlin.FindAllAnagramInStringKt" />
       </list>
     </recent_temporary>
   </component>
@@ -418,7 +684,23 @@
       <option name="project" value="LOCAL" />
       <updated>1783580315100</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added All problems with explanation.">
+      <option name="closed" value="true" />
+      <created>1784050636036</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1784050636036</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added All problems with explanation.">
+      <option name="closed" value="true" />
+      <created>1784050674991</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1784050674991</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -437,7 +719,8 @@
     <MESSAGE value="First" />
     <MESSAGE value="Added New Problems with explanation." />
     <MESSAGE value="Added All Mobile related Topic and Interview Preparation Concepts." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added All Mobile related Topic and Interview Preparation Concepts." />
+    <MESSAGE value="Added All problems with explanation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added All problems with explanation." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Learning$ZigZagConversionStringKt.ic" NAME="ZigZagConversionStringKt Coverage Results" MODIFIED="1772600950334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

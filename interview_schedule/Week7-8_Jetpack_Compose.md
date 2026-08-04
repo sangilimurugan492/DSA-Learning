@@ -98,10 +98,10 @@
 | Tue | Topological sort | [DSA/graph/topological_sort/](../DSA/graph/topological_sort/) | Medium |
 | Wed | Union find | [DSA/graph/union_find/](../DSA/graph/union_find/) | Medium |
 | Wed | Graph review | [DSA/graph/](../DSA/graph/) | Medium-Hard |
-| Thu | Combination Sum | [CombinationSum](../DSA/BackTracking/CombinationSum.kt) | Medium |
-| Thu | Permutations | [Permutations](../DSA/BackTracking/Permutations.kt) | Medium |
-| Fri | Subsets | [Subsets](../DSA/BackTracking/Subsets.kt) | Medium |
-| Fri | Word Search | [WordSearch](../DSA/BackTracking/WordSearch.kt) | Medium |
+| Thu | Combination Sum | [CombinationSum](../DSA/BackTracking/combination_sum/CombinationSum.kt) | Medium |
+| Thu | Permutations | [Permutations](../DSA/BackTracking/permutations/Permutations.kt) | Medium |
+| Fri | Subsets | [Subsets](../DSA/BackTracking/subsets/Subsets.kt) | Medium |
+| Fri | Word Search | [WordSearch](../DSA/BackTracking/word_search/WordSearch.kt) | Medium |
 | Sat | Letter Combinations | [LetterAndCombinationPhoneNumber](../DSA/BackTracking/LetterAndCombinationPhoneNumber.kt) | Medium |
 | Sat | Greedy review | [DSA/array/greedy/](../DSA/array/greedy/) | Easy-Hard |
 | Sun | Backtracking review | [DSA/BackTracking/](../DSA/BackTracking/) | Medium |

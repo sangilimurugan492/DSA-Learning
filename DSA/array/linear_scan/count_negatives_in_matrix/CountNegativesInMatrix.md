@@ -1,6 +1,7 @@
-# CountNegativesInMatrix — Detailed Explanation
+# CountNegativesInMatrix — Sorted Matrix - Detailed Explanation
 
-> **LeetCode** |   
+> **LeetCode** | https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/description/
+
 > **Topic:** Array
 
 ---

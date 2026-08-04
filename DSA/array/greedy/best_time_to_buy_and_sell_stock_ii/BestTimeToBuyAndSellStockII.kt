@@ -21,7 +21,7 @@ package array.greedy.best_time_to_buy_and_sell_stock_ii
  */
 
 fun main() {
-    val prices = intArrayOf(7, 1, 5, 3, 6, 4)
+    val prices = intArrayOf(7,6,4,3,1)
 
     println("=== Method 1: Peak-Valley ===")
     println("maxProfit(${prices.toList()}) = ${maxProfitPeakValley(prices)}")

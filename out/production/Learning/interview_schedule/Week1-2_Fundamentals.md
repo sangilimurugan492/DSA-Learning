@@ -75,31 +75,31 @@
 
 | Day | Problem | File | Difficulty |
 |-----|---------|------|-----------|
-| Mon | Two Sum | [TwoSumLevelOneWithoutSortedArray](../DSA/array/complement_search/TwoSumLevelOneWithoutSortedArray.kt) | Easy |
-| Mon | Two Sum II | [TwoSumII](../DSA/array/complement_search/TwoSumII.kt) | Medium |
-| Tue | Finding Pairs with Certain Sum | [FindingPairsWithCertainSum](../DSA/array/complement_search/FindingPairsWithCertainSum.kt) | Medium |
-| Tue | Best Time to Buy & Sell Stock I | [BestTimeToBuyAndSellStockI](../DSA/array/greedy/BestTimeToBuyAndSellStockI.kt) | Easy |
-| Wed | Best Time to Buy & Sell Stock II | [BestTimeToBuyAndSellStockII](../DSA/array/greedy/BestTimeToBuyAndSellStockII.kt) | Medium |
-| Wed | Jump Game | [JumpGame](../DSA/array/greedy/JumpGame.kt) | Medium |
-| Thu | Gas Station | [GasStation](../DSA/array/greedy/GasStation.kt) | Hard |
-| Thu | Assign Cookies | [AssignCookies](../DSA/array/greedy/AssignCookies.kt) | Easy |
-| Fri | Candy | [Candy](../DSA/array/greedy/Candy.kt) | Hard |
-| Fri | Insert Interval | [InsertInterval](../DSA/array/greedy/InsertInterval.kt) | Medium |
-| Sat | Interval Groups | [IntervalGroups](../DSA/array/greedy/IntervalGroups.kt) | Medium |
-| Sat | Count The Number of Pairs | [CountTheNumberOfPairs](../DSA/array/frequency_count/CountTheNumberOfPairs.kt) | Medium |
-| Sat | Finding Fair Pairs | [FindingFairPairs](../DSA/array/frequency_count/FindingFairPairs.kt) | Medium |
-| Sat | Top K Frequent Elements (array) | [TopKFrequentElements](../DSA/array/frequency_count/TopKFrequentElements.kt) | Medium |
-| Sun | Search in Rotated Sorted Array | [SearchInRotatedSortedArray](../DSA/array/binary_search/SearchInRotatedSortedArray.kt) | Medium |
-| Sun | Find Minimum in Rotated Sorted Array | [FindMinimumInRotatedSortedArray](../DSA/array/binary_search/FindMinimumInRotatedSortedArray.kt) | Medium |
-| Sun | Median of Two Sorted Arrays | [MedianOfTwoSortedSubArray](../DSA/array/binary_search/MedianOfTwoSortedSubArray.kt) | Hard |
-| Sun | Single Number | [SingleNumber](../DSA/array/bit_manipulation/SingleNumber.kt) | Easy |
+| Mon | Two Sum | [TwoSumLevelOneWithoutSortedArray](../DSA/array/complement_search/two_sum_level_one_without_sorted_array/TwoSumLevelOneWithoutSortedArray.kt) | Easy |
+| Mon | Two Sum II | [TwoSumII](../DSA/array/complement_search/two_sum_ii/TwoSumII.kt) | Medium |
+| Tue | Finding Pairs with Certain Sum | [FindingPairsWithCertainSum](../DSA/array/complement_search/finding_pairs_with_certain_sum/FindingPairsWithCertainSum.kt) | Medium |
+| Tue | Best Time to Buy & Sell Stock I | [BestTimeToBuyAndSellStockI](../DSA/array/greedy/best_time_to_buy_and_sell_stock_i/BestTimeToBuyAndSellStockI.kt) | Easy |
+| Wed | Best Time to Buy & Sell Stock II | [BestTimeToBuyAndSellStockII](../DSA/array/greedy/best_time_to_buy_and_sell_stock_ii/BestTimeToBuyAndSellStockII.kt) | Medium |
+| Wed | Jump Game | [JumpGame](../DSA/array/greedy/jump_game/JumpGame.kt) | Medium |
+| Thu | Gas Station | [GasStation](../DSA/array/greedy/gas_station/GasStation.kt) | Hard |
+| Thu | Assign Cookies | [AssignCookies](../DSA/array/greedy/assign_cookies/AssignCookies.kt) | Easy |
+| Fri | Candy | [Candy](../DSA/array/greedy/candy/Candy.kt) | Hard |
+| Fri | Insert Interval | [InsertInterval](../DSA/array/greedy/insert_interval/InsertInterval.kt) | Medium |
+| Sat | Interval Groups | [IntervalGroups](../DSA/array/greedy/interval_groups/IntervalGroups.kt) | Medium |
+| Sat | Count The Number of Pairs | [CountTheNumberOfPairs](../DSA/array/frequency_count/count_the_number_of_pairs/CountTheNumberOfPairs.kt) | Medium |
+| Sat | Finding Fair Pairs | [FindingFairPairs](../DSA/array/frequency_count/finding_fair_pairs/FindingFairPairs.kt) | Medium |
+| Sat | Top K Frequent Elements (array) | [TopKFrequentElements](../DSA/array/frequency_count/top_k_frequent_elements/TopKFrequentElements.kt) | Medium |
+| Sun | Search in Rotated Sorted Array | [SearchInRotatedSortedArray](../DSA/array/binary_search/search_in_rotated_sorted_array/SearchInRotatedSortedArray.kt) | Medium |
+| Sun | Find Minimum in Rotated Sorted Array | [FindMinimumInRotatedSortedArray](../DSA/array/binary_search/find_minimum_in_rotated_sorted_array/FindMinimumInRotatedSortedArray.kt) | Medium |
+| Sun | Median of Two Sorted Arrays | [MedianOfTwoSortedSubArray](../DSA/array/binary_search/median_of_two_sorted_arrays/MedianOfTwoSortedSubArray.kt) | Hard |
+| Sun | Single Number | [SingleNumber](../DSA/array/bit_manipulation/single_number/SingleNumber.kt) | Easy |
 
 ### Week 2: Binary Search + HashSet + Prefix Sum
 
 | Day | Problem | File | Difficulty |
 |-----|---------|------|-----------|
-| Mon | Single Number II | [SingleNumberII](../DSA/array/bit_manipulation/SingleNumberII.kt) | Medium |
-| Mon | Plus One | [PlusOne](../DSA/interview_problem/PlusOne.kt) | Easy |
+| Mon | Single Number II | [SingleNumberII](../DSA/array/bit_manipulation/single_number_ii/SingleNumberII.kt) | Medium |
+| Mon | Plus One | [PlusOne](../DSA/interview_problem/plus_one/PlusOne.kt) | Easy |
 | Tue | Kadane's Algorithm (review) | [DSA/array/kadane_algorithm/](../DSA/array/kadane_algorithm/) | Medium |
 | Tue | Linear scan problems | [DSA/array/linear_scan/](../DSA/array/linear_scan/) | Easy-Med |
 | Wed | Set operations | [DSA/array/set_operations/](../DSA/array/set_operations/) | Easy-Med |

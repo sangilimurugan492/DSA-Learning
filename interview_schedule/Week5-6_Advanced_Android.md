@@ -96,10 +96,10 @@
 | Mon | Binary tree problems | [DSA/tree/binary_tree/](../DSA/tree/binary_tree/) | Medium |
 | Tue | BST problems | [DSA/tree/bst/](../DSA/tree/bst/) | Medium |
 | Tue | TreeNode class | [TreeNode](../DSA/tree/TreeNode.kt) | Easy |
-| Wed | Kth Largest Element | [KthLargestElement](../DSA/heap/KthLargestElement.kt) | Medium |
-| Wed | Top K Frequent Elements (heap) | [TopKFrequentElements](../DSA/heap/TopKFrequentElements.kt) | Medium |
-| Thu | Merge K Sorted Lists | [MergeKSortedLists](../DSA/heap/MergeKSortedLists.kt) | Hard |
-| Thu | Find Median from Data Stream | [FindMedianFromDataStream](../DSA/heap/FindMedianFromDataStream.kt) | Hard |
+| Wed | Kth Largest Element | [KthLargestElement](../DSA/heap/kth_largest_element/KthLargestElement.kt) | Medium |
+| Wed | Top K Frequent Elements (heap) | [TopKFrequentElements](../DSA/heap/top_k_frequent_elements/TopKFrequentElements.kt) | Medium |
+| Thu | Merge K Sorted Lists | [MergeKSortedLists](../DSA/heap/merge_k_sorted_lists/MergeKSortedLists.kt) | Hard |
+| Thu | Find Median from Data Stream | [FindMedianFromDataStream](../DSA/heap/find_median_from_data_stream/FindMedianFromDataStream.kt) | Hard |
 | Fri | Heap review | [DSA/heap/](../DSA/heap/) | Medium-Hard |
 | Sat | Tree + BST review | [DSA/tree/](../DSA/tree/) | Easy-Hard |
 | Sat | Heap review | [DSA/heap/](../DSA/heap/) | Medium-Hard |
@@ -110,10 +110,10 @@
 
 | Day | Problem | File | Difficulty |
 |-----|---------|------|-----------|
-| Mon | Implement Trie | [ImplementTrie](../DSA/trie/ImplementTrie.kt) | Medium |
-| Mon | Word Search II | [WordSearchII](../DSA/trie/WordSearchII.kt) | Hard |
-| Tue | Single Number (review) | [SingleNumber](../DSA/array/bit_manipulation/SingleNumber.kt) | Easy |
-| Tue | Single Number II (review) | [SingleNumberII](../DSA/array/bit_manipulation/SingleNumberII.kt) | Medium |
+| Mon | Implement Trie | [ImplementTrie](../DSA/trie/implement_trie/ImplementTrie.kt) | Medium |
+| Mon | Word Search II | [WordSearchII](../DSA/trie/word_search_ii/WordSearchII.kt) | Hard |
+| Tue | Single Number (review) | [SingleNumber](../DSA/array/bit_manipulation/single_number/SingleNumber.kt) | Easy |
+| Tue | Single Number II (review) | [SingleNumberII](../DSA/array/bit_manipulation/single_number_ii/SingleNumberII.kt) | Medium |
 | Wed | Bit manipulation review | [DSA/array/bit_manipulation/](../DSA/array/bit_manipulation/) | Easy-Med |
 | Wed | Mixed review (trees) | [DSA/tree/](../DSA/tree/) | Easy-Hard |
 | Thu | Mixed review (heaps) | [DSA/heap/](../DSA/heap/) | Medium-Hard |

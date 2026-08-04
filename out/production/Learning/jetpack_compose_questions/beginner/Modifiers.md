@@ -237,6 +237,190 @@ Modifier.windowInsetsPadding(WindowInsets.navigationBars)
 
 ---
 
+## Q8: How do you create a custom modifier?
+
+```kotlin
+// 1. Extension function on Modifier (simplest)
+fun Modifier.roundedBorder(color: Color, radius: Dp): Modifier =
+    this.then(
+        Modifier.border(width = 1.dp, color = color, shape = RoundedCornerShape(radius))
+    )
+
+// Usage
+Box(Modifier.roundedBorder(Color.Red, 8.dp)) { Text("Custom") }
+
+// 2. Modifier.composed — for stateful modifiers
+fun Modifier.pressAnimation(): Modifier = composed {
+    var pressed by remember { mutableStateOf(false) }
+    val scale by animateFloatAsState(if (pressed) 0.95f else 1f, label = "scale")
+
+    this
+        .graphicsLayer { scaleX = scale; scaleY = scale }
+        .pointerInput(Unit) {
+            detectTapGestures(
+                onPress = {
+                    pressed = true
+                    tryAwaitRelease()
+                    pressed = false
+                },
+            )
+        }
+}
+
+// 3. Modifier.Node (modern, performant — Compose 1.3+)
+class ClickableNode : Modifier.Node() {
+    var onClick: () -> Unit = {}
+
+    override fun onAttach() { /* setup */ }
+    override fun onDetach() { /* cleanup */ }
+
+    override fun onPointerEvent(event: PointerEventPass, event: PointerEvent) {
+        if (event.type == PointerEventType.Release) onClick()
+    }
+}
+
+fun Modifier.customClick(onClick: () -> Unit) = this.then(
+    Modifier.NodeElement(ClickableNode().apply { this.onClick = onClick })
+)
+
+// 4. Factory pattern for reusable modifiers
+object CardModifiers {
+    fun Modifier.elevatedCard(elevation: Dp = 4.dp): Modifier = this
+        .clip(RoundedCornerShape(12.dp))
+        .shadow(elevation, RoundedCornerShape(12.dp))
+        .background(MaterialTheme.colorScheme.surface)
+
+    fun Modifier.outlinedCard(): Modifier = this
+        .clip(RoundedCornerShape(12.dp))
+        .border(1.dp, MaterialTheme.colorScheme.outline, RoundedCornerShape(12.dp))
+}
+```
+
+| Approach | Stateful? | Performance | Use Case |
+|----------|-----------|-------------|----------|
+| Extension function | ❌ | ✅ Best | Simple, stateless |
+| `composed {}` | ✅ | ⚠️ OK | Stateful, quick |
+| `Modifier.Node` | ✅ | ✅ Best | Complex, stateful |
+| Factory object | ❌ | ✅ Best | Grouped modifiers |
+
+> **Best Practice:** Prefer simple extension functions for stateless modifiers. Use `Modifier.Node` for complex stateful modifiers (it's the most performant). Avoid `composed {}` for new code — it creates a new composition per element.
+
+---
+
+## Q9: How do you use `Modifier.layout` for custom measurements?
+
+```kotlin
+// Modifier.layout — intercept measurement and placement of a composable
+
+// Fixed-size modifier — forces a specific size
+fun Modifier.fixedSize(width: Dp, height: Dp) = layout { measurable, _ ->
+    val placeable = measurable.measure(Constraints.fixed(width.roundToPx(), height.roundToPx()))
+    layout(placeable.width, placeable.height) {
+        placeable.placeRelative(0, 0)
+    }
+}
+
+// Offset modifier — shift content
+fun Modifier.offset(x: Dp, y: Dp) = layout { measurable, constraints ->
+    val placeable = measurable.measure(constraints)
+    layout(placeable.width, placeable.height) {
+        placeable.placeRelative(x.roundToPx(), y.roundToPx())
+    }
+}
+
+// Padding from baseline — useful for text
+fun Modifier.paddingFromBaseline(top: Dp, bottom: Dp = 0.dp) = layout { measurable, constraints ->
+    val placeable = measurable.measure(constraints)
+    val baseline = placeable[FirstBaseline]  // Get text baseline
+    layout(placeable.width, placeable.height + top.roundToPx() + bottom.roundToPx()) {
+        placeable.placeRelative(0, top.roundToPx() - baseline)
+    }
+}
+
+// Custom — center content with fixed size
+fun Modifier.centerIn(size: Dp) = layout { measurable, _ ->
+    val placeable = measurable.measure(Constraints())
+    val targetSize = size.roundToPx()
+    layout(targetSize, targetSize) {
+        val x = (targetSize - placeable.width) / 2
+        val y = (targetSize - placeable.height) / 2
+        placeable.placeRelative(x, y)
+    }
+}
+
+// Usage
+Text("Centered", modifier = Modifier.centerIn(100.dp))
+```
+
+> **Key:** `Modifier.layout` gives you full control over the measure and placement phases. The `measurable` is the child, `constraints` come from the parent. You measure the child, then decide the final size and position.
+
+---
+
+## Q10: How do you optimize modifier chains for performance?
+
+```kotlin
+// ❌ Bad — creates new Modifier chain on every recomposition
+@Composable
+fun BadExample(isActive: Boolean) {
+    // New Modifier object created every time
+    Box(
+        Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+            .clip(RoundedCornerShape(8.dp))
+            .background(if (isActive) Color.Blue else Color.Gray)
+    )
+}
+
+// ✅ Good — hoist stable modifiers
+@Composable
+fun GoodExample(isActive: Boolean) {
+    // Static modifiers hoisted — only background changes
+    val baseModifier = Modifier
+        .fillMaxWidth()
+        .padding(16.dp)
+        .clip(RoundedCornerShape(8.dp))
+
+    Box(baseModifier.background(if (isActive) Color.Blue else Color.Gray))
+}
+
+// ✅ Better — use remember for complex chains
+@Composable
+fun BetterExample(isActive: Boolean) {
+    val baseModifier = remember {
+        Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+            .clip(RoundedCornerShape(8.dp))
+    }
+    Box(baseModifier.background(if (isActive) Color.Blue else Color.Gray))
+}
+
+// Modifier order matters!
+// ❌ Background clipped to original shape
+Modifier.background(Color.Red).clip(RoundedCornerShape(8.dp))
+
+// ✅ Background clipped to rounded shape
+Modifier.clip(RoundedCornerShape(8.dp)).background(Color.Red)
+
+// ❌ Padding inside clip — shadow not clipped
+Modifier.shadow(4.dp).clip(RoundedCornerShape(8.dp)).padding(8.dp)
+
+// ✅ Padding outside clip — shadow follows shape
+Modifier.padding(8.dp).shadow(4.dp, RoundedCornerShape(8.dp))
+```
+
+| Optimization | Impact |
+|-------------|--------|
+| Hoist static modifiers | ✅ Fewer allocations |
+| `remember` complex chains | ✅ No re-creation |
+| Correct modifier order | ✅ Correct rendering |
+| Avoid `composed {}` in lists | ✅ Less overhead |
+
+> **Rule:** Modifier order matters — they are applied left to right. `clip` before `background` clips the background. `padding` before `clip` adds padding outside the clip. Always check the visual result when reordering modifiers.
+
+---
+
 ## 🔗 Related Topics
 - [Composables](Composables.md)
 - [Layouts](Layouts.md)

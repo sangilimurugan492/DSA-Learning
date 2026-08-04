@@ -331,6 +331,208 @@ context.replace('/login');   // Replace current
 
 ---
 
+## Q8: How do you implement nested navigation with `ShellRoute`?
+
+```dart
+// ShellRoute — shared UI (like bottom nav) persists across routes
+final router = GoRouter(
+  initialLocation: '/home',
+  routes: [
+    ShellRoute(
+      builder: (context, state, child) => MainShell(child: child),
+      routes: [
+        GoRoute(
+          path: '/home',
+          builder: (context, state) => const HomeScreen(),
+        ),
+        GoRoute(
+          path: '/search',
+          builder: (context, state) => const SearchScreen(),
+        ),
+        GoRoute(
+          path: '/profile',
+          builder: (context, state) => const ProfileScreen(),
+          routes: [
+            GoRoute(
+              path: 'edit',  // /profile/edit
+              builder: (context, state) => const EditProfileScreen(),
+            ),
+            GoRoute(
+              path: 'settings',  // /profile/settings
+              builder: (context, state) => const SettingsScreen(),
+            ),
+          ],
+        ),
+      ],
+    ),
+    // Routes outside ShellRoute — no bottom nav
+    GoRoute(
+      path: '/login',
+      builder: (context, state) => const LoginScreen(),
+    ),
+  ],
+);
+
+// MainShell — persistent bottom navigation
+class MainShell extends StatelessWidget {
+  final Widget child;
+  const MainShell({super.key, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    final location = GoRouterState.of(context).uri.toString();
+    final index = switch (location) {
+      String s when s.startsWith('/home') => 0,
+      String s when s.startsWith('/search') => 1,
+      String s when s.startsWith('/profile') => 2,
+      _ => 0,
+    };
+
+    return Scaffold(
+      body: child,  // Current route content
+      bottomNavigationBar: NavigationBar(
+        selectedIndex: index,
+        onDestinationSelected: (i) => switch (i) {
+          0 => context.go('/home'),
+          1 => context.go('/search'),
+          2 => context.go('/profile'),
+          _ => context.go('/home'),
+        },
+        destinations: const [
+          NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+          NavigationDestination(icon: Icon(Icons.search), label: 'Search'),
+          NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
+        ],
+      ),
+    );
+  }
+}
+```
+
+> **Key:** `ShellRoute` keeps the bottom navigation bar persistent while navigating between tabs. Without it, each tab would rebuild the `Scaffold` and lose the nav bar state.
+
+---
+
+## Q9: How do you handle deep links in Flutter?
+
+```dart
+// Deep links — open specific screen from URL
+// Example: myapp://product/42 → ProductScreen(id: 42)
+
+// 1. go_router — automatic deep link handling
+final router = GoRouter(
+  routes: [
+    GoRoute(
+      path: '/product/:id',
+      builder: (context, state) =>
+          ProductScreen(id: state.pathParameters['id']!),
+    ),
+  ],
+);
+
+// 2. Android — AndroidManifest.xml
+// <intent-filter>
+//   <action android:name="android.intent.action.VIEW" />
+//   <category android:name="android.intent.category.DEFAULT" />
+//   <category android:name="android.intent.category.BROWSABLE" />
+//   <data android:scheme="myapp" android:host="product" />
+// </intent-filter>
+
+// 3. iOS — Info.plist
+// <key>CFBundleURLTypes</key>
+// <array>
+//   <dict>
+//     <key>CFBundleURLSchemes</key>
+//     <array><string>myapp</string></array>
+//   </dict>
+// </array>
+
+// 4. Handle incoming links
+class DeepLinkHandler {
+  StreamSubscription<Uri>? _sub;
+
+  void init() {
+    // For uni_links package
+    _sub = uriLinkStream.listen((uri) {
+      _handleDeepLink(uri);
+    });
+  }
+
+  void _handleDeepLink(Uri uri) {
+    // uri: myapp://product/42
+    final segments = uri.pathSegments;  // ['product', '42']
+    if (segments.first == 'product') {
+      router.go('/product/${segments[1]}');
+    }
+  }
+
+  void dispose() => _sub?.cancel();
+}
+```
+
+> **Best Practice:** Use `go_router` for deep links — it maps URLs to routes automatically. For push notifications, store the target route in the notification payload and navigate when the user taps.
+
+---
+
+## Q10: How do you implement custom page transitions?
+
+```dart
+// Custom PageRouteBuilder — custom transitions
+Navigator.push(
+  context,
+  PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) =>
+        const DetailScreen(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      // Slide transition
+      const begin = Offset(1.0, 0.0);
+      const end = Offset.zero;
+      final tween = Tween(begin: begin, end: end)
+          .chain(CurveTween(curve: Curves.easeInOut));
+      return SlideTransition(position: animation.drive(tween), child: child);
+    },
+    transitionDuration: const Duration(milliseconds: 300),
+  ),
+);
+
+// Fade transition
+PageRouteBuilder(
+  pageBuilder: (_, __, ___) => const DetailScreen(),
+  transitionsBuilder: (_, animation, __, child) {
+    return FadeTransition(opacity: animation, child: child);
+  },
+)
+
+// Scale transition
+PageRouteBuilder(
+  pageBuilder: (_, __, ___) => const DetailScreen(),
+  transitionsBuilder: (_, animation, __, child) {
+    return ScaleTransition(
+      scale: Tween(begin: 0.0, end: 1.0).animate(
+        CurvedAnimation(parent: animation, curve: Curves.elasticOut),
+      ),
+      child: child,
+    );
+  },
+)
+
+// go_router custom transitions
+GoRoute(
+  path: '/detail',
+  builder: (context, state) => const DetailScreen(),
+  pageBuilder: (context, state) => CustomTransitionPage(
+    child: const DetailScreen(),
+    transitionsBuilder: (_, animation, __, child) {
+      return FadeTransition(opacity: animation, child: child);
+    },
+  ),
+)
+```
+
+> **Tip:** For platform-specific transitions (slide on iOS, fade on Android), use `MaterialPageRoute` and `CupertinoPageRoute`. Use custom transitions only when you need a unique effect.
+
+---
+
 ## 🔗 Related Topics
 - [Widgets](Widgets.md)
 - [State Management](StateManagement.md)

@@ -371,6 +371,419 @@ CustomScrollView(
 
 ---
 
+## Q8: What is `Builder` widget and when should you use it?
+
+```dart
+// Builder — creates a widget from a BuildContext
+// Useful when you need a context that is below the current widget
+
+// ❌ Bad — context is from the parent, theme may not be available yet
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // This context is ABOVE MaterialApp — Theme.of(context) fails!
+    final theme = Theme.of(context);  // ❌ No theme yet
+    return MaterialApp(
+      home: Text('Hello', style: theme.textTheme.bodyLarge),
+    );
+  }
+}
+
+// ✅ Good — Builder gives a context BELOW MaterialApp
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Builder(
+        builder: (context) {
+          // This context is BELOW MaterialApp — theme is available
+          final theme = Theme.of(context);  // ✅ Works
+          return Text('Hello', style: theme.textTheme.bodyLarge);
+        },
+      ),
+    );
+  }
+}
+
+// Common use: SnackBar with Scaffold context
+Scaffold(
+  body: Builder(
+    builder: (context) => ElevatedButton(
+      onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Hello!')),
+      ),
+      child: const Text('Show SnackBar'),
+    ),
+  ),
+)
+```
+
+> **Key:** `Builder` provides a `BuildContext` that is a child of the current widget. Use it when you need to access `InheritedWidget`s (Theme, MediaQuery, Provider) that are defined above the current widget but below the root.
+
+---
+
+## Q9: What is the difference between `Container` and `SizedBox`?
+
+```dart
+// SizedBox — fixed size or gap (lightweight)
+const SizedBox(height: 16)  // Gap
+const SizedBox(width: 100, height: 50, child: Text('Fixed'))
+
+// Container — multi-purpose (heavier, only use when needed)
+Container(
+  width: 100,
+  height: 50,
+  padding: const EdgeInsets.all(8),
+  margin: const EdgeInsets.all(16),
+  decoration: BoxDecoration(
+    color: Colors.blue,
+    borderRadius: BorderRadius.circular(12),
+  ),
+  child: const Text('Box'),
+)
+
+// Container with no decoration/padding/margin = SizedBox (but heavier)
+// Container with only color = ColoredBox (but heavier)
+```
+
+| Feature | `SizedBox` | `Container` |
+|---------|-----------|-------------|
+| Size | ✅ Fixed size | ✅ Fixed or flexible |
+| Padding | ❌ | ✅ |
+| Margin | ❌ | ✅ |
+| Decoration | ❌ | ✅ (color, border, shadow) |
+| Transform | ❌ | ✅ |
+| Performance | ✅ Lightweight | ⚠️ Heavier |
+| Use case | Gaps, fixed size | Complex styling |
+
+> **Best Practice:** Use `SizedBox` for gaps and fixed sizes. Use `Container` only when you need padding, margin, decoration, or transform. `SizedBox` is cheaper because it maps directly to `RenderConstrainedBox`.
+
+---
+
+## Q10: What are `ListView.builder`, `ListView.separated`, and `ListView.custom`?
+
+```dart
+// ListView.builder — lazy, only builds visible items (most common)
+ListView.builder(
+  itemCount: 1000,
+  itemBuilder: (context, index) => ListTile(
+    title: Text('Item $index'),
+  ),
+)
+
+// ListView.separated — adds separators between items
+ListView.separated(
+  itemCount: 20,
+  separatorBuilder: (context, index) => const Divider(height: 1),
+  itemBuilder: (context, index) => ListTile(
+    title: Text('Item $index'),
+  ),
+)
+
+// ListView.custom — full control with SliverChildDelegate
+ListView.custom(
+  childrenDelegate: SliverChildBuilderDelegate(
+    (context, index) => ListTile(title: Text('Item $index')),
+    childCount: 100,
+    // findChildIndexCallback — for efficient key-based reordering
+    findChildIndexCallback: (key) {
+      final id = (key as ValueKey).value as String;
+      return items.indexWhere((item) => item.id == id);
+    },
+  ),
+)
+
+// Performance tips:
+// 1. Use const constructors in items
+// 2. Set itemExtent for fixed-height items (skips measurement)
+ListView.builder(
+  itemExtent: 72,  // Fixed height — faster scrolling
+  itemCount: 1000,
+  itemBuilder: (context, index) => ListTile(title: Text('Item $index')),
+)
+
+// 3. Use prototypeItem for variable-height items (measures once)
+ListView.builder(
+  prototypeItem: const ListTile(title: Text('Prototype')),
+  itemCount: 1000,
+  itemBuilder: (context, index) => ListTile(title: Text('Item $index')),
+)
+```
+
+| Constructor | Builds | Use Case |
+|-------------|--------|----------|
+| `ListView()` | All children | Small lists (<20) |
+| `ListView.builder()` | Only visible | Large/dynamic lists |
+| `ListView.separated()` | Only visible + dividers | Lists with separators |
+| `ListView.custom()` | Delegate-controlled | Custom item management |
+
+> **Performance:** `itemExtent` is the single biggest performance win for `ListView.builder` — it skips the layout phase for each item since the height is known.
+
+---
+
+## Q11: What is the difference between `Navigator.push` and `Navigator.pushNamed`?
+
+```dart
+// Navigator.push — direct widget navigation (imperative)
+Navigator.push(
+  context,
+  MaterialPageRoute(
+    builder: (context) => const DetailScreen(),
+  ),
+);
+
+// Navigator.pushNamed — named route navigation (declarative)
+// Requires route definitions in MaterialApp
+MaterialApp(
+  routes: {
+    '/': (context) => const HomeScreen(),
+    '/detail': (context) => const DetailScreen(),
+    '/settings': (context) => const SettingsScreen(),
+  },
+);
+
+// Navigate using named route
+Navigator.pushNamed(context, '/detail');
+
+// With arguments
+Navigator.pushNamed(context, '/detail', arguments: {'id': 42});
+
+// Receiving arguments
+class DetailScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+    return Text('Item ${args['id']}');
+  }
+}
+```
+
+| Feature | `Navigator.push` | `Navigator.pushNamed` |
+|---------|------------------|---------------------|
+| Route definition | Inline | Centralized in MaterialApp |
+| Arguments | Direct widget params | `arguments` parameter |
+| Deep linking | Harder | Easier (URL → route) |
+| Testing | Tightly coupled | Loosely coupled |
+| Best for | Small apps | Medium/large apps |
+
+> **Best Practice:** Use named routes for apps with 5+ screens. For complex navigation, use the `go_router` package which supports nested navigation, redirects, and URL-based routing.
+
+---
+
+## Q12: What is `Hero` animation and how does it work?
+
+```dart
+// Hero — shared element transition between two screens
+// The widget "flies" from source to destination
+
+// Screen 1 — tap to navigate
+Hero(
+  tag: 'product-${product.id}',  // Unique tag must match
+  child: Image.network(product.imageUrl),
+)
+
+// Screen 2 — receives the flying widget
+Hero(
+  tag: 'product-${product.id}',  // Same tag!
+  child: Image.network(product.imageUrl),
+)
+```
+
+### How it works:
+1. User taps the image on Screen 1
+2. Flutter finds the `Hero` with matching `tag` on Screen 2
+3. It creates an overlay that animates the widget from Screen 1 position to Screen 2 position
+4. The transition uses `MaterialRectArcTween` (circular arc path)
+
+### Custom flight duration:
+```dart
+Navigator.push(
+  context,
+  PageRouteBuilder(
+    transitionDuration: const Duration(milliseconds: 500),
+    pageBuilder: (context, animation, secondaryAnimation) => const DetailScreen(),
+  ),
+);
+```
+
+> **Tip:** The `tag` must be unique across the entire widget tree. If two Heroes have the same tag, Flutter throws an assertion error. Use a unique identifier like `'image-$id'`.
+
+---
+
+## Q13: What is `LayoutBuilder` and when should you use it?
+
+```dart
+// LayoutBuilder — gives you the parent's constraints
+// Use when you need to adapt layout based on available space
+
+LayoutBuilder(
+  builder: (context, constraints) {
+    if (constraints.maxWidth > 600) {
+      // Tablet/desktop — 2 columns
+      return Row(
+        children: [
+          Expanded(child: MenuPanel()),
+          Expanded(child: ContentPanel()),
+        ],
+      );
+    } else {
+      // Phone — 1 column
+      return Column(
+        children: [
+          ContentPanel(),
+        ],
+      );
+    }
+  },
+)
+
+// Responsive grid — adjust columns based on width
+LayoutBuilder(
+  builder: (context, constraints) {
+    final columns = (constraints.maxWidth / 200).floor().clamp(1, 4);
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: columns,
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 8,
+      ),
+      itemCount: items.length,
+      itemBuilder: (context, index) => ItemCard(items[index]),
+    );
+  },
+)
+```
+
+> **Key:** `LayoutBuilder` is the responsive design foundation in Flutter. It gives you `BoxConstraints` from the parent, so you can make layout decisions at runtime. For app-level responsiveness, use `MediaQuery.of(context).size` or the `flutter_screenutil` package.
+
+---
+
+## Q14: What is `Tween` and how do you create custom animations?
+
+```dart
+// Tween — defines the start and end values for an animation
+// Interpolates between two values over a duration
+
+class FadeInWidget extends StatefulWidget {
+  const FadeInWidget({super.key});
+  @override
+  State<FadeInWidget> createState() => _FadeInWidgetState();
+}
+
+class _FadeInWidgetState extends State<FadeInWidget>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+  late Animation<double> fadeAnimation;
+  late Animation<Offset> slideAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 800),
+    );
+
+    // Fade tween: 0.0 → 1.0
+    fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(parent: controller, curve: Curves.easeIn),
+    );
+
+    // Slide tween: offset(0, 0.1) → offset(0, 0)
+    slideAnimation = Tween<Offset>(
+      begin: const Offset(0, 0.1),
+      end: Offset.zero,
+    ).animate(
+      CurvedAnimation(parent: controller, curve: Curves.easeOut),
+    );
+
+    controller.forward();  // Start animation
+  }
+
+  @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FadeTransition(
+      opacity: fadeAnimation,
+      child: SlideTransition(
+        position: slideAnimation,
+        child: const Text('Animated!'),
+      ),
+    );
+  }
+}
+
+// Color tween
+final colorTween = ColorTween(begin: Colors.blue, end: Colors.red)
+    .animate(controller);
+
+// Int tween
+final intTween = IntTween(begin: 0, end: 100).animate(controller);
+```
+
+| Tween Type | Use Case |
+|------------|----------|
+| `Tween<double>` | Opacity, scale, rotation |
+| `Tween<Offset>` | Slide, drag |
+| `ColorTween` | Color transitions |
+| `IntTween` | Counters, progress |
+| `Tween<Rect>` | Size transitions |
+
+> **Tip:** Use `Curves.easeInOut` for natural motion. Avoid linear curves — they feel robotic. For spring physics, use `SpringSimulation` or the `flutter_animate` package for declarative animations.
+
+---
+
+## Q15: What is `ValueListenableBuilder` and how does it differ from `setState`?
+
+```dart
+// ValueListenableBuilder — rebuild only when a ValueNotifier changes
+// More efficient than setState (which rebuilds the entire widget)
+
+class CounterApp extends StatelessWidget {
+  // ValueNotifier holds the state — no StatefulWidget needed!
+  final counter = ValueNotifier<int>(0);
+
+  CounterApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        // Only this Text rebuilds when counter changes
+        ValueListenableBuilder<int>(
+          valueListenable: counter,
+          builder: (context, value, child) {
+            return Text('Count: $value', style: const TextStyle(fontSize: 32));
+          },
+        ),
+        ElevatedButton(
+          onPressed: () => counter.value++,  // No setState needed!
+          child: const Text('Increment'),
+        ),
+      ],
+    );
+  }
+}
+```
+
+| Feature | `setState` | `ValueListenableBuilder` |
+|---------|-----------|------------------------|
+| Rebuild scope | Entire widget | Only the builder |
+| State location | Inside State object | In ValueNotifier |
+| Widget type | StatefulWidget | StatelessWidget |
+| Performance | Rebuilds whole tree | Rebuilds only listener |
+| Disposal | Automatic | Must dispose ValueNotifier |
+| Best for | Simple local state | Fine-grained updates |
+
+> **Best Practice:** Use `ValueListenableBuilder` when only a small part of the UI needs to rebuild. For complex state, use Provider or Riverpod. Always dispose `ValueNotifier` to prevent memory leaks.
+
+---
+
 ## 🔗 Related Topics
 - [Basics](Basics.md)
 - [Layouts](Layouts.md)

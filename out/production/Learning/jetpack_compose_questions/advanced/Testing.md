@@ -309,6 +309,270 @@ fun RatingBar(rating: Int) {
 
 ---
 
+## Q8: How do you test navigation in Compose?
+
+```kotlin
+// Test Navigation Compose with TestNavHostController
+class NavigationTest {
+
+    @get:Rule
+    val composeRule = createComposeRule()
+
+    lateinit var navController: TestNavHostController
+
+    @Before
+    fun setup() {
+        composeRule.setContent {
+            navController = TestNavHostController(LocalContext.current)
+            AppNavHost(navController = navController)
+        }
+    }
+
+    @Test
+    fun `start destination is home`() {
+        composeRule.onNodeWithText("Home Screen").assertIsDisplayed()
+    }
+
+    @Test
+    fun `navigate to detail on click`() {
+        composeRule.onNodeWithText("Go to Detail").performClick()
+        composeRule.onNodeWithText("Detail Screen").assertIsDisplayed()
+    }
+
+    @Test
+    fun `verify current route after navigation`() {
+        composeRule.onNodeWithText("Go to Detail").performClick()
+        assertThat(navController.currentDestination?.route).isEqualTo("detail")
+    }
+
+    @Test
+    fun `back button pops back stack`() {
+        composeRule.onNodeWithText("Go to Detail").performClick()
+        composeRule.onNodeWithText("Detail Screen").assertIsDisplayed()
+
+        // Simulate back press
+        composeRule.onNodeWithContentDescription("Back").performClick()
+
+        composeRule.onNodeWithText("Home Screen").assertIsDisplayed()
+        assertThat(navController.currentDestination?.route).isEqualTo("home")
+    }
+}
+
+// AppNavHost for testing
+@Composable
+fun AppNavHost(navController: NavHostController) {
+    NavHost(navController, startDestination = "home") {
+        composable("home") {
+            Column {
+                Text("Home Screen")
+                Button(onClick = { navController.navigate("detail") }) {
+                    Text("Go to Detail")
+                }
+            }
+        }
+        composable("detail") {
+            Column {
+                IconButton(onClick = { navController.popBackStack() }) {
+                    Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+                }
+                Text("Detail Screen")
+            }
+        }
+    }
+}
+```
+
+> **Key:** Use `TestNavHostController` to verify navigation state in tests. Assert on both UI (text displayed) and navigation state (current route) for complete coverage.
+
+---
+
+## Q9: How do you test with screenshot testing (Paparazzi)?
+
+```kotlin
+// Paparazzi — screenshot testing without emulator/device
+// build.gradle: appTestImplementation 'app.cash.paparazzi:app.cash.paparazzi:1.3.0'
+
+class ScreenshotTest {
+    @get:Rule
+    val paparazzi = Paparazzi(
+        deviceConfig = DeviceConfig.PIXEL_5,
+        theme = "android:Theme.Material.Light.NoActionBar",
+    )
+
+    @Test
+    fun `home screen light mode`() {
+        paparazzi.snapshot {
+            AppTheme(darkTheme = false) {
+                HomeScreen()
+            }
+        }
+    }
+
+    @Test
+    fun `home screen dark mode`() {
+        paparazzi.snapshot {
+            AppTheme(darkTheme = true) {
+                HomeScreen()
+            }
+        }
+    }
+
+    @Test
+    fun `loading state`() {
+        paparazzi.snapshot {
+            AppTheme {
+                LoadingScreen()
+            }
+        }
+    }
+
+    @Test
+    fun `error state`() {
+        paparazzi.snapshot {
+            AppTheme {
+                ErrorScreen(message = "Network error", onRetry = {})
+            }
+        }
+    }
+
+    @Test
+    fun `different screen sizes`() {
+        // Test with different device configs
+        paparazzi.unsafeUpdateConfig(deviceConfig = DeviceConfig.PIXEL_5)
+        paparazzi.snapshot { HomeScreen() }
+
+        paparazzi.unsafeUpdateConfig(deviceConfig = DeviceConfig.PIXEL_TABLET)
+        paparazzi.snapshot { HomeScreen() }
+    }
+}
+
+// Shot (alternative) — uses connected device
+class ShotTest {
+    @get:Rule
+    val composeRule = createAndroidComposeRule<MainActivity>()
+
+    @Test
+    fun `matches screenshot`() {
+        composeRule.setContent {
+            AppTheme { HomeScreen() }
+        }
+        compareScreenshot(composeRule, name = "home_screen")
+    }
+}
+```
+
+| Tool | Needs Device? | CI Friendly | Speed |
+|------|--------------|-------------|-------|
+| Paparazzi | ❌ No | ✅ Yes | ✅ Fast |
+| Shot | ✅ Yes | ⚠️ Needs emulator | ⚠️ Slower |
+| Roborazzi | ❌ No | ✅ Yes | ✅ Fast |
+
+> **Best Practice:** Use screenshot tests for visual regression — catch unintended UI changes automatically. Test key states (loading, error, empty, content) and both light/dark themes. Run in CI to prevent visual regressions.
+
+---
+
+## Q10: How do you test performance and recomposition?
+
+```kotlin
+// Compose has built-in recomposition tracking
+// build.gradle: debugImplementation 'androidx.compose.runtime:runtime-tracing:1.0.0-beta01'
+
+class RecompositionTest {
+
+    @get:Rule
+    val composeRule = createComposeRule()
+
+    @Test
+    fun `counter only recomposes Text not Button`() {
+        var recompositions = 0
+
+        composeRule.setContent {
+            var count by remember { mutableStateOf(0) }
+
+            // Track recompositions
+            RecomposeTracker {
+                recompositions++
+            }
+
+            Column {
+                Text("$count", modifier = Modifier.testTag("count"))
+                Button(onClick = { count++ }, modifier = Modifier.testTag("button")) {
+                    Text("Increment")
+                }
+            }
+        }
+
+        // Initial composition
+        assertThat(recompositions).isEqualTo(1)
+
+        // Click button — only Text should recompose
+        composeRule.onNodeWithTag("button").performClick()
+
+        // Verify count updated
+        composeRule.onNodeWithTag("count").assertTextEquals("1")
+    }
+
+    @Test
+    fun `stable composable skips recomposition`() {
+        data class User(val name: String)  // Stable (val properties)
+
+        var recompositions by remember { mutableStateOf(0) }
+
+        composeRule.setContent {
+            val user = remember { User("Alice") }
+            UserCard(user = user, onRecompose = { recompositions++ })
+        }
+
+        // Trigger recomposition
+        composeRule.onNodeWithTag("refresh").performClick()
+
+        // UserCard should NOT recompose — input is stable
+        assertThat(recompositions).isEqualTo(0)
+    }
+
+    @Test
+    fun `verify no infinite recomposition`() {
+        composeRule.setContent {
+            var state by remember { mutableStateOf(0) }
+            // If this causes infinite recomposition, test will timeout
+            LaunchedEffect(Unit) { state++ }
+            Text("$state")
+        }
+        composeRule.waitForIdle()
+        // If we get here, no infinite loop
+    }
+}
+
+// Helper to track recompositions
+@Composable
+fun RecomposeTracker(onRecompose: () -> Unit) {
+    SideEffect { onRecompose() }
+}
+
+// Performance annotations
+@Composable
+fun OptimizedList(items: List<Item>) {
+    // @Immutable — tells compiler this type is stable
+    // @Stable — tells compiler this type is stable (but may change)
+    LazyColumn {
+        items(items, key = { it.id }) { item ->
+            // Only recomposes when item content changes
+            ItemRow(item)
+        }
+    }
+}
+```
+
+| Annotation | Meaning | Use Case |
+|-----------|---------|----------|
+| `@Immutable` | All fields are `val`, never changes | Data classes with only `val` |
+| `@Stable` | Can change but changes are observable | Classes with `mutableStateOf` fields |
+| `@Composable` | Function is a composable | UI functions |
+
+> **Key:** Use `@Immutable` or `@Stable` annotations to help the Compose compiler skip unnecessary recompositions. A data class with all `val` properties is automatically stable, but classes with `List<T>` or `Map<K,V>` parameters need `@Immutable` since those interfaces aren't stable.
+
+---
+
 ## 🔗 Related Topics
 - [Architecture](Architecture.md)
 - [State Management](../intermediate/StateManagement.md)

@@ -196,8 +196,10 @@
 
 | Resource | Link |
 |----------|------|
+| **Daily DSA Schedule (3 patterns/day, Easy→Hard)** | **[Daily_DSA_Schedule.md](Daily_DSA_Schedule.md)** |
 | Quick Reference Cheat Sheet | [Quick_Reference.md](Quick_Reference.md) |
 | DSA Study Guide | [../DSA/study.md](../DSA/study.md) |
+| DSA Pattern Index | [../DSA/PatternWiseProblems.md](../DSA/PatternWiseProblems.md) |
 | Week 1-2 | [Week1-2_Fundamentals.md](Week1-2_Fundamentals.md) |
 | Week 3-4 | [Week3-4_Android_Core.md](Week3-4_Android_Core.md) |
 | Week 5-6 | [Week5-6_Advanced_Android.md](Week5-6_Advanced_Android.md) |

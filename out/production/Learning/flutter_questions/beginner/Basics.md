@@ -261,6 +261,146 @@ const Text('Hello');  // Never rebuilds — same instance reused
 
 ---
 
+## Q8: What is the difference between `StatelessWidget`, `StatefulWidget`, and `InheritedWidget`?
+
+```dart
+// StatelessWidget — immutable, rebuilt when parent rebuilds or input changes
+class Greeting extends StatelessWidget {
+  final String name;
+  const Greeting({super.key, required this.name});
+
+  @override
+  Widget build(BuildContext context) => Text('Hello, $name');
+}
+
+// StatefulWidget — has mutable state, can rebuild independently via setState()
+class Counter extends StatefulWidget {
+  const Counter({super.key});
+  @override
+  State<Counter> createState() => _CounterState();
+}
+
+class _CounterState extends State<Counter> {
+  int _count = 0;
+  @override
+  Widget build(BuildContext context) => Text('$_count');
+}
+
+// InheritedWidget — efficiently propagates data down the tree
+// Only dependents rebuild when data changes
+class ThemeProvider extends InheritedWidget {
+  final ThemeData theme;
+  const ThemeProvider({super.key, required this.theme, required super.child});
+
+  static ThemeProvider? of(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<ThemeProvider>();
+
+  @override
+  bool updateShouldNotify(ThemeProvider oldWidget) => theme != oldWidget.theme;
+}
+```
+
+| Widget Type | State | Rebuild Trigger | Use Case |
+|-------------|-------|-----------------|----------|
+| `StatelessWidget` | None | Parent rebuilds | Static UI, display |
+| `StatefulWidget` | Mutable (`State`) | `setState()` | Interactive UI |
+| `InheritedWidget` | Shared | `updateShouldNotify` | Propagate data down tree |
+
+> **Key:** `InheritedWidget` is the foundation of Provider, Theme, MediaQuery — it only rebuilds widgets that explicitly depend on it via `dependOnInheritedWidgetOfExactType`.
+
+---
+
+## Q9: What are Flutter's build modes and when do you use each?
+
+```dart
+// Check build mode at compile time
+const isDebug = kDebugMode;       // true in debug
+const isProfile = kProfileMode;   // true in profile
+const isRelease = kReleaseMode;   // true in release
+
+// Use in code
+if (kDebugMode) {
+  print('Debug-only log');  // Stripped in release
+}
+
+// Conditional imports
+// import 'debug_utils.dart' if (dart.library.html) 'web_utils.dart';
+```
+
+| Mode | Compilation | Hot Reload | Performance | Use Case |
+|------|-------------|------------|-------------|----------|
+| Debug | JIT | ✅ Yes | Slow | Development |
+| Profile | AOT | ❌ No | Near-release | Performance testing |
+| Release | AOT | ❌ No | Fast | Production |
+
+```bash
+# Run in different modes
+flutter run --debug       # Default (JIT, hot reload)
+flutter run --profile     # Performance testing (AOT + profiling)
+flutter run --release     # Production-like (AOT, optimized)
+
+# Build
+flutter build apk --debug
+flutter build apk --profile
+flutter build apk --release
+```
+
+> **Rule:** Always test performance in **profile mode** — debug mode has assertions, debug checks, and JIT overhead that don't reflect real-world performance.
+
+---
+
+## Q10: What is the `Key` class and how does `GlobalKey` differ from `ValueKey`?
+
+```dart
+// ValueKey — identifies by value (most common)
+ListView.builder(
+  itemBuilder: (context, index) => ListItem(
+    key: ValueKey(items[index].id),  // Unique by ID
+    item: items[index],
+  ),
+)
+
+// GlobalKey — access state from anywhere (use sparingly)
+final _formKey = GlobalKey<FormState>();
+
+Form(
+  key: _formKey,
+  child: Column(
+    children: [
+      TextFormField(validator: (v) => v!.isEmpty ? 'Required' : null),
+      ElevatedButton(
+        onPressed: () {
+          if (_formKey.currentState!.validate()) {
+            // Form is valid
+          }
+        },
+        child: const Text('Submit'),
+      ),
+    ],
+  ),
+)
+
+// GlobalKey for state access across widget tree
+final _counterKey = GlobalKey<CounterState>();
+
+Counter(key: _counterKey);
+
+// Access state from anywhere
+_counterKey.currentState?.increment();
+```
+
+| Key Type | Scope | Use Case | Performance |
+|----------|-------|----------|-------------|
+| `ValueKey` | Local | List items, reorderable | ✅ Fast |
+| `ObjectKey` | Local | Identity by object | ✅ Fast |
+| `UniqueKey` | Local | Force new instance | ⚠️ Always rebuilds |
+| `GlobalKey` | Global | Access state, form validation | ⚠️ Expensive |
+| `PageStorageKey` | Local | Preserve scroll position | ✅ Fast |
+
+> **Warning:** Avoid `GlobalKey` for lists — it's expensive and can cause issues. Use `ValueKey` with unique IDs instead. `GlobalKey` is appropriate for form validation and accessing state from parent widgets.
+
+---
+
 ## 🔗 Related Topics
 - [Dart Basics](DartBasics.md)
 - [Widgets](Widgets.md)

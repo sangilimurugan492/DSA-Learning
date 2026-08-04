@@ -271,6 +271,209 @@ fun main() = runBlocking {
 
 ---
 
+## Scenario 6: Structured Concurrency — Child Coroutine Exception
+
+### Problem
+A parent coroutine launches multiple child coroutines to fetch data in parallel. When one child fails, the others keep running — wasting resources and causing inconsistent state.
+
+```kotlin
+// ❌ Bad — GlobalScope, no parent-child relationship
+fun fetchAllData() {
+    GlobalScope.launch {
+        val data1 = async { api.fetchData1() }  // fails
+        val data2 = async { api.fetchData2() }  // keeps running
+        val data3 = async { api.fetchData3() }  // keeps running
+
+        try {
+            println("${data1.await()} ${data2.await()} ${data3.await()}")
+        } catch (e: Exception) {
+            println("Error: ${e.message}")
+            // ❌ data2 and data3 still running — leaked coroutines
+        }
+    }
+}
+```
+
+### Solution: Structured concurrency with supervisorScope and exception handling
+
+```kotlin
+// ✅ Good — structured concurrency with proper cancellation
+suspend fun fetchAllData(): Result<CombinedData> = coroutineScope {
+    try {
+        // ✅ coroutineScope cancels all children if any child fails
+        val data1 = async { api.fetchData1() }
+        val data2 = async { api.fetchData2() }
+        val data3 = async { api.fetchData3() }
+
+        Result.success(CombinedData(data1.await(), data2.await(), data3.await()))
+    } catch (e: Exception) {
+        // ✅ All children automatically cancelled by coroutineScope
+        Result.failure(e)
+    }
+}
+
+// ✅ Use supervisorScope when you want children to fail independently
+suspend fun fetchAllDataIndependent(): List<Result<Data>> = supervisorScope {
+    val results = listOf(
+        async { runCatching { api.fetchData1() } },
+        async { runCatching { api.fetchData2() } },
+        async { runCatching { api.fetchData3() } }
+    )
+    results.map { it.await() }
+    // ✅ If fetchData1 fails, fetchData2 and fetchData3 still complete
+}
+```
+
+### Key Takeaway
+- `coroutineScope` cancels all children when any child fails — fail-fast
+- `supervisorScope` lets children fail independently — good for parallel fetches
+- `async` propagates exceptions to the parent on `await()`
+- Never use `GlobalScope` — it breaks structured concurrency
+- `Job` hierarchy ensures no leaked coroutines when parent is cancelled
+
+---
+
+## Scenario 7: Coroutine Leak When ViewModel Is Cleared
+
+### Problem
+A ViewModel launches a network request in `viewModelScope`. When the user navigates away and the ViewModel is cleared, the coroutine keeps running and causes a memory leak.
+
+```kotlin
+// ❌ Bad — coroutine outlives ViewModel
+class BadViewModel : ViewModel() {
+    fun loadData() {
+        // ❌ GlobalScope — not cancelled when ViewModel is cleared
+        GlobalScope.launch {
+            val data = api.fetchLargeData()  // keeps running after ViewModel cleared
+            // ❌ References Activity context via callback → memory leak
+            _uiState.value = data  // Updates a destroyed ViewModel
+        }
+    }
+}
+```
+
+### Solution: viewModelScope + proper cancellation
+
+```kotlin
+// ✅ Good — viewModelScope auto-cancels on onCleared()
+class GoodViewModel(private val api: Api) : ViewModel() {
+    private val _uiState = MutableStateFlow<UiState>(UiState.Loading)
+    val uiState: StateFlow<UiState> = _uiState
+
+    fun loadData() {
+        viewModelScope.launch {
+            _uiState.value = UiState.Loading
+            try {
+                val data = api.fetchLargeData()
+                _uiState.value = UiState.Success(data)
+            } catch (e: CancellationException) {
+                // ✅ Must rethrow — coroutine was cancelled
+                throw e
+            } catch (e: Exception) {
+                _uiState.value = UiState.Error(e.message)
+            }
+        }
+    }
+
+    // ✅ For long-running work that should survive config change
+    private var fetchJob: Job? = null
+
+    fun loadDataWithCancel() {
+        fetchJob?.cancel()  // ✅ Cancel previous request
+        fetchJob = viewModelScope.launch {
+            val data = api.fetchLargeData()
+            _uiState.value = UiState.Success(data)
+        }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        // viewModelScope is auto-cancelled here
+        // No need to manually cancel
+    }
+}
+```
+
+### Key Takeaway
+- Always use `viewModelScope` — it's automatically cancelled in `onCleared()`
+- Never use `GlobalScope` in a ViewModel — coroutines outlive the ViewModel
+- Catch `CancellationException` separately and rethrow it
+- Cancel previous jobs before starting new ones to avoid race conditions
+- `StateFlow` doesn't leak — it's not tied to any lifecycle owner
+
+---
+
+## Scenario 8: Flow Backpressure — Producer Faster Than Consumer
+
+### Problem
+A Flow emits values at a high rate (e.g., sensor data every 10ms), but the consumer processes each value slowly (e.g., 100ms per operation). Values pile up, causing memory pressure and outdated data processing.
+
+```kotlin
+// ❌ Bad — no backpressure handling
+fun sensorFlow(): Flow<Float> = flow {
+    while (true) {
+        emit(sensor.read())  // Emits every 10ms
+        delay(10)
+    }
+}
+
+// Consumer takes 100ms per item
+// ❌ Buffer grows unbounded → OOM
+sensorFlow().collect { value ->
+    processValue(value)  // Takes 100ms — 10x slower than producer
+}
+```
+
+### Solution: Buffer, conflate, or sample the Flow
+
+```kotlin
+// ✅ Fix 1: Buffer — run producer and consumer in parallel
+sensorFlow()
+    .buffer(100)  // Buffer up to 100 values
+    .collect { value ->
+        processValue(value)  // Producer continues emitting while consumer processes
+    }
+
+// ✅ Fix 2: Conflate — only process the latest value (drop intermediate)
+sensorFlow()
+    .conflate()  // Keep only the most recent value
+    .collect { value ->
+        processValue(value)  // Skips outdated values
+    }
+
+// ✅ Fix 3: Sample — process at fixed intervals
+sensorFlow()
+    .sample(50)  // Take latest value every 50ms
+    .collect { value ->
+        processValue(value)
+    }
+
+// ✅ Fix 4: Debounce — only process after emissions settle
+sensorFlow()
+    .debounce(50)  // Wait 50ms of silence before processing
+    .collect { value ->
+        processValue(value)
+    }
+
+// ✅ Fix 5: Flow with capacity — bounded channel
+fun sensorFlow(): Flow<Float> = channelFlow {
+    while (true) {
+        send(sensor.read())
+        delay(10)
+    }
+}.buffer(Channel.BUFFERED)  // Bounded buffer with default capacity
+```
+
+### Key Takeaway
+- Flows are cold — backpressure is natural for suspending collectors, but only if the producer also suspends
+- `buffer()` runs producer and consumer concurrently with a buffer
+- `conflate()` keeps only the latest value — perfect for UI state updates
+- `sample(period)` picks the latest at fixed intervals — good for sensor data
+- `debounce()` waits for silence — good for search inputs
+- Use `channelFlow` with bounded capacity for hot-stream-like behavior
+
+---
+
 ## 🔗 Related Topics
 - [Coroutines Deep Dive](../advanced/Coroutines.md)
 - [Flows](../advanced/Flows.md)

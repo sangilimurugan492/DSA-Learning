@@ -276,6 +276,228 @@ fun CustomCard() {
 
 ---
 
+## Q8: How do you implement multi-brand theming?
+
+```kotlin
+// Multi-brand — support different brand colors/logos in one app
+enum class Brand { Default, Premium, Enterprise }
+
+data class BrandTheme(
+    val primary: Color,
+    val secondary: Color,
+    val logo: Int,
+    val font: FontFamily,
+)
+
+val LocalBrandTheme = staticCompositionLocalOf { BrandTheme.Default }
+
+object BrandThemes {
+    val Default = BrandTheme(
+        primary = Color(0xFF6200EE),
+        secondary = Color(0xFF03DAC6),
+        logo = R.drawable.logo_default,
+        font = FontFamily.Default,
+    )
+    val Premium = BrandTheme(
+        primary = Color(0xFFFFD700),
+        secondary = Color(0xFFB8860B),
+        logo = R.drawable.logo_premium,
+        font = FontFamily.Serif,
+    )
+    val Enterprise = BrandTheme(
+        primary = Color(0xFF003366),
+        secondary = Color(0xFF0066CC),
+        logo = R.drawable.logo_enterprise,
+        font = FontFamily.SansSerif,
+    )
+}
+
+@Composable
+fun BrandThemeWrapper(brand: Brand, content: @Composable () -> Unit) {
+    val theme = when (brand) {
+        Brand.Default -> BrandThemes.Default
+        Brand.Premium -> BrandThemes.Premium
+        Brand.Enterprise -> BrandThemes.Enterprise
+    }
+
+    val colorScheme = when (brand) {
+        Brand.Default -> lightColorScheme(primary = theme.primary, secondary = theme.secondary)
+        Brand.Premium -> lightColorScheme(primary = theme.primary, secondary = theme.secondary)
+        Brand.Enterprise -> darkColorScheme(primary = theme.primary, secondary = theme.secondary)
+    }
+
+    CompositionLocalProvider(LocalBrandTheme provides theme) {
+        MaterialTheme(
+            colorScheme = colorScheme,
+            typography = Typography(bodyLarge = TextStyle(fontFamily = theme.font)),
+        ) {
+            content()
+        }
+    }
+}
+
+// Usage
+@Composable
+fun App() {
+    val brand = getBrandFromConfig()
+    BrandThemeWrapper(brand) {
+        MainScreen()
+    }
+}
+
+// Access brand-specific values
+@Composable
+fun Header() {
+    val brand = LocalBrandTheme.current
+    Image(painterResource(brand.logo), contentDescription = "Logo")
+}
+```
+
+> **Key:** Use `CompositionLocal` for brand-specific values that don't fit in `MaterialTheme` (logos, custom fonts). Keep `MaterialTheme` for standard Material colors/typography/shapes.
+
+---
+
+## Q9: How do you create custom component styles?
+
+```kotlin
+// Component-specific theming — consistent styling across app
+
+// 1. Define custom component colors
+data class ButtonColors(
+    val container: Color,
+    val content: Color,
+    val disabledContainer: Color,
+    val disabledContent: Color,
+)
+
+val LocalButtonColors = staticCompositionLocalOf {
+    ButtonColors(
+        container = Color.Unspecified,
+        content = Color.Unspecified,
+        disabledContainer = Color.Unspecified,
+        disabledContent = Color.Unspecified,
+    )
+}
+
+// 2. Provide in theme
+@Composable
+fun AppTheme(content: @Composable () -> Unit) {
+    val colors = ButtonColors(
+        container = MaterialTheme.colorScheme.primary,
+        content = MaterialTheme.colorScheme.onPrimary,
+        disabledContainer = MaterialTheme.colorScheme.surfaceVariant,
+        disabledContent = MaterialTheme.colorScheme.onSurfaceVariant,
+    )
+    CompositionLocalProvider(LocalButtonColors provides colors) {
+        content()
+    }
+}
+
+// 3. Reusable styled component
+@Composable
+fun PrimaryButton(
+    text: String,
+    onClick: () -> Unit,
+    enabled: Boolean = true,
+    modifier: Modifier = Modifier,
+) {
+    val colors = LocalButtonColors.current
+    Button(
+        onClick = onClick,
+        enabled = enabled,
+        colors = ButtonDefaults.buttonColors(
+            containerColor = colors.container,
+            contentColor = colors.content,
+            disabledContainerColor = colors.disabledContainer,
+            disabledContentColor = colors.disabledContent,
+        ),
+        modifier = modifier.fillMaxWidth(),
+    ) {
+        Text(text)
+    }
+}
+
+// Usage — consistent everywhere
+PrimaryButton("Submit", onClick = { /* ... */ })
+PrimaryButton("Save", onClick = { /* ... */ }, enabled = false)
+```
+
+> **Best Practice:** Create wrapper composables (`PrimaryButton`, `SecondaryButton`, `AppCard`) that apply your app's design system. This ensures consistency and makes rebranding a one-line change.
+
+---
+
+## Q10: How do you handle edge-to-edge and window insets?
+
+```kotlin
+// Edge-to-edge — content draws behind system bars
+// In Activity: enableEdgeToEdge()
+
+// 1. windowInsetsPadding — push content away from system bars
+Column(Modifier.windowInsetsPadding(WindowInsets.statusBars)) {
+    Text("Below status bar")
+}
+
+// 2. Modifier.statusBarsPadding() — shorthand
+Column(Modifier.statusBarsPadding()) {
+    Text("Below status bar")
+}
+
+// 3. Multiple insets
+Column(
+    Modifier
+        .statusBarsPadding()
+        .navigationBarsPadding()
+) {
+    Text("Safe from status + nav bars")
+}
+
+// 4. Scaffold handles insets automatically
+Scaffold(
+    topBar = { TopAppBar(title = { Text("App") }) },
+    contentWindowInsets = WindowInsets.safeDrawing,
+) { padding ->
+    Column(Modifier.padding(padding)) {
+        Text("Properly inset content")
+    }
+}
+
+// 5. IME (keyboard) insets
+Column(Modifier.imePadding()) {
+    TextField(value = text, onValueChange = { text = it })
+    // Content moves up when keyboard appears
+}
+
+// 6. Custom inset handling
+Box(Modifier.fillMaxSize()) {
+    Text("Full screen")
+    // Apply insets only to specific elements
+    Text(
+        "Status bar text",
+        modifier = Modifier
+            .align(Alignment.TopCenter)
+            .statusBarsPadding(),
+    )
+}
+
+// 7. Animated IME insets
+val imeInsets = WindowInsets.ime
+val imeVisible = imeInsets.isVisible
+val imeHeight = imeInsets.getBottom(LocalDensity.current)
+```
+
+| Inset Type | Modifier | What It Avoids |
+|-----------|----------|---------------|
+| Status bar | `statusBarsPadding()` | Notch, clock, battery |
+| Navigation bar | `navigationBarsPadding()` | Back button, gesture bar |
+| IME (keyboard) | `imePadding()` | Keyboard overlap |
+| Safe drawing | `safeDrawingPadding()` | All system UI |
+| System bars | `systemBarsPadding()` | Status + nav bars |
+| Display cutout | `displayCutoutPadding()` | Notches, punch holes |
+
+> **Key:** `Scaffold` handles most insets automatically via its `padding` parameter. For custom layouts, use `WindowInsets` modifiers. Always call `enableEdgeToEdge()` in your Activity for modern edge-to-edge rendering.
+
+---
+
 ## 🔗 Related Topics
 - [Composables](../beginner/Composables.md)
 - [Modifiers](../beginner/Modifiers.md)

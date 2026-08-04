@@ -88,24 +88,24 @@
 
 | Day | Problem | File | Difficulty |
 |-----|---------|------|-----------|
-| Mon | Valid Parentheses | [ValidParentheses](../DSA/stack/ValidParentheses.kt) | Easy |
-| Mon | Min Stack | [MinStack](../DSA/stack/MinStack.kt) | Medium |
-| Tue | Evaluate Reverse Polish Notation | [EvaluateReversePolishNotation](../DSA/stack/EvaluateReversePolishNotation.kt) | Medium |
-| Tue | Daily Temperatures | [DailyTemperatures](../DSA/stack/DailyTemperatures.kt) | Medium |
-| Wed | Next Greater Element I | [NextGreaterElementI](../DSA/stack/NextGreaterElementI.kt) | Easy |
-| Wed | Next Greater Element II | [NextGreaterElementII](../DSA/stack/NextGreaterElementII.kt) | Medium |
-| Thu | Online Stock Span | [OnlineStockSpan](../DSA/stack/OnlineStockSpan.kt) | Medium |
-| Thu | Minimum Parentheses to Remove | [MinimumParentheseToRemove](../DSA/stack/MinimumParentheseToRemove.kt) | Medium |
-| Fri | Add Binary | [AddBinary](../DSA/simulation/AddBinary.kt) | Easy |
-| Fri | Add Strings | [AddString](../DSA/simulation/AddString.kt) | Easy |
-| Sat | FizzBuzz | [FizzBuzz](../DSA/simulation/FizzBuzz.kt) | Easy |
-| Sat | Add Digits | [AddDigits](../DSA/simulation/AddDigits.kt) | Easy |
-| Sat | Spiral Matrix | [SpiralMatrix](../DSA/simulation/SpiralMatrix.kt) | Medium |
-| Sat | Spiral Matrix II | [SpiralMatrixII](../DSA/simulation/SpiralMatrixII.kt) | Medium |
-| Sun | Text Justification | [TextJustification](../DSA/simulation/TextJustification.kt) | Hard |
-| Sun | Longest Valid Parentheses | [LongestValidParentheses](../DSA/stack/LongestValidParentheses.kt) | Hard |
-| Sun | Largest Rectangle in Histogram | [LargestRectangleInHistogram](../DSA/stack/LargestRectangleInHistogram.kt) | Hard |
-| Sun | Car Fleet | [CarFleet](../DSA/stack/CarFleet.kt) | Medium |
+| Mon | Valid Parentheses | [ValidParentheses](../DSA/stack/valid_parentheses/ValidParentheses.kt) | Easy |
+| Mon | Min Stack | [MinStack](../DSA/stack/min_stack/MinStack.kt) | Medium |
+| Tue | Evaluate Reverse Polish Notation | [EvaluateReversePolishNotation](../DSA/stack/evaluate_reverse_polish_notation/EvaluateReversePolishNotation.kt) | Medium |
+| Tue | Daily Temperatures | [DailyTemperatures](../DSA/stack/daily_temperatures/DailyTemperatures.kt) | Medium |
+| Wed | Next Greater Element I | [NextGreaterElementI](../DSA/stack/next_greater_element_i/NextGreaterElementI.kt) | Easy |
+| Wed | Next Greater Element II | [NextGreaterElementII](../DSA/stack/next_greater_element_ii/NextGreaterElementII.kt) | Medium |
+| Thu | Online Stock Span | [OnlineStockSpan](../DSA/stack/online_stock_span/OnlineStockSpan.kt) | Medium |
+| Thu | Minimum Parentheses to Remove | [MinimumParentheseToRemove](../DSA/stack/minimum_parentheses_to_remove/MinimumParentheseToRemove.kt) | Medium |
+| Fri | Add Binary | [AddBinary](../DSA/simulation/add_binary/AddBinary.kt) | Easy |
+| Fri | Add Strings | [AddString](../DSA/simulation/add_string/AddString.kt) | Easy |
+| Sat | FizzBuzz | [FizzBuzz](../DSA/simulation/fizz_buzz/FizzBuzz.kt) | Easy |
+| Sat | Add Digits | [AddDigits](../DSA/simulation/add_digits/AddDigits.kt) | Easy |
+| Sat | Spiral Matrix | [SpiralMatrix](../DSA/simulation/spiral_matrix/SpiralMatrix.kt) | Medium |
+| Sat | Spiral Matrix II | [SpiralMatrixII](../DSA/simulation/spiral_matrix_ii/SpiralMatrixII.kt) | Medium |
+| Sun | Text Justification | [TextJustification](../DSA/simulation/text_justification/TextJustification.kt) | Hard |
+| Sun | Longest Valid Parentheses | [LongestValidParentheses](../DSA/stack/longest_valid_parentheses/LongestValidParentheses.kt) | Hard |
+| Sun | Largest Rectangle in Histogram | [LargestRectangleInHistogram](../DSA/stack/largest_rectangle_in_histogram/LargestRectangleInHistogram.kt) | Hard |
+| Sun | Car Fleet | [CarFleet](../DSA/stack/car_fleet/CarFleet.kt) | Medium |
 
 ### Week 4: Linked Lists + Hashing + Mixed
 

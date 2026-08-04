@@ -261,6 +261,152 @@ fun NameDisplay() {
 
 ---
 
+## Q8: What is the `@Composable` annotation and how does the compiler transform it?
+
+```kotlin
+// What you write:
+@Composable
+fun Greeting(name: String) {
+    Text("Hello, $name")
+}
+
+// What the compiler generates (simplified):
+fun Greeting(composer: Composer, name: String) {
+    composer.startRestartGroup(123456)  // Unique key
+
+    // Check if inputs changed — skip if not
+    val changed = composer.changed(name)
+    if (changed || !composer.skipping) {
+        Text(composer, "Hello, $name")  // Re-execute
+    } else {
+        composer.skipToGroupEnd()  // Skip — inputs unchanged
+    }
+
+    composer.endRestartGroup()
+}
+
+// Key transformations:
+// 1. Adds Composer parameter to every @Composable function
+// 2. Wraps in startGroup/endGroup for tracking
+// 3. Adds changed() checks for each parameter
+// 4. Caches remember() values in slot table
+// 5. Assigns unique integer keys to call sites
+```
+
+| Transformation | Purpose |
+|----------------|---------|
+| `Composer` param | Track composition, diffing |
+| `startGroup/endGroup` | Track call site in slot table |
+| `changed()` | Skip if inputs unchanged |
+| `cache()` | Store `remember` values |
+| Unique keys | Identify composables in slot table |
+
+> **Key:** The `@Composable` annotation is not just a marker — the Compose compiler plugin transforms the function to accept a `Composer` and add tracking logic. This is why composables can only be called from other composables.
+
+---
+
+## Q9: What is the difference between `remember`, `rememberSaveable`, and `derivedStateOf`?
+
+```kotlin
+// remember — survives recomposition, lost on config change/process death
+@Composable
+fun RememberExample() {
+    var count by remember { mutableStateOf(0) }  // Lost on rotation
+    Button(onClick = { count++ }) { Text("$count") }
+}
+
+// rememberSaveable — survives recomposition + config change + process death
+@Composable
+fun SaveableExample() {
+    var name by rememberSaveable { mutableStateOf("") }  // Survives rotation
+    TextField(value = name, onValueChange = { name = it })
+}
+
+// derivedStateOf — computed state, only recomposes when result changes
+@Composable
+fun DerivedExample() {
+    val todos = remember { mutableStateListOf<Todo>() }
+    val completedCount by remember {
+        derivedStateOf { todos.count { it.isDone } }
+    }
+    // Only recomposes when completedCount changes, not on every todo change
+    Text("Completed: $completedCount")
+}
+
+// rememberSaveable with custom Saver
+val userSaver = run {
+    mapSaver(
+        save = { mapOf("name" to it.name, "age" to it.age) },
+        restore = { User(it["name"] as String, it["age"] as Int) },
+    )
+}
+
+var user by rememberSaveable(stateSaver = userSaver) {
+    mutableStateOf(User("Alice", 30))
+}
+```
+
+| API | Survives Recomposition | Survives Rotation | Survives Process Death |
+|-----|----------------------|-------------------|----------------------|
+| `remember` | ✅ | ❌ | ❌ |
+| `rememberSaveable` | ✅ | ✅ | ✅ |
+| `derivedStateOf` | ✅ (with `remember`) | ❌ | ❌ |
+| `ViewModel` | ✅ | ✅ | ❌ |
+
+> **Rule:** Use `remember` for UI-only state. Use `rememberSaveable` for state the user would expect to survive (form input, scroll position). Use `derivedStateOf` for computed values that change less frequently than their sources.
+
+---
+
+## Q10: What are `CompositionLocal` and when should you use it?
+
+```kotlin
+// CompositionLocal — implicitly pass data down the tree without parameters
+
+// 1. Define a CompositionLocal
+val LocalTheme = staticCompositionLocalOf { Theme.Light }
+val LocalElevation = staticCompositionLocalOf { 4.dp }
+
+// 2. Provide a value
+@Composable
+fun App() {
+    CompositionLocalProvider(
+        LocalTheme provides Theme.Dark,
+        LocalElevation provides 8.dp,
+    ) {
+        Child()  // Can read LocalTheme.current
+    }
+}
+
+// 3. Consume the value
+@Composable
+fun Child() {
+    val theme = LocalTheme.current  // Read without parameter passing
+    val elevation = LocalElevation.current
+    Surface(tonalElevation = elevation) {
+        Text("Theme: $theme")
+    }
+}
+
+// staticCompositionLocalOf — never changes (better performance, no tracking)
+// compositionLocalOf — can change (tracks reads, triggers recomposition)
+
+// Built-in CompositionLocals
+val context = LocalContext.current
+val configuration = LocalConfiguration.current
+val density = LocalDensity.current
+val view = LocalView.current
+val lifecycleOwner = LocalLifecycleOwner.current
+```
+
+| Type | Performance | When to Use |
+|------|-------------|------------|
+| `staticCompositionLocalOf` | ✅ Best | App-wide constants (theme, config) |
+| `compositionLocalOf` | ⚠️ Tracks reads | Dynamic values (current user, locale) |
+
+> **Warning:** Don't overuse `CompositionLocal` — it makes data flow implicit and harder to trace. Use it for truly cross-cutting concerns (theme, density, context). For feature-specific data, pass via parameters or ViewModel.
+
+---
+
 ## 🔗 Related Topics
 - [Composables](Composables.md)
 - [State](State.md)

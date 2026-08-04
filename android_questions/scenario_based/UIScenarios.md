@@ -366,6 +366,219 @@ class FeedAdapter : ListAdapter<Item, FeedAdapter.VH>(DiffCallback) {
 
 ---
 
+## Scenario 6: Nested RecyclerView Performance Issues
+
+### Problem
+A feed screen has a vertical RecyclerView with horizontal RecyclerViews inside each item (like Play Store). Scrolling is laggy, memory usage is high, and items lose their scroll position when recycled.
+
+```kotlin
+// ❌ Bad — each row creates its own RecyclerView with its own adapter and pool
+class ParentAdapter(private val rows: List<Row>) : RecyclerView.Adapter<ParentAdapter.VH>() {
+    class VH(val binding: RowBinding) : RecyclerView.ViewHolder(binding.root)
+
+    override fun onBindViewHolder(holder: VH, position: Int) {
+        val row = rows[position]
+        // ❌ New adapter every bind — no state preservation
+        holder.binding.innerRecycler.adapter = ChildAdapter(row.items)
+        // ❌ No shared pool — each inner RecyclerView has its own
+        // ❌ No prefetching — inner items not prefetched
+    }
+}
+```
+
+### Solution: Shared RecycledViewPool, stable adapters, and prefetch
+
+```kotlin
+// ✅ Good — shared pool, stable adapter, prefetch
+class ParentAdapter : ListAdapter<Row, ParentAdapter.VH>(RowDiffCallback) {
+    private val sharedPool = RecyclerView.RecycledViewPool()
+
+    class VH(val binding: RowBinding) : RecyclerView.ViewHolder(binding.root)
+
+    init {
+        // Pre-warm the pool for the expected view type
+        sharedPool.setMaxRecycledViews(TYPE_CHILD, 20)
+    }
+
+    override fun onBindViewHolder(holder: VH, position: Int) {
+        val row = getItem(position)
+        // ✅ Reuse adapter — just submit new list
+        if (holder.binding.innerRecycler.adapter == null) {
+            holder.binding.innerRecycler.adapter = ChildAdapter()
+            // ✅ Share the pool across all inner RecyclerViews
+            holder.binding.innerRecycler.setRecycledViewPool(sharedPool)
+            // ✅ Enable prefetch for inner items
+            (holder.binding.innerRecycler.layoutManager as LinearLayoutManager).isItemPrefetchEnabled = true
+            // ✅ Set prefetch count
+            holder.binding.innerRecycler.layoutManager?.initialPrefetchItemCount = 4
+        }
+        (holder.binding.innerRecycler.adapter as ChildAdapter).submitList(row.items)
+
+        // ✅ Save and restore scroll position
+        holder.binding.innerRecycler.layoutManager?.onSaveInstanceState()?.let {
+            savedScrollStates[row.id] = it
+        }
+        savedScrollStates[row.id]?.let {
+            holder.binding.innerRecycler.layoutManager?.onRestoreInstanceState(it)
+        }
+    }
+
+    companion object {
+        private const val TYPE_CHILD = 1
+        private val savedScrollStates = mutableMapOf<String, Parcelable>()
+    }
+}
+```
+
+### Key Takeaway
+- Use `setRecycledViewPool()` to share a single pool across all inner RecyclerViews
+- Reuse the adapter — call `submitList()` instead of creating a new adapter
+- Enable `isItemPrefetchEnabled = true` and set `initialPrefetchItemCount`
+- Save/restore scroll state per row ID using `onSaveInstanceState()`/`onRestoreInstanceState()`
+- Use `setHasFixedSize(true)` on inner RecyclerViews if their size doesn't change
+- Consider using `ConcatAdapter` for sections instead of nested RecyclerViews where possible
+
+---
+
+## Scenario 7: EditText Keyboard Pushing UI Up
+
+### Problem
+When the user taps an EditText at the bottom of a scrollable form, the keyboard appears and pushes the UI up, covering the submit button. The form is unusable.
+
+```xml
+<!-- ❌ Bad — no keyboard handling -->
+<ScrollView>
+    <LinearLayout>
+        <EditText ... />
+        <Button android:text="Submit" />  <!-- Hidden behind keyboard -->
+    </LinearLayout>
+</ScrollView>
+```
+
+### Solution: `windowSoftInputMode`, `imePadding`, and `WindowInsets`
+
+```xml
+<!-- ✅ Fix 1: Manifest — adjust resize -->
+<activity android:windowSoftInputMode="adjustResize">
+```
+
+```kotlin
+// ✅ Fix 2: Apply window insets as padding
+ViewCompat.setOnApplyWindowInsetsListener(binding.root) { view, windowInsets ->
+    val imeInsets = windowInsets.getInsets(WindowInsetsCompat.Type.ime())
+    val systemBarsInsets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars())
+
+    view.updatePadding(
+        bottom = imeInsets.bottom.coerceAtLeast(systemBarsInsets.bottom)
+    )
+    WindowInsetsCompat.CONSUMED
+}
+
+// ✅ Fix 3: Scroll to focused view when keyboard appears
+binding.scrollView.viewTreeObserver.addOnGlobalLayoutListener {
+    val focused = binding.root.findFocus() ?: return@addOnGlobalLayoutListener
+    binding.scrollView.smoothScrollTo(0, focused.bottom)
+}
+```
+
+```kotlin
+// ✅ Fix 4: Use IME animation callback (API 30+) for smooth transitions
+ViewCompat.setWindowInsetsAnimationCallback(binding.root,
+    object : WindowInsetsAnimationCompat.Callback(DISPATCH_MODE_STOP) {
+        override fun onProgress(insets: WindowInsetsCompat, runningAnimations: MutableList<WindowInsetsAnimationCompat>) = insets
+
+        override fun onStart(animation: WindowInsetsAnimationCompat, bounds: WindowInsetsAnimationCompat.Bounds): WindowInsetsAnimationCompat.Bounds {
+            // Animate UI smoothly with keyboard
+            bounds
+        }
+    })
+```
+
+### Key Takeaway
+- Use `android:windowSoftInputMode="adjustResize"` in the manifest
+- Handle `WindowInsetsCompat.Type.ime()` to apply bottom padding for the keyboard
+- Scroll to the focused `EditText` using `smoothScrollTo`
+- Use `WindowInsetsAnimationCompat` (API 30+) for smooth keyboard transitions
+- In Compose, use `imePadding()` modifier and `windowInsets` parameter on `Scaffold`
+
+---
+
+## Scenario 8: Dark Mode Not Applying Correctly
+
+### Problem
+The app supports dark mode but some screens show white backgrounds, hardcoded colors appear wrong, and theme switches don't apply until Activity recreation.
+
+```kotlin
+// ❌ Bad — hardcoded colors, no theme awareness
+binding.container.setBackgroundColor(Color.WHITE)
+binding.title.setTextColor(Color.BLACK)
+
+// ❌ Bad — colors not in themes
+<TextView android:background="#FFFFFF" android:textColor="#000000" />
+```
+
+### Solution: Theme attributes, dynamic colors, and DayNight
+
+```xml
+<!-- ✅ Fix 1: Use DayNight theme in styles.xml -->
+<style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+    <item name="colorPrimary">@color/colorPrimary</item>
+</style>
+
+<!-- ✅ Fix 2: Use theme attributes, not hardcoded colors -->
+<TextView
+    android:background="?attr/colorSurface"
+    android:textColor="?attr/colorOnSurface" />
+
+<!-- ✅ Fix 3: values-night/colors.xml for dark-specific overrides -->
+<!-- values/colors.xml: <color name="background">#FFFFFF</color> -->
+<!-- values-night/colors.xml: <color name="background">#121212</color> -->
+```
+
+```kotlin
+// ✅ Fix 4: Force dark mode programmatically
+AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+
+// ✅ Fix 5: Check current mode
+val isDark = when (resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK) {
+    Configuration.UI_MODE_NIGHT_YES -> true
+    else -> false
+}
+
+// ✅ Fix 6: Dynamic color (Android 12+)
+val dynamicContext = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+    ContextThemeWrapper(this, android.R.style.Theme_DeviceDefault_DayNight)
+} else this
+```
+
+```kotlin
+// ✅ Fix 7: In Compose — use MaterialTheme with dynamic color
+@Composable
+fun AppTheme(content: @Composable () -> Unit) {
+    val darkTheme = isSystemInDarkTheme()
+    val colorScheme = when {
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
+            val context = LocalContext.current
+            if (darkTheme) dynamicDarkColorScheme(context)
+            else dynamicLightColorScheme(context)
+        }
+        darkTheme -> DarkColors
+        else -> LightColors
+    }
+    MaterialTheme(colorScheme = colorScheme, content = content)
+}
+```
+
+### Key Takeaway
+- Use `Theme.Material3.DayNight` as the parent theme
+- Never hardcode colors — use theme attributes (`?attr/colorSurface`, `?attr/colorOnSurface`)
+- Provide `values-night/` resource overrides for dark mode-specific colors
+- Use `AppCompatDelegate.setDefaultNightMode()` to force/restrict dark mode
+- Use `dynamicDarkColorScheme()`/`dynamicLightColorScheme()` (Android 12+) for Material You
+- In Compose, use `isSystemInDarkTheme()` and `dynamicColorScheme()` for automatic theming
+
+---
+
 ## 🔗 Related Topics
 - [RecyclerView Basics](../beginner/RecyclerView.md)
 - [UI Layouts](../beginner/UILayouts.md)

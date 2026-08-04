@@ -21,7 +21,11 @@
  *
  * Input: nums = [1,0,-1,0,-2,2], target = 0
  * Output: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
+ *
  * Example 2:
+ *
+ * Input: nums = [2,2,2,2,2], target = 8
+ * Output: [[2,2,2,2]]
 
 ---
 
@@ -35,7 +39,7 @@ See implementation in `FourSum.kt` for details.
 
 | Metric | Value |
 |--------|-------|
-| **Time** | O(N²) |
+| **Time** | O(N⁴) |
 | **Space** | O(N) |
 
 ---
@@ -50,7 +54,7 @@ See implementation in `FourSum.kt` for details.
 
 | Metric | Value |
 |--------|-------|
-| **Time** | O(N) |
+| **Time** | O(N³) |
 | **Space** | O(1) |
 
 ---
@@ -66,4 +70,6 @@ See implementation in `FourSum.kt` for details.
 
 | Problem | LeetCode | Difficulty |
 |---------|----------|------------|
-| FourSum | [https://leetcode.com/problems/4sum/description/](https://leetcode.com/problems/4sum/description/) | Medium |
+| 3Sum | [https://leetcode.com/problems/3sum/](https://leetcode.com/problems/3sum/) | Medium |
+| 3Sum Closest | [https://leetcode.com/problems/3sum-closest/](https://leetcode.com/problems/3sum-closest/) | Medium |
+| 4Sum II | [https://leetcode.com/problems/4sum-ii/](https://leetcode.com/problems/4sum-ii/) | Medium |

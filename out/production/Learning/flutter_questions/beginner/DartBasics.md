@@ -322,6 +322,190 @@ countDown(3).listen((value) {
 
 ---
 
+## Q8: What are isolates and how do they work?
+
+```dart
+// Dart is single-threaded — isolates provide true parallelism
+// Each isolate has its own memory heap (no shared state)
+
+// Isolate.run (Dart 2.19+) — simplest way
+final result = await Isolate.run(() {
+  return heavyComputation();  // Runs in separate isolate
+});
+
+// compute() — Flutter wrapper for Isolate.run
+final result = await compute(_processData, largeList);
+
+List<Result> _processData(List<Data> data) {
+  return data.map((e) => complexCalculation(e)).toList();
+}
+
+// Isolate.spawn — for long-running isolates with communication
+Future<void> startWorker() async {
+  final receivePort = ReceivePort();
+  await Isolate.spawn(_workerEntry, receivePort.sendPort);
+
+  receivePort.listen((message) {
+    print('From worker: $message');
+  });
+}
+
+void _workerEntry(SendPort sendPort) {
+  // Runs in separate isolate
+  final result = heavyComputation();
+  sendPort.send(result);
+}
+
+// Two-way communication
+Future<void> twoWayCommunication() async {
+  final receivePort = ReceivePort();
+  final isolate = await Isolate.spawn(_entry, receivePort.sendPort);
+
+  final sendPort = await receivePort.first as SendPort;
+  sendPort.send('Do work');
+}
+```
+
+| Feature | Main Isolate | Worker Isolate |
+|---------|-------------|----------------|
+| Memory | Shared | Separate heap |
+| UI | ✅ Runs UI | ❌ No UI |
+| Concurrency | Single-threaded | True parallelism |
+| Communication | Direct | Message passing (SendPort) |
+| Use case | UI, event handling | Heavy computation |
+
+> **Rule:** Use isolates for CPU-heavy work (parsing large JSON, image processing, crypto). Don't use isolates for I/O (network, file) — Dart's async I/O is already non-blocking.
+
+---
+
+## Q9: What are records and patterns in Dart 3?
+
+```dart
+// Records — anonymous aggregate types (Dart 3+)
+// (String, int) — positional fields
+// ({String name, int age}) — named fields
+
+// Positional record
+(String, int) user = ('Alice', 30);
+print(user.$1);  // Alice
+print(user.$2);  // 30
+
+// Named record
+({String name, int age}) person = (name: 'Bob', age: 25);
+print(person.name);  // Bob
+print(person.age);   // 25
+
+// Destructuring
+final (name, age) = ('Alice', 30);
+print(name);  // Alice
+
+final (name: n, age: a) = (name: 'Bob', age: 25);
+print(n);  // Bob
+
+// Patterns — switch expressions and destructuring
+String describe(Object obj) => switch (obj) {
+  int i when i > 0 => 'Positive integer: $i',
+  String s => 'String: $s',
+  List<int> l => 'Int list: $l',
+  (String, int) r => 'Record: ${r.$1}, ${r.$2}',
+  null => 'Null',
+  _ => 'Unknown',
+};
+
+// Pattern matching with if-case
+final result = switch (statusCode) {
+  200 || 201 => 'Success',
+  404 => 'Not found',
+  >= 500 => 'Server error',
+  _ => 'Unknown: $statusCode',
+};
+
+// Map entry destructuring
+for (final MapEntry(:key, :value) in map.entries) {
+  print('$key: $value');
+}
+```
+
+> **Key:** Records and patterns (Dart 3+) make Dart more expressive — replacing boilerplate classes with lightweight records, and replacing if-else chains with pattern matching.
+
+---
+
+## Q10: What are sealed classes and when do you use them?
+
+```dart
+// Sealed class — closed hierarchy, all subtypes known at compile time
+// Used for exhaustive pattern matching
+
+sealed class Result<T> {
+  const Result();
+}
+
+class Success<T> extends Result<T> {
+  final T data;
+  const Success(this.data);
+}
+
+class Failure<T> extends Result<T> {
+  final String error;
+  const Failure(this.error);
+}
+
+class Loading<T> extends Result<T> {
+  const Loading();
+}
+
+// Exhaustive switch — compiler warns if a case is missing
+String handleResult(Result<int> result) => switch (result) {
+  Success(:final data) => 'Got: $data',
+  Failure(:final error) => 'Error: $error',
+  Loading() => 'Loading...',
+};
+
+// State pattern for BLoC/state management
+sealed class UiState<T> {
+  const UiState();
+}
+
+class Initial<T> extends UiState<T> {
+  const Initial();
+}
+
+class LoadingState<T> extends UiState<T> {
+  const LoadingState();
+}
+
+class SuccessState<T> extends UiState<T> {
+  final T data;
+  const SuccessState(this.data);
+}
+
+class ErrorState<T> extends UiState<T> {
+  final String message;
+  const ErrorState(this.message);
+}
+
+// Usage
+Widget build(BuildContext context) {
+  return switch (state) {
+    Initial() => const SizedBox.shrink(),
+    LoadingState() => const CircularProgressIndicator(),
+    SuccessState(:final data) => ContentWidget(data: data),
+    ErrorState(:final message) => ErrorWidget(message: message),
+  };
+}
+```
+
+| Feature | `sealed` | `abstract` | `abstract interface` |
+|---------|----------|-----------|---------------------|
+| Subtypes | Same library only | Anywhere | Anywhere |
+| Exhaustive switch | ✅ Yes | ❌ No | ❌ No |
+| Implement | `extends` | `extends`/`implements` | `implements` |
+| Use case | Closed hierarchies | Open hierarchies | Pure interfaces |
+
+> **Key:** Use `sealed` when you have a fixed set of subtypes (states, results, events). The compiler enforces exhaustive `switch` — if you add a new subtype, all switches must handle it.
+
+---
+
 ## 🔗 Related Topics
 - [Basics](Basics.md)
 - [Widgets](Widgets.md)

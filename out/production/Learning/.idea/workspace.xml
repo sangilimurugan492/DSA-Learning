@@ -4,9 +4,119 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63e6e312-ba97-461c-9408-efe0eb739fb1" name="Changes" comment="Added All Mobile related Topic and Interview Preparation Concepts.">
+    <list default="true" id="63e6e312-ba97-461c-9408-efe0eb739fb1" name="Changes" comment="Added All problems with explanation.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/complement_search/TwoSumII.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/complement_search/TwoSumII.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/best_time_to_buy_and_sell_stock_ii/BestTimeToBuyAndSellStockII.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/greedy/best_time_to_buy_and_sell_stock_ii/BestTimeToBuyAndSellStockII.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/circular/CircularLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/circular/JosephusProblem.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/circular/SortedInsertInCircularLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/circular/SplitCircularLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/DListNode.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/DeleteNodeInDoublyLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/FindPairsWithGivenSum.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/FlatternDoubleLLMultiLevel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/InsertNodeInDoublyLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/LeastFrequentlyUsedLFU.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/LeastRecentlyUsedLRU.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/RemoveDuplicatesFromSortedDLL.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/double/ReverseDoublyLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/AddTwoNumbers.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/ConvertSortedListToBinarySearchTree.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/CopyListWithRandomPointer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/DeleteNodeInLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/DesignHashSet.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/IntersectionOfTwoLinkedLists.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/LinkedListBinaryToInteger.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/LinkedListCycle.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/LinkedListCycleII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/ListNode.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/MergeKSortedLists.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/MergeTwoSortedLists.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/MiddleOfLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/MyLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/Node.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/PalindromeLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/PatiotionList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/RemoveDuplicatesFromSortedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/RemoveDuplicatesFromSortedListII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/RemoveNthNodeFromLast.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/ReorderList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/ReverseLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/ReverseLinkedListII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/ReverseLinkedListKGroup.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/RotateLinkedList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/SortList.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/SwapNodesInPairs.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/simulation/AddDigits.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/simulation/AddString.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/simulation/FizzBuzz.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/simulation/SpiralMatrix.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/simulation/SpiralMatrixII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/simulation/TextJustification.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/trie/WordSearchII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/advanced/CICD.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/advanced/CICD.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/advanced/CustomViews.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/advanced/CustomViews.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/advanced/DependencyInjection.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/advanced/DependencyInjection.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/advanced/Performance.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/advanced/Performance.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/advanced/Security.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/advanced/Security.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/advanced/Testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/advanced/Testing.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/beginner/ActivityLifecycle.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/beginner/ActivityLifecycle.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/beginner/Basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/beginner/FragmentLifecycle.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/beginner/FragmentLifecycle.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/beginner/Intents.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/beginner/Intents.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/beginner/Permissions.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/beginner/Permissions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/beginner/RecyclerView.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/beginner/RecyclerView.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/beginner/UILayouts.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/beginner/UILayouts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/intermediate/ArchitecturePatterns.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/intermediate/ArchitecturePatterns.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/intermediate/DataBinding.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/intermediate/DataBinding.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/intermediate/Navigation.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/intermediate/Navigation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/intermediate/Retrofit.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/intermediate/Retrofit.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/intermediate/RoomDatabase.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/intermediate/RoomDatabase.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/intermediate/ViewModelLiveData.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/intermediate/ViewModelLiveData.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/intermediate/WorkManager.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/intermediate/WorkManager.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android_questions/scenario_based/UIScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/scenario_based/UIScenarios.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/DartBasics.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/DartBasics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Layouts.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Layouts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Navigation.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Navigation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/StateManagement.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/StateManagement.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Widgets.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Widgets.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interview_schedule/Week1-2_Fundamentals.md" beforeDir="false" afterPath="$PROJECT_DIR$/interview_schedule/Week1-2_Fundamentals.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interview_schedule/Week3-4_Android_Core.md" beforeDir="false" afterPath="$PROJECT_DIR$/interview_schedule/Week3-4_Android_Core.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interview_schedule/Week5-6_Advanced_Android.md" beforeDir="false" afterPath="$PROJECT_DIR$/interview_schedule/Week5-6_Advanced_Android.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interview_schedule/Week7-8_Jetpack_Compose.md" beforeDir="false" afterPath="$PROJECT_DIR$/interview_schedule/Week7-8_Jetpack_Compose.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetpack_compose_questions/advanced/Testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/jetpack_compose_questions/advanced/Testing.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetpack_compose_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/jetpack_compose_questions/beginner/Basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetpack_compose_questions/beginner/Composables.md" beforeDir="false" afterPath="$PROJECT_DIR$/jetpack_compose_questions/beginner/Composables.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetpack_compose_questions/beginner/Modifiers.md" beforeDir="false" afterPath="$PROJECT_DIR$/jetpack_compose_questions/beginner/Modifiers.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetpack_compose_questions/beginner/State.md" beforeDir="false" afterPath="$PROJECT_DIR$/jetpack_compose_questions/beginner/State.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetpack_compose_questions/intermediate/StateManagement.md" beforeDir="false" afterPath="$PROJECT_DIR$/jetpack_compose_questions/intermediate/StateManagement.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jetpack_compose_questions/intermediate/Theming.md" beforeDir="false" afterPath="$PROJECT_DIR$/jetpack_compose_questions/intermediate/Theming.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/advanced/Coroutines.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/advanced/Coroutines.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/advanced/DSL.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/advanced/DSL.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/advanced/DelegatedProperties.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/advanced/DelegatedProperties.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/advanced/Flows.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/advanced/Flows.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/advanced/Generics.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/advanced/Generics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/advanced/ReflectionAndAnnotations.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/advanced/ReflectionAndAnnotations.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/advanced/ValueClasses.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/advanced/ValueClasses.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/Arrays.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/Arrays.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/Basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/ControlFlow.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/ControlFlow.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/ExceptionHandling.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/ExceptionHandling.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/Functions.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/Functions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/NullSafety.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/NullSafety.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/StringTemplates.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/StringTemplates.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/TypeChecksAndSmartCasts.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/TypeChecksAndSmartCasts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/VariablesAndDataTypes.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/VariablesAndDataTypes.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/Collections.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/Collections.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/DataAndSealedClasses.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/DataAndSealedClasses.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/Extensions.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/Extensions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/InlineAndReified.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/InlineAndReified.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/LambdasAndHigherOrderFunctions.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/LambdasAndHigherOrderFunctions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/OOP.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/OOP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/OperatorOverloading.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/OperatorOverloading.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/intermediate/ScopeFunctions.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/intermediate/ScopeFunctions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/scenario_based/ConcurrencyScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/scenario_based/ConcurrencyScenarios.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +135,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="lesson1" />
+        <entry key="$PROJECT_DIR$" value="Interview_preparation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,6 +169,8 @@
     "Kotlin.AddStringKt.executor": "Run",
     "Kotlin.AddTowNumbersKt.executor": "Run",
     "Kotlin.AssignCookiesKt.executor": "Run",
+    "Kotlin.BestTimeToBuyAndSellStockIIKt (1).executor": "Run",
+    "Kotlin.BestTimeToBuyAndSellStockIIKt.executor": "Debug",
     "Kotlin.BestTimeToBuyAndSellStockIKt.executor": "Debug",
     "Kotlin.BoatsToSaveKt.executor": "Run",
     "Kotlin.CheckArraySortedOrRotateKt.executor": "Debug",
@@ -82,6 +194,7 @@
     "Kotlin.IntersectionTwoArrayIIKt.executor": "Run",
     "Kotlin.IntervalGroupsKt.executor": "Run",
     "Kotlin.IsSubSequenceKt.executor": "Run",
+    "Kotlin.JumpGameKt.executor": "Debug",
     "Kotlin.LeadersInArrayKt.executor": "Run",
     "Kotlin.LeastFrequentlyUsedLFUKt.executor": "Run",
     "Kotlin.LeastRecentlyUsedLRUKt.executor": "Run",
@@ -133,7 +246,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Interview__preparation",
+    "git-widget-placeholder": "Problem__explanation",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/d2c-sangili.murugan/IdeaProjects/Learning/simulation",
     "project.structure.last.edited": "Modules",
@@ -154,21 +267,28 @@
       <recent name="$PROJECT_DIR$/array_hashing_technique" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.TwoSumIIKt">
+  <component name="RunManager" selected="Kotlin.BestTimeToBuyAndSellStockIIKt">
     <configuration name="simulation.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="filePath" value="$PROJECT_DIR$/simulation/bin/simulation.dart" />
       <option name="workingDirectory" value="$PROJECT_DIR$/simulation" />
       <method v="2" />
     </configuration>
-    <configuration name="FindAllAnagramInStringKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="array.two_pointer.FindAllAnagramInStringKt" />
+    <configuration name="BestTimeToBuyAndSellStockIIKt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.greedy.best_time_to_buy_and_sell_stock_ii.BestTimeToBuyAndSellStockIIKt" />
       <module name="Learning" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FindMinimumInRotatedSortedArrayKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="array_traversals.binary_search.FindMinimumInRotatedSortedArrayKt" />
+    <configuration name="BestTimeToBuyAndSellStockIIKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.greedy.BestTimeToBuyAndSellStockIIKt" />
+      <module name="Learning" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JumpGameKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.greedy.JumpGameKt" />
       <module name="Learning" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -176,13 +296,6 @@
     </configuration>
     <configuration name="PlusOneKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DSA.interview_problem.PlusOneKt" />
-      <module name="Learning" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SortingTestKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sorting.SortingTestKt" />
       <module name="Learning" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -197,11 +310,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.BestTimeToBuyAndSellStockIIKt" />
+        <item itemvalue="Kotlin.BestTimeToBuyAndSellStockIIKt (1)" />
+        <item itemvalue="Kotlin.JumpGameKt" />
         <item itemvalue="Kotlin.TwoSumIIKt" />
         <item itemvalue="Kotlin.PlusOneKt" />
-        <item itemvalue="Kotlin.FindAllAnagramInStringKt" />
-        <item itemvalue="Kotlin.FindMinimumInRotatedSortedArrayKt" />
-        <item itemvalue="Kotlin.SortingTestKt" />
       </list>
     </recent_temporary>
   </component>
@@ -277,7 +390,23 @@
       <option name="project" value="LOCAL" />
       <updated>1783580315100</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added All problems with explanation.">
+      <option name="closed" value="true" />
+      <created>1784050636036</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1784050636036</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added All problems with explanation.">
+      <option name="closed" value="true" />
+      <created>1784050674991</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1784050674991</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,22 +425,8 @@
     <MESSAGE value="First" />
     <MESSAGE value="Added New Problems with explanation." />
     <MESSAGE value="Added All Mobile related Topic and Interview Preparation Concepts." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added All Mobile related Topic and Interview Preparation Concepts." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-function">
-          <url>file://$PROJECT_DIR$/DSA/interview_problem/PlusOne.kt</url>
-          <line>45</line>
-          <properties method="main">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Added All problems with explanation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added All problems with explanation." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Learning$ZigZagConversionStringKt.ic" NAME="ZigZagConversionStringKt Coverage Results" MODIFIED="1772600950334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
