@@ -1,48 +1,84 @@
 package array.linear_scan.reverse_a_string
 
+/**
+ * https://leetcode.com/problems/reverse-string/
+ *
+ * Write a function that reverses a string (represented as a char array).
+ * The input is given as a character array `s`, and you must modify it **in-place**
+ * with O(1) extra space.
+ *
+ * Constraints:
+ *   1 <= s.length <= 10^5
+ *   s[i] is a printable ascii character
+ *
+ * Example 1:
+ *   Input:  s = ['h','e','l','l','o']
+ *   Output: ['o','l','l','e','h']
+ *
+ * Example 2:
+ *   Input:  s = ['H','a','n','n','a','h']
+ *   Output: ['h','a','n','n','a','H']
+ */
 fun main() {
-    val array = charArrayOf('h','e','l','l','o')
+    val s1 = charArrayOf('h', 'e', 'l', 'l', 'o')
+    reverseStringBF(s1)
+    println(s1.toList()) // [o, l, l, e, h]
 
-    reverseAStringBF(array)
-    println()
-    reverseAStringOP(array)
-
-//    Output: [5, 6, 2, 3, 4, 1])
+    val s2 = charArrayOf('h', 'e', 'l', 'l', 'o')
+    reverseStringOP(s2)
+    println(s2.toList()) // [o, l, l, e, h]
 }
 
 /**
- * Reverse an Array
- * Bruteforce
- * O(N)
- * We are using Extra Space and O(N) Time Complexity
+ * Brute Force — Extra Array
+ *
+ * Create a new array and copy elements in reverse order.
+ * This uses O(N) extra space, which violates the in-place constraint but
+ * illustrates the basic idea.
+ *
+ * Time Complexity:  O(N) — single pass to copy
+ * Space Complexity: O(N) — extra array of size N
  */
-fun reverseAStringBF(array: CharArray) {
-    val size = array.size
-    val bArray = arrayOfNulls<Char>(size = size)
-    for (i in 0 until size) {
-        bArray[i] = array[size - (i + 1)]
+fun reverseStringBF(s: CharArray) {
+    val n = s.size
+    val temp = CharArray(n)
+    for (i in 0 until n) {
+        temp[i] = s[n - 1 - i]
     }
-    print("Brute Force Approach -> [")
-    bArray.forEach { print("$it ") }
-    print("]")
+    // Copy back into original array
+    for (i in 0 until n) {
+        s[i] = temp[i]
+    }
 }
 
-
 /**
- * Reverse an Array
- * Optimal
- * O(N/2)
- * We are using No Extra Space and O(N/2) Time Complexity
+ * Optimal — Two Pointers (In-Place Swap)
+ *
+ * Use two pointers: left (start) and right (end). Swap s[left] and s[right],
+ * then move both pointers inward until they meet in the middle.
+ *
+ * Trace for s = ['h','e','l','l','o']:
+ *
+ *   left=0, right=4: swap 'h' and 'o' → ['o','e','l','l','h']
+ *   left=1, right=3: swap 'e' and 'l' → ['o','l','l','e','h']
+ *   left=2, right=2: left >= right → stop
+ *
+ *   Result = ['o','l','l','e','h'] ✅
+ *
+ * Time Complexity:  O(N) — each element visited once (N/2 swaps)
+ * Space Complexity: O(1) — in-place, only a temp variable
  */
-fun reverseAStringOP(array: CharArray) {
-    val size = array.size
-    var temp: Char
-    for (i in 0 until size/2) {
-        temp = array[i]
-        array[i] = array[size - (i+1)]
-        array[size - (i+1)] = temp
+fun reverseStringOP(s: CharArray) {
+    var left = 0
+    var right = s.size - 1
+
+    while (left < right) {
+        // Swap s[left] and s[right]
+        val temp = s[left]
+        s[left] = s[right]
+        s[right] = temp
+
+        left++
+        right--
     }
-    print("Optimal Approach -> [")
-    array.forEach { print("$it ") }
-    print("]")
 }

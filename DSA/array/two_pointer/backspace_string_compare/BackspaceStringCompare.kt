@@ -18,42 +18,45 @@ package array.two_pointer.backspace_string_compare
  * Explanation: Both s and t become "".
  */
 fun main() {
-    println(backspaceStringCompareBF("a##c", "#a#c"))
-    println(backspaceStringCompareOP("a##c", "#a#c"))
+    println(backspaceStringCompareStack("a##c", "#a#c"))      // true
+    println(backspaceStringCompareTwoPointer("a##c", "#a#c")) // true
 }
 
 /**
- * Time complexity O(m+n)
- * Space Complexity O(1)
+ * Stack-based approach: Build the final string by simulating backspaces using a list.
+ *
+ * Time complexity:  O(m + n)  — each character is processed once
+ * Space Complexity: O(m + n) — extra storage for the processed strings
  */
-fun backspaceStringCompareBF(s : String,t : String) : Boolean {
+fun backspaceStringCompareStack(s: String, t: String): Boolean {
     val s1 = helperToRemoveHash(s)
     val t1 = helperToRemoveHash(t)
     return s1 == t1
 }
 
-fun helperToRemoveHash(s : String) : String {
+fun helperToRemoveHash(s: String): String {
     val charArray = mutableListOf<Char>()
     for (i in s.indices) {
         if (s[i] != '#') {
             charArray.add(s[i])
         } else {
-            if (charArray.size >= 1)
+            if (charArray.isNotEmpty())
                 charArray.removeAt(charArray.size - 1)
         }
     }
-
-    return charArray.toString()
+    return String(charArray.toCharArray())
 }
 
 /**
- * Time Complexity O(N+M)
- * Space Complexity O(N)
+ * Two-pointer approach: Traverse both strings from the end, skipping backspaced characters.
+ * This achieves O(1) space by not building any intermediate strings.
+ *
+ * Time Complexity:  O(m + n) — each character is visited at most once
+ * Space Complexity: O(1)    — only a few integer variables are used
  */
-fun backspaceStringCompareOP(s : String,t : String) : Boolean {
+fun backspaceStringCompareTwoPointer(s: String, t: String): Boolean {
     var i = s.length - 1
     var j = t.length - 1
-
     var skipS = 0
     var skipT = 0
 

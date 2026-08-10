@@ -1,11 +1,28 @@
-package patterns.bit_manipulation.number_of_1_bits
+package array.bit_manipulation.number_of_1_bits
 
 /**
  * https://leetcode.com/problems/number-of-1-bits/
+ *
  * Count the number of '1' bits in an unsigned integer (Hamming weight).
- * Example: n = 11 (1011) → 3
+ *
+ * Constraints:
+ *   The input must be a binary string of length 32.
+ *
+ * Example 1:
+ *   Input:  n = 11 (binary: 1011)
+ *   Output: 3
+ *
+ * Example 2:
+ *   Input:  n = 128 (binary: 10000000)
+ *   Output: 1
+ *
+ * Example 3:
+ *   Input:  n = 2147483645 (binary: 1111111111111111111111111111101)
+ *   Output: 30
+ *
  * FAANG Importance: ⭐⭐⭐⭐⭐ (Brian Kernighan's algorithm — must know)
  */
+
 
 fun main() {
     println(hammingWeight(11))   // 3 (1011)

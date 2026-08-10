@@ -1,11 +1,25 @@
-package patterns.bit_manipulation.sum_of_two_integers
+package array.bit_manipulation.sum_of_two_integers
 
 /**
  * https://leetcode.com/problems/sum-of-two-integers/
- * Add two integers without using + or - operators.
- * Example: a=1, b=2 → 3; a=2, b=3 → 5
+ *
+ * Given two integers a and b, return the sum of the two integers without using the
+ * operators + and -.
+ *
+ * Constraints:
+ *   -1000 <= a, b <= 1000
+ *
+ * Example 1:
+ *   Input:  a = 1, b = 2
+ *   Output: 3
+ *
+ * Example 2:
+ *   Input:  a = 2, b = 3
+ *   Output: 5
+ *
  * FAANG Importance: ⭐⭐⭐⭐ (Bit manipulation — carry propagation)
  */
+
 
 fun main() {
     println(getSum(1, 2))   // 3

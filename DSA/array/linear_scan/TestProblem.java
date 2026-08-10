@@ -1,4 +1,4 @@
-package array_traversals;
+package DSA.array.linear_scan;
 
 public class TestProblem {
 

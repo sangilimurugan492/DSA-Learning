@@ -1,11 +1,27 @@
-package patterns.bit_manipulation.reverse_bits
+package array.bit_manipulation.reverse_bits
 
 /**
  * https://leetcode.com/problems/reverse-bits/
- * Reverse the 32 bits of an unsigned integer.
- * Example: n=43261596 (10100101000011000010100100) → 964176192
+ *
+ * Reverse the 32 bits of a given unsigned integer.
+ *
+ * Note: In Kotlin/Java, integers are 32-bit signed. Treat the input as unsigned
+ * by using unsigned right shift (ushr).
+ *
+ * Constraints:
+ *   The input must be a binary string of length 32.
+ *
+ * Example 1:
+ *   Input:  n = 43261596 (binary: 00000010100101000001111010011100)
+ *   Output: 964176192   (binary: 00111001011110000010100101000000)
+ *
+ * Example 2:
+ *   Input:  n = 0
+ *   Output: 0
+ *
  * FAANG Importance: ⭐⭐⭐⭐ (Bit reversal — must know)
  */
+
 
 fun main() {
     println(reverseBits(43261596))  // 964176192

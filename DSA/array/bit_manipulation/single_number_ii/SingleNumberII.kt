@@ -43,14 +43,19 @@ fun main() {
  * ones = (ones ^ num) & ~twos  → add to ones if not in twos
  * twos = (twos ^ num) & ~ones  → add to twos if not in ones (after update)
  *
- * Trace for [2,2,3,2]:
- * num=2: ones=2, twos=0
- * num=2: ones=0, twos=2
- * num=3: ones=3, twos=2
- * num=2: ones=0, twos=0 → wait, let me recalculate
+ * Trace for [2, 2, 3, 2] (binary: 2=10, 3=11):
  *
- * Actually: ones tracks bits seen once, twos tracks bits seen twice.
- * After seeing 3 of the same number, both reset → the single number remains in ones.
+ *   num=2: ones=(0^2)&~0=10&11=10=2,  twos=(0^2)&~2=10&01=0     → ones=2,  twos=0
+ *   num=2: ones=(2^2)&~0=0&11=0,      twos=(0^2)&~0=10&11=10=2  → ones=0,  twos=2
+ *   num=3: ones=(0^3)&~2=11&01=01=1,  twos=(2^3)&~1=01&10=0     → ones=1,  twos=0
+ *   num=2: ones=(1^2)&~0=11&11=11=3,  twos=(0^2)&~3=10&00=0     → ones=3,  twos=0
+ *
+ *   Final: ones = 3 → the single number! ✅
+ *
+ * Summary: After seeing 2 three times, its bits cycle through ones→twos→reset.
+ * The single number (3, appearing once) stays in `ones`.
+
+
  */
 fun singleNumberII(nums: IntArray): Int {
     var ones = 0
