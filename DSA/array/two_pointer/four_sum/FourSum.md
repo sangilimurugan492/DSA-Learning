@@ -1,31 +1,21 @@
-# FourSum — Detailed Explanation
+# 4Sum — Detailed Explanation
 
-> **LeetCode** | https://leetcode.com/problems/4sum/description/  
-> **Topic:** Array
+> **LeetCode #18** | [Problem Link](https://leetcode.com/problems/4sum/description/)  
+> **Topic:** Two Pointers / Sorting  
+> **Difficulty:** Medium
 
 ---
 
 ## 📋 Problem Statement
 
- * https://leetcode.com/problems/4sum/description/
- * Given an array nums of n integers, return an array of all the unique quadruplets [nums[a], nums[b], nums[c], nums[d]] such that:
- *
- * 0 <= a, b, c, d < n
- * a, b, c, and d are distinct.
- * nums[a] + nums[b] + nums[c] + nums[d] == target
- * You may return the answer in any order.
- *
- *
- *
- * Example 1:
- *
- * Input: nums = [1,0,-1,0,-2,2], target = 0
- * Output: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
- *
- * Example 2:
- *
- * Input: nums = [2,2,2,2,2], target = 8
- * Output: [[2,2,2,2]]
+Given an array `nums` and a `target`, return all **unique quadruplets** that sum to `target`.
+
+### Example
+
+```
+Input: nums = [1,0,-1,0,-2,2], target = 0
+Output: [[-2,-1,1,2],[-2,0,0,2],[-1,0,0,1]]
+```
 
 ---
 
@@ -33,7 +23,7 @@
 
 ### Core Idea
 
-See implementation in `FourSum.kt` for details.
+Four nested loops checking all quadruplets. Use a Set to avoid duplicates.
 
 ### Complexity
 
@@ -44,25 +34,34 @@ See implementation in `FourSum.kt` for details.
 
 ---
 
-## 🧩 Method 2: Optimal
+## 🧩 Method 2: Sort + Two Pointer (Optimal)
 
 ### Core Idea
 
-See implementation in `FourSum.kt` for details.
+Sort the array. Fix the first two elements with nested loops, then use two pointers for the remaining two. Skip duplicates at every level.
+
+### Key Insight
+
+> After fixing two elements, the problem reduces to "find two numbers that sum to a target" — classic two-pointer on sorted array.
 
 ### Complexity
 
 | Metric | Value |
 |--------|-------|
-| **Time** | O(N³) |
-| **Space** | O(1) |
+| **Time** | O(N³) — two outer loops + two-pointer scan |
+| **Space** | O(1) — ignoring output |
+
+### Overflow Note
+
+Use `Long` for the sum to prevent integer overflow with large values.
 
 ---
 
 ## 🔑 Key Takeaways
 
-1. See the `.kt` file for full implementation and inline comments.
-2. Refer to the LeetCode problem for detailed examples.
+1. **Fix two, two-pointer the rest:** Extends 3Sum pattern by one more nested loop.
+2. **Skip duplicates at all levels:** Essential for unique quadruplets.
+3. **Use Long for sum:** Prevents overflow with large numbers.
 
 ---
 
@@ -70,6 +69,6 @@ See implementation in `FourSum.kt` for details.
 
 | Problem | LeetCode | Difficulty |
 |---------|----------|------------|
-| 3Sum | [https://leetcode.com/problems/3sum/](https://leetcode.com/problems/3sum/) | Medium |
-| 3Sum Closest | [https://leetcode.com/problems/3sum-closest/](https://leetcode.com/problems/3sum-closest/) | Medium |
-| 4Sum II | [https://leetcode.com/problems/4sum-ii/](https://leetcode.com/problems/4sum-ii/) | Medium |
+| 3Sum | [#15](https://leetcode.com/problems/3sum/) | Medium |
+| 4Sum | [#18](https://leetcode.com/problems/4sum/) | Medium |
+| 4Sum II | [#454](https://leetcode.com/problems/4sum-ii/) | Medium |

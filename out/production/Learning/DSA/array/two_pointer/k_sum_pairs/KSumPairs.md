@@ -1,64 +1,58 @@
-# KSumPairs — Detailed Explanation
+# K-Sum Pairs — Detailed Explanation
 
-> **LeetCode** | https://leetcode.com/problems/k-sum-pairs/  
-> **Topic:** Array
+> **LeetCode #1679** | [Problem Link](https://leetcode.com/problems/k-sum-pairs/)  
+> **Topic:** Two Pointers / Sorting  
+> **Difficulty:** Medium
 
 ---
 
 ## 📋 Problem Statement
 
- * https://leetcode.com/problems/k-sum-pairs/
- *
- * Given an array of integers nums and an integer k, return the maximum number of
- * operations you can perform where each operation picks two numbers whose sum equals k
- * and removes them from the array.
- *
- * Example 1:
- *
- * Input: nums = [1,2,3,4], k = 5
- * Output: 2
- * Explanation: (1,4) and (2,3) → 2 operations
- *
- * Example 2:
- *
- * Input: nums = [3,1,3,4,3], k = 6
+Given an array `nums` and integer `k`, return the maximum number of operations where each operation picks two numbers whose sum equals `k` and removes them.
+
+### Example
+
+```
+Input: nums = [1,2,3,4], k = 5
+Output: 2  ((1,4) and (2,3))
+```
 
 ---
 
-## 🧩 Method 1: Brute Force
+## 🧩 Method: Sort + Two Pointer
 
 ### Core Idea
 
-See implementation in `KSumPairs.kt` for details.
+Sort the array, then use two pointers from both ends:
+- `sum == k` → count++, move both pointers
+- `sum < k` → `left++` (need bigger)
+- `sum > k` → `right--` (need smaller)
+
+### Walkthrough: `[1,2,3,4], k=5`
+
+```
+Sorted: [1,2,3,4]
+left=0, right=3: 1+4=5 == k → operations=1, left=1, right=2
+left=1, right=2: 2+3=5 == k → operations=2, left=2, right=1
+left >= right → stop
+
+Result: 2 ✅
+```
 
 ### Complexity
 
 | Metric | Value |
 |--------|-------|
-| **Time** | O(N²) |
-| **Space** | O(N) |
-
----
-
-## 🧩 Method 2: Optimal
-
-### Core Idea
-
-See implementation in `KSumPairs.kt` for details.
-
-### Complexity
-
-| Metric | Value |
-|--------|-------|
-| **Time** | O(N) |
+| **Time** | O(N log N) — dominated by sorting |
 | **Space** | O(1) |
 
 ---
 
 ## 🔑 Key Takeaways
 
-1. See the `.kt` file for full implementation and inline comments.
-2. Refer to the LeetCode problem for detailed examples.
+1. **Sort enables two-pointer:** After sorting, pair smallest with largest.
+2. **Greedy pairing:** If sum < k, we need a bigger number (move left). If sum > k, we need smaller (move right).
+3. **Alternative:** HashMap approach also works in O(N) time, O(N) space.
 
 ---
 
@@ -66,4 +60,6 @@ See implementation in `KSumPairs.kt` for details.
 
 | Problem | LeetCode | Difficulty |
 |---------|----------|------------|
-| KSumPairs | [https://leetcode.com/problems/k-sum-pairs/](https://leetcode.com/problems/k-sum-pairs/) | Medium |
+| K-Sum Pairs | [#1679](https://leetcode.com/problems/k-sum-pairs/) | Medium |
+| Two Sum | [#1](https://leetcode.com/problems/two-sum/) | Easy |
+| Two Sum II | [#167](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/) | Medium |

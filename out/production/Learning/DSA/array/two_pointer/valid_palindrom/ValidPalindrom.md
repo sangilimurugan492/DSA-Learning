@@ -1,64 +1,69 @@
-# ValidPalindrom — Detailed Explanation
+# Valid Palindrome — Detailed Explanation
 
-> **LeetCode** | https://leetcode.com/problems/valid-palindrome/  
-> **Topic:** Array
+> **LeetCode #125** | [Problem Link](https://leetcode.com/problems/valid-palindrome/)  
+> **Topic:** Two Pointers  
+> **Difficulty:** Easy
 
 ---
 
 ## 📋 Problem Statement
 
- * https://leetcode.com/problems/valid-palindrome/
- *
- * Given a string s, return true if it is a palindrome (considering only alphanumeric).
- *
- * Example: "A man, a plan, a canal: Panama" → true
- *
- * FAANG Importance: ⭐⭐⭐⭐ (Classic warm-up)
- */
- * BRUTE FORCE
- * Time Complexity: O(N) — clean string + reverse
- * Space Complexity: O(N) — cleaned string + reversed copy
- *
- * Clean the string (lowercase + alphanumeric only), reverse, compare.
- */
- * OPTIMAL — Two Pointer
+Given a string `s`, return `true` if it is a palindrome, considering only **alphanumeric** characters and ignoring case.
+
+### Examples
+
+| Input | Output | Explanation |
+|-------|--------|-------------|
+| `"A man, a plan, a canal: Panama"` | `true` | Cleaned: `"amanaplanacanalpanama"` — reads same forwards/backwards |
+| `"race a car"` | `false` | Cleaned: `"raceacar"` — not a palindrome |
 
 ---
 
-## 🧩 Method 1: Brute Force
+## 🧩 Method 1: Brute Force (Clean + Reverse)
 
 ### Core Idea
 
-See implementation in `ValidPalindrom.kt` for details.
-
-### Complexity
-
-| Metric | Value |
-|--------|-------|
-| **Time** | O(N²) |
-| **Space** | O(N) |
-
----
-
-## 🧩 Method 2: Optimal
-
-### Core Idea
-
-See implementation in `ValidPalindrom.kt` for details.
+Clean the string (lowercase + alphanumeric only), reverse it, and compare.
 
 ### Complexity
 
 | Metric | Value |
 |--------|-------|
 | **Time** | O(N) |
-| **Space** | O(1) |
+| **Space** | O(N) — cleaned string + reversed copy |
+
+---
+
+## 🧩 Method 2: Two Pointer (Optimal)
+
+### Core Idea
+
+Use two pointers from both ends. Skip non-alphanumeric characters. Compare the lowercase versions of the characters at each pointer.
+
+### Walkthrough: `"A man, a plan, a canal: Panama"`
+
+```
+left=0 ('a'), right=20 ('a') → match → left++, right--
+left=1 (skip ' '), right=19 (skip ':') → left=2 ('m'), right=18 ('m') → match
+... continues until left >= right
+
+Result: true ✅
+```
+
+### Complexity
+
+| Metric | Value |
+|--------|-------|
+| **Time** | O(N) — single pass |
+| **Space** | O(1) — no extra string |
 
 ---
 
 ## 🔑 Key Takeaways
 
-1. See the `.kt` file for full implementation and inline comments.
-2. Refer to the LeetCode problem for detailed examples.
+1. **Skip non-alphanumeric:** Use `isLetterOrDigit()` to skip spaces, punctuation, etc.
+2. **Case-insensitive:** Compare using `lowercaseChar()`.
+3. **Two pointers save space:** No need to build a cleaned string — compare in-place.
 
 ---
 
@@ -66,4 +71,6 @@ See implementation in `ValidPalindrom.kt` for details.
 
 | Problem | LeetCode | Difficulty |
 |---------|----------|------------|
-| ValidPalindrom | [https://leetcode.com/problems/valid-palindrome/](https://leetcode.com/problems/valid-palindrome/) | Medium |
+| Valid Palindrome | [#125](https://leetcode.com/problems/valid-palindrome/) | Easy |
+| Valid Palindrome II | [#680](https://leetcode.com/problems/valid-palindrome-ii/) | Easy |
+| Longest Palindromic Substring | [#5](https://leetcode.com/problems/longest-palindromic-substring/) | Medium |

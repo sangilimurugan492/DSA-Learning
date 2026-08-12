@@ -37,7 +37,7 @@ fun main() {
 /**
  * Brute Force Method
  * Time Complexity O(N^2)
- * Space Complexity O(N)
+ * Space Complexity O(1)
  * Time taken in leetcode : 117 ms
  */
 fun findPivotIndexBF(nums: IntArray) : Int {
@@ -63,7 +63,7 @@ fun findPivotIndexBF(nums: IntArray) : Int {
 /**
  * Optimal Method
  * Time Complexity O(N)
- * Space Complexity O(N)
+ * Space Complexity O(1)
  * Time taken in leetcode : 1 ms
  */
 fun findPivotIndexOP(nums: IntArray) : Int {

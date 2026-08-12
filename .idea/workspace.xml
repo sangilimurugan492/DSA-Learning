@@ -5,41 +5,134 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63e6e312-ba97-461c-9408-efe0eb739fb1" name="Changes" comment="Added All problems with explanation.">
+      <change afterPath="$PROJECT_DIR$/DSA/array/sliding_window/max_consecutive_ones_iii/MaxConsecutiveOnesIII.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/array/sliding_window/max_consecutive_ones_iii/MaxConsecutiveOnesIII.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/bit_manipulation/counting_bits/CountingBits.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/bit_manipulation/counting_bits/CountingBits.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/bit_manipulation/missing_number/MissingNumber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/bit_manipulation/missing_number/MissingNumber.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/bit_manipulation/number_of_1_bits/NumberOf1Bits.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/bit_manipulation/number_of_1_bits/NumberOf1Bits.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/bit_manipulation/power_of_two/PowerOfTwo.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/bit_manipulation/power_of_two/PowerOfTwo.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/bit_manipulation/reverse_bits/ReverseBits.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/bit_manipulation/reverse_bits/ReverseBits.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/bit_manipulation/single_number/SingleNumber.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/bit_manipulation/single_number/SingleNumber.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/bit_manipulation/single_number_ii/SingleNumberII.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/bit_manipulation/single_number_ii/SingleNumberII.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/bit_manipulation/single_number_ii/SingleNumberII.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/bit_manipulation/single_number_ii/SingleNumberII.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/bit_manipulation/sum_of_two_integers/SumOfTwoIntegers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/bit_manipulation/sum_of_two_integers/SumOfTwoIntegers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/TestProblem.java" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/TestProblem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/height_checker/HeightChecker.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/height_checker/HeightChecker.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/height_checker/HeightChecker.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/height_checker/HeightChecker.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/check_array_sorted_or_rotate/CheckArraySortedOrRotate.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/check_array_sorted_or_rotate/CheckArraySortedOrRotate.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/count_negatives_in_matrix/CountNegativesInMatrix.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/count_negatives_in_matrix/CountNegativesInMatrix.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/finding_pivot_index/FindingPivotIndex.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/finding_pivot_index/FindingPivotIndex.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/first_repeating_element/FirstRepeatingElement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/first_repeating_element/FirstRepeatingElement.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/leaders_in_array/LeadersInArray.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/leaders_in_array/LeadersInArray.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/leaders_in_array/LeadersInArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/leaders_in_array/LeadersInArray.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/minimum_absolute_difference/MinimumAbsoluteDifference.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/minimum_absolute_difference/MinimumAbsoluteDifference.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/minimum_absolute_difference/MinimumAbsoluteDifference.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/minimum_absolute_difference/MinimumAbsoluteDifference.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/number_of_distinct_averages/NumberOfDistinctAverages.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/number_of_distinct_averages/NumberOfDistinctAverages.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/number_of_distinct_averages/NumberOfDistinctAverages.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/number_of_distinct_averages/NumberOfDistinctAverages.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/reverse_a_string/ReverseAString.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/reverse_a_string/ReverseAString.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/reverse_a_string/ReverseAString.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/reverse_a_string/ReverseAString.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/reverse_an_array/ReverseAnArray.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/reverse_an_array/ReverseAnArray.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/linear_scan/reverse_an_array/ReverseAnArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/linear_scan/reverse_an_array/ReverseAnArray.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/backspace_string_compare/BackspaceStringCompare.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/backspace_string_compare/BackspaceStringCompare.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/backspace_string_compare/BackspaceStringCompare.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/backspace_string_compare/BackspaceStringCompare.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/boats_to_save/BoatsToSave.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/boats_to_save/BoatsToSave.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/boats_to_save/BoatsToSave.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/boats_to_save/BoatsToSave.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer_inplace/remove_element/RemoveElement.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer_inplace/remove_element/RemoveElement.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer_inplace/remove_element/RemoveElement.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer_inplace/remove_element/RemoveElement.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/voting_floyd/find_dupplicate_number/FindDupplicateNumber.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/voting_floyd/find_dupplicate_number/FindDupplicateNumber.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/voting_floyd/find_dupplicate_number/FindDupplicateNumber.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/voting_floyd/find_dupplicate_number/FindDupplicateNumber.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/voting_floyd/missing_number_in_array/MissingNumberInArray.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/voting_floyd/missing_number_in_array/MissingNumberInArray.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/voting_floyd/missing_number_in_array/MissingNumberInArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/voting_floyd/missing_number_in_array/MissingNumberInArray.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/interview_problem/plus_one/PlusOne.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/interview_problem/plus_one/PlusOne.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/container_with_most_water/ContainerWithMostWater.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/container_with_most_water/ContainerWithMostWater.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/count_number_of_nice_subarrays/CountNumberOfNiceSubarrays.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/count_number_of_nice_subarrays/CountNumberOfNiceSubarrays.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/count_number_of_nice_subarrays/CountNumberOfNiceSubarrays.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/count_number_of_nice_subarrays/CountNumberOfNiceSubarrays.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/find_all_anagram_in_string/FindAllAnagramInString.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/find_all_anagram_in_string/FindAllAnagramInString.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/four_sum/FourSum.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/four_sum/FourSum.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/four_sum_ii/FourSumII.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/four_sum_ii/FourSumII.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/intersection_two_array_ii/IntersectionTwoArrayII.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/intersection_two_array_ii/IntersectionTwoArrayII.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/intersection_two_array_ii/IntersectionTwoArrayII.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/intersection_two_array_ii/IntersectionTwoArrayII.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/is_sub_sequence/IsSubSequence.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/is_sub_sequence/IsSubSequence.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/is_sub_sequence/IsSubSequence.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/is_sub_sequence/IsSubSequence.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/k_sum_pairs/KSumPairs.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/k_sum_pairs/KSumPairs.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/k_sum_pairs/KSumPairs.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/k_sum_pairs/KSumPairs.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/longest_palindrom_sub_string/LongestPalindromSubString.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/longest_palindrom_sub_string/LongestPalindromSubString.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/longest_palindrom_sub_string/LongestPalindromSubString.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/longest_palindrom_sub_string/LongestPalindromSubString.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/longest_repeating_charcter_replacement/LongestRepeatingCharcterReplacement.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/longest_repeating_charcter_replacement/LongestRepeatingCharcterReplacement.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/longest_sub_string_without_repeating_character/LongestSubStringWithoutRepeatingCharacter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/longest_sub_string_without_repeating_character/LongestSubStringWithoutRepeatingCharacter.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/max_consecutive_ones_iii/MaxConsecutiveOnesIII.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/max_consecutive_ones_iii/MaxConsecutiveOnesIII.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/merge_sorted_array/MergeSortedArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/merge_sorted_array/MergeSortedArray.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/minimum_pair_removalto_sort_array_i/MinimumPairRemovaltoSortArrayI.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/minimum_pair_removalto_sort_array_i/MinimumPairRemovaltoSortArrayI.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/minimum_pair_removalto_sort_array_i/MinimumPairRemovaltoSortArrayI.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/minimum_pair_removalto_sort_array_i/MinimumPairRemovaltoSortArrayI.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/minimum_size_sub_array_sum/MinimumSizeSubArraySum.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/minimum_size_sub_array_sum/MinimumSizeSubArraySum.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/move_zeros_to_end/MoveZerosToEnd.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/move_zeros_to_end/MoveZerosToEnd.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/move_zeros_to_end/MoveZerosToEnd.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/move_zeros_to_end/MoveZerosToEnd.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/permutation_in_string/PermutationInString.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/permutation_in_string/PermutationInString.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/remove_element_in_an_array/RemoveElementInAnArray.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/remove_element_in_an_array/RemoveElementInAnArray.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/remove_element_in_an_array/RemoveElementInAnArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/remove_element_in_an_array/RemoveElementInAnArray.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/sort_colors_dutch_national_flag/SortColorsDutchNationalFlag.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/sort_colors_dutch_national_flag/SortColorsDutchNationalFlag.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/sort_colors_dutch_national_flag/SortColorsDutchNationalFlag.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/sort_colors_dutch_national_flag/SortColorsDutchNationalFlag.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/string_compression/StringCompression.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/string_compression/StringCompression.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/string_compression/StringCompression.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/string_compression/StringCompression.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/sub_array_with_k_different_integer/SubArrayWithKDifferentInteger.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/sub_array_with_k_different_integer/SubArrayWithKDifferentInteger.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/trapping_rain_water_i/TrappingRainWaterI.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/trapping_rain_water_i/TrappingRainWaterI.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/two_sum_less_than_k/TwoSumLessThanK.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/two_sum_less_than_k/TwoSumLessThanK.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/two_sum_less_than_k/TwoSumLessThanK.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/two_sum_less_than_k/TwoSumLessThanK.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/two_sum_level_two_with_sorted_array/TwoSumLevelTwoWithSortedArray.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/two_sum_level_two_with_sorted_array/TwoSumLevelTwoWithSortedArray.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/two_sum_level_two_with_sorted_array/TwoSumLevelTwoWithSortedArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/two_sum_level_two_with_sorted_array/TwoSumLevelTwoWithSortedArray.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/two_pointer/valid_palindrom/ValidPalindrom.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/two_pointer/valid_palindrom/ValidPalindrom.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/bit_manipulation/single_number/SingleNumber.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/bit_manipulation/single_number/SingleNumber.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/bit_manipulation/single_number_ii/SingleNumberII.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/bit_manipulation/single_number_ii/SingleNumberII.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/complement_search/two_sum_ii/TwoSumII.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/linear_scan/count_negatives_in_matrix/CountNegativesInMatrix.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/linear_scan/count_negatives_in_matrix/CountNegativesInMatrix.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/linear_scan/height_checker/HeightChecker.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/linear_scan/height_checker/HeightChecker.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/linear_scan/leaders_in_array/LeadersInArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/linear_scan/leaders_in_array/LeadersInArray.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/linear_scan/minimum_absolute_difference/MinimumAbsoluteDifference.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/linear_scan/minimum_absolute_difference/MinimumAbsoluteDifference.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/linear_scan/number_of_distinct_averages/NumberOfDistinctAverages.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/linear_scan/number_of_distinct_averages/NumberOfDistinctAverages.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/linear_scan/reverse_a_string/ReverseAString.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/linear_scan/reverse_a_string/ReverseAString.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/linear_scan/reverse_an_array/ReverseAnArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/linear_scan/reverse_an_array/ReverseAnArray.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/backspace_string_compare/BackspaceStringCompare.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/backspace_string_compare/BackspaceStringCompare.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/boats_to_save/BoatsToSave.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/boats_to_save/BoatsToSave.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/count_number_of_nice_subarrays/CountNumberOfNiceSubarrays.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/count_number_of_nice_subarrays/CountNumberOfNiceSubarrays.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/find_all_anagram_in_string/FindAllAnagramInString.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/find_all_anagram_in_string/FindAllAnagramInString.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/four_sum/FourSum.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/four_sum/FourSum.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/intersection_two_array_ii/IntersectionTwoArrayII.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/intersection_two_array_ii/IntersectionTwoArrayII.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/is_sub_sequence/IsSubSequence.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/is_sub_sequence/IsSubSequence.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/k_sum_pairs/KSumPairs.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/k_sum_pairs/KSumPairs.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/longest_palindrom_sub_string/LongestPalindromSubString.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/longest_palindrom_sub_string/LongestPalindromSubString.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/longest_repeating_charcter_replacement/LongestRepeatingCharcterReplacement.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/longest_repeating_charcter_replacement/LongestRepeatingCharcterReplacement.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/longest_sub_string_without_repeating_character/LongestSubStringWithoutRepeatingCharacter.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/longest_sub_string_without_repeating_character/LongestSubStringWithoutRepeatingCharacter.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/max_consecutive_ones_iii/MaxConsecutiveOnesIII.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/max_consecutive_ones_iii/MaxConsecutiveOnesIII.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/merge_sorted_array/MergeSortedArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/merge_sorted_array/MergeSortedArray.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/minimum_pair_removalto_sort_array_i/MinimumPairRemovaltoSortArrayI.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/minimum_pair_removalto_sort_array_i/MinimumPairRemovaltoSortArrayI.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/minimum_size_sub_array_sum/MinimumSizeSubArraySum.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/minimum_size_sub_array_sum/MinimumSizeSubArraySum.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/move_zeros_to_end/MoveZerosToEnd.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/move_zeros_to_end/MoveZerosToEnd.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/permutation_in_string/PermutationInString.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/permutation_in_string/PermutationInString.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/remove_element_in_an_array/RemoveElementInAnArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/remove_element_in_an_array/RemoveElementInAnArray.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/sort_colors_dutch_national_flag/SortColorsDutchNationalFlag.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/sort_colors_dutch_national_flag/SortColorsDutchNationalFlag.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/string_compression/StringCompression.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/string_compression/StringCompression.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/sub_array_with_k_different_integer/SubArrayWithKDifferentInteger.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/sub_array_with_k_different_integer/SubArrayWithKDifferentInteger.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/three_sum_closet/ThreeSumCloset.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/trapping_rain_water_i/TrappingRainWaterI.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/trapping_rain_water_i/TrappingRainWaterI.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/two_sum_less_than_k/TwoSumLessThanK.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/two_sum_less_than_k/TwoSumLessThanK.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/two_sum_level_two_with_sorted_array/TwoSumLevelTwoWithSortedArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/two_sum_level_two_with_sorted_array/TwoSumLevelTwoWithSortedArray.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/valid_palindrom/ValidPalindrom.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer/valid_palindrom/ValidPalindrom.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer_inplace/remove_element/RemoveElement.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/two_pointer_inplace/remove_element/RemoveElement.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/voting_floyd/find_dupplicate_number/FindDupplicateNumber.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/voting_floyd/find_dupplicate_number/FindDupplicateNumber.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/voting_floyd/missing_number_in_array/MissingNumberInArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/voting_floyd/missing_number_in_array/MissingNumberInArray.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/interview_problem/plus_one/PlusOne.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/META-INF/Learning.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/META-INF/Learning.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/bit_manipulation/single_number_ii/SingleNumberIIKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/bit_manipulation/single_number_ii/SingleNumberIIKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/complement_search/two_sum_ii/TwoSumIIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/finding_pivot_index/FindingPivotIndexKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/finding_pivot_index/FindingPivotIndexKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/first_repeating_element/FirstRepeatingElementKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/first_repeating_element/FirstRepeatingElementKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/height_checker/HeightCheckerKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/height_checker/HeightCheckerKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/leaders_in_array/LeadersInArrayKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/leaders_in_array/LeadersInArrayKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/minimum_absolute_difference/MinimumAbsoluteDifferenceKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/minimum_absolute_difference/MinimumAbsoluteDifferenceKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/number_of_distinct_averages/NumberOfDistinctAveragesKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/number_of_distinct_averages/NumberOfDistinctAveragesKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/reverse_a_string/ReverseAStringKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/reverse_a_string/ReverseAStringKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/reverse_an_array/ReverseAnArrayKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/linear_scan/reverse_an_array/ReverseAnArrayKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/backspace_string_compare/BackspaceStringCompareKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/backspace_string_compare/BackspaceStringCompareKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/boats_to_save/BoatsToSaveKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/boats_to_save/BoatsToSaveKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/longest_palindrom_sub_string/LongestPalindromSubStringKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/longest_palindrom_sub_string/LongestPalindromSubStringKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/longest_sub_string_without_repeating_character/LongestSubStringWithoutRepeatingCharacterKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/longest_sub_string_without_repeating_character/LongestSubStringWithoutRepeatingCharacterKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/move_zeros_to_end/MoveZerosToEndKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/move_zeros_to_end/MoveZerosToEndKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/remove_element_in_an_array/RemoveElementInAnArrayKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/remove_element_in_an_array/RemoveElementInAnArrayKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/sort_colors_dutch_national_flag/SortColorsDutchNationalFlagKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/sort_colors_dutch_national_flag/SortColorsDutchNationalFlagKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/three_sum_closet/ThreeSumClosetKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/two_sum_level_two_with_sorted_array/TwoSumLevelTwoWithSortedArrayKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/two_sum_level_two_with_sorted_array/TwoSumLevelTwoWithSortedArrayKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer_inplace/remove_element/RemoveElementKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/two_pointer_inplace/remove_element/RemoveElementKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/voting_floyd/find_dupplicate_number/FindDupplicateNumberKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/voting_floyd/find_dupplicate_number/FindDupplicateNumberKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/voting_floyd/missing_number_in_array/MissingNumberInArrayKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/voting_floyd/missing_number_in_array/MissingNumberInArrayKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array_traversals/TestProblem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array_traversals/two_pointer_technique/IntersectionTwoArrayIIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array_traversals/two_pointer_technique/IsSubSequenceKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array_traversals/two_pointer_technique/MinimumPairRemovaltoSortArrayIKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_problem/plus_one/PlusOneKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/interview_schedule/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/patterns/bit_manipulation/counting_bits/CountingBitsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/patterns/bit_manipulation/missing_number/MissingNumberKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/patterns/bit_manipulation/number_of_1_bits/NumberOf1BitsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/patterns/bit_manipulation/power_of_two/PowerOfTwoKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/patterns/bit_manipulation/reverse_bits/ReverseBitsKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/patterns/bit_manipulation/sum_of_two_integers/SumOfTwoIntegersKt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/patterns/two_pointer/three_sum_closest/ThreeSumClosestKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/patterns/two_pointer/three_sum_closest/ThreeSumClosestKt.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,101 +176,102 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.TestJavaProblem.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TestProblem.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.AddBinaryKt.executor&quot;: &quot;Debug&quot;,
-    &quot;Kotlin.AddDigitsKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.AddStringKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.AddTowNumbersKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.AssignCookiesKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.BestTimeToBuyAndSellStockIIKt (1).executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.BestTimeToBuyAndSellStockIIKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.BestTimeToBuyAndSellStockIKt.executor&quot;: &quot;Debug&quot;,
-    &quot;Kotlin.BoatsToSaveKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.CheckArraySortedOrRotateKt.executor&quot;: &quot;Debug&quot;,
-    &quot;Kotlin.CheckIfNDoubleExitsKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ContainerWithMostWaterKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.CountDistinctElementsKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.CountFrequencyOfElementKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.CountNegativesInMatrixKt.executor&quot;: &quot;Debug&quot;,
-    &quot;Kotlin.CountTheNumberOfPairsKt.executor&quot;: &quot;Debug&quot;,
-    &quot;Kotlin.FindAllAnagramInStringKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.FindMinimumInRotatedSortedArrayKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.FindingPairsWithCertainSumKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.FindingPivotIndexKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.FirstRepeatingElementKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.FizzBuzzKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.FlatternDoubleLLMultiLevelKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.FruitsIntoBasketsKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.GrumpyBookStoreOwnerKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.HeightCheckerKt.executor&quot;: &quot;Debug&quot;,
-    &quot;Kotlin.IntegerToRomanKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.IntersectionTwoArrayIIKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.IntervalGroupsKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.IsSubSequenceKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.JumpGameKt.executor&quot;: &quot;Debug&quot;,
-    &quot;Kotlin.LeadersInArrayKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.LeastFrequentlyUsedLFUKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.LeastRecentlyUsedLRUKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.LetterAndCombinationPhoneNumberKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.LinkedListBinaryToIntegerKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.LongestPalidromStringKt.executor&quot;: &quot;Debug&quot;,
-    &quot;Kotlin.LongestPalindromSubStringKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.LongestRepeatingCharcterReplacementKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.LongestSubArrayAfterDeletingOneKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.LongestSubStringWithoutRepeatingCharacterKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.LongestValidParenthesesKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MajorityOfElementsKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MaximumAverageSubArrayKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MedianOfTwoSortedSubArrayKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MinimumPairRemovaltoSortArrayIKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MinimumSizeSubArraySumKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MissingNumberInArrayKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MyLinkedListKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.NonOverlappingIntervalsKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.PatiotionListKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.PermutationInStringKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.PlusOneKt.executor&quot;: &quot;Debug&quot;,
-    &quot;Kotlin.RemoveElementInAnArrayKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.RemoveElementKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.RemoveNthNodeFromLastKt.executor&quot;: &quot;Debug&quot;,
-    &quot;Kotlin.ReplaceGratestElementOnRightKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ReverseLinkedListIIKt.executor&quot;: &quot;Debug&quot;,
-    &quot;Kotlin.ReverseLinkedListKGroupKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ReverseLinkedListKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.RotateLinkedListKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.RunningSum1DArrayKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.SearchInsertPositionKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.SortColorsDutchNationalFlagKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.SortedSquaresKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.SortingTestKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.SpiralMatrixIIKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.SpiralMatrixKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.StringCompressionKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.StringToIntegerKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.SubArrayWithKDifferentIntegerKt.executor&quot;: &quot;Debug&quot;,
-    &quot;Kotlin.TextJustificationKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ThreeSumKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.TrappingRainWaterIKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.TwoSumIIKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.TwoSumLevelTwoWithSortedArrayKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ValidParenthesesKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.ZigZagConversionStringKt.executor&quot;: &quot;Coverage&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Problem__explanation&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/d2c-sangili.murugan/IdeaProjects/Learning/simulation&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.TestJavaProblem.executor": "Run",
+    "Application.TestProblem.executor": "Run",
+    "Kotlin.AddBinaryKt.executor": "Debug",
+    "Kotlin.AddDigitsKt.executor": "Run",
+    "Kotlin.AddStringKt.executor": "Run",
+    "Kotlin.AddTowNumbersKt.executor": "Run",
+    "Kotlin.AssignCookiesKt.executor": "Run",
+    "Kotlin.BestTimeToBuyAndSellStockIIKt (1).executor": "Run",
+    "Kotlin.BestTimeToBuyAndSellStockIIKt.executor": "Run",
+    "Kotlin.BestTimeToBuyAndSellStockIKt.executor": "Debug",
+    "Kotlin.BoatsToSaveKt.executor": "Run",
+    "Kotlin.CheckArraySortedOrRotateKt.executor": "Debug",
+    "Kotlin.CheckIfNDoubleExitsKt.executor": "Run",
+    "Kotlin.ContainerWithMostWaterKt.executor": "Run",
+    "Kotlin.CountDistinctElementsKt.executor": "Run",
+    "Kotlin.CountFrequencyOfElementKt.executor": "Run",
+    "Kotlin.CountNegativesInMatrixKt.executor": "Debug",
+    "Kotlin.CountNumberOfNiceSubarraysKt.executor": "Debug",
+    "Kotlin.CountTheNumberOfPairsKt.executor": "Debug",
+    "Kotlin.FindAllAnagramInStringKt.executor": "Run",
+    "Kotlin.FindMinimumInRotatedSortedArrayKt.executor": "Run",
+    "Kotlin.FindingPairsWithCertainSumKt.executor": "Run",
+    "Kotlin.FindingPivotIndexKt.executor": "Run",
+    "Kotlin.FirstRepeatingElementKt.executor": "Run",
+    "Kotlin.FizzBuzzKt.executor": "Run",
+    "Kotlin.FlatternDoubleLLMultiLevelKt.executor": "Run",
+    "Kotlin.FruitsIntoBasketsKt.executor": "Run",
+    "Kotlin.GrumpyBookStoreOwnerKt.executor": "Run",
+    "Kotlin.HeightCheckerKt.executor": "Debug",
+    "Kotlin.IntegerToRomanKt.executor": "Run",
+    "Kotlin.IntersectionTwoArrayIIKt.executor": "Run",
+    "Kotlin.IntervalGroupsKt.executor": "Run",
+    "Kotlin.IsSubSequenceKt.executor": "Run",
+    "Kotlin.JumpGameKt.executor": "Debug",
+    "Kotlin.LeadersInArrayKt.executor": "Run",
+    "Kotlin.LeastFrequentlyUsedLFUKt.executor": "Run",
+    "Kotlin.LeastRecentlyUsedLRUKt.executor": "Run",
+    "Kotlin.LetterAndCombinationPhoneNumberKt.executor": "Run",
+    "Kotlin.LinkedListBinaryToIntegerKt.executor": "Run",
+    "Kotlin.LongestPalidromStringKt.executor": "Debug",
+    "Kotlin.LongestPalindromSubStringKt.executor": "Run",
+    "Kotlin.LongestRepeatingCharcterReplacementKt.executor": "Run",
+    "Kotlin.LongestSubArrayAfterDeletingOneKt.executor": "Run",
+    "Kotlin.LongestSubStringWithoutRepeatingCharacterKt.executor": "Run",
+    "Kotlin.LongestValidParenthesesKt.executor": "Run",
+    "Kotlin.MajorityOfElementsKt.executor": "Run",
+    "Kotlin.MaximumAverageSubArrayKt.executor": "Run",
+    "Kotlin.MedianOfTwoSortedSubArrayKt.executor": "Run",
+    "Kotlin.MinimumPairRemovaltoSortArrayIKt.executor": "Run",
+    "Kotlin.MinimumSizeSubArraySumKt.executor": "Run",
+    "Kotlin.MissingNumberInArrayKt.executor": "Run",
+    "Kotlin.MyLinkedListKt.executor": "Run",
+    "Kotlin.NonOverlappingIntervalsKt.executor": "Run",
+    "Kotlin.PatiotionListKt.executor": "Run",
+    "Kotlin.PermutationInStringKt.executor": "Run",
+    "Kotlin.PlusOneKt.executor": "Debug",
+    "Kotlin.RemoveElementInAnArrayKt.executor": "Run",
+    "Kotlin.RemoveElementKt.executor": "Run",
+    "Kotlin.RemoveNthNodeFromLastKt.executor": "Debug",
+    "Kotlin.ReplaceGratestElementOnRightKt.executor": "Run",
+    "Kotlin.ReverseLinkedListIIKt.executor": "Debug",
+    "Kotlin.ReverseLinkedListKGroupKt.executor": "Run",
+    "Kotlin.ReverseLinkedListKt.executor": "Run",
+    "Kotlin.RotateLinkedListKt.executor": "Run",
+    "Kotlin.RunningSum1DArrayKt.executor": "Run",
+    "Kotlin.SearchInsertPositionKt.executor": "Run",
+    "Kotlin.SortColorsDutchNationalFlagKt.executor": "Run",
+    "Kotlin.SortedSquaresKt.executor": "Run",
+    "Kotlin.SortingTestKt.executor": "Run",
+    "Kotlin.SpiralMatrixIIKt.executor": "Run",
+    "Kotlin.SpiralMatrixKt.executor": "Run",
+    "Kotlin.StringCompressionKt.executor": "Run",
+    "Kotlin.StringToIntegerKt.executor": "Run",
+    "Kotlin.SubArrayWithKDifferentIntegerKt.executor": "Debug",
+    "Kotlin.TextJustificationKt.executor": "Run",
+    "Kotlin.ThreeSumKt.executor": "Run",
+    "Kotlin.TrappingRainWaterIKt.executor": "Run",
+    "Kotlin.TwoSumIIKt.executor": "Run",
+    "Kotlin.TwoSumLevelTwoWithSortedArrayKt.executor": "Run",
+    "Kotlin.ValidParenthesesKt.executor": "Run",
+    "Kotlin.ZigZagConversionStringKt.executor": "Coverage",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "Problem__explanation",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/d2c-sangili.murugan/IdeaProjects/Learning/simulation",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/simulation" />
@@ -190,7 +284,7 @@
       <recent name="$PROJECT_DIR$/array_hashing_technique" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.BestTimeToBuyAndSellStockIIKt (1)">
+  <component name="RunManager" selected="Kotlin.ContainerWithMostWaterKt">
     <configuration name="simulation.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="filePath" value="$PROJECT_DIR$/simulation/bin/simulation.dart" />
       <option name="workingDirectory" value="$PROJECT_DIR$/simulation" />
@@ -210,22 +304,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JumpGameKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="array.greedy.JumpGameKt" />
+    <configuration name="ContainerWithMostWaterKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.two_pointer.container_with_most_water.ContainerWithMostWaterKt" />
       <module name="Learning" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlusOneKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DSA.interview_problem.PlusOneKt" />
+    <configuration name="CountNumberOfNiceSubarraysKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.two_pointer.count_number_of_nice_subarrays.CountNumberOfNiceSubarraysKt" />
       <module name="Learning" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TwoSumIIKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="array.complement_search.TwoSumIIKt" />
+    <configuration name="HeightCheckerKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.linear_scan.height_checker.HeightCheckerKt" />
       <module name="Learning" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -233,11 +327,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.ContainerWithMostWaterKt" />
+        <item itemvalue="Kotlin.HeightCheckerKt" />
+        <item itemvalue="Kotlin.CountNumberOfNiceSubarraysKt" />
         <item itemvalue="Kotlin.BestTimeToBuyAndSellStockIIKt (1)" />
         <item itemvalue="Kotlin.BestTimeToBuyAndSellStockIIKt" />
-        <item itemvalue="Kotlin.JumpGameKt" />
-        <item itemvalue="Kotlin.TwoSumIIKt" />
-        <item itemvalue="Kotlin.PlusOneKt" />
       </list>
     </recent_temporary>
   </component>
@@ -337,7 +431,15 @@
       <option name="project" value="LOCAL" />
       <updated>1785858875660</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added All problems with explanation.">
+      <option name="closed" value="true" />
+      <created>1786382448796</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1786382448796</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

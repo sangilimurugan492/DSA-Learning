@@ -35,56 +35,44 @@ fun main() {
 }
 
 /**
- * Brute force approach: Try all possible pairings using recursion.
+ * Brute Force: Sort, then greedily pair each person with the heaviest
+ * possible partner using a simple scan.
  *
- * For each unboarded person, we have two choices:
- * 1. Send them alone in a boat.
- * 2. Pair them with every other unboarded person (if combined weight <= limit).
+ * For each unboarded person (lightest first), scan from the heaviest
+ * unboarded person downward to find a partner that fits within limit.
+ * If no partner found, they go alone.
  *
- * We explore all possibilities and return the minimum boat count.
- *
- * Time Complexity:  O(n * 2^n) — exponential, each person can be paired or go alone
- * Space Complexity: O(n)      — recursion stack + visited array
+ * Time Complexity:  O(N²) — for each person, scan remaining unboarded people
+ * Space Complexity: O(N)  — boarded array
  */
 fun numRescueBoatsBF(people: IntArray, limit: Int): Int {
+    people.sort()
     val boarded = BooleanArray(people.size)
-    return numRescueBoatsBFHelper(people, limit, boarded, people.size)
-}
+    var boats = 0
 
-private fun numRescueBoatsBFHelper(
-    people: IntArray,
-    limit: Int,
-    boarded: BooleanArray,
-    remaining: Int
-): Int {
-    // Base case: everyone has been boarded
-    if (remaining == 0) return 0
+    for (i in people.indices) {
+        if (boarded[i]) continue // Already boarded
 
-    // Find the first unboarded person
-    var firstUnboarded = 0
-    while (firstUnboarded < people.size && boarded[firstUnboarded]) firstUnboarded++
-
-    var minBoats = Int.MAX_VALUE
-
-    // Option 1: Send this person alone
-    boarded[firstUnboarded] = true
-    minBoats = 1 + numRescueBoatsBFHelper(people, limit, boarded, remaining - 1)
-    boarded[firstUnboarded] = false
-
-    // Option 2: Pair this person with every other unboarded person
-    for (j in firstUnboarded + 1 until people.size) {
-        if (!boarded[j] && people[firstUnboarded] + people[j] <= limit) {
-            boarded[firstUnboarded] = true
-            boarded[j] = true
-            val boats = 1 + numRescueBoatsBFHelper(people, limit, boarded, remaining - 2)
-            if (boats < minBoats) minBoats = boats
-            boarded[firstUnboarded] = false
-            boarded[j] = false
+        // Try to pair person i with the heaviest unboarded person
+        var partner = -1
+        for (j in people.size - 1 downTo i + 1) {
+            if (!boarded[j] && people[i] + people[j] <= limit) {
+                partner = j
+                break
+            }
         }
+
+        // Board person i (and their partner if found)
+        boarded[i] = true
+        if (partner != -1) {
+            boarded[partner] = true
+        }
+        boats++
     }
 
-    return minBoats
+    return boats
 }
+
 
 /**
  * Two-pointer greedy approach:

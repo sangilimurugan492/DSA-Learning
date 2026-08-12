@@ -1,64 +1,54 @@
-# PermutationInString — Detailed Explanation
+# Permutation in String — Detailed Explanation
 
-> **LeetCode** | https://leetcode.com/problems/permutation-in-string/  
-> **Topic:** Array
+> **LeetCode #567** | [Problem Link](https://leetcode.com/problems/permutation-in-string/)  
+> **Topic:** Sliding Window  
+> **Difficulty:** Medium
 
 ---
 
 ## 📋 Problem Statement
 
- * https://leetcode.com/problems/permutation-in-string/
- *
- * Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.
- *
- * In other words, return true if one of s1's permutations is the substring of s2.
- *
- *
- *
- * Example 1:
- *
- * Input: s1 = "ab", s2 = "eidbaooo"
- * Output: true
- * Explanation: s2 contains one permutation of s1 ("ba").
- * Example 2:
- *
+Given two strings `s1` and `s2`, return `true` if `s2` contains a permutation of `s1` (i.e., a substring that is an anagram of `s1`).
+
+### Example
+
+```
+Input: s1 = "ab", s2 = "eidbaooo"
+Output: true  ("ba" is a permutation of "ab")
+```
 
 ---
 
-## 🧩 Method 1: Brute Force
+## 🧩 Method: Sliding Window with Frequency Count
 
 ### Core Idea
 
-See implementation in `PermutationInString.kt` for details.
+Use two `IntArray(26)` frequency maps — one for `s1` and one for the current window in `s2` (window size = `len(s1)`). Slide the window across `s2`, updating counts in O(1) per step. If the frequency arrays match, a permutation exists.
+
+### Walkthrough: `s1 = "ab", s2 = "eidbaooo"`
+
+```
+Window size = 2
+Window "ei": freq doesn't match s1
+Window "id": freq doesn't match
+Window "db": freq doesn't match
+Window "ba": freq matches s1 {a:1, b:1} → true ✅
+```
 
 ### Complexity
 
 | Metric | Value |
 |--------|-------|
-| **Time** | O(N²) |
-| **Space** | O(N) |
-
----
-
-## 🧩 Method 2: Optimal
-
-### Core Idea
-
-See implementation in `PermutationInString.kt` for details.
-
-### Complexity
-
-| Metric | Value |
-|--------|-------|
-| **Time** | O(N) |
-| **Space** | O(1) |
+| **Time** | O(N) — sliding window with O(26) comparison per step |
+| **Space** | O(1) — two fixed-size arrays of 26 |
 
 ---
 
 ## 🔑 Key Takeaways
 
-1. See the `.kt` file for full implementation and inline comments.
-2. Refer to the LeetCode problem for detailed examples.
+1. **Fixed window size:** Window size = `len(s1)`.
+2. **Frequency arrays:** Compare character counts in O(26) = O(1) per window.
+3. **Same pattern as Find All Anagrams:** The only difference is returning boolean vs indices.
 
 ---
 
@@ -66,4 +56,6 @@ See implementation in `PermutationInString.kt` for details.
 
 | Problem | LeetCode | Difficulty |
 |---------|----------|------------|
-| PermutationInString | [https://leetcode.com/problems/permutation-in-string/](https://leetcode.com/problems/permutation-in-string/) | Medium |
+| Permutation in String | [#567](https://leetcode.com/problems/permutation-in-string/) | Medium |
+| Find All Anagrams in a String | [#438](https://leetcode.com/problems/find-all-anagrams-in-a-string/) | Medium |
+| Minimum Window Substring | [#76](https://leetcode.com/problems/minimum-window-substring/) | Hard |

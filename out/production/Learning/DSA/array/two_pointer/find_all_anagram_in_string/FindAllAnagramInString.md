@@ -1,64 +1,71 @@
-# FindAllAnagramInString — Detailed Explanation
+# Find All Anagrams in a String — Detailed Explanation
 
-> **LeetCode** | https://leetcode.com/problems/find-all-anagrams-in-a-string/description/  
-> **Topic:** Array
+> **LeetCode #438** | [Problem Link](https://leetcode.com/problems/find-all-anagrams-in-a-string/description/)  
+> **Topic:** Sliding Window  
+> **Difficulty:** Medium
 
 ---
 
 ## 📋 Problem Statement
 
- * https://leetcode.com/problems/find-all-anagrams-in-a-string/description/
- *
- * Given two strings s and p, return an array of all the start indices of p's anagrams in s. You may return the answer in any order.
- *
- * Example 1:
- *
- * Input: s = "cbaebabacd", p = "abc"
- * Output: [0,6]
- * Explanation:
- * The substring with start index = 0 is "cba", which is an anagram of "abc".
- * The substring with start index = 6 is "bac", which is an anagram of "abc".
- * Example 2:
- *
- * Input: s = "abab", p = "ab"
- * Output: [0,1,2]
+Given strings `s` and `p`, return all start indices of `p`'s anagrams in `s`.
+
+### Example
+
+```
+Input: s = "cbaebabacd", p = "abc"
+Output: [0, 6]  ("cba" and "bac" are anagrams of "abc")
+```
 
 ---
 
-## 🧩 Method 1: Brute Force
+## 🧩 Method 1: Brute Force (Sort & Compare)
 
 ### Core Idea
 
-See implementation in `FindAllAnagramInString.kt` for details.
+For each substring of `s` with length `len(p)`, sort it and compare with sorted `p`.
 
 ### Complexity
 
 | Metric | Value |
 |--------|-------|
-| **Time** | O(N²) |
+| **Time** | O(M × N log N) — M substrings, each sorted |
 | **Space** | O(N) |
 
 ---
 
-## 🧩 Method 2: Optimal
+## 🧩 Method 2: Sliding Window with Frequency Count (Optimal)
 
 ### Core Idea
 
-See implementation in `FindAllAnagramInString.kt` for details.
+Use two `IntArray(26)` frequency maps — one for `p` and one for the current window in `s`. Slide the window across `s`, updating counts in O(1) per step. If the frequency arrays match, the current window is an anagram.
+
+### Walkthrough: `s = "cbaebabacd", p = "abc"`
+
+```
+Window size = 3
+Window "cba": freq matches p → add index 0
+Window "bae": freq doesn't match
+...
+Window "bac": freq matches p → add index 6
+
+Result: [0, 6] ✅
+```
 
 ### Complexity
 
 | Metric | Value |
 |--------|-------|
-| **Time** | O(N) |
-| **Space** | O(1) |
+| **Time** | O(N) — sliding window with O(26) comparison per step |
+| **Space** | O(1) — two fixed-size arrays of 26 |
 
 ---
 
 ## 🔑 Key Takeaways
 
-1. See the `.kt` file for full implementation and inline comments.
-2. Refer to the LeetCode problem for detailed examples.
+1. **Frequency arrays instead of sorting:** Compare character counts in O(26) = O(1) per window.
+2. **Slide efficiently:** Add new char on right, remove old char on left — O(1) update.
+3. **Fixed window size:** Window size = `len(p)`.
 
 ---
 
@@ -66,4 +73,6 @@ See implementation in `FindAllAnagramInString.kt` for details.
 
 | Problem | LeetCode | Difficulty |
 |---------|----------|------------|
-| FindAllAnagramInString | [https://leetcode.com/problems/find-all-anagrams-in-a-string/description/](https://leetcode.com/problems/find-all-anagrams-in-a-string/description/) | Medium |
+| Find All Anagrams in a String | [#438](https://leetcode.com/problems/find-all-anagrams-in-a-string/) | Medium |
+| Permutation in String | [#567](https://leetcode.com/problems/permutation-in-string/) | Medium |
+| Minimum Window Substring | [#76](https://leetcode.com/problems/minimum-window-substring/) | Hard |

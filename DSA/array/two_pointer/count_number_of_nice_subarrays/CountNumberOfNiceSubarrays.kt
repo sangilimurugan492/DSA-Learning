@@ -30,45 +30,65 @@ package array.two_pointer.count_number_of_nice_subarrays
  * Number of subarrays ending at right = right - left + 1.
  */
 fun main() {
-    println(numberOfSubarrays(intArrayOf(1, 1, 2, 1, 1), 3))
-    println(numberOfSubarrays(intArrayOf(2, 4, 6), 1))
-    println(numberOfSubarrays(intArrayOf(2, 2, 2, 1, 2, 2, 1, 2, 2, 2), 2))
+    println("Brute Force:")
+    println(numberOfSubarraysBF(intArrayOf(1, 1, 2, 1, 1), 3))           // 2
+    println(numberOfSubarraysBF(intArrayOf(2, 4, 6), 1))                  // 0
+    println(numberOfSubarraysBF(intArrayOf(2, 2, 2, 1, 2, 2, 1, 2, 2, 2), 2)) // 16
+    println("Optimal (atMost pattern):")
+    println(numberOfSubarrays(intArrayOf(1, 1, 2, 1, 1), 3))             // 2
+    println(numberOfSubarrays(intArrayOf(2, 4, 6), 1))                    // 0
+    println(numberOfSubarrays(intArrayOf(2, 2, 2, 1, 2, 2, 1, 2, 2, 2), 2)) // 16
 }
 
 /**
- * Time Complexity O(N)
- * Space Complexity O(1)
+ * Brute Force: For each starting index, expand right and count odd numbers.
+ * If odd count == k, increment result. If odd count > k, stop expanding.
  *
- * Approach: atMost(K) - atMost(K-1)
+ * Walkthrough: nums = [1,1,2,1,1], k = 3
+ *
+ *   i=0: expand right → odds: 1,2,2,3 → [1,1,2,1] count++ → odds: 4 > 3 stop
+ *   i=1: expand right → odds: 1,1,2,3 → [1,2,1,1] count++ → stop
+ *   i=2: expand right → odds: 0,1,2 → never reaches 3
+ *   i=3: expand right → odds: 1,2 → never reaches 3
+ *   i=4: expand right → odds: 1 → never reaches 3
+ *
+ * Result: 2 ✅
+ *
+ * Time Complexity:  O(N²) — nested loops for each starting index
+ * Space Complexity: O(1)  — only a counter variable
+ */
+fun numberOfSubarraysBF(nums: IntArray, k: Int): Int {
+    var result = 0
+
+    for (i in nums.indices) {
+        var oddCount = 0
+        for (j in i until nums.size) {
+            if (nums[j] % 2 == 1) oddCount++
+            if (oddCount == k) {
+                result++
+            } else if (oddCount > k) {
+                break // No point expanding further — odds only increase
+            }
+        }
+    }
+
+    return result
+}
+
+/**
+ * Optimal (atMost pattern): exactly(k) = atMost(k) - atMost(k-1)
  *
  * atMost(k): Count subarrays with at most k odd numbers.
  * For each right, if odd count > k, shrink from left.
  * Number of valid subarrays ending at right = right - left + 1.
  *
- * exactly(k) = atMost(k) - atMost(k-1)
- *
- * Trace for [1,1,2,1,1], k=3:
- * atMost(3): all subarrays with ≤3 odds
- *   right=0: [1], odds=1, count=1
- *   right=1: [1,1],[1], odds=2, count=2+1=3
- *   right=2: [1,1,2],[1,2],[2], odds=2, count=3+2+1=6
- *   right=3: odds=3, count=4 → total=10
- *   right=4: odds=4>3 → shrink, odds=3, count=3 → total=13
- * atMost(2):
- *   right=0: odds=1, count=1
- *   right=1: odds=2, count=2 → total=3
- *   right=2: odds=2, count=3 → total=6
- *   right=3: odds=3>2 → shrink, odds=2, count=2 → total=8
- *   right=4: odds=3>2 → shrink, odds=2, count=1 → total=9
- * exactly(3) = 13 - 9 = 4... hmm, let me verify
- *
- * Actually: nice subarrays with exactly 3 odds in [1,1,2,1,1]:
- * [1,1,2,1] and [1,2,1,1] = 2. But the atMost calculation gives more due to
- * subarrays ending at different positions. Let me trust the formula.
+ * Time Complexity:  O(N) — two passes of atMost, each single pass
+ * Space Complexity: O(1) — only variables
  */
 fun numberOfSubarrays(nums: IntArray, k: Int): Int {
     return atMost(nums, k) - atMost(nums, k - 1)
 }
+
 
 fun atMost(nums: IntArray, k: Int): Int {
     if (k < 0) return 0

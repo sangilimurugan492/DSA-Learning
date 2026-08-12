@@ -43,7 +43,7 @@ fun main() {
  * If we reach the end without finding one, arr[i] IS a leader.
  *
  * Time Complexity:  O(N²) — for each of N elements, scan up to N elements to the right
- * Space Complexity: O(1)   — excluding the result array (no extra data structures)
+ * Space Complexity: O(N)   — excluding the result array (no extra data structures)
  */
 fun findLeadersInAnArrayBF(nums: IntArray): ArrayList<Int> {
     val result = ArrayList<Int>()

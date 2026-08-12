@@ -44,7 +44,7 @@ fun checkArraySortedOrRotateBF(array : Array<Int>) {
  * B[i] == A[(i+x) % A.length]
  * Optimal
  * Time Complexity O(N)
- * Space Complexity O(N)
+ * Space Complexity O(1)
  */
 fun checkIfSortedRotateOp(array : Array<Int>) {
     val size = array.size

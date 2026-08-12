@@ -22,42 +22,46 @@ Return the **minimum number of boats** to carry every given person.
 
 ---
 
-## 🧩 Method 1: Brute Force (Recursive Exhaustive Search)
+## 🧩 Method 1: Brute Force (Sort + Greedy Scan)
 
 ### Core Idea
 
-Try **all possible pairings** using recursion. For each unboarded person, we explore two options:
-1. **Send them alone** in a boat.
-2. **Pair them** with every other unboarded person whose combined weight is within `limit`.
+**Sort** the array, then for each unboarded person (lightest first), scan from the **heaviest** unboarded person downward to find a partner that fits within `limit`. If no partner is found, the person goes alone.
 
-We recursively explore every option and return the minimum boat count.
+This is simpler than recursion: we just iterate and greedily pair each person with the heaviest possible partner.
 
 ### Algorithm Steps
 
-1. Maintain a `boarded` boolean array to track who has been assigned a boat.
-2. Find the first unboarded person.
-3. **Option 1**: Mark them as boarded (alone), recurse with `remaining - 1`.
-4. **Option 2**: For each other unboarded person, if their combined weight ≤ `limit`, mark both as boarded, recurse with `remaining - 2`.
-5. Take the minimum across all options.
-6. **Base case**: `remaining == 0` → all boarded, return 0.
+1. **Sort** the array in ascending order.
+2. Maintain a `boarded` boolean array to track who has been assigned a boat.
+3. For each person `i` (from lightest to heaviest):
+   - If already boarded, skip.
+   - Scan from the heaviest unboarded person `j` downward.
+   - If `people[i] + people[j] <= limit`, mark both as boarded (paired).
+   - If no partner found, mark only `i` as boarded (alone).
+   - Increment boat count.
+4. Return total boats.
 
-### Walkthrough (`people = [1,2]`, `limit = 3`)
+### Walkthrough (`people = [3,2,2,1]`, `limit = 3`)
 
 ```
-firstUnboarded = 0 (weight 1)
-  Option 1: person 0 alone → recurse with person 1
-    person 1 alone → boats = 2
-  Option 2: pair (1, 2) → 1+2=3 <= 3 → recurse, remaining=0 → boats = 1
-min(2, 1) = 1
-Result: 1 boat
+Sorted: [1, 2, 2, 3]
+
+i=0 (weight 1): scan j=3(3)→1+3=4>3, j=2(2)→1+2=3≤3 → pair (1,2)  boats=1
+i=1 (weight 2): scan j=3(3)→2+3=5>3, j=2 already boarded → alone    boats=2
+i=2 (weight 2): already boarded → skip
+i=3 (weight 3): scan j=2 already boarded → alone                     boats=3
+
+Result: 3 boats ✅
 ```
 
 ### Complexity
 
 | Metric | Value |
 |--------|-------|
-| **Time** | O(n · 2ⁿ) — exponential, each person can be paired or go alone |
-| **Space** | O(n) — recursion stack + visited array |
+| **Time** | O(N²) — for each person, scan remaining unboarded people |
+| **Space** | O(N) — boarded array |
+
 
 ---
 
@@ -95,9 +99,10 @@ Result: 3 boats
 
 ## 🔑 Key Takeaways
 
-1. **Brute force** explores all possible pairings recursively — correct but exponential in time.
-2. **Sorting + two pointers** reduces this to O(n log n) by making a greedy choice: the heaviest person either fits with the lightest or must go alone — no better pairing exists for them.
+1. **Brute force (O(N²))** sorts then greedily scans for a partner — simple and intuitive, but slower than optimal.
+2. **Sorting + two pointers (O(N log N))** improves on brute force by replacing the inner scan with a single two-pointer pass: the heaviest person either fits with the lightest or must go alone — no better pairing exists for them.
 3. Each iteration in the two-pointer approach always represents exactly one boat, making the boat count straightforward.
+
 
 ---
 

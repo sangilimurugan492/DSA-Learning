@@ -45,10 +45,10 @@ fun firstRepeatingElementOP(nums : IntArray) : Int{
 
     // If an element is already present, return it
     // else insert it
-    var minEle = Int.MAX_VALUE
+    var minEle : Int = 0
     for (i in nums.size - 1 downTo 0) {
         if (s.contains(nums[i])) {
-            minEle = min(minEle.toDouble(), i.toDouble()).toInt()
+            minEle = min(minEle, nums[i])
         }
         s.add(nums[i])
     }

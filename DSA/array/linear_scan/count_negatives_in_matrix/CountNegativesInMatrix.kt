@@ -38,7 +38,7 @@ fun countNegativesBF(grid: Array<IntArray>): Int {
 
 /**
  * TimeComplexity O(M+N)
- * Space Complexity O(M+N)
+ * Space Complexity O(1)
  */
 
 fun countNegativesOP(grid: Array<IntArray>): Int {

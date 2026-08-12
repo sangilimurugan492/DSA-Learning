@@ -1,64 +1,57 @@
-# MinimumSizeSubArraySum — Detailed Explanation
+# Minimum Size Subarray Sum — Detailed Explanation
 
-> **LeetCode** | https://leetcode.com/problems/minimum-size-subarray-sum/description/  
-> **Topic:** Array
+> **LeetCode #209** | [Problem Link](https://leetcode.com/problems/minimum-size-subarray-sum/)  
+> **Topic:** Sliding Window  
+> **Difficulty:** Medium
 
 ---
 
 ## 📋 Problem Statement
 
- * https://leetcode.com/problems/minimum-size-subarray-sum/description/
- *
- * Given an array of positive integers nums and a positive integer target, return the minimal length of a subarray whose sum is greater than or equal to target. If there is no such subarray, return 0 instead.
- *
- * Example 1:
- *
- * Input: target = 7, nums = [2,3,1,2,4,3]
- * Output: 2
- * Explanation: The subarray [4,3] has the minimal length under the problem constraint.
- * Example 2:
- *
- * Input: target = 4, nums = [1,4,4]
- * Output: 1
- * Example 3:
- *
+Given an array of positive integers `nums` and a positive integer `target`, return the minimal length of a subarray whose sum ≥ `target`. If none exists, return 0.
+
+### Example
+
+```
+Input: target = 7, nums = [2,3,1,2,4,3]
+Output: 2  (subarray [4,3] sums to 7)
+```
 
 ---
 
-## 🧩 Method 1: Brute Force
+## 🧩 Method: Sliding Window
 
 ### Core Idea
 
-See implementation in `MinimumSizeSubArraySum.kt` for details.
+Expand `right` to grow the window sum. When `sum >= target`, shrink from `left` to find the minimum length. Track the minimum.
+
+### Walkthrough: `target = 7, nums = [2,3,1,2,4,3]`
+
+```
+right=0: sum=2 < 7
+right=1: sum=5 < 7
+right=2: sum=6 < 7
+right=3: sum=8 >= 7 → minLen=4, shrink left: sum=6 < 7
+right=4: sum=10 >= 7 → minLen=2 ([4,3]... actually [4] at this point), shrink left
+right=5: sum=7 >= 7 → minLen=2 ([4,3])
+
+Result: 2 ✅
+```
 
 ### Complexity
 
 | Metric | Value |
 |--------|-------|
-| **Time** | O(N²) |
-| **Space** | O(N) |
-
----
-
-## 🧩 Method 2: Optimal
-
-### Core Idea
-
-See implementation in `MinimumSizeSubArraySum.kt` for details.
-
-### Complexity
-
-| Metric | Value |
-|--------|-------|
-| **Time** | O(N) |
+| **Time** | O(N) — each element visited at most twice |
 | **Space** | O(1) |
 
 ---
 
 ## 🔑 Key Takeaways
 
-1. See the `.kt` file for full implementation and inline comments.
-2. Refer to the LeetCode problem for detailed examples.
+1. **Variable-size sliding window:** Expand right to increase sum, shrink left to decrease.
+2. **Only works for positive numbers:** The approach relies on the fact that expanding increases sum and shrinking decreases it.
+3. **Track minimum:** Update `minLen` whenever `sum >= target`.
 
 ---
 
@@ -66,4 +59,6 @@ See implementation in `MinimumSizeSubArraySum.kt` for details.
 
 | Problem | LeetCode | Difficulty |
 |---------|----------|------------|
-| MinimumSizeSubArraySum | [https://leetcode.com/problems/minimum-size-subarray-sum/description/](https://leetcode.com/problems/minimum-size-subarray-sum/description/) | Medium |
+| Minimum Size Subarray Sum | [#209](https://leetcode.com/problems/minimum-size-subarray-sum/) | Medium |
+| Maximum Average Subarray I | [#643](https://leetcode.com/problems/maximum-average-subarray-i/) | Easy |
+| Maximum Length of Repeated Subarray | [#718](https://leetcode.com/problems/maximum-length-of-repeated-subarray/) | Medium |
