@@ -19,7 +19,34 @@ Output: 2  ([1,1,2,1] and [1,2,1,1])
 
 ---
 
-## 🧩 Method: atMost(K) − atMost(K−1)
+## 🧩 Method 1: Brute Force (Nested Loops)
+
+### Core Idea
+
+For each starting index `i`, expand `right` and count odd numbers. If odd count equals `k`, increment the result. If odd count exceeds `k`, stop expanding (odds only increase).
+
+### Walkthrough: `nums = [1,1,2,1,1], k = 3`
+
+```
+i=0: expand right → odds: 1,2,2,3 → [1,1,2,1] count++ → odds: 4 > 3 stop
+i=1: expand right → odds: 1,1,2,3 → [1,2,1,1] count++ → stop
+i=2: expand right → odds: 0,1,2 → never reaches 3
+i=3: expand right → odds: 1,2 → never reaches 3
+i=4: expand right → odds: 1 → never reaches 3
+
+Result: 2 ✅
+```
+
+### Complexity
+
+| Metric | Value |
+|--------|-------|
+| **Time** | O(N²) — nested loops for each starting index |
+| **Space** | O(1) — only a counter |
+
+---
+
+## 🧩 Method 2: atMost(K) − atMost(K−1) (Optimal)
 
 ### Core Idea
 
@@ -31,18 +58,6 @@ Counting "exactly k" directly is hard. Instead use:
 - When odds > k, shrink `left`.
 - Subarrays ending at `right` = `right − left + 1`.
 
-### Walkthrough: `[1,1,2,1,1], k=3`
-
-```
-atMost(3) = 13  (all subarrays with ≤3 odds)
-atMost(2) = 9   (all subarrays with ≤2 odds)
-exactly(3) = 13 - 9 = 4... 
-
-Note: The formula counts all valid subarrays, not just the two shown above.
-The LeetCode expected answer for this input is 2, but the atMost pattern
-correctly handles all edge cases. Trust the formula — it's proven.
-```
-
 ### Complexity
 
 | Metric | Value |
@@ -52,11 +67,22 @@ correctly handles all edge cases. Trust the formula — it's proven.
 
 ---
 
+## 📊 Comparison
+
+| Method | Time | Space |
+|--------|------|-------|
+| Brute Force | O(N²) | O(1) |
+| atMost Pattern | O(N) | O(1) |
+
+---
+
 ## 🔑 Key Takeaways
 
-1. **atMost pattern:** `exactly(k) = atMost(k) − atMost(k−1)` — converts "exact count" to "at most count" which is easier with sliding window.
-2. **Subarrays ending at right:** Each position contributes `right − left + 1` subarrays.
-3. **Same pattern** as Subarrays with K Different Integers.
+1. **Brute force is intuitive:** Just expand from each starting index and count odds — simple but O(N²).
+2. **atMost pattern:** `exactly(k) = atMost(k) − atMost(k−1)` — converts "exact count" to "at most count" which is easier with sliding window.
+3. **Subarrays ending at right:** Each position contributes `right − left + 1` subarrays.
+4. **Same pattern** as Subarrays with K Different Integers.
+
 
 ---
 

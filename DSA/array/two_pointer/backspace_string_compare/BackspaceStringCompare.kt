@@ -18,8 +18,10 @@ package array.two_pointer.backspace_string_compare
  * Explanation: Both s and t become "".
  */
 fun main() {
-    println(backspaceStringCompareStack("a##c", "#a#c"))      // true
-    println(backspaceStringCompareTwoPointer("a##c", "#a#c")) // true
+    println(backspaceStringCompareStack("a##c", "#a#c"))           // true
+    println(backspaceStringCompareTwoPointer("a##c#e##c", "#a#c")) // true
+    println(backspaceStringCompareTwoPointer("ab##", "c#d#"))      // true
+    println(backspaceStringCompareTwoPointer("ab#c", "ad#c"))      // true
 }
 
 /**
@@ -48,8 +50,16 @@ fun helperToRemoveHash(s: String): String {
 }
 
 /**
- * Two-pointer approach: Traverse both strings from the end, skipping backspaced characters.
+ * Two-pointer approach: Traverse both strings from the END, skipping backspaced characters.
  * This achieves O(1) space by not building any intermediate strings.
+ *
+ * WHY TWO INNER LOOPS (not one)?
+ * - The inner loops independently find the next "valid" (non-backspaced) character in each string.
+ * - s and t may have different numbers of '#' at different positions, so you CANNOT
+ *   advance both pointers in lockstep in a single loop.
+ * - Example: s = "a##b" needs 3 steps to reach 'b'; t = "b" needs 1 step.
+ *   These are independent traversals — merging them is impossible.
+ * - Total work is still O(m + n): each character is visited at most once across all loops.
  *
  * Time Complexity:  O(m + n) — each character is visited at most once
  * Space Complexity: O(1)    — only a few integer variables are used
@@ -57,18 +67,18 @@ fun helperToRemoveHash(s: String): String {
 fun backspaceStringCompareTwoPointer(s: String, t: String): Boolean {
     var i = s.length - 1
     var j = t.length - 1
-    var skipS = 0
-    var skipT = 0
+    var skipS = 0  // count of backspaces pending in s
+    var skipT = 0  // count of backspaces pending in t
 
     while (i >= 0 || j >= 0) {
-        // Find next valid character in S
+        // Find next valid character in S (skip backspaced chars)
         while (i >= 0) {
             if (s[i] == '#') { skipS++; i-- }
             else if (skipS > 0) { skipS--; i-- }
             else break
         }
 
-        // Find next valid character in T
+        // Find next valid character in T (skip backspaced chars)
         while (j >= 0) {
             if (t[j] == '#') { skipT++; j-- }
             else if (skipT > 0) { skipT--; j-- }

@@ -12,6 +12,7 @@ A comprehensive, architect-level collection of system design notes, patterns, an
 | [`case_studies/`](case_studies/README.md) | 10 end-to-end designs with estimation + deep dive: URL shortener, Twitter, WhatsApp chat, rate limiter, Google Drive, notification system, web crawler, ticket booking, key-value store, news feed |
 | [`estimation/`](estimation/README.md) | Back-of-the-envelope estimation: latency numbers, throughput numbers, worked examples (Twitter, URL shortener, chat), formulas, common mistakes |
 | [`interview/`](interview/README.md) | Interview framework (5-step), communication strategy, 25 practice questions, technology decision guide, anti-patterns, mock interview walkthrough, 8-week preparation roadmap |
+| [`mobile/`](mobile/README.md) | **Mobile system design** for Senior/Lead Mobile Developers: 14-step framework, Flutter/Android architecture, offline sync, security, performance, 2 full mock interview examples (E-Commerce + Chat) |
 
 ## How to Use This Guide
 

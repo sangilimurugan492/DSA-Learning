@@ -78,7 +78,92 @@ Binary search on the smaller array to find a partition point where left halves o
 
 Valid partition! Total is even → median = (max(2, MIN) + min(MAX, 3)) / 2 = (2+3)/2 = **2.5** ✅
 
+---
+
+## 🔍 Huge 10-Element Array Walkthrough
+
+To make the binary search partition crystal clear, let's trace through **two 5-element arrays** (10 elements total).
+
+### Setup
+
+- **nums1 (a):** `[1, 3, 5, 7, 9]` (m=5)
+- **nums2 (b):** `[2, 4, 6, 8, 10]` (n=5)
+- **Merged:** `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]` (10 elements, even)
+- **Expected median:** `(5 + 6) / 2 = 5.5`
+- **Left half size:** `(m+n+1)/2 = 5` elements
+
+```
+nums1 (a): [ 1,  3,  5,  7,  9 ]   (m=5)
+nums2 (b): [ 2,  4,  6,  8, 10 ]   (n=5)
+Merged:    [ 1,  2,  3,  4,  5 | 6,  7,  8,  9, 10 ]
+            ←── left half (5) ──→ ←── right half (5) ──→
+                                  ↑
+                            median = (5+6)/2 = 5.5
+```
+
+### Step-by-Step Binary Search Partition
+
+#### STEP 1: `low=0, high=5`
+
+- `partitionX = (0+5)/2 = 2` → a's left = `[1,3]`, right = `[5,7,9]`
+- `partitionY = 5 - 2 = 3` → b's left = `[2,4,6]`, right = `[8,10]`
+- `maxLeftX=3, minRightX=5, maxLeftY=6, minRightY=8`
+- Check: `3 ≤ 8` ✅ but `6 ≤ 5` ❌ → `maxLeftY > minRightX`
+- **Decision:** Too few from `a` in left half → `low = partitionX + 1 = 3`
+
+```
+a: [ 1,  3 | 5,  7,  9 ]     b: [ 2,  4,  6 | 8, 10 ]
+    left(2)  right(3)              left(3)    right(2)
+         maxLeftX=3                maxLeftY=6
+         minRightX=5               minRightY=8
+  ❌ 6 > 5 → need more from a → low = 3
+```
+
+#### STEP 2: `low=3, high=5`
+
+- `partitionX = (3+5)/2 = 4` → a's left = `[1,3,5,7]`, right = `[9]`
+- `partitionY = 5 - 4 = 1` → b's left = `[2]`, right = `[4,6,8,10]`
+- `maxLeftX=7, minRightX=9, maxLeftY=2, minRightY=4`
+- Check: `7 ≤ 4` ❌ → `maxLeftX > minRightY`
+- **Decision:** Too many from `a` in left half → `high = partitionX - 1 = 3`
+
+```
+a: [ 1,  3,  5,  7 | 9 ]     b: [ 2 | 4,  6,  8, 10 ]
+    left(4)        right(1)        left(1)  right(4)
+         maxLeftX=7                maxLeftY=2
+         minRightX=9               minRightY=4
+  ❌ 7 > 4 → too many from a → high = 3
+```
+
+#### STEP 3: `low=3, high=3`
+
+- `partitionX = (3+3)/2 = 3` → a's left = `[1,3,5]`, right = `[7,9]`
+- `partitionY = 5 - 3 = 2` → b's left = `[2,4]`, right = `[6,8,10]`
+- `maxLeftX=5, minRightX=7, maxLeftY=4, minRightY=6`
+- Check: `5 ≤ 6` ✅ AND `4 ≤ 7` ✅ → **VALID PARTITION!**
+- Total is even → median = `(max(5,4) + min(7,6)) / 2 = (5+6)/2 = 5.5` ✅
+
+```
+a: [ 1,  3,  5 | 7,  9 ]     b: [ 2,  4 | 6,  8, 10 ]
+    left(3)     right(2)           left(2)  right(3)
+         maxLeftX=5                maxLeftY=4
+         minRightX=7               minRightY=6
+  ✅ 5 ≤ 6 && 4 ≤ 7 → VALID!
+  median = (max(5,4) + min(7,6)) / 2 = (5+6)/2 = 5.5 ✅
+```
+
+### Summary Table
+
+| Step | low | high | partX | partY | maxLeftX | minRightX | maxLeftY | minRightY | Valid? | Action |
+|:----:|:---:|:-----:|:-----:|:-----:|:---------:|:---------:|:---------:|:---------:|:------:|:------:|
+| 1 | 0 | 5 | 2 | 3 | 3 | 5 | 6 | 8 | 3≤8 ✅ 6≤5 ❌ | low = 3 |
+| 2 | 3 | 5 | 4 | 1 | 7 | 9 | 2 | 4 | 7≤4 ❌ | high = 3 |
+| 3 | 3 | 3 | 3 | 2 | 5 | 7 | 4 | 6 | 5≤6 ✅ 4≤7 ✅ | return **5.5** ✅ |
+
+> **Key observation:** Only **3 iterations** to find the median of two 5-element arrays (10 total). That's O(log(min(m,n))) — binary search on the smaller array!
+
 ### Code
+
 
 ```kotlin
 fun findMedianSortedArrays(nums1: IntArray, nums2: IntArray): Double {

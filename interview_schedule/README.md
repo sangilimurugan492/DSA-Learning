@@ -9,14 +9,14 @@
 
 | Week | Focus | Theory Files | DSA Focus | Schedule File |
 |------|-------|-------------|-----------|---------------|
-| 1-2 | Kotlin + Java Basics + Git | 22 files | Arrays, Two Pointers, Sliding Window, Binary Search | [Week1-2](Week1-2_Fundamentals.md) |
-| 3-4 | Android Core + Kotlin Intermediate | 31 files | Stack, Strings, Hashing, Linked Lists | [Week3-4](Week3-4_Android_Core.md) |
-| 5-6 | Advanced Android + CICD + Security | 33 files | Trees, BST, Heaps, Tries, Bit Manipulation | [Week5-6](Week5-6_Advanced_Android.md) |
-| 7-8 | Jetpack Compose (All Levels) | 32 files | Graphs, Backtracking, Greedy, Simulation | [Week7-8](Week7-8_Jetpack_Compose.md) |
-| 9 | DSA Intensive | 50+ files | DP (1D, 2D, Subsequence), Sorting, Matrix | [Week9](Week9_DSA_Intensive.md) |
-| 10 | SOLID + Design Patterns + System Design | 19+ files | Mixed DSA review (medium/hard) | [Week10](Week10_Design_Patterns_System_Design.md) |
-| 11 | Flutter + KMP + Firebase + WebRTC + Testing | 79 files | Mixed DSA review (medium/hard) | [Week11](Week11_Specialized_Topics.md) |
-| 12 | Behavioral + Mock Interviews + Final Review | 25+ files | Hard DSA + timed practice | [Week12](Week12_Mock_Interviews_Behavioral.md) |
+| 1-2 | Kotlin + Java Basics + Git | 22 files | Arrays, Two Pointers, Sliding Window, Binary Search | [Overview](weekly/Week1-2_Fundamentals.md) · [Daily](daily/Week1_Daily_Checklist.md) |
+| 3-4 | Android Core + Kotlin Intermediate | 31 files | Stack, Strings, Hashing, Linked Lists | [Overview](weekly/Week3-4_Android_Core.md) · [Daily](daily/Week3_Daily_Checklist.md) |
+| 5-6 | Advanced Android + CICD + Security | 33 files | Trees, BST, Heaps, Tries, Bit Manipulation | [Overview](weekly/Week5-6_Advanced_Android.md) · [Daily](daily/Week5_Daily_Checklist.md) |
+| 7-8 | Jetpack Compose (All Levels) | 32 files | Graphs, Backtracking, Greedy, Simulation | [Overview](weekly/Week7-8_Jetpack_Compose.md) · [Daily](daily/Week7_Daily_Checklist.md) |
+| 9 | DSA Intensive | 50+ files | DP (1D, 2D, Subsequence), Sorting, Matrix | [Overview](weekly/Week9_DSA_Intensive.md) · [Daily](daily/Week9_Daily_Checklist.md) |
+| 10 | SOLID + Design Patterns + System Design | 19+ files | Mixed DSA review (medium/hard) | [Overview](weekly/Week10_Design_Patterns_System_Design.md) · [Daily](daily/Week10_Daily_Checklist.md) |
+| 11 | Flutter + KMP + Firebase + WebRTC + Testing | 79 files | Mixed DSA review (medium/hard) | [Overview](weekly/Week11_Specialized_Topics.md) · [Daily](daily/Week11_Daily_Checklist.md) |
+| 12 | Behavioral + Mock Interviews + Final Review | 25+ files | Hard DSA + timed practice | [Overview](weekly/Week12_Mock_Interviews_Behavioral.md) · [Daily](daily/Week12_Daily_Checklist.md) |
 
 ---
 
@@ -200,14 +200,15 @@
 | Quick Reference Cheat Sheet | [Quick_Reference.md](Quick_Reference.md) |
 | DSA Study Guide | [../DSA/study.md](../DSA/study.md) |
 | DSA Pattern Index | [../DSA/PatternWiseProblems.md](../DSA/PatternWiseProblems.md) |
-| Week 1-2 | [Week1-2_Fundamentals.md](Week1-2_Fundamentals.md) |
-| Week 3-4 | [Week3-4_Android_Core.md](Week3-4_Android_Core.md) |
-| Week 5-6 | [Week5-6_Advanced_Android.md](Week5-6_Advanced_Android.md) |
-| Week 7-8 | [Week7-8_Jetpack_Compose.md](Week7-8_Jetpack_Compose.md) |
-| Week 9 | [Week9_DSA_Intensive.md](Week9_DSA_Intensive.md) |
-| Week 10 | [Week10_Design_Patterns_System_Design.md](Week10_Design_Patterns_System_Design.md) |
-| Week 11 | [Week11_Specialized_Topics.md](Week11_Specialized_Topics.md) |
-| Week 12 | [Week12_Mock_Interviews_Behavioral.md](Week12_Mock_Interviews_Behavioral.md) |
+| **Daily Checklist Index** | **[Daily_Checklist.md](Daily_Checklist.md)** |
+| Week 1-2 | [Overview](weekly/Week1-2_Fundamentals.md) · [Daily](daily/Week1_Daily_Checklist.md) |
+| Week 3-4 | [Overview](weekly/Week3-4_Android_Core.md) · [Daily](daily/Week3_Daily_Checklist.md) |
+| Week 5-6 | [Overview](weekly/Week5-6_Advanced_Android.md) · [Daily](daily/Week5_Daily_Checklist.md) |
+| Week 7-8 | [Overview](weekly/Week7-8_Jetpack_Compose.md) · [Daily](daily/Week7_Daily_Checklist.md) |
+| Week 9 | [Overview](weekly/Week9_DSA_Intensive.md) · [Daily](daily/Week9_Daily_Checklist.md) |
+| Week 10 | [Overview](weekly/Week10_Design_Patterns_System_Design.md) · [Daily](daily/Week10_Daily_Checklist.md) |
+| Week 11 | [Overview](weekly/Week11_Specialized_Topics.md) · [Daily](daily/Week11_Daily_Checklist.md) |
+| Week 12 | [Overview](weekly/Week12_Mock_Interviews_Behavioral.md) · [Daily](daily/Week12_Daily_Checklist.md) |
 
 ---
 
