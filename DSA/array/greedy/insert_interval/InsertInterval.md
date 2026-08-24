@@ -19,17 +19,17 @@ Given an array of non-overlapping intervals sorted by start time, and a new inte
 
 ---
 
-## 🧩 Method 1: Brute Force — O(N²)
+## 🧩 Method 1: Brute Force — O(N log N)
 
 ### Core Idea
 
-Add newInterval to the list, sort by start, then merge overlapping pairs.
+Add newInterval to the list, sort by start, then single-pass merge overlapping pairs.
 
 ### Complexity
 
 | Metric | Value | Reason |
 |--------|-------|--------|
-| **Time** | O(N²) | Repeated merging passes |
+| **Time** | O(N log N) | Sort dominates; merge pass is O(N) |
 | **Space** | O(N) | Result |
 
 ---
@@ -91,7 +91,7 @@ fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
 
 | Aspect | Brute Force | Three-Phase |
 |--------|-------------|-------------|
-| **Time** | O(N²) | O(N) |
+| **Time** | O(N log N) | O(N) |
 | **Space** | O(N) | O(N) |
 | **Uses sorted input?** | No (re-sorts) | Yes |
 | **Interview preference** | ⭐⭐ | ⭐⭐⭐⭐⭐ |

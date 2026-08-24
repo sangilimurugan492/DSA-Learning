@@ -1,29 +1,8 @@
 # Navigation
 
-## Q1: How does navigation work in Flutter?
+## 📖 Explanation
 
-```dart
-// Basic navigation — push a new route
-Navigator.push(
-  context,
-  MaterialPageRoute(
-    builder: (context) => const DetailScreen(),
-  ),
-);
-
-// Pop back
-Navigator.pop(context);
-
-// Push with result
-final result = await Navigator.push(
-  context,
-  MaterialPageRoute(builder: (context) => const SelectionScreen()),
-);
-// result is returned when the second screen pops
-
-// Return data from second screen
-Navigator.pop(context, 'Selected Item');
-```
+Flutter navigation is based on a stack of routes. The `Navigator` manages this stack — `push` adds a route on top, `pop` removes the top route. Flutter supports both imperative (`Navigator.push`) and declarative (`go_router`) navigation.
 
 ### Navigation Stack
 ```
@@ -36,78 +15,7 @@ pop()                → [HomeScreen, DetailScreen]
 popUntil(HomeScreen) → [HomeScreen]
 ```
 
----
-
-## Q2: What is named navigation?
-
-```dart
-// Define routes in MaterialApp
-MaterialApp(
-  initialRoute: '/',
-  routes: {
-    '/': (context) => const HomeScreen(),
-    '/detail': (context) => const DetailScreen(),
-    '/settings': (context) => const SettingsScreen(),
-  },
-)
-
-// Navigate by name
-Navigator.pushNamed(context, '/detail');
-
-// With arguments
-Navigator.pushNamed(context, '/detail', arguments: {'id': 42});
-
-// Read arguments in destination
-class DetailScreen extends StatelessWidget {
-  const DetailScreen({super.key});
-  @override
-  Widget build(BuildContext context) {
-    final args = ModalRoute.of(context)!.settings.arguments as Map;
-    final id = args['id'];  // 42
-    return Text('Detail $id');
-  }
-}
-
-// Push replacement — replace current route
-Navigator.pushReplacementNamed(context, '/home');
-
-// Push and remove until — clear stack
-Navigator.pushNamedAndRemoveUntil(
-  context,
-  '/login',
-  (route) => false,  // Remove all routes below
-);
-```
-
----
-
-## Q3: What is the difference between `push` and `pushReplacement`?
-
-```dart
-// push — add new route on top of stack
-// Stack: [A] → push(B) → [A, B]
-Navigator.push(context, MaterialPageRoute(builder: (_) => ScreenB()));
-
-// pushReplacement — replace current route with new one
-// Stack: [A] → pushReplacement(B) → [B]
-Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => ScreenB()));
-
-// pushAndRemoveUntil — push new, remove routes below until predicate
-// Stack: [A, B, C] → pushAndRemoveUntil(D, (r) => false) → [D]
-Navigator.pushAndRemoveUntil(
-  context,
-  MaterialPageRoute(builder: (_) => ScreenD()),
-  (route) => false,  // Remove all
-);
-
-// Common pattern: login → home (don't go back to login)
-Navigator.pushAndRemoveUntil(
-  context,
-  MaterialPageRoute(builder: (_) => const HomeScreen()),
-  (route) => false,  // Clear entire stack — no back to login
-);
-```
-
+### Navigation Methods
 | Method | Stack Effect | Use Case |
 |--------|-------------|----------|
 | `push` | Add on top | Normal navigation |
@@ -116,207 +24,8 @@ Navigator.pushAndRemoveUntil(
 | `pop` | Remove top | Back button |
 | `popUntil` | Remove until | Back to specific screen |
 
----
-
-## Q4: How do you pass data between screens?
-
-```dart
-// 1. Constructor parameters (most common)
-class DetailScreen extends StatelessWidget {
-  final String title;
-  final int id;
-
-  const DetailScreen({super.key, required this.title, required this.id});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text(title)));
-  }
-}
-
-// Navigate
-Navigator.push(
-  context,
-  MaterialPageRoute(
-    builder: (_) => DetailScreen(title: 'Product', id: 42),
-  ),
-);
-
-// 2. Named route with arguments
-Navigator.pushNamed(context, '/detail', arguments: {'id': 42});
-
-// 3. Return data
-// Screen A:
-final result = await Navigator.push(
-  context,
-  MaterialPageRoute(builder: (_) => const SelectionScreen()),
-);
-print('Selected: $result');
-
-// Screen B:
-ElevatedButton(
-  onPressed: () => Navigator.pop(context, 'Option A'),
-  child: const Text('Select A'),
-);
-```
-
----
-
-## Q5: What is `BottomNavigationBar` and how do you implement it?
-
-```dart
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
-
-class _MainScreenState extends State<MainScreen> {
-  int _currentIndex = 0;
-
-  final screens = [
-    const HomeScreen(),
-    const SearchScreen(),
-    const ProfileScreen(),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: IndexedStack(
-        index: _currentIndex,
-        children: screens,  // Preserves state of all screens
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _currentIndex,
-        onTap: (index) => setState(() => _currentIndex = index),
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-        ],
-      ),
-    );
-  }
-}
-```
-
-### NavigationBar (Material 3)
-```dart
-NavigationBar(
-  selectedIndex: _currentIndex,
-  onDestinationSelected: (index) => setState(() => _currentIndex = index),
-  destinations: const [
-    NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-    NavigationDestination(icon: Icon(Icons.search), label: 'Search'),
-    NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
-  ],
-)
-```
-
----
-
-## Q6: What is `Drawer` and how do you implement it?
-
-```dart
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          onPressed: () => Scaffold.of(context).openDrawer(),
-        ),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(color: Colors.blue),
-              child: Text('Menu', style: TextStyle(color: Colors.white)),
-            ),
-            ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.pop(context);  // Close drawer first
-                Navigator.pushNamed(context, '/home');
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pushNamed(context, '/settings');
-              },
-            ),
-          ],
-        ),
-      ),
-      body: const Center(child: Text('Home')),
-    );
-  }
-}
-```
-
----
-
-## Q7: What is `go_router` and declarative navigation?
-
-```dart
-// go_router — official declarative routing package
-// pubspec.yaml: go_router: ^12.0.0
-
-final router = GoRouter(
-  initialLocation: '/',
-  routes: [
-    GoRoute(
-      path: '/',
-      builder: (context, state) => const HomeScreen(),
-    ),
-    GoRoute(
-      path: '/detail/:id',
-      builder: (context, state) {
-        final id = state.pathParameters['id']!;
-        return DetailScreen(id: id);
-      },
-    ),
-    GoRoute(
-      path: '/profile',
-      builder: (context, state) => const ProfileScreen(),
-      routes: [
-        GoRoute(
-          path: 'edit',  // /profile/edit
-          builder: (context, state) => const EditProfileScreen(),
-        ),
-      ],
-    ),
-    ShellRoute(
-      builder: (context, state, child) => MainShell(child: child),
-      routes: [
-        GoRoute(path: '/tab1', builder: (_, __) => const Tab1()),
-        GoRoute(path: '/tab2', builder: (_, __) => const Tab2()),
-      ],
-    ),
-  ],
-  errorBuilder: (context, state) => ErrorScreen(error: state.error),
-);
-
-// MaterialApp.router
-MaterialApp.router(routerConfig: router);
-
-// Navigate
-context.go('/');              // Replace — no back
-context.push('/detail/42');  // Push — has back
-context.replace('/login');   // Replace current
-
-// Deep links work automatically
-// URL: /detail/42 → DetailScreen(id: '42')
-```
+### Named Routes
+Routes are defined centrally in `MaterialApp`. Navigate by name with `Navigator.pushNamed()`. Arguments passed via `arguments` parameter, read via `ModalRoute.of(context).settings.arguments`.
 
 ### Imperative vs Declarative
 | Imperative (Navigator) | Declarative (go_router) |
@@ -329,207 +38,150 @@ context.replace('/login');   // Replace current
 
 > **Recommendation:** Use `go_router` for new projects — supports deep links, web URLs, nested navigation.
 
+### Bottom Navigation
+`BottomNavigationBar` (Material 2) or `NavigationBar` (Material 3) with `IndexedStack` to preserve state of all screens. `IndexedStack` keeps all children in the tree — only the selected one is visible.
+
+### Drawer
+A `Drawer` is a slide-in menu attached to `Scaffold`. Use `ListView` with `ListTile`s for menu items. Always `Navigator.pop(context)` to close the drawer before navigating.
+
+### go_router
+`go_router` is the official declarative routing package. Supports: path parameters (`/detail/:id`), nested routes, `ShellRoute` (persistent UI like bottom nav), redirects, and deep links.
+
+### ShellRoute
+`ShellRoute` keeps shared UI (like bottom navigation) persistent while navigating between routes. Without it, each tab would rebuild the `Scaffold` and lose the nav bar state.
+
+### Deep Links
+Deep links open a specific screen from a URL (e.g., `myapp://product/42`). `go_router` handles deep links automatically by mapping URLs to routes. Platform config: Android (AndroidManifest.xml intent-filter), iOS (Info.plist URL schemes).
+
+### Custom Page Transitions
+Use `PageRouteBuilder` with `transitionsBuilder` for custom transitions (slide, fade, scale). For platform-specific transitions, use `MaterialPageRoute` (Android) and `CupertinoPageRoute` (iOS).
+
 ---
 
-## Q8: How do you implement nested navigation with `ShellRoute`?
+## 🧪 Code Example
 
 ```dart
-// ShellRoute — shared UI (like bottom nav) persists across routes
-final router = GoRouter(
-  initialLocation: '/home',
-  routes: [
-    ShellRoute(
-      builder: (context, state, child) => MainShell(child: child),
-      routes: [
-        GoRoute(
-          path: '/home',
-          builder: (context, state) => const HomeScreen(),
-        ),
-        GoRoute(
-          path: '/search',
-          builder: (context, state) => const SearchScreen(),
-        ),
-        GoRoute(
-          path: '/profile',
-          builder: (context, state) => const ProfileScreen(),
-          routes: [
-            GoRoute(
-              path: 'edit',  // /profile/edit
-              builder: (context, state) => const EditProfileScreen(),
-            ),
-            GoRoute(
-              path: 'settings',  // /profile/settings
-              builder: (context, state) => const SettingsScreen(),
-            ),
-          ],
-        ),
-      ],
-    ),
-    // Routes outside ShellRoute — no bottom nav
-    GoRoute(
-      path: '/login',
-      builder: (context, state) => const LoginScreen(),
-    ),
-  ],
-);
+import 'package:flutter/material.dart';
 
-// MainShell — persistent bottom navigation
-class MainShell extends StatelessWidget {
-  final Widget child;
-  const MainShell({super.key, required this.child});
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final location = GoRouterState.of(context).uri.toString();
-    final index = switch (location) {
-      String s when s.startsWith('/home') => 0,
-      String s when s.startsWith('/search') => 1,
-      String s when s.startsWith('/profile') => 2,
-      _ => 0,
-    };
+    return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/detail': (context) => const DetailScreen(),
+      },
+    );
+  }
+}
 
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: child,  // Current route content
-      bottomNavigationBar: NavigationBar(
-        selectedIndex: index,
-        onDestinationSelected: (i) => switch (i) {
-          0 => context.go('/home'),
-          1 => context.go('/search'),
-          2 => context.go('/profile'),
-          _ => context.go('/home'),
-        },
-        destinations: const [
-          NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
-          NavigationDestination(icon: Icon(Icons.search), label: 'Search'),
-          NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
-        ],
+      appBar: AppBar(title: const Text('Home')),
+      body: Center(
+        child: ElevatedButton(
+          // Push with constructor params
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const DetailScreen(title: 'Product', id: 42),
+              ),
+            );
+          },
+          child: const Text('Go to Detail'),
+        ),
       ),
     );
   }
 }
-```
 
-> **Key:** `ShellRoute` keeps the bottom navigation bar persistent while navigating between tabs. Without it, each tab would rebuild the `Scaffold` and lose the nav bar state.
+class DetailScreen extends StatelessWidget {
+  final String title;
+  final int id;
 
----
+  const DetailScreen({super.key, required this.title, required this.id});
 
-## Q9: How do you handle deep links in Flutter?
-
-```dart
-// Deep links — open specific screen from URL
-// Example: myapp://product/42 → ProductScreen(id: 42)
-
-// 1. go_router — automatic deep link handling
-final router = GoRouter(
-  routes: [
-    GoRoute(
-      path: '/product/:id',
-      builder: (context, state) =>
-          ProductScreen(id: state.pathParameters['id']!),
-    ),
-  ],
-);
-
-// 2. Android — AndroidManifest.xml
-// <intent-filter>
-//   <action android:name="android.intent.action.VIEW" />
-//   <category android:name="android.intent.category.DEFAULT" />
-//   <category android:name="android.intent.category.BROWSABLE" />
-//   <data android:scheme="myapp" android:host="product" />
-// </intent-filter>
-
-// 3. iOS — Info.plist
-// <key>CFBundleURLTypes</key>
-// <array>
-//   <dict>
-//     <key>CFBundleURLSchemes</key>
-//     <array><string>myapp</string></array>
-//   </dict>
-// </array>
-
-// 4. Handle incoming links
-class DeepLinkHandler {
-  StreamSubscription<Uri>? _sub;
-
-  void init() {
-    // For uni_links package
-    _sub = uriLinkStream.listen((uri) {
-      _handleDeepLink(uri);
-    });
-  }
-
-  void _handleDeepLink(Uri uri) {
-    // uri: myapp://product/42
-    final segments = uri.pathSegments;  // ['product', '42']
-    if (segments.first == 'product') {
-      router.go('/product/${segments[1]}');
-    }
-  }
-
-  void dispose() => _sub?.cancel();
-}
-```
-
-> **Best Practice:** Use `go_router` for deep links — it maps URLs to routes automatically. For push notifications, store the target route in the notification payload and navigate when the user taps.
-
----
-
-## Q10: How do you implement custom page transitions?
-
-```dart
-// Custom PageRouteBuilder — custom transitions
-Navigator.push(
-  context,
-  PageRouteBuilder(
-    pageBuilder: (context, animation, secondaryAnimation) =>
-        const DetailScreen(),
-    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      // Slide transition
-      const begin = Offset(1.0, 0.0);
-      const end = Offset.zero;
-      final tween = Tween(begin: begin, end: end)
-          .chain(CurveTween(curve: Curves.easeInOut));
-      return SlideTransition(position: animation.drive(tween), child: child);
-    },
-    transitionDuration: const Duration(milliseconds: 300),
-  ),
-);
-
-// Fade transition
-PageRouteBuilder(
-  pageBuilder: (_, __, ___) => const DetailScreen(),
-  transitionsBuilder: (_, animation, __, child) {
-    return FadeTransition(opacity: animation, child: child);
-  },
-)
-
-// Scale transition
-PageRouteBuilder(
-  pageBuilder: (_, __, ___) => const DetailScreen(),
-  transitionsBuilder: (_, animation, __, child) {
-    return ScaleTransition(
-      scale: Tween(begin: 0.0, end: 1.0).animate(
-        CurvedAnimation(parent: animation, curve: Curves.elasticOut),
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(title)),
+      body: Center(
+        child: ElevatedButton(
+          // Pop with result
+          onPressed: () => Navigator.pop(context, 'Selected Item $id'),
+          child: const Text('Return Result'),
+        ),
       ),
-      child: child,
     );
-  },
-)
+  }
+}
 
-// go_router custom transitions
-GoRoute(
-  path: '/detail',
-  builder: (context, state) => const DetailScreen(),
-  pageBuilder: (context, state) => CustomTransitionPage(
-    child: const DetailScreen(),
-    transitionsBuilder: (_, animation, __, child) {
-      return FadeTransition(opacity: animation, child: child);
-    },
-  ),
-)
+// Named route navigation
+// Navigator.pushNamed(context, '/detail', arguments: {'id': 42});
+
+// Push replacement (login → home)
+// Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => HomeScreen()));
+
+// Push and remove until (clear stack)
+// Navigator.pushAndRemoveUntil(
+//   context,
+//   MaterialPageRoute(builder: (_) => const HomeScreen()),
+//   (route) => false,  // Remove all routes below
+// );
 ```
 
-> **Tip:** For platform-specific transitions (slide on iOS, fade on Android), use `MaterialPageRoute` and `CupertinoPageRoute`. Use custom transitions only when you need a unique effect.
+### Output
+```
+- HomeScreen with "Go to Detail" button
+- Tapping navigates to DetailScreen with title "Product" and id 42
+- Tapping "Return Result" pops back with "Selected Item 42"
+```
+
+---
+
+## ❓ Interview Questions
+
+1. **How does navigation work in Flutter?**
+   - Flutter navigation is stack-based. `Navigator` maintains a stack of routes. `push` adds a new route on top. `pop` removes the top route. `push` with `MaterialPageRoute` creates a platform-standard transition. You can return data by passing it to `pop(context, result)`. The calling screen receives the result via `await Navigator.push(...)`. The stack is: push(Home) → [Home], push(Detail) → [Home, Detail], pop() → [Home].
+
+2. **What is named navigation?**
+   - Named routes are defined centrally in `MaterialApp(routes: {...})`. Navigate with `Navigator.pushNamed(context, '/detail')`. Pass arguments via `arguments` parameter: `Navigator.pushNamed(context, '/detail', arguments: {'id': 42})`. Read arguments in the destination: `ModalRoute.of(context)!.settings.arguments as Map`. Use `pushReplacementNamed` to replace the current route (login → home). Use `pushNamedAndRemoveUntil` to clear the stack. Named routes are better for deep linking and medium/large apps.
+
+3. **What is the difference between `push` and `pushReplacement`?**
+   - `push` adds a new route on top of the stack: [A] → push(B) → [A, B]. The previous screen is preserved — user can go back. `pushReplacement` replaces the current route: [A] → pushReplacement(B) → [B]. The previous screen is removed — user can't go back. Use `push` for normal navigation. Use `pushReplacement` for flows like login → home (don't go back to login). `pushAndRemoveUntil` pushes a new route and removes routes below until a predicate is met — use for resetting the entire flow.
+
+4. **How do you pass data between screens?**
+   - Three approaches: (1) Constructor parameters — most common and type-safe: `DetailScreen(title: 'Product', id: 42)`. (2) Named route arguments — `Navigator.pushNamed(context, '/detail', arguments: {'id': 42})`, read via `ModalRoute.of(context)!.settings.arguments`. (3) Return data — `Navigator.pop(context, 'result')`, received via `await Navigator.push(...)` on the calling screen. For complex data, use a shared state management solution (Provider, Riverpod) instead of passing data through navigation.
+
+5. **What is `BottomNavigationBar` and how do you implement it?**
+   - `BottomNavigationBar` (Material 2) or `NavigationBar` (Material 3) provides tab-based navigation at the bottom. Use with `IndexedStack` to preserve state of all screens — `IndexedStack` keeps all children in the tree, only the selected one is visible. Store the current index in a `StatefulWidget`, update on `onTap`/`onDestinationSelected`. Each tab is a separate screen. For nested navigation within tabs, use `go_router`'s `ShellRoute`.
+
+6. **What is `Drawer` and how do you implement it?**
+   - `Drawer` is a slide-in menu attached to `Scaffold`'s `drawer` property. It contains a `ListView` with `DrawerHeader` and `ListTile`s for menu items. Always call `Navigator.pop(context)` to close the drawer before navigating — otherwise the drawer stays open over the new screen. Use `Scaffold.of(context).openDrawer()` or the app bar's `leading` hamburger icon to open it. Drawers are good for 5+ navigation items; use `BottomNavigationBar` for 2-5 items.
+
+7. **What is `go_router` and declarative navigation?**
+   - `go_router` is Flutter's official declarative routing package. It maps URLs to routes, supporting path parameters (`/detail/:id`), nested routes, `ShellRoute` (persistent UI), redirects, and deep links. Navigate with `context.go('/path')` (replace, no back) or `context.push('/path')` (push, has back). Use `MaterialApp.router(routerConfig: router)`. Unlike imperative `Navigator`, go_router is URL-driven — the URL changes on web, deep links work automatically. Use go_router for new projects.
+
+8. **How do you implement nested navigation with `ShellRoute`?**
+   - `ShellRoute` keeps shared UI (like bottom navigation) persistent while navigating between routes within the shell. The `ShellRoute` builder wraps child routes with a shared widget (e.g., `Scaffold` with `bottomNavigationBar`). Routes inside the shell share the persistent UI. Routes outside the shell (like login) don't have the bottom nav. Without `ShellRoute`, each tab would rebuild the `Scaffold` and lose the nav bar state. The shell's `child` is the current route's content — it changes on navigation, but the shell persists.
+
+9. **How do you handle deep links in Flutter?**
+   - Deep links open a specific screen from a URL (e.g., `myapp://product/42`). With `go_router`, deep links are handled automatically — URLs map to routes. Platform config: Android — add `<intent-filter>` with `<data android:scheme="myapp">` in AndroidManifest.xml. iOS — add `CFBundleURLSchemes` in Info.plist. For push notifications, store the target route in the notification payload and navigate when the user taps. Use `uni_links` package for raw deep link streams if not using go_router.
+
+10. **How do you implement custom page transitions?**
+    - Use `PageRouteBuilder` with `transitionsBuilder` for custom transitions. Slide: `Tween<Offset>(begin: Offset(1, 0), end: Offset.zero)` with `SlideTransition`. Fade: `FadeTransition(opacity: animation)`. Scale: `ScaleTransition` with `Tween<double>(begin: 0, end: 1)`. Set `transitionDuration` for speed. For platform-specific transitions, use `MaterialPageRoute` (Android slide) and `CupertinoPageRoute` (iOS slide). With `go_router`, use `CustomTransitionPage` in `pageBuilder`. Use custom transitions only when you need a unique effect — platform defaults are usually best.
 
 ---
 

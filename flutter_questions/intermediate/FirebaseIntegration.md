@@ -1,420 +1,292 @@
 # Firebase Integration
 
-## Q1: How do you set up Firebase in Flutter?
+## 📖 Explanation
+
+Firebase provides a backend-as-a-service for Flutter apps — authentication, real-time database, Firestore, cloud storage, push notifications, analytics, and crash reporting.
+
+### Firebase Services for Flutter
+| Service | Package | Use Case |
+|---------|---------|----------|
+| Authentication | `firebase_auth` | Email, Google, Apple, phone login |
+| Cloud Firestore | `cloud_firestore` | NoSQL real-time database |
+| Realtime Database | `firebase_database` | JSON real-time sync |
+| Cloud Storage | `firebase_storage` | File uploads (images, videos) |
+| Cloud Messaging | `firebase_messaging` | Push notifications |
+| Analytics | `firebase_analytics` | User behavior tracking |
+| Crashlytics | `firebase_crashlytics` | Crash reporting |
+| Remote Config | `firebase_remote_config` | Feature flags, A/B testing |
+
+### Firebase Initialization
+```dart
+// main.dart
+await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
+```
+
+### Firestore Data Model
+```
+Collections (top-level)  →  Documents  →  Fields
+users/                    →  user_123    →  {name, email, createdAt}
+                          →  user_456    →  {name, email, createdAt}
+chats/                    →  chat_001    →  {members, lastMessage}
+  chat_001/messages/      →  msg_001     →  {text, senderId, timestamp}
+```
+
+### Firestore vs Realtime Database
+| Feature | Firestore | Realtime DB |
+|---------|-----------|-------------|
+| Data model | Documents/Collections | JSON tree |
+| Querying | Complex queries | Limited |
+| Offline | Built-in cache | Manual |
+| Scaling | Automatic | Sharding |
+| Best for | Complex apps | Real-time sync |
+
+### Firestore Operations
+| Operation | Method |
+|-----------|--------|
+| Create | `collection.add()` or `doc.set()` |
+| Read once | `doc.get()` or `collection.get()` |
+| Read real-time | `doc.snapshots()` or `collection.snapshots()` |
+| Update | `doc.update()` |
+| Delete | `doc.delete()` |
+| Query | `collection.where().orderBy().limit()` |
+
+### Auth Providers
+| Provider | Method |
+|----------|--------|
+| Email/Password | `createUserWithEmailAndPassword` |
+| Google | `GoogleSignIn` + `signInWithCredential` |
+| Apple | `SignInWithApple` |
+| Phone | `verifyPhoneNumber` + `signInWithCredential` |
+| Anonymous | `signInAnonymously` |
+
+---
+
+## 🧪 Code Example
 
 ```dart
-// 1. Install CLI tools
-// flutterfire configure  → generates firebase_options.dart
-
-// 2. Initialize in main()
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
-
+// ── Firebase initialization ──
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  // Crashlytics — catch all errors
+  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+
   runApp(const MyApp());
 }
 
-// pubspec.yaml dependencies:
-// firebase_core: ^2.24.0
-// firebase_auth: ^4.15.0
-// cloud_firestore: ^4.13.0
-// firebase_storage: ^11.5.0
-// firebase_messaging: ^14.7.0
-```
-
----
-
-## Q2: How do you implement Firebase Authentication?
-
-```dart
-import 'package:firebase_auth/firebase_auth.dart';
-
+// ── Authentication ──
 class AuthService {
   final _auth = FirebaseAuth.instance;
 
-  // Email/Password sign up
-  Future<User?> signUp(String email, String password) async {
-    final credential = await _auth.createUserWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
-    return credential.user;
-  }
-
-  // Sign in
-  Future<User?> signIn(String email, String password) async {
-    final credential = await _auth.signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
-    return credential.user;
-  }
-
-  // Sign out
-  Future<void> signOut() => _auth.signOut();
-
-  // Auth state stream
   Stream<User?> get authState => _auth.authStateChanges();
+  User? get currentUser => _auth.currentUser;
 
-  // Google Sign-In
-  Future<User?> signInWithGoogle() async {
+  Future<User> signUp(String email, String password) async {
+    final credential = await _auth.createUserWithEmailAndPassword(
+      email: email, password: password,
+    );
+    // Create user document in Firestore
+    await FirebaseFirestore.instance
+        .collection('users')
+        .doc(credential.user!.uid)
+        .set({'email': email, 'createdAt': FieldValue.serverTimestamp()});
+    return credential.user!;
+  }
+
+  Future<User> signIn(String email, String password) async {
+    final credential = await _auth.signInWithEmailAndPassword(
+      email: email, password: password,
+    );
+    return credential.user!;
+  }
+
+  Future<User> signInWithGoogle() async {
     final googleUser = await GoogleSignIn().signIn();
     final googleAuth = await googleUser!.authentication;
     final credential = GoogleAuthProvider.credential(
       accessToken: googleAuth.accessToken,
       idToken: googleAuth.idToken,
     );
-    return (await _auth.signInWithCredential(credential)).user;
+    return (await _auth.signInWithCredential(credential)).user!;
   }
 
-  // Password reset
-  Future<void> resetPassword(String email) {
-    return _auth.sendPasswordResetEmail(email: email);
-  }
-
-  // Phone auth
-  Future<void> verifyPhone(String phone) async {
-    await _auth.verifyPhoneNumber(
-      phoneNumber: phone,
-      verificationCompleted: (credential) async {
-        await _auth.signInWithCredential(credential);
-      },
-      verificationFailed: (e) => print('Failed: $e'),
-      codeSent: (verificationId, resendToken) {
-        // Store verificationId, show OTP input
-      },
-      codeAutoRetrievalTimeout: (verificationId) {},
-    );
+  Future<void> signOut() async {
+    await GoogleSignIn().signOut();
+    await _auth.signOut();
   }
 }
 
-// Usage in widget
-StreamBuilder<User?>(
-  stream: AuthService().authState,
-  builder: (context, snapshot) {
-    if (snapshot.hasData) {
-      return const HomeScreen();
-    }
-    return const LoginScreen();
-  },
-)
-```
-
----
-
-## Q3: How do you use Cloud Firestore?
-
-```dart
-import 'package:cloud_firestore/cloud_firestore.dart';
-
+// ── Firestore CRUD ──
 class FirestoreService {
   final _db = FirebaseFirestore.instance;
 
-  // Create document
-  Future<void> addUser(User user) async {
-    await _db.collection('users').doc(user.id).set(user.toJson());
+  // Create
+  Future<void> addUser(UserModel user) async {
+    await _db.collection('users').doc(user.id).set(user.toMap());
   }
 
-  // Read single document
-  Future<User?> getUser(String id) async {
+  // Read once
+  Future<UserModel?> getUser(String id) async {
     final doc = await _db.collection('users').doc(id).get();
-    if (doc.exists) {
-      return User.fromJson(doc.data()!);
-    }
-    return null;
+    if (!doc.exists) return null;
+    return UserModel.fromMap(doc.id, doc.data()!);
   }
 
-  // Read collection
-  Future<List<User>> getUsers() async {
-    final snapshot = await _db.collection('users').get();
-    return snapshot.docs.map((d) => User.fromJson(d.data())).toList();
+  // Read real-time stream
+  Stream<List<UserModel>> getUsersStream() {
+    return _db.collection('users')
+        .orderBy('name')
+        .snapshots()
+        .map((snapshot) => snapshot.docs
+            .map((doc) => UserModel.fromMap(doc.id, doc.data()))
+            .toList());
   }
 
-  // Update document
+  // Update
   Future<void> updateUser(String id, Map<String, dynamic> data) async {
     await _db.collection('users').doc(id).update(data);
   }
 
-  // Delete document
+  // Delete
   Future<void> deleteUser(String id) async {
     await _db.collection('users').doc(id).delete();
   }
 
-  // Query with filters
-  Future<List<User>> getActiveUsers() async {
-    final snapshot = await _db
-        .collection('users')
-        .where('isActive', isEqualTo: true)
-        .where('age', isGreaterThanOrEqualTo: 18)
-        .orderBy('name')
+  // Query
+  Future<List<UserModel>> searchUsers(String query) async {
+    final snapshot = await _db.collection('users')
+        .where('name', isGreaterThanOrEqualTo: query)
+        .where('name', isLessThanOrEqualTo: '$query\uf8ff')
         .limit(20)
         .get();
-    return snapshot.docs.map((d) => User.fromJson(d.data())).toList();
-  }
-
-  // Real-time stream
-  Stream<List<User>> watchUsers() {
-    return _db.collection('users').snapshots().map((snapshot) {
-      return snapshot.docs.map((d) => User.fromJson(d.data())).toList();
-    });
-  }
-
-  // Batch write
-  Future<void> batchWrite(List<User> users) async {
-    final batch = _db.batch();
-    for (final user in users) {
-      final ref = _db.collection('users').doc(user.id);
-      batch.set(ref, user.toJson());
-    }
-    await batch.commit();
-  }
-
-  // Transaction
-  Future<void> transferCredits(String fromId, String toId, int amount) async {
-    await _db.runTransaction((txn) async {
-      final fromRef = _db.collection('users').doc(fromId);
-      final toRef = _db.collection('users').doc(toId);
-
-      final fromDoc = await txn.get(fromRef);
-      final toDoc = await txn.get(toRef);
-
-      final fromCredits = fromDoc.data()!['credits'] as int;
-      final toCredits = toDoc.data()!['credits'] as int;
-
-      if (fromCredits < amount) throw Exception('Insufficient credits');
-
-      txn.update(fromRef, {'credits': fromCredits - amount});
-      txn.update(toRef, {'credits': toCredits + amount});
-    });
+    return snapshot.docs
+        .map((doc) => UserModel.fromMap(doc.id, doc.data()))
+        .toList();
   }
 }
-```
 
----
+// ── StreamBuilder with Firestore ──
+class UserListScreen extends StatelessWidget {
+  const UserListScreen({super.key});
 
-## Q4: How do you use Firebase Storage?
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<QuerySnapshot>(
+      stream: FirebaseFirestore.instance
+          .collection('users')
+          .orderBy('createdAt', descending: true)
+          .snapshots(),
+      builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          return const Center(child: Text('Error loading users'));
+        }
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        final users = snapshot.data!.docs;
+        return ListView.builder(
+          itemCount: users.length,
+          itemBuilder: (context, index) {
+            final user = users[index].data() as Map<String, dynamic>;
+            return ListTile(title: Text(user['name'] ?? 'Unknown'));
+          },
+        );
+      },
+    );
+  }
+}
 
-```dart
-import 'package:firebase_storage/firebase_storage.dart';
-
+// ── Cloud Storage — upload image ──
 class StorageService {
   final _storage = FirebaseStorage.instance;
 
-  // Upload file
-  Future<String> uploadImage(File file, String path) async {
-    final ref = _storage.ref().child(path);
-    final task = ref.putFile(file);
-
-    // Track progress
-    task.snapshotEvents.listen((event) {
-      final progress = event.bytesTransferred / event.totalBytes * 100;
-      print('Upload: ${progress.toStringAsFixed(0)}%');
-    });
-
-    final snapshot = await task;
-    return snapshot.ref.getDownloadURL();  // Return URL
-  }
-
-  // Download file
-  Future<File> downloadFile(String path, String localPath) async {
-    final ref = _storage.ref().child(path);
-    final file = File(localPath);
-    await ref.writeToFile(file);
-    return file;
-  }
-
-  // Delete file
-  Future<void> deleteFile(String path) async {
-    await _storage.ref().child(path).delete();
-  }
-
-  // List files
-  Future<List<String>> listFiles(String folder) async {
-    final result = await _storage.ref(folder).listAll();
-    return result.items.map((ref) => ref.fullPath).toList();
+  Future<String> uploadImage(File image, String userId) async {
+    final ref = _storage.ref('users/$userId/avatar.jpg');
+    final task = await ref.putFile(image);
+    return await task.ref.getDownloadURL();  // Return download URL
   }
 }
-```
 
----
-
-## Q5: How do you implement Push Notifications?
-
-```dart
-import 'package:firebase_messaging/firebase_messaging.dart';
-
-// Background handler (must be top-level function)
-@pragma('vm:entry-point')
-Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
-  print('Background message: ${message.messageId}');
-}
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-  runApp(const MyApp());
-}
-
+// ── Push Notifications ──
 class NotificationService {
   Future<void> init() async {
-    // Request permission
-    await FirebaseMessaging.instance.requestPermission(
-      alert: true, badge: true, sound: true,
-    );
+    final messaging = FirebaseMessaging.instance;
+
+    // Request permission (iOS)
+    await messaging.requestPermission();
 
     // Get FCM token
-    final token = await FirebaseMessaging.instance.getToken();
+    final token = await messaging.getToken();
     print('FCM Token: $token');
-    // Send this token to your server
 
     // Foreground messages
     FirebaseMessaging.onMessage.listen((message) {
       print('Foreground: ${message.notification?.title}');
-      // Show local notification
     });
 
-    // Background/notification tap
-    FirebaseMessaging.onMessageOpenedApp.listen((message) {
-      // Navigate to specific screen
-      final screen = message.data['screen'];
-      if (screen != null) Navigator.pushNamed(context, screen);
-    });
-
-    // Terminated state tap
-    final initialMessage = await FirebaseMessaging.instance.getInitialMessage();
-    if (initialMessage != null) {
-      // App opened from notification
-    }
-  }
-
-  // Subscribe to topic
-  Future<void> subscribeToTopic(String topic) {
-    return FirebaseMessaging.instance.subscribeToTopic(topic);
+    // Background/terminated
+    FirebaseMessaging.onBackgroundMessage(_backgroundHandler);
   }
 }
+
+@pragma('vm:entry-point')
+Future<void> _backgroundHandler(RemoteMessage message) async {
+  print('Background: ${message.notification?.title}');
+}
+```
+
+### Output
+```
+A Flutter app with Firebase integration:
+- Auth: email/password and Google sign-in with Firestore user creation
+- Firestore: CRUD operations + real-time streams + search queries
+- StreamBuilder for reactive UI updates
+- Cloud Storage: image upload with download URL
+- FCM push notifications: foreground and background handlers
 ```
 
 ---
 
-## Q6: How do you use Firebase Remote Config?
+## ❓ Interview Questions
 
-```dart
-import 'package:firebase_remote_config/firebase_remote_config.dart';
+1. **How do you integrate Firebase in a Flutter app?**
+   - Add Firebase to the project: use `flutterfire configure` CLI to auto-configure for all platforms. This generates `firebase_options.dart` with platform-specific config. In `main()`, call `await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform)` before `runApp()`. Add packages in `pubspec.yaml`: `firebase_core` (required), `firebase_auth`, `cloud_firestore`, `firebase_storage`, `firebase_messaging`, etc. For Crashlytics, set `FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError`. Always initialize Firebase before any Firebase service usage.
 
-class RemoteConfigService {
-  final _remoteConfig = FirebaseRemoteConfig.instance;
+2. **How do you implement authentication in Flutter with Firebase?**
+   - Use `firebase_auth` package. Email/password: `_auth.createUserWithEmailAndPassword(email, password)` and `_auth.signInWithEmailAndPassword(email, password)`. Google: `GoogleSignIn().signIn()` → get `GoogleAuthAccount` → create `GoogleAuthProvider.credential(accessToken, idToken)` → `_auth.signInWithCredential(credential)`. Listen to auth state: `_auth.authStateChanges()` returns a `Stream<User?>` — use with `StreamBuilder` or Provider to rebuild UI on login/logout. Store additional user data in Firestore after sign-up. Always `signOut()` on logout. For phone auth, use `verifyPhoneNumber()` with code sent via SMS.
 
-  Future<void> init() async {
-    await _remoteConfig.setConfigSettings(RemoteConfigSettings(
-      fetchTimeout: const Duration(seconds: 10),
-      minimumFetchInterval: const Duration(hours: 1),
-    ));
+3. **How do you use Firestore in Flutter?**
+   - Firestore is a NoSQL document database. Collections contain documents, which contain fields (and subcollections). Create: `db.collection('users').doc(id).set({'name': 'John'})`. Read once: `db.collection('users').doc(id).get()` → `doc.data()`. Read real-time: `db.collection('users').snapshots()` → `Stream<QuerySnapshot>`. Update: `db.collection('users').doc(id).update({'name': 'Jane'})`. Delete: `db.collection('users').doc(id).delete()`. Query: `db.collection('users').where('age', isGreaterThan: 18).orderBy('name').limit(10).get()`. Use `StreamBuilder` to reactively update UI on data changes. Use `FieldValue.serverTimestamp()` for server-side timestamps.
 
-    await _remoteConfig.setDefaults({
-      'maintenance_mode': false,
-      'max_items_per_page': 20,
-      'feature_flag_new_ui': false,
-    });
+4. **What is the difference between Firestore and Realtime Database?**
+   - **Firestore**: document/ collection model, complex queries (where, orderBy, limit), built-in offline cache, automatic scaling, hierarchical data. Best for most apps. **Realtime Database**: JSON tree model, limited queries, manual offline support, requires sharding for scale, simpler real-time sync. Best for simple real-time features (chat, presence). Firestore is the recommended default — it's newer, more scalable, and has better querying. Use Realtime Database only when you need very fast real-time syncing of simple JSON data (e.g., live game state, presence detection).
 
-    await _remoteConfig.fetchAndActivate();
-  }
+5. **How do you handle real-time updates with Firestore?**
+   - Use `snapshots()` which returns a `Stream`. For a single document: `db.collection('users').doc(id).snapshots()` → `Stream<DocumentSnapshot>`. For a collection: `db.collection('users').snapshots()` → `Stream<QuerySnapshot>`. Use with `StreamBuilder` in the widget tree — Flutter automatically rebuilds when data changes, and cancels the stream subscription when the widget is disposed. For filtered real-time: `db.collection('users').where('status', isEqualTo: 'active').snapshots()`. The stream stays open and emits new snapshots whenever data changes in Firestore — no need for polling.
 
-  bool get maintenanceMode => _remoteConfig.getBool('maintenance_mode');
-  int get maxItems => _remoteConfig.getInt('max_items_per_page');
-  bool get newUiEnabled => _remoteConfig.getBool('feature_flag_new_ui');
-}
+6. **How do you upload files to Firebase Storage?**
+   - Use `firebase_storage` package. Create a reference: `final ref = FirebaseStorage.instance.ref('users/$userId/avatar.jpg')`. Upload: `final task = await ref.putFile(imageFile)`. Get download URL: `final url = await task.ref.getDownloadURL()`. Track progress: `ref.putFile(file).snapshotEvents.listen((task) { print('${task.bytesTransferred / task.totalBytes * 100}%'); })`. Upload from bytes: `ref.putData(uint8List)`. For large files, use `UploadTask` with pause/resume: `task.pause()`, `task.resume()`, `task.cancel()`. Store the download URL in Firestore for later retrieval.
 
-// Usage
-if (remoteConfig.maintenanceMode) {
-  return const MaintenanceScreen();
-}
-```
+7. **How do you implement push notifications with FCM?**
+   - Use `firebase_messaging` package. Request permission: `messaging.requestPermission()`. Get token: `messaging.getToken()` — send this token to your server to send targeted notifications. Foreground messages: `FirebaseMessaging.onMessage.listen((message) { ... })` — show in-app notification. Background: `FirebaseMessaging.onBackgroundMessage(_handler)` — annotate with `@pragma('vm:entry-point')`. Terminated: `messaging.getInitialMessage()` — check if app was opened from notification. Use `flutter_local_notifications` to display notifications when in foreground. Send from server using the FCM HTTP API with the device token.
 
----
+8. **How do you structure Firestore data for a chat app?**
+   - Top-level `chats` collection: each chat document has `members` (array of user IDs), `lastMessage`, `lastMessageTime`, `unreadCount`. Subcollection `chats/{chatId}/messages`: each message document has `senderId`, `text`, `timestamp`, `type` (text/image). Query user's chats: `db.collection('chats').where('members', arrayContains: userId).orderBy('lastMessageTime', descending: true)`. Real-time messages: `db.collection('chats/$chatId/messages').orderBy('timestamp', descending: true).limit(50).snapshots()`. Use batch writes for sending a message (update message + update chat's lastMessage). Use `FieldValue.arrayUnion()` to add members.
 
-## Q7: How do you structure Firestore for a chat app?
+9. **How do you handle offline support with Firebase?**
+   - Firestore has built-in offline persistence — enable with `FirebaseFirestore.instance.settings = Settings(persistenceEnabled: true)`. Reads work offline from cache. Writes are queued and synced when online. Check if data is from cache: `snapshot.metadata.isFromCache`. For auth, use `flutter_secure_storage` to persist the user session. For file storage, cache downloaded files locally. For push notifications, queue notification sends server-side. Use `connectivity_plus` to detect online/offline status and show appropriate UI. Firestore offline support is automatic — no extra code needed for basic CRUD operations.
 
-```dart
-// Firestore structure for chat
-// chats/{chatId}/messages/{messageId}
-
-// Chat document
-// chats/chat_123
-{
-  'participants': ['user_1', 'user_2'],
-  'lastMessage': 'Hello!',
-  'lastMessageTime': FieldValue.serverTimestamp(),
-  'unreadCount': {'user_1': 0, 'user_2': 1},
-}
-
-// Message document
-// chats/chat_123/messages/msg_456
-{
-  'senderId': 'user_1',
-  'text': 'Hello!',
-  'timestamp': FieldValue.serverTimestamp(),
-  'type': 'text',  // text, image, file
-}
-
-// Service
-class ChatService {
-  final _db = FirebaseFirestore.instance;
-
-  // Send message
-  Future<void> sendMessage(String chatId, String senderId, String text) async {
-    final batch = _db.batch();
-
-    // Add message
-    final msgRef = _db.collection('chats').doc(chatId).collection('messages').doc();
-    batch.set(msgRef, {
-      'senderId': senderId,
-      'text': text,
-      'timestamp': FieldValue.serverTimestamp(),
-      'type': 'text',
-    });
-
-    // Update chat metadata
-    final chatRef = _db.collection('chats').doc(chatId);
-    batch.update(chatRef, {
-      'lastMessage': text,
-      'lastMessageTime': FieldValue.serverTimestamp(),
-    });
-
-    await batch.commit();
-  }
-
-  // Stream messages (real-time)
-  Stream<List<Message>> watchMessages(String chatId) {
-    return _db
-        .collection('chats')
-        .doc(chatId)
-        .collection('messages')
-        .orderBy('timestamp', descending: true)
-        .limit(50)
-        .snapshots()
-        .map((s) => s.docs.map((d) => Message.fromJson(d.data())).toList());
-  }
-
-  // Get user's chats
-  Stream<List<Chat>> watchUserChats(String userId) {
-    return _db
-        .collection('chats')
-        .where('participants', arrayContains: userId)
-        .orderBy('lastMessageTime', descending: true)
-        .snapshots()
-        .map((s) => s.docs.map((d) => Chat.fromJson(d.data())).toList());
-  }
-}
-```
+10. **How do you use Firebase Remote Config for feature flags?**
+    - Use `firebase_remote_config` package. Initialize: `final remoteConfig = FirebaseRemoteConfig.instance`. Set defaults: `remoteConfig.setDefaults({'new_feature_enabled': false})`. Fetch: `await remoteConfig.fetchAndActivate()`. Read: `remoteConfig.getBool('new_feature_enabled')`. Set values in Firebase Console — changes propagate to all devices. Use for: feature flags (enable/disable features per platform), A/B testing (different values for different user groups), emergency switches (disable a broken feature), phased rollouts. Set `minimumFetchInterval` to control how often the app fetches new config (default 12 hours). Use `StreamBuilder` with `remoteConfig.onConfigChanged` for real-time updates.
 
 ---
 
 ## 🔗 Related Topics
-- [HTTP & Networking](HTTPNetworking.md)
+- [HTTP Networking](HTTPNetworking.md)
 - [State Management Advanced](StateManagementAdvanced.md)
-- [Testing](Testing.md)
+- [Architecture Patterns](../advanced/ArchitecturePatterns.md)

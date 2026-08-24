@@ -1,71 +1,48 @@
 # Dart Basics
 
-## Q1: What are variables and data types in Dart?
+## 📖 Explanation
+
+Dart is the programming language used by Flutter. It is a modern, object-oriented, statically typed language with sound null safety. Dart supports both JIT (for development) and AOT (for production) compilation.
+
+### Variables
+Dart has several variable declarations:
+- **`var`** — Type inferred, mutable. Can be reassigned.
+- **`final`** — Runtime constant. Assigned once, cannot be reassigned.
+- **`const`** — Compile-time constant. Deeply immutable, value must be known at compile time.
+- **`late`** — Declared now, initialized later. Must be assigned before first use.
 
 ```dart
-// Variables
 var name = 'Alice';        // Type inferred (String)
 String city = 'NYC';       // Explicit type
 final age = 30;            // Runtime constant
 const pi = 3.14;           // Compile-time constant
 late String description;   // Assigned later
+```
 
-// Built-in types
-int count = 42;            // 64-bit integer
-double price = 9.99;      // 64-bit float
-bool isActive = true;      // Boolean
-String message = 'Hello';  // String
-List<int> nums = [1, 2];  // List (growable)
-Map<String, int> map = {}; // Map
-Set<String> set = {};      // Set
-dynamic anything = 'x';   // Any type (unsafe)
-Object obj = 'x';          // Any non-null type
+### Built-in Data Types
+| Type | Description | Example |
+|------|-------------|---------|
+| `int` | 64-bit integer | `42` |
+| `double` | 64-bit floating point | `9.99` |
+| `bool` | Boolean | `true` |
+| `String` | Text | `'Hello'` |
+| `List<T>` | Ordered collection | `[1, 2]` |
+| `Map<K,V>` | Key-value pairs | `{'a': 1}` |
+| `Set<T>` | Unique elements | `{1, 2}` |
+| `dynamic` | Any type (unsafe) | `'x'` |
+| `Object` | Any non-null type | `'x'` |
 
-// Type conversion
+### Type Conversion
+Dart requires explicit type conversion — no implicit widening.
+```dart
 int.parse('42');           // String → int
 double.parse('3.14');      // String → double
 42.toString();             // int → String
 '3.14'.toDouble();         // String → double
-
-// Null-aware operators
-String? name;              // Nullable type
-int length = name?.length ?? 0;  // Null-aware access + default
-name ??= 'default';        // Assign if null
 ```
 
----
-
-## Q2: How does null safety work in Dart?
-
-```dart
-// Sound null safety (Dart 2.12+)
-// Types are non-nullable by default
-
-String name = 'Alice';     // Non-nullable — can't be null
-String? nickname;          // Nullable — can be null
-
-// Null assertion (!) — throws if null
-int len = nickname!.length;  // ❌ if nickname is null
-
-// Null-aware access (?.) — returns null if null
-int? len2 = nickname?.length;  // Safe — null if nickname is null
-
-// Null-coalescing (??) — default value
-String display = nickname ?? 'Anonymous';
-
-// Null-aware assignment (??=)
-nickname ??= 'Bob';  // Assign only if null
-
-// Null-aware spread (...)
-List<int>? nums;
-var all = [1, 2, ...?nums];  // [1, 2] — no error if nums is null
-
-// Late initialization
-late String config;
-void init() {
-  config = loadConfig();  // Must be assigned before use
-}
-```
+### Null Safety
+Dart has sound null safety (Dart 2.12+). Types are non-nullable by default.
 
 | Operator | Name | Behavior |
 |----------|------|----------|
@@ -76,137 +53,28 @@ void init() {
 | `??=` | Null-aware assign | Assign if null |
 | `...?` | Null-aware spread | Spread if not null |
 
----
-
-## Q3: What are functions in Dart?
+### Functions
+Dart functions are first-class citizens — they can be assigned to variables, passed as arguments, and returned from functions.
 
 ```dart
 // Basic function
-int add(int a, int b) {
-  return a + b;
-}
-
-// Arrow function (single expression)
-int multiply(int a, int b) => a * b;
+int add(int a, int b) => a + b;
 
 // Named parameters (curly braces)
-void greet({String? name, int? age}) {
-  print('Hello $name, age $age');
-}
-greet(name: 'Alice', age: 30);  // Named args
+void greet({String? name, int? age}) {}
 
 // Required named parameter
-void createUser({required String email, String? name}) {
-  // email is required, name is optional
-}
-createUser(email: 'a@b.com', name: 'Alice');
+void createUser({required String email}) {}
 
 // Default values
-void configure({int port = 8080, String host = 'localhost'}) {}
-configure();  // Uses defaults
+void configure({int port = 8080}) {}
 
 // Positional optional (square brackets)
-void log(String message, [String? tag]) {
-  print('[$tag] $message');
-}
-log('Hello');           // tag is null
-log('Hello', 'INFO');   // tag is 'INFO'
-
-// Function as first-class citizen
-void process(String input, String Function(String) transformer) {
-  print(transformer(input));
-}
-process('hello', (s) => s.toUpperCase());  // HELLO
-
-// Typedef
-typedef Transformer = String Function(String);
-void apply(String input, Transformer fn) {}
+void log(String message, [String? tag]) {}
 ```
 
----
-
-## Q4: What are classes and constructors in Dart?
-
-```dart
-class User {
-  // Fields
-  final String name;
-  final int age;
-  String? email;
-
-  // Constructor (short form)
-  User(this.name, this.age);
-
-  // Named constructor
-  User.guest() : name = 'Guest', age = 0;
-
-  // Named constructor with redirecting
-  User.admin(String name) : this(name, 99);
-
-  // Factory constructor
-  factory User.fromJson(Map<String, dynamic> json) {
-    return User(json['name'] as String, json['age'] as int);
-  }
-
-  // Getters
-  bool get isAdult => age >= 18;
-
-  // Methods
-  String greet() => 'Hi, I am $name';
-
-  // toString
-  @override
-  String toString() => 'User($name, $age)';
-}
-
-// Usage
-final user = User('Alice', 30);
-final guest = User.guest();
-final admin = User.admin('Bob');
-final fromJson = User.fromJson({'name': 'Charlie', 'age': 25});
-
-print(user.isAdult);  // true
-print(user.greet());  // Hi, I am Alice
-```
-
----
-
-## Q5: What are mixins in Dart?
-
-```dart
-// Mixin — reusable code shared across class hierarchies
-mixin Logger {
-  void log(String message) {
-    print('[$runtimeType] $message');
-  }
-}
-
-mixin Validator {
-  bool isValid(String input) => input.isNotEmpty;
-}
-
-// Apply mixins with 'with' keyword
-class UserService with Logger, Validator {
-  void createUser(String name) {
-    if (!isValid(name)) {
-      log('Invalid name');
-      return;
-    }
-    log('Creating user: $name');
-  }
-}
-
-// Mixin with constraint (on)
-mixin OnString on String {
-  String shout() => toUpperCase();
-}
-// Only String subclasses can use this mixin
-
-// Usage
-final service = UserService();
-service.createUser('Alice');  // [UserService] Creating user: Alice
-service.createUser('');        // [UserService] Invalid name
-```
+### Classes and Constructors
+Dart supports short-form constructors, named constructors, factory constructors, and mixins.
 
 | Concept | Keyword | Purpose |
 |---------|---------|---------|
@@ -216,100 +84,8 @@ service.createUser('');        // [UserService] Invalid name
 | Mixin | `with` | Reuse code across hierarchies |
 | Extension | `extension` | Add methods to existing types |
 
----
-
-## Q6: What are extensions in Dart?
-
-```dart
-// Extension — add methods to existing types
-extension StringExtensions on String {
-  bool get isEmail => contains('@') && contains('.');
-  String capitalize() =>
-      isEmpty ? this : '${this[0].toUpperCase()}${substring(1)}';
-  String reverse() => split('').reversed.join();
-}
-
-// Usage
-print('alice@test.com'.isEmail);    // true
-print('hello'.capitalize());         // Hello
-print('flutter'.reverse());          // rettulf
-
-// Extension on List
-extension ListExtensions<T> on List<T> {
-  T? get firstOrNull => isEmpty ? null : first;
-  List<T> shuffled() => [...this]..shuffle();
-}
-
-// Extension on int
-extension IntExtensions on int {
-  bool get isEven => this % 2 == 0;
-  Duration get seconds => Duration(seconds: this);
-}
-
-// Usage
-print([1, 2, 3].firstOrNull);  // 1
-print(5.seconds);               // 0:00:05.000000
-```
-
----
-
-## Q7: What are futures, async, and await in Dart?
-
-```dart
-// Future — represents a value that will be available later
-Future<String> fetchUser() {
-  return Future.delayed(const Duration(seconds: 1), () => 'Alice');
-}
-
-// async/await — read async code like sync
-Future<void> main() async {
-  print('Start');
-  final user = await fetchUser();  // Waits for result
-  print('User: $user');            // Prints after 1 second
-  print('End');
-}
-// Output: Start → (1s) → User: Alice → End
-
-// Error handling
-Future<void> loadData() async {
-  try {
-    final data = await fetchData();
-    print(data);
-  } catch (e) {
-    print('Error: $e');
-  } finally {
-    print('Done');
-  }
-}
-
-// Future methods
-Future<List<String>> fetchAll() async {
-  final results = await Future.wait([
-    fetchUser(),
-    fetchPosts(),
-    fetchComments(),
-  ]);
-  return results;
-}
-
-// then/catchError (alternative to async/await)
-fetchUser()
-    .then((user) => print(user))
-    .catchError((e) => print('Error: $e'));
-
-// Stream — async sequence of values
-Stream<int> countDown(int from) async* {
-  for (int i = from; i >= 0; i--) {
-    await Future.delayed(const Duration(seconds: 1));
-    yield i;
-  }
-}
-
-// Listen to stream
-countDown(3).listen((value) {
-  print(value);  // 3, 2, 1, 0
-});
-```
+### Async Programming
+Dart uses `Future` and `Stream` for async operations, with `async`/`await` syntax.
 
 | Concept | Description |
 |---------|-------------|
@@ -320,51 +96,8 @@ countDown(3).listen((value) {
 | `async*` | Async generator (yields values) |
 | `yield` | Emits a value in a stream |
 
----
-
-## Q8: What are isolates and how do they work?
-
-```dart
-// Dart is single-threaded — isolates provide true parallelism
-// Each isolate has its own memory heap (no shared state)
-
-// Isolate.run (Dart 2.19+) — simplest way
-final result = await Isolate.run(() {
-  return heavyComputation();  // Runs in separate isolate
-});
-
-// compute() — Flutter wrapper for Isolate.run
-final result = await compute(_processData, largeList);
-
-List<Result> _processData(List<Data> data) {
-  return data.map((e) => complexCalculation(e)).toList();
-}
-
-// Isolate.spawn — for long-running isolates with communication
-Future<void> startWorker() async {
-  final receivePort = ReceivePort();
-  await Isolate.spawn(_workerEntry, receivePort.sendPort);
-
-  receivePort.listen((message) {
-    print('From worker: $message');
-  });
-}
-
-void _workerEntry(SendPort sendPort) {
-  // Runs in separate isolate
-  final result = heavyComputation();
-  sendPort.send(result);
-}
-
-// Two-way communication
-Future<void> twoWayCommunication() async {
-  final receivePort = ReceivePort();
-  final isolate = await Isolate.spawn(_entry, receivePort.sendPort);
-
-  final sendPort = await receivePort.first as SendPort;
-  sendPort.send('Do work');
-}
-```
+### Isolates
+Dart is single-threaded. Isolates provide true parallelism — each isolate has its own memory heap (no shared state).
 
 | Feature | Main Isolate | Worker Isolate |
 |---------|-------------|----------------|
@@ -372,137 +105,140 @@ Future<void> twoWayCommunication() async {
 | UI | ✅ Runs UI | ❌ No UI |
 | Concurrency | Single-threaded | True parallelism |
 | Communication | Direct | Message passing (SendPort) |
-| Use case | UI, event handling | Heavy computation |
 
-> **Rule:** Use isolates for CPU-heavy work (parsing large JSON, image processing, crypto). Don't use isolates for I/O (network, file) — Dart's async I/O is already non-blocking.
-
----
-
-## Q9: What are records and patterns in Dart 3?
+### Records and Patterns (Dart 3+)
+Records are anonymous aggregate types. Patterns enable destructuring and exhaustive switch expressions.
 
 ```dart
-// Records — anonymous aggregate types (Dart 3+)
-// (String, int) — positional fields
-// ({String name, int age}) — named fields
-
 // Positional record
 (String, int) user = ('Alice', 30);
 print(user.$1);  // Alice
-print(user.$2);  // 30
 
 // Named record
 ({String name, int age}) person = (name: 'Bob', age: 25);
-print(person.name);  // Bob
-print(person.age);   // 25
 
 // Destructuring
 final (name, age) = ('Alice', 30);
-print(name);  // Alice
 
-final (name: n, age: a) = (name: 'Bob', age: 25);
-print(n);  // Bob
-
-// Patterns — switch expressions and destructuring
+// Switch expression
 String describe(Object obj) => switch (obj) {
-  int i when i > 0 => 'Positive integer: $i',
+  int i when i > 0 => 'Positive: $i',
   String s => 'String: $s',
-  List<int> l => 'Int list: $l',
-  (String, int) r => 'Record: ${r.$1}, ${r.$2}',
-  null => 'Null',
   _ => 'Unknown',
 };
-
-// Pattern matching with if-case
-final result = switch (statusCode) {
-  200 || 201 => 'Success',
-  404 => 'Not found',
-  >= 500 => 'Server error',
-  _ => 'Unknown: $statusCode',
-};
-
-// Map entry destructuring
-for (final MapEntry(:key, :value) in map.entries) {
-  print('$key: $value');
-}
 ```
 
-> **Key:** Records and patterns (Dart 3+) make Dart more expressive — replacing boilerplate classes with lightweight records, and replacing if-else chains with pattern matching.
-
----
-
-## Q10: What are sealed classes and when do you use them?
-
-```dart
-// Sealed class — closed hierarchy, all subtypes known at compile time
-// Used for exhaustive pattern matching
-
-sealed class Result<T> {
-  const Result();
-}
-
-class Success<T> extends Result<T> {
-  final T data;
-  const Success(this.data);
-}
-
-class Failure<T> extends Result<T> {
-  final String error;
-  const Failure(this.error);
-}
-
-class Loading<T> extends Result<T> {
-  const Loading();
-}
-
-// Exhaustive switch — compiler warns if a case is missing
-String handleResult(Result<int> result) => switch (result) {
-  Success(:final data) => 'Got: $data',
-  Failure(:final error) => 'Error: $error',
-  Loading() => 'Loading...',
-};
-
-// State pattern for BLoC/state management
-sealed class UiState<T> {
-  const UiState();
-}
-
-class Initial<T> extends UiState<T> {
-  const Initial();
-}
-
-class LoadingState<T> extends UiState<T> {
-  const LoadingState();
-}
-
-class SuccessState<T> extends UiState<T> {
-  final T data;
-  const SuccessState(this.data);
-}
-
-class ErrorState<T> extends UiState<T> {
-  final String message;
-  const ErrorState(this.message);
-}
-
-// Usage
-Widget build(BuildContext context) {
-  return switch (state) {
-    Initial() => const SizedBox.shrink(),
-    LoadingState() => const CircularProgressIndicator(),
-    SuccessState(:final data) => ContentWidget(data: data),
-    ErrorState(:final message) => ErrorWidget(message: message),
-  };
-}
-```
+### Sealed Classes
+Sealed classes create closed hierarchies — all subtypes are known at compile time, enabling exhaustive pattern matching.
 
 | Feature | `sealed` | `abstract` | `abstract interface` |
 |---------|----------|-----------|---------------------|
 | Subtypes | Same library only | Anywhere | Anywhere |
 | Exhaustive switch | ✅ Yes | ❌ No | ❌ No |
-| Implement | `extends` | `extends`/`implements` | `implements` |
 | Use case | Closed hierarchies | Open hierarchies | Pure interfaces |
 
-> **Key:** Use `sealed` when you have a fixed set of subtypes (states, results, events). The compiler enforces exhaustive `switch` — if you add a new subtype, all switches must handle it.
+---
+
+## 🧪 Code Example
+
+```dart
+// Variables and data types
+void main() {
+  var name = 'Alice';
+  String city = 'NYC';
+  final age = 30;
+  const pi = 3.14;
+
+  print('Name: $name, City: $city, Age: $age, Pi: $pi');
+
+  // Built-in types
+  int count = 42;
+  double price = 9.99;
+  bool isActive = true;
+  List<int> nums = [1, 2, 3];
+  Map<String, int> map = {'a': 1, 'b': 2};
+
+  print('Count: $count, Price: $price, Active: $isActive');
+  print('Nums: $nums, Map: $map');
+
+  // Type conversion
+  int parsed = int.parse('42');
+  String str = 42.toString();
+  print('Parsed: $parsed, String: $str');
+
+  // Null safety
+  String? nickname;
+  int len = nickname?.length ?? 0;
+  print('Length: $len');
+
+  // Functions
+  int add(int a, int b) => a + b;
+  print('3 + 5 = ${add(3, 5)}');
+
+  // Class
+  final user = User('Alice', 30);
+  print(user.greet());
+  print('Is adult: ${user.isAdult}');
+}
+
+class User {
+  final String name;
+  final int age;
+  User(this.name, this.age);
+
+  bool get isAdult => age >= 18;
+  String greet() => 'Hi, I am $name';
+
+  @override
+  String toString() => 'User($name, $age)';
+}
+```
+
+### Output
+```
+Name: Alice, City: NYC, Age: 30, Pi: 3.14
+Count: 42, Price: 9.99, Active: true
+Nums: [1, 2, 3], Map: {a: 1, b: 2}
+Parsed: 42, String: 42
+Length: 0
+3 + 5 = 8
+Hi, I am Alice
+Is adult: true
+```
+
+---
+
+## ❓ Interview Questions
+
+1. **What are variables and data types in Dart?**
+   - Dart has `var` (type inferred, mutable), `final` (runtime constant), `const` (compile-time constant), and `late` (declared now, initialized later). Built-in types include `int` (64-bit), `double` (64-bit float), `bool`, `String`, `List`, `Map`, `Set`, `dynamic` (any type, unsafe), and `Object` (any non-null type). Type conversion is explicit — `int.parse('42')`, `42.toString()`, `'3.14'.toDouble()`.
+
+2. **How does null safety work in Dart?**
+   - Dart has sound null safety (Dart 2.12+) — types are non-nullable by default. `String` can't be null; `String?` can be null. Operators: `!` (null assertion, throws if null), `?.` (null-aware access, returns null), `??` (null-coalescing, default value), `??=` (assign if null), `...?` (null-aware spread). `late` allows deferring initialization — must be assigned before first use.
+
+3. **What are functions in Dart?**
+   - Functions are first-class citizens — can be assigned to variables, passed as arguments, returned from functions. Dart supports: arrow functions (`=>`), named parameters (`{}`), required named parameters (`required`), default values (`= 8080`), positional optional (`[]`), and typedefs (`typedef Transformer = String Function(String)`).
+
+4. **What are classes and constructors in Dart?**
+   - Dart supports short-form constructors (`User(this.name, this.age)`), named constructors (`User.guest()`), redirecting constructors (`User.admin(String name) : this(name, 99)`), and factory constructors (`factory User.fromJson(...)`). Getters use `get` keyword. Dart has no interfaces keyword — any class can be used as an interface via `implements`. Mixins use `with` keyword for code reuse across hierarchies.
+
+5. **What are mixins in Dart and how do they differ from classes?**
+   - Mixins are reusable code blocks shared across class hierarchies using the `with` keyword. Unlike classes, mixins can't be instantiated — they're meant to be mixed in. Mixins can have constraints using `on` keyword (e.g., `mixin OnString on String`). Use mixins for cross-cutting concerns like logging, validation. Multiple mixins can be applied: `class Service with Logger, Validator`.
+
+6. **What are extensions in Dart?**
+   - Extensions add methods to existing types without modifying the original class. `extension StringExtensions on String { bool get isEmail => contains('@'); }`. Extensions can be generic: `extension ListExtensions<T> on List<T>`. They're useful for adding utility methods to framework types. Extensions are resolved at compile time — they don't modify the type system.
+
+7. **What are Futures, async, and await in Dart?**
+   - `Future<T>` represents a value available later (single value). `async` marks a function as asynchronous. `await` pauses execution until the Future completes. Error handling uses try/catch/finally. `Future.wait()` runs multiple futures in parallel. `Stream<T>` represents an async sequence of values (multiple). `async*` marks an async generator that yields values. Alternative to async/await: `.then().catchError()` chaining.
+
+8. **What are isolates and how do they work?**
+   - Dart is single-threaded. Isolates provide true parallelism — each isolate has its own memory heap (no shared state). `Isolate.run()` (Dart 2.19+) is the simplest way. `compute()` is Flutter's wrapper. `Isolate.spawn()` creates long-running isolates with two-way communication via `SendPort`/`ReceivePort`. Use isolates for CPU-heavy work (parsing, image processing). Don't use for I/O — Dart's async I/O is already non-blocking.
+
+9. **What are records and patterns in Dart 3?**
+   - Records are anonymous aggregate types: positional `(String, int)` or named `({String name, int age})`. Accessed via `.$1`, `.$2` (positional) or `.name` (named). Destructuring: `final (name, age) = ('Alice', 30)`. Patterns enable switch expressions with exhaustive matching: `switch (obj) { int i when i > 0 => 'Positive', _ => 'Unknown' }`. Records replace boilerplate classes; patterns replace if-else chains.
+
+10. **What are sealed classes and when do you use them?**
+    - Sealed classes create closed hierarchies — all subtypes must be in the same library and are known at compile time. The compiler enforces exhaustive `switch` — if a new subtype is added, all switches must handle it. Use cases: result types (`Success`/`Failure`/`Loading`), UI state patterns, event types. Unlike `abstract`, sealed supports exhaustive pattern matching. Use `sealed` for fixed sets of subtypes; use `abstract` for open hierarchies.
 
 ---
 

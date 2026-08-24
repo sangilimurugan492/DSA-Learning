@@ -1,11 +1,11 @@
 # Flutter Basics
 
-## Q1: What is Flutter and how does it work?
+## 📖 Explanation
 
-Flutter is Google's UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.
+Flutter is Google's UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. It uses Dart as its programming language and renders UI using its own rendering engine (Skia/Impeller), not platform widgets.
 
+### Flutter Architecture
 ```
-Flutter Architecture
 ┌─────────────────────────────────────┐
 │           Your Dart Code            │
 ├─────────────────────────────────────┤
@@ -13,13 +13,13 @@ Flutter Architecture
 │  (Widgets, Rendering, Animation,    │
 │   Painting, Gestures, Foundation)   │
 ├─────────────────────────────────────┤
-│          Flutter Engine              │
-│  (Skia, Text, Dart Runtime)          │
+│          Flutter Engine             │
+│  (Skia, Text, Dart Runtime)         │
 ├─────────────────────────────────────┤
-│       Platform Embedder              │
-│  (Android, iOS, Web, Desktop)        │
+│       Platform Embedder             │
+│  (Android, iOS, Web, Desktop)       │
 ├─────────────────────────────────────┤
-│    OS (Android/iOS/Web/Desktop)      │
+│    OS (Android/iOS/Web/Desktop)     │
 └─────────────────────────────────────┘
 ```
 
@@ -27,34 +27,27 @@ Flutter Architecture
 - **Flutter Engine** → renders UI using Skia/Impeller (not platform widgets)
 - **Platform Embedder** → manages event loop, input, platform channels
 
+### Key Characteristics
+- **Single codebase**: One codebase for Android, iOS, web, and desktop
+- **Hot reload**: Sub-second code changes reflected instantly without losing state
+- **Own rendering**: Uses Skia/Impeller engine, not native platform widgets
+- **Widget-based**: Everything is a widget — composition over inheritance
+
+### `main()` and `runApp()`
+The `main()` function is the entry point of every Dart/Flutter program. `runApp()` attaches the root widget to the screen.
+
 ```dart
-// Minimal Flutter app
-import 'package:flutter/material.dart';
-
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp());  // Attaches widget tree to screen
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'My App',
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Home')),
-        body: const Center(child: Text('Hello Flutter!')),
-      ),
-    );
-  }
-}
+// runApp() does:
+// 1. Creates a RenderObject for the root widget
+// 2. Attaches it to the screen
+// 3. Schedules first frame
 ```
 
----
-
-## Q2: What is the difference between hot reload and hot restart?
-
+### Hot Reload vs Hot Restart
 | Feature | Hot Reload | Hot Restart |
 |---------|-----------|-------------|
 | Speed | <1 second | 2-3 seconds |
@@ -63,30 +56,8 @@ class MyApp extends StatelessWidget {
 | Use case | UI tweaks, logic changes | State-related changes |
 | App restarts? | ❌ No | ✅ Yes |
 
-```dart
-// Hot Reload preserves state
-class CounterPage extends StatefulWidget {
-  const CounterPage({super.key});
-  @override
-  State<CounterPage> createState() => _CounterPageState();
-}
-
-class _CounterPageState extends State<CounterPage> {
-  int count = 0;  // This is preserved on hot reload
-
-  @override
-  Widget build(BuildContext context) {
-    return Text('$count');  // Change color → hot reload → count stays
-  }
-}
-
-// Hot Restart resets state
-// count goes back to 0
-```
-
----
-
-## Q3: What is `pubspec.yaml`?
+### `pubspec.yaml`
+The `pubspec.yaml` is the configuration file for a Flutter project — defines dependencies, assets, fonts, and metadata.
 
 ```yaml
 name: my_app
@@ -114,51 +85,9 @@ flutter:
   assets:
     - assets/images/
     - assets/config.json
-  fonts:
-    - family: Roboto
-      fonts:
-        - asset: assets/fonts/Roboto-Regular.ttf
-        - asset: assets/fonts/Roboto-Bold.ttf
-          weight: 700
 ```
 
-### Key Commands
-```bash
-flutter pub get        # Install dependencies
-flutter pub upgrade    # Upgrade to latest compatible
-flutter pub add http   # Add a package
-flutter pub remove http # Remove a package
-flutter pub outdated   # Check for outdated packages
-```
-
----
-
-## Q4: What is `main()` and `runApp()`?
-
-```dart
-// main() — entry point of every Dart program
-void main() {
-  runApp(const MyApp());  // Attaches widget tree to screen
-}
-
-// runApp() does:
-// 1. Creates a RenderObject for the root widget
-// 2. Attaches it to the screen
-// 3. Schedules first frame
-
-// With async initialization
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();  // Required before async
-  await Firebase.initializeApp();
-  await SharedPreferences.getInstance();
-  runApp(const MyApp());
-}
-```
-
----
-
-## Q5: What is the widget tree vs element tree vs render tree?
-
+### Widget Tree, Element Tree, Render Tree
 ```
 Widget Tree (immutable descriptions)
   MaterialApp
@@ -182,75 +111,11 @@ Render Tree (layout, painting, hit-testing)
               └── RenderParagraph (Text)
 ```
 
-```dart
-// Widget — immutable configuration (blueprint)
-// Element — mutable instance, manages state, diffing
-// RenderObject — measures, paints, handles input
+- **Widget** — immutable configuration (blueprint)
+- **Element** — mutable instance, manages state, diffing
+- **RenderObject** — measures, paints, handles input
 
-// When setState() is called:
-// 1. Element marks itself dirty
-// 2. Framework schedules rebuild
-// 3. New widget compared with old (canUpdate)
-// 4. If same type → update element's widget reference
-// 5. If different type → unmount old, mount new
-// 6. RenderObject updated with new layout/paint
-```
-
----
-
-## Q6: What is `BuildContext`?
-
-```dart
-class MyWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // context is the position in the widget tree
-    // Used to:
-    // 1. Find ancestors
-    final theme = Theme.of(context);
-    final mediaQuery = MediaQuery.of(context);
-
-    // 2. Navigate
-    Navigator.of(context).push(...);
-
-    // 3. Show dialogs
-    showDialog(context: context, builder: ...);
-
-    // 4. Access inherited widgets
-    final provider = Provider.of<MyModel>(context);
-
-    return Text('Hello', style: theme.textTheme.bodyLarge);
-  }
-}
-```
-
-> **Key:** `BuildContext` is a handle to the location of a widget in the tree. It's used to look up inherited widgets, themes, and navigate.
-
----
-
-## Q7: What is the difference between `const` and `final` in Dart?
-
-```dart
-// const — compile-time constant (deeply immutable)
-const int x = 42;
-const List<int> nums = [1, 2, 3];
-const Point p = Point(0, 0);
-
-// final — runtime constant (assigned once)
-final int y = DateTime.now().hour;  // Can't be const — runtime value
-final List<int> items = [1, 2, 3];
-items.add(4);  // ✅ Allowed — final is reference, not deeply immutable
-
-// const constructor
-class Point {
-  final double x, y;
-  const Point(this.x, this.y);  // const constructor
-}
-
-// In widgets — const constructors save rebuilds
-const Text('Hello');  // Never rebuilds — same instance reused
-```
-
+### `const` vs `final` in Dart
 | `const` | `final` |
 |----------|---------|
 | Compile-time constant | Runtime constant |
@@ -259,145 +124,88 @@ const Text('Hello');  // Never rebuilds — same instance reused
 | `const [1, 2, 3]` | `final x = DateTime.now()` |
 | Better performance (canonicalized) | Slightly slower |
 
----
-
-## Q8: What is the difference between `StatelessWidget`, `StatefulWidget`, and `InheritedWidget`?
-
-```dart
-// StatelessWidget — immutable, rebuilt when parent rebuilds or input changes
-class Greeting extends StatelessWidget {
-  final String name;
-  const Greeting({super.key, required this.name});
-
-  @override
-  Widget build(BuildContext context) => Text('Hello, $name');
-}
-
-// StatefulWidget — has mutable state, can rebuild independently via setState()
-class Counter extends StatefulWidget {
-  const Counter({super.key});
-  @override
-  State<Counter> createState() => _CounterState();
-}
-
-class _CounterState extends State<Counter> {
-  int _count = 0;
-  @override
-  Widget build(BuildContext context) => Text('$_count');
-}
-
-// InheritedWidget — efficiently propagates data down the tree
-// Only dependents rebuild when data changes
-class ThemeProvider extends InheritedWidget {
-  final ThemeData theme;
-  const ThemeProvider({super.key, required this.theme, required super.child});
-
-  static ThemeProvider? of(BuildContext context) =>
-      context.dependOnInheritedWidgetOfExactType<ThemeProvider>();
-
-  @override
-  bool updateShouldNotify(ThemeProvider oldWidget) => theme != oldWidget.theme;
-}
-```
-
-| Widget Type | State | Rebuild Trigger | Use Case |
-|-------------|-------|-----------------|----------|
-| `StatelessWidget` | None | Parent rebuilds | Static UI, display |
-| `StatefulWidget` | Mutable (`State`) | `setState()` | Interactive UI |
-| `InheritedWidget` | Shared | `updateShouldNotify` | Propagate data down tree |
-
-> **Key:** `InheritedWidget` is the foundation of Provider, Theme, MediaQuery — it only rebuilds widgets that explicitly depend on it via `dependOnInheritedWidgetOfExactType`.
-
----
-
-## Q9: What are Flutter's build modes and when do you use each?
-
-```dart
-// Check build mode at compile time
-const isDebug = kDebugMode;       // true in debug
-const isProfile = kProfileMode;   // true in profile
-const isRelease = kReleaseMode;   // true in release
-
-// Use in code
-if (kDebugMode) {
-  print('Debug-only log');  // Stripped in release
-}
-
-// Conditional imports
-// import 'debug_utils.dart' if (dart.library.html) 'web_utils.dart';
-```
-
+### Build Modes
 | Mode | Compilation | Hot Reload | Performance | Use Case |
 |------|-------------|------------|-------------|----------|
 | Debug | JIT | ✅ Yes | Slow | Development |
 | Profile | AOT | ❌ No | Near-release | Performance testing |
 | Release | AOT | ❌ No | Fast | Production |
 
-```bash
-# Run in different modes
-flutter run --debug       # Default (JIT, hot reload)
-flutter run --profile     # Performance testing (AOT + profiling)
-flutter run --release     # Production-like (AOT, optimized)
+---
 
-# Build
-flutter build apk --debug
-flutter build apk --profile
-flutter build apk --release
+## 🧪 Code Example
+
+```dart
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'My App',
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Home')),
+        body: const Center(child: Text('Hello Flutter!')),
+      ),
+    );
+  }
+}
+
+// With async initialization
+void mainAsync() async {
+  WidgetsFlutterBinding.ensureInitialized();  // Required before async
+  await Firebase.initializeApp();
+  await SharedPreferences.getInstance();
+  runApp(const MyApp());
+}
 ```
 
-> **Rule:** Always test performance in **profile mode** — debug mode has assertions, debug checks, and JIT overhead that don't reflect real-world performance.
+### Output
+```
+A running Flutter app with:
+- AppBar showing "Home"
+- Centered text "Hello Flutter!"
+```
 
 ---
 
-## Q10: What is the `Key` class and how does `GlobalKey` differ from `ValueKey`?
+## ❓ Interview Questions
 
-```dart
-// ValueKey — identifies by value (most common)
-ListView.builder(
-  itemBuilder: (context, index) => ListItem(
-    key: ValueKey(items[index].id),  // Unique by ID
-    item: items[index],
-  ),
-)
+1. **What is Flutter and how does it work?**
+   - Flutter is Google's UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. It uses Dart and its own rendering engine (Skia/Impeller) to draw widgets, rather than using native platform widgets. The architecture consists of: Dart Code → Flutter Framework (widgets, rendering) → Flutter Engine (Skia, text, Dart runtime) → Platform Embedder → OS.
 
-// GlobalKey — access state from anywhere (use sparingly)
-final _formKey = GlobalKey<FormState>();
+2. **What is the difference between hot reload and hot restart?**
+   - Hot reload injects updated source code into the running VM while preserving state — it takes <1 second and is triggered with `r`. Hot restart restarts the app entirely, resetting all state to initial values — it takes 2-3 seconds and is triggered with `R` (capital). Use hot reload for UI tweaks and logic changes; use hot restart when state-related changes cause issues.
 
-Form(
-  key: _formKey,
-  child: Column(
-    children: [
-      TextFormField(validator: (v) => v!.isEmpty ? 'Required' : null),
-      ElevatedButton(
-        onPressed: () {
-          if (_formKey.currentState!.validate()) {
-            // Form is valid
-          }
-        },
-        child: const Text('Submit'),
-      ),
-    ],
-  ),
-)
+3. **What is `pubspec.yaml` and what does it contain?**
+   - `pubspec.yaml` is the configuration file for a Flutter project. It contains: project metadata (name, description, version), environment constraints (SDK and Flutter versions), dependencies (packages from pub.dev), dev_dependencies (testing, linting), and Flutter-specific config (assets, fonts, material design flag). Key commands: `flutter pub get` (install), `flutter pub add` (add package), `flutter pub upgrade` (upgrade).
 
-// GlobalKey for state access across widget tree
-final _counterKey = GlobalKey<CounterState>();
+4. **What is `main()` and `runApp()`?**
+   - `main()` is the entry point of every Dart/Flutter program. `runApp()` attaches the given widget to the screen by creating a RenderObject for the root widget, attaching it to the screen, and scheduling the first frame. For async initialization (Firebase, SharedPreferences), use `WidgetsFlutterBinding.ensureInitialized()` before any async calls in `main()`.
 
-Counter(key: _counterKey);
+5. **What is the widget tree vs element tree vs render tree?**
+   - **Widget tree** — immutable descriptions/blueprints of the UI. Widgets are cheap and recreated on every rebuild. **Element tree** — mutable instances that manage lifecycle, state, and diffing. Elements are the bridge between widgets and render objects. **Render tree** — RenderObjects that measure, paint, and handle hit-testing. When `setState()` is called: element marks itself dirty → framework schedules rebuild → new widget compared with old → if same type, update reference; if different, unmount old and mount new → RenderObject updated.
 
-// Access state from anywhere
-_counterKey.currentState?.increment();
-```
+6. **What is `BuildContext`?**
+   - `BuildContext` is a handle to the position of a widget in the widget tree. It's used to: (1) Find ancestors (Theme, MediaQuery), (2) Navigate (Navigator.of(context)), (3) Show dialogs (showDialog), (4) Access inherited widgets (Provider.of). It represents the element in the element tree corresponding to the widget.
 
-| Key Type | Scope | Use Case | Performance |
-|----------|-------|----------|-------------|
-| `ValueKey` | Local | List items, reorderable | ✅ Fast |
-| `ObjectKey` | Local | Identity by object | ✅ Fast |
-| `UniqueKey` | Local | Force new instance | ⚠️ Always rebuilds |
-| `GlobalKey` | Global | Access state, form validation | ⚠️ Expensive |
-| `PageStorageKey` | Local | Preserve scroll position | ✅ Fast |
+7. **What is the difference between `const` and `final` in Dart?**
+   - `const` is a compile-time constant — deeply immutable, the value must be known at compile time, and it's canonicalized (same instance reused). `final` is a runtime constant — the reference is assigned once but can be at runtime. `const` widgets never rebuild (same instance reused); `final` can hold mutable objects (e.g., `final list = [1, 2]; list.add(3)` works). Use `const` wherever possible for performance.
 
-> **Warning:** Avoid `GlobalKey` for lists — it's expensive and can cause issues. Use `ValueKey` with unique IDs instead. `GlobalKey` is appropriate for form validation and accessing state from parent widgets.
+8. **What is the difference between `StatelessWidget`, `StatefulWidget`, and `InheritedWidget`?**
+   - `StatelessWidget` — immutable, no internal state, rebuilds when parent rebuilds. Use for static UI. `StatefulWidget` — has mutable state via `State` object, can rebuild independently via `setState()`. Use for interactive UI. `InheritedWidget` — efficiently propagates data down the tree; only widgets that explicitly depend on it rebuild. It's the foundation of Provider, Theme, MediaQuery.
+
+9. **What are Flutter's build modes and when do you use each?**
+   - Debug mode uses JIT compilation with hot reload — for development. Profile mode uses AOT without hot reload — for performance testing (near-release performance with profiling). Release mode uses AOT, fully optimized — for production. Always test performance in **profile mode** — debug mode has assertions, debug checks, and JIT overhead that don't reflect real-world performance.
+
+10. **What is the `Key` class and how does `GlobalKey` differ from `ValueKey`?**
+    - `Key` uniquely identifies a widget in the tree, used for preserving state across rebuilds. `ValueKey(value)` — identifies by value (most common, fast). `GlobalKey` — accesses state from anywhere in the tree (expensive, use sparingly). Use `ValueKey` for list items with unique IDs. Use `GlobalKey` for form validation and accessing state from parent widgets. Avoid `GlobalKey` for lists — it's expensive and can cause issues.
 
 ---
 

@@ -15,7 +15,7 @@ package array.greedy.insert_interval
  * FAANG Importance: ⭐⭐⭐⭐⭐ (Asked at Google, Meta, Amazon)
  *
  * Two approaches:
- * 1. Brute Force: O(N²) — add newInterval, then merge all overlapping pairs
+ * 1. Brute Force: O(N log N) — sort all intervals, then single-pass merge
  * 2. Three-Phase: O(N) — add before, merge overlapping, add after
  */
 
@@ -34,13 +34,13 @@ fun main() {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════════
-// METHOD 1: BRUTE FORCE — O(N²)
+// METHOD 1: BRUTE FORCE — O(N log N)
 // ═══════════════════════════════════════════════════════════════════════════════
 
 /**
- * BRUTE FORCE — Add newInterval to the list, then repeatedly merge overlapping pairs.
+ * BRUTE FORCE — Add newInterval to the list, sort all by start time, then single-pass merge.
  *
- * Time Complexity:  O(N²) — repeated merging passes.
+ * Time Complexity:  O(N log N) — dominated by the sort; the merge pass is O(N).
  * Space Complexity: O(N).
  */
 fun insertBruteForce(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {

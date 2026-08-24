@@ -1,211 +1,129 @@
 # MobX
 
-## Q1: What is MobX?
+## 📖 Explanation
 
-MobX is a state management library that uses observables, actions, and reactions — applying reactive programming principles.
+MobX is a state management library that uses observables, actions, and reactions. It applies reactive programming principles — the UI automatically reacts to state changes. MobX uses code generation for boilerplate reduction.
 
-```dart
-// pubspec.yaml: mobx: ^2.2.0, flutter_mobx: ^2.2.0
-// dev_dependencies: build_runner, mobx_codegen
+### MobX Core Concepts
+| Concept | Purpose |
+|---------|---------|
+| `@observable` | A property that widgets can observe |
+| `@action` | A method that modifies observable state |
+| `@computed` | A derived value from observables |
+| `Observer` | Widget that rebuilds when observed values change |
+| `Reaction` | Side effect when observables change |
 
-// MobX Core Concepts:
-// Observable — state that can be observed
-// Action — modifies observable state
-// Reaction — responds to state changes (rebuild UI, side effects)
-// Computed — derived state from observables
+### MobX Flow
+```
+Action → modifies @observable → @computed recalculates → Observer rebuilds
 ```
 
-```
-┌──────────────┐     ┌──────────┐     ┌──────────────┐
-│  Observable   │ ←── │  Action   │     │   Reaction    │
-│  (state)      │     │ (mutate)  │     │  (respond)    │
-└──────────────┘     └──────────┘     └──────────────┘
-       ↓                                    ↑
-       └────────── Computed ────────────────┘
-                  (derived)
-```
+### MobX vs Other Solutions
+| Feature | MobX | Provider | BLoC |
+|---------|------|----------|------|
+| Reactivity | Auto (observable) | Manual (notifyListeners) | Manual (emit) |
+| Boilerplate | Medium (codegen) | Low | High |
+| Code generation | ✅ Required | ❌ | ❌ |
+| Computed values | ✅ Built-in | Manual | Manual |
+| Learning curve | Medium | Low | High |
+
+### When to Use MobX
+- You want automatic reactivity (no manual `notifyListeners()`)
+- You need computed/derived values
+- You prefer OOP-style state management
+- You're comfortable with code generation
 
 ---
 
-## Q2: How do you create a MobX store?
+## 🧪 Code Example
 
 ```dart
-// 1. Define store (counter_store.dart)
 import 'package:mobx/mobx.dart';
-
 part 'counter_store.g.dart';  // Generated code
 
+// ── Store ──
 class CounterStore = _CounterStore with _$CounterStore;
 
 abstract class _CounterStore with Store {
   @observable
   int count = 0;
 
-  @action
-  void increment() => count++;
-
-  @action
-  void decrement() => count--;
-
-  @action
-  void reset() => count = 0;
+  @observable
+  bool isEven = true;
 
   @computed
-  bool get isPositive => count > 0;
+  String get status => count > 10 ? 'High' : count > 0 ? 'Medium' : 'Low';
 
-  @computed
-  String get displayValue => 'Count: $count';
+  @action
+  void increment() {
+    count++;
+    isEven = count % 2 == 0;
+  }
+
+  @action
+  void decrement() {
+    count--;
+    isEven = count % 2 == 0;
+  }
+
+  @action
+  void reset() {
+    count = 0;
+    isEven = true;
+  }
 }
 
-// 2. Generate code: dart run build_runner build
-// 3. Use store
-final counter = CounterStore();
-```
+// ── Provide the store ──
+void main() {
+  runApp(
+    Provider<CounterStore>(
+      create: (_) => CounterStore(),
+      child: const MyApp(),
+    ),
+  );
+}
 
----
-
-## Q3: How do you consume MobX in widgets?
-
-```dart
-import 'package:flutter_mobx/flutter_mobx.dart';
-
-// Observer — rebuilds when observed values change
+// ── Observer widget ──
 class CounterScreen extends StatelessWidget {
   const CounterScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    final counter = CounterStore();  // Or inject via Provider/get_it
+    final store = context.read<CounterStore>();
 
     return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Observer auto-detects which observables are used
+            // Observer rebuilds when count changes
             Observer(
               builder: (_) => Text(
-                '${counter.count}',
+                'Count: ${store.count}',
                 style: const TextStyle(fontSize: 48),
               ),
             ),
-            // Computed values also trigger rebuilds
             Observer(
-              builder: (_) => Text(counter.displayValue),
+              builder: (_) => Text('Status: ${store.status}'),
             ),
             Observer(
-              builder: (_) => Text(
-                counter.isPositive ? 'Positive' : 'Zero or negative',
-              ),
+              builder: (_) => Text(store.isEven ? 'Even' : 'Odd'),
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: counter.increment,  // Action — no Observer needed
+        onPressed: store.increment,  // Action modifies observable
         child: const Icon(Icons.add),
       ),
     );
   }
 }
 
-// Observer only rebuilds the builder — not the whole widget
-// Multiple Observers = independent rebuilds
-```
+// ── Async actions ──
+class UserStore = _UserStore with _$UserStore;
 
----
-
-## Q4: How do you use computed values and reactions?
-
-```dart
-// Computed — derived state, cached, only recalculates when dependencies change
-abstract class _CartStore with Store {
-  @observable
-  ObservableList<CartItem> items = ObservableList<CartItem>();
-
-  @computed
-  int get itemCount => items.length;
-
-  @computed
-  double get subtotal =>
-      items.fold(0, (sum, item) => sum + item.price * item.quantity);
-
-  @computed
-  double get tax => subtotal * 0.08;
-
-  @computed
-  double get total => subtotal + tax;
-
-  @computed
-  bool get isEmpty => items.isEmpty;
-
-  @action
-  void addItem(CartItem item) => items.add(item);
-
-  @action
-  void removeItem(String id) =>
-      items.removeWhere((item) => item.id == id);
-
-  @action
-  void clear() => items.clear();
-}
-
-// Reactions — side effects on state change
-class _CartStore with Store {
-  @observable
-  ObservableList<CartItem> items = ObservableList<CartItem>();
-
-  // reaction — runs when specific value changes
-  late final ReactionDisposer _disposer;
-
-  _CartStore() {
-    _disposer = reaction(
-      (_) => items.length,  // Watch itemCount
-      (int count) {
-        if (count > 10) {
-          print('Cart limit reached!');
-        }
-      },
-    );
-  }
-
-  // autorun — runs immediately + on any observed change
-  void setupAutoRun() {
-    autorun((_) {
-      print('Cart has ${items.length} items, total: ${total}');
-    });
-  }
-
-  // when — runs once when condition is true
-  void setupWhen() {
-    when(
-      () => items.length >= 5,
-      () => print('5 items in cart!'),
-    );
-  }
-
-  void dispose() {
-    _disposer();  // Always dispose reactions
-  }
-}
-```
-
-### Reaction Types
-| Reaction | When | Runs | Use Case |
-|----------|------|------|----------|
-| `reaction` | Specific value changes | Each time | Side effects on specific change |
-| `autorun` | Any observed change | Immediately + on change | Logging, tracking |
-| `when` | Condition becomes true | Once | One-time trigger |
-
----
-
-## Q5: How do you handle async actions in MobX?
-
-```dart
 abstract class _UserStore with Store {
-  final UserRepository _repository;
-
-  _UserStore(this._repository);
-
   @observable
   User? user;
 
@@ -218,13 +136,12 @@ abstract class _UserStore with Store {
   @computed
   bool get isLoggedIn => user != null;
 
-  // Async action
   @action
   Future<void> login(String email, String password) async {
     isLoading = true;
     error = null;
     try {
-      user = await _repository.login(email, password);
+      user = await api.login(email, password);
     } catch (e) {
       error = e.toString();
     } finally {
@@ -233,186 +150,97 @@ abstract class _UserStore with Store {
   }
 
   @action
-  Future<void> logout() async {
-    await _repository.logout();
+  void logout() {
     user = null;
   }
-
-  // ObservableFuture — tracks async state
-  @observable
-  ObservableFuture<List<Product>>? productsFuture;
-
-  @computed
-  bool get isLoadingProducts =>
-      productsFuture?.status == FutureStatus.pending;
-
-  @action
-  Future<void> loadProducts() async {
-    productsFuture = ObservableFuture(_repository.getProducts());
-    try {
-      final products = await productsFuture!;
-      // products loaded
-    } catch (e) {
-      error = e.toString();
-    }
-  }
-
-  // ObservableStream — tracks stream
-  @observable
-  ObservableStream<Message>? messageStream;
-
-  @action
-  void listenToMessages() {
-    messageStream = ObservableStream(_repository.messages);
-  }
-}
-```
-
----
-
-## Q6: How do you use MobX with Provider for DI?
-
-```dart
-// Provide stores via Provider
-void main() {
-  runApp(
-    MultiProvider(
-      providers: [
-        Provider(create: (_) => UserRepository()),
-        Provider<CounterStore>(
-          create: (context) => CounterStore(),
-        ),
-        ProxyProvider<UserRepository, UserStore>(
-          update: (_, repo, __) => UserStore(repo),
-        ),
-        ProxyProvider<UserRepository, CartStore>(
-          update: (_, repo, __) => CartStore(repo),
-        ),
-      ],
-      child: const MyApp(),
-    ),
-  );
 }
 
-// Consume in widget
-class UserScreen extends StatelessWidget {
-  const UserScreen({super.key});
+// ── Reactions (side effects) ──
+class ReactionExample extends StatefulWidget {
+  const ReactionExample({super.key});
   @override
-  Widget build(BuildContext context) {
-    final store = context.watch<UserStore>();
+  State<ReactionExample> createState() => _ReactionExampleState();
+}
 
-    return Observer(
-      builder: (_) {
-        if (store.isLoading) return const CircularProgressIndicator();
-        if (store.error != null) return Text('Error: ${store.error}');
-        if (store.user != null) return Text('Hello, ${store.user!.name}');
-        return const Text('Not logged in');
+class _ReactionExampleState extends State<ReactionExample> {
+  late final CounterStore store;
+  late final ReactionDisposer disposer;
+
+  @override
+  void initState() {
+    super.initState();
+    store = CounterStore();
+
+    // Run when count changes
+    disposer = reaction(
+      (_) => store.count,
+      (count) {
+        if (count == 10) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Reached 10!')),
+          );
+        }
       },
     );
   }
+
+  @override
+  void dispose() {
+    disposer();  // Clean up reaction
+    super.dispose();
+  }
 }
 
-// Or with get_it
-final counter = getIt<CounterStore>();
+// Generate code: dart run build_runner build
+```
+
+### Output
+```
+A Flutter app with MobX state management:
+- CounterStore with @observable, @action, @computed
+- Observer widgets that auto-rebuild on observable changes
+- UserStore with async login action and computed isLoggedIn
+- Reactions for side effects (snackbar on count == 10)
+- Code generation for boilerplate reduction
 ```
 
 ---
 
-## Q7: How do you test MobX stores?
+## ❓ Interview Questions
 
-```dart
-void main() {
-  group('CounterStore', () {
-    test('starts at 0', () {
-      final store = CounterStore();
-      expect(store.count, 0);
-    });
+1. **What is MobX and how does it work?**
+   - MobX is a reactive state management library using observables, actions, and computed values. Annotate state with `@observable`, mutation methods with `@action`, derived values with `@computed`. `Observer` widgets automatically rebuild when observed values change — no manual `notifyListeners()`. Flow: Action modifies `@observable` → `@computed` recalculates → `Observer` rebuilds. MobX uses code generation (`mobx_codegen` + `build_runner`) to generate the implementation. The store class is abstract with a mixin; `part 'store.g.dart'` includes generated code. MobX is great for automatic reactivity and computed values without manual notification.
 
-    test('increment increases count', () {
-      final store = CounterStore();
-      store.increment();
-      expect(store.count, 1);
-    });
+2. **What is the difference between @observable and @computed?**
+   - `@observable` marks a property as trackable — when it changes, all `Observer` widgets watching it rebuild. Example: `@observable int count = 0`. `@computed` marks a getter that derives its value from observables — it's recalculated only when a dependency changes, and cached otherwise. Example: `@computed String get status => count > 10 ? 'High' : 'Low'`. Computed values are reactive — if `count` changes, `status` is recalculated and Observers watching `status` rebuild. Use `@observable` for raw state, `@computed` for derived values (totals, filtered lists, formatted strings). This eliminates manual calculation and keeps state DRY.
 
-    test('isPositive is correct', () {
-      final store = CounterStore();
-      expect(store.isPositive, false);
+3. **What is @action and why use it?**
+   - `@action` marks a method that modifies observables. Actions batch changes — all observable modifications within an action are applied atomically, and observers are notified once (not after each change). Without `@action`, each observable modification triggers a separate notification — multiple rebuilds for one logical operation. Example: `@action void increment() { count++; isEven = count % 2 == 0; }` — both changes are batched, Observer rebuilds once. Actions also enable MobX's transaction tracking for debugging. Always use `@action` for methods that modify observables — never modify observables directly from non-action methods.
 
-      store.increment();
-      expect(store.isPositive, true);
-    });
-  });
+4. **What is Observer and how does it work?**
+   - `Observer` is a widget that tracks which observables are accessed inside its `builder` and rebuilds when any of them change. `Observer(builder: (_) => Text('${store.count}'))` — the builder accesses `store.count`, so the Observer tracks it and rebuilds when `count` changes. Only observables accessed during the build are tracked — observables not accessed don't trigger rebuilds. This is fine-grained reactivity — each Observer tracks exactly what it needs. Wrap only the widget subtree that depends on the observable, not the entire screen. Multiple Observers can watch the same store independently.
 
-  group('CartStore', () {
-    test('addItem increases itemCount', () {
-      final store = CartStore();
-      expect(store.itemCount, 0);
+5. **How do you handle async operations in MobX?**
+   - Mark the async method with `@action`: `@action Future<void> login(String email, String password) async { isLoading = true; try { user = await api.login(email, password); } catch (e) { error = e.toString(); } finally { isLoading = false; } }`. The action's observable modifications (isLoading, user, error) are tracked. However, `await` breaks the action's batching — changes after `await` are in a new batch. Use `ObservableFuture` for tracking async state: `@observable ObservableFuture<User>? userFuture`. Or use `runInAction(() { ... })` to wrap post-await changes in an action: `final user = await api.login(); runInAction(() => this.user = user);`.
 
-      store.addItem(CartItem(id: '1', price: 10, quantity: 1));
-      expect(store.itemCount, 1);
-    });
+6. **What are Reactions in MobX?**
+   - Reactions are side effects that run when observed values change. `reaction<T>(predicate, effect)` — runs `effect` when `predicate`'s result changes. `autorun(fn)` — runs immediately and re-runs when any accessed observable changes. `when(predicate, effect)` — runs `effect` once when `predicate` becomes true. Reactions are useful for: logging, analytics, navigation, snackbars, persisting state. Always dispose reactions: `final disposer = reaction(...); disposer();` in `dispose()`. Reactions don't rebuild UI — use `Observer` for UI, reactions for side effects. Reactions are the MobX equivalent of `BlocListener` or `ref.listen`.
 
-    test('total includes tax', () {
-      final store = CartStore();
-      store.addItem(CartItem(id: '1', price: 100, quantity: 2));
+7. **How do you test MobX stores?**
+   - Create the store, call actions, verify observable values: `test('increment increases count', () { final store = CounterStore(); store.increment(); expect(store.count, 1); })`. For async: `test('login sets user', () async { final store = UserStore(mockApi); await store.login('email', 'pass'); expect(store.isLoggedIn, isTrue); })`. Mock the API with `mocktail`. Test computed values: `expect(store.status, 'High')`. Test reactions: use `when()` reaction and verify the callback fires. MobX stores are pure Dart — no widget testing needed for logic. For widget tests: provide the store via Provider, pump the widget, call actions, verify Observer rebuilds with new values.
 
-      expect(store.subtotal, 200);
-      expect(store.tax, 16);  // 8% of 200
-      expect(store.total, 216);
-    });
+8. **What are the pros and cons of MobX?**
+   - **Pros**: (1) Automatic reactivity — no manual `notifyListeners()`. (2) Computed values — derived state without manual recalculation. (3) Fine-grained reactivity — only observers watching changed values rebuild. (4) Clean OOP-style stores. (5) Good DevTools integration. **Cons**: (1) Requires code generation — `build_runner` adds build time. (2) Learning curve — observables, actions, reactions, computed. (3) Less popular than Provider/Riverpod/BLoC — smaller community. (4) Code generation can be confusing for beginners. (5) Less strict structure than BLoC — easier to make mistakes. Use MobX when you want automatic reactivity and computed values. For most apps, Provider or Riverpod are simpler choices.
 
-    test('reaction fires on change', () async {
-      final store = CartStore();
-      var fired = false;
+9. **How does MobX compare to Riverpod?**
+   - **MobX**: OOP-style stores with `@observable`/`@action`/`@computed`. Code generation required. Automatic reactivity — Observers auto-detect dependencies. Computed values built-in. More magical (less explicit). **Riverpod**: Functional-style providers. No code generation (optional with riverpod_generator). Explicit `ref.watch()` for reactivity. No built-in computed (use `Provider` that depends on others). More explicit and compile-safe. Riverpod is more popular, has better testing, and no code generation requirement. MobX's advantage is automatic reactivity and computed values — less boilerplate for derived state. Riverpod's advantage is compile-safety, explicitness, and no code generation. Choose Riverpod for most apps, MobX if you love reactive programming.
 
-      store.addItem(CartItem(id: '1', price: 10, quantity: 1));
-
-      final disposer = reaction(
-        (_) => store.itemCount,
-        (_) => fired = true,
-      );
-
-      store.addItem(CartItem(id: '2', price: 20, quantity: 1));
-      await Future.delayed(Duration.zero);  // Reactions are async
-
-      expect(fired, true);
-      disposer();
-    });
-  });
-}
-```
-
----
-
-## Q8: What are the pros and cons of MobX?
-
-### Pros
-- ✅ Reactive programming model (observables, computed)
-- ✅ Fine-grained rebuilds (only what changed)
-- ✅ Computed values are cached (only recalculate when deps change)
-- ✅ Clean separation of concerns
-- ✅ Good for complex derived state
-
-### Cons
-- ❌ Requires code generation (build_runner)
-- ❌ More boilerplate than Riverpod/GetX
-- ❌ Learning curve (observables, reactions, computed)
-- ❌ Build step slows development
-- ❌ Less popular in Flutter community
-
-| Feature | MobX | Riverpod | BLoC |
-|---------|------|----------|------|
-| Code gen | ✅ Required | ❌ Optional | ❌ None |
-| Reactive | ✅ Observables | ✅ Providers | ✅ Streams |
-| Computed | ✅ Built-in | Manual | Manual |
-| Boilerplate | Medium | Low | High |
-| Learning curve | Medium | Medium | High |
-
-> **Recommendation:** MobX is great if you come from a React/MobX background or need complex derived state. For new Flutter projects, Riverpod is more popular.
+10. **How do you structure MobX stores for a large app?**
+    - Create one store per feature: `AuthStore`, `CartStore`, `ProductStore`, `SettingsStore`. Each store manages its own observables, actions, and computed values. Use dependency injection (Provider or get_it) to provide stores. Stores can reference each other via constructor injection. Split large stores into smaller ones — don't create a god store. Use `@computed` for cross-store derived values. Persist stores with `ObservableStream` + SharedPreferences. Keep stores in `domain/` or `stores/` folder, separate from UI. Test each store independently. MobX stores are classes — use OOP best practices (single responsibility, composition over inheritance). Example structure: `stores/auth/auth_store.dart`, `stores/cart/cart_store.dart`.
 
 ---
 
 ## 🔗 Related Topics
 - [Provider](Provider.md)
-- [Riverpod](Riverpod.md)
 - [Comparison](Comparison.md)
+- [Best Practices](BestPractices.md)

@@ -23,19 +23,19 @@
 ### All DSA Folders
 | Folder | Link | Topics |
 |--------|------|--------|
-| `DSA/array/` | [Link](../DSA/array/) | binary_search, bit_manipulation, complement_search, frequency_count, greedy, hashset_lookup, kadane_algorithm, linear_scan, matrix, prefix_sum, set_operations, sliding_window, string_parsing, two_pointer, two_pointer_inplace, voting_floyd |
-| `DSA/BackTracking/` | [Link](../DSA/BackTracking/) | CombinationSum, Permutations, Subsets, WordSearch, LetterAndCombinationPhoneNumber |
-| `DSA/dp/` | [Link](../DSA/dp/) | one_d, subsequence, two_d |
-| `DSA/graph/` | [Link](../DSA/graph/) | bfs_dfs, shortest_path, topological_sort, union_find |
-| `DSA/heap/` | [Link](../DSA/heap/) | FindMedianFromDataStream, KthLargestElement, MergeKSortedLists, TopKFrequentElements |
-| `DSA/linked_list/` | [Link](../DSA/linked_list/) | circular, double, single |
-| `DSA/simulation/` | [Link](../DSA/simulation/) | AddBinary, AddDigits, AddString, FizzBuzz, SpiralMatrix, SpiralMatrixII, TextJustification |
-| `DSA/sorting/` | [Link](../DSA/sorting/) | sortingTest |
-| `DSA/stack/` | [Link](../DSA/stack/) | CarFleet, DailyTemperatures, EvaluateReversePolishNotation, LargestRectangleInHistogram, LongestValidParentheses, MinimumParentheseToRemove, MinStack, NextGreaterElementI, NextGreaterElementII, OnlineStockSpan, ValidParentheses |
-| `DSA/tree/` | [Link](../DSA/tree/) | binary_tree, bst, traversal, TreeNode |
-| `DSA/trie/` | [Link](../DSA/trie/) | ImplementTrie, WordSearchII |
-| `DSA/interview_problem/` | [Link](../DSA/interview_problem/) | PlusOne |
-| DSA Study Guide | [study.md](../DSA/study.md) | Overall guide |
+| `DSA/array/` | [Link](../../DSA/array/) | binary_search, bit_manipulation, complement_search, frequency_count, greedy, hashset_lookup, kadane_algorithm, linear_scan, matrix, prefix_sum, set_operations, sliding_window, string_parsing, two_pointer, two_pointer_inplace, voting_floyd |
+| `DSA/BackTracking/` | [Link](../../DSA/BackTracking/) | CombinationSum, Permutations, Subsets, WordSearch, LetterAndCombinationPhoneNumber |
+| `DSA/dp/` | [Link](../../DSA/dp/) | one_d, subsequence, two_d |
+| `DSA/graph/` | [Link](../../DSA/graph/) | bfs_dfs, shortest_path, topological_sort, union_find |
+| `DSA/heap/` | [Link](../../DSA/heap/) | FindMedianFromDataStream, KthLargestElement, MergeKSortedLists, TopKFrequentElements |
+| `DSA/linked_list/` | [Link](../../DSA/linked_list/) | circular, double, single |
+| `DSA/simulation/` | [Link](../../DSA/simulation/) | AddBinary, AddDigits, AddString, FizzBuzz, SpiralMatrix, SpiralMatrixII, TextJustification |
+| `DSA/sorting/` | [Link](../../DSA/sorting/) | sortingTest |
+| `DSA/stack/` | [Link](../../DSA/stack/) | CarFleet, DailyTemperatures, EvaluateReversePolishNotation, LargestRectangleInHistogram, LongestValidParentheses, MinimumParentheseToRemove, MinStack, NextGreaterElementI, NextGreaterElementII, OnlineStockSpan, ValidParentheses |
+| `DSA/tree/` | [Link](../../DSA/tree/) | binary_tree, bst, traversal, TreeNode |
+| `DSA/trie/` | [Link](../../DSA/trie/) | ImplementTrie, WordSearchII |
+| `DSA/interview_problem/` | [Link](../../DSA/interview_problem/) | PlusOne |
+| DSA Study Guide | [study.md](../../DSA/study.md) | Overall guide |
 
 ---
 

@@ -1,28 +1,10 @@
 # Performance
 
-## Q1: How do you profile a Flutter app?
+## 📖 Explanation
 
-```bash
-# Run in profile mode (not debug — debug is slow)
-flutter run --profile
+Performance optimization in Flutter focuses on achieving smooth 60fps (16ms per frame) or 120fps (8ms per frame). Common issues include unnecessary rebuilds, jank from heavy computations, image memory overflow, and large app size.
 
-# Open DevTools
-flutter pub global activate devtools
-dart devtools
-
-# Or press 'D' in terminal while app is running
-```
-
-### DevTools Tabs
-| Tab | Purpose |
-|-----|---------|
-| Flutter Inspector | Widget tree, rebuild detection |
-| Performance | Frame rendering, GPU/CPU timeline |
-| CPU Profiler | Function call time, flame chart |
-| Memory | Heap snapshots, memory leaks |
-| Network | HTTP requests timeline |
-
-### Key Metrics
+### Frame Budget
 ```
 60 FPS = 16ms per frame (16.67ms budget)
 120 FPS = 8ms per frame
@@ -35,212 +17,114 @@ Frame budget:
 If a frame takes >16ms → jank (dropped frame)
 ```
 
----
+### DevTools Performance Tabs
+| Tab | Purpose |
+|-----|---------|
+| Flutter Inspector | Widget tree, rebuild detection |
+| Performance | Frame rendering, GPU/CPU timeline |
+| CPU Profiler | Function call time, flame chart |
+| Memory | Heap snapshots, memory leaks |
+| Network | HTTP requests timeline |
 
-## Q2: How do you avoid unnecessary rebuilds?
+### Performance Overlay
+```
+┌─────────────────────┐
+│  GPU   │   UI       │
+│ ▓▓▓▓▓ │ ▓▓▓▓▓▓▓▓▓  │
 
-```dart
-// ❌ Bad — entire Column rebuilds when counter changes
-class BadCounter extends StatefulWidget {
-  @override
-  State<BadCounter> createState() => _BadCounterState();
-}
+Green  = < 16ms (good, 60fps)
+Yellow = 16-32ms (jank)
+Red    = > 32ms (severe jank)
 
-class _BadCounterState extends State<BadCounter> {
-  int _count = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const ExpensiveWidget(),  // Rebuilds unnecessarily!
-        Text('$_count'),
-        ElevatedButton(
-          onPressed: () => setState(() => _count++),
-          child: const Text('Add'),
-        ),
-      ],
-    );
-  }
-}
-
-// ✅ Good 1 — const constructor (never rebuilds)
-const ExpensiveWidget()  // Add const
-
-// ✅ Good 2 — extract to separate widget
-class GoodCounter extends StatefulWidget {
-  @override
-  State<GoodCounter> createState() => _GoodCounterState();
-}
-
-class _GoodCounterState extends State<GoodCounter> {
-  int _count = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const ExpensiveWidget(),  // const — no rebuild
-        _CountDisplay(count: _count),  // Only this rebuilds
-        ElevatedButton(
-          onPressed: () => setState(() => _count++),
-          child: const Text('Add'),
-        ),
-      ],
-    );
-  }
-}
-
-class _CountDisplay extends StatelessWidget {
-  final int count;
-  const _CountDisplay({required this.count});
-  @override
-  Widget build(BuildContext context) => Text('$count');
-}
-
-// ✅ Good 3 — use Consumer/Selector to limit rebuild scope
-Consumer<CounterModel>(
-  builder: (context, model, child) {
-    return Text('${model.count}');  // Only this rebuilds
-  },
-)
-
-// ✅ Good 4 — Selector for specific field
-Selector<UserModel, String>(
-  selector: (_, model) => model.name,  // Only rebuilds when name changes
-  builder: (context, name, child) => Text(name),
-)
+GPU graph = rasterization (painting, compositing)
+UI graph  = build + layout (widget tree)
 ```
 
-### Rebuild Detection
-```dart
-// In DevTools → Flutter Inspector → "Track widget rebuilds"
-// Widgets that rebuild are highlighted
-
-// Or use debugPrint
-class MyWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    debugPrint('MyWidget building...');  // Check if too frequent
-    return Container();
-  }
-}
-```
-
----
-
-## Q3: How do you optimize lists?
-
-```dart
-// ❌ Bad — ListView builds all items at once
-ListView(
-  children: items.map((item) => ItemWidget(item: item)).toList(),
-)
-// 1000 items → 1000 widgets built → memory + jank
-
-// ✅ Good 1 — ListView.builder (lazy, only visible items)
-ListView.builder(
-  itemCount: items.length,
-  itemBuilder: (context, index) => ItemWidget(item: items[index]),
-)
-
-// ✅ Good 2 — const items (if static)
-ListView(
-  children: const [
-    ItemWidget(item: Item('A')),
-    ItemWidget(item: Item('B')),
-  ],
-)
-
-// ✅ Good 3 — add keys for reordering
-ListView.builder(
-  itemCount: items.length,
-  itemBuilder: (context, index) => ItemWidget(
-    key: ValueKey(items[index].id),  // Preserves state on reorder
-    item: items[index],
-  ),
-)
-
-// ✅ Good 4 — cacheExtent for smoother scrolling
-ListView.builder(
-  cacheExtent: 500,  // Build 500px ahead of viewport
-  itemCount: items.length,
-  itemBuilder: (context, index) => ItemWidget(item: items[index]),
-)
-
-// ✅ Good 5 — ListView.separated for dividers
-ListView.separated(
-  itemCount: items.length,
-  separatorBuilder: (_, __) => const Divider(),
-  itemBuilder: (context, index) => ItemWidget(item: items[index]),
-)
-```
-
----
-
-## Q4: How do you optimize images?
-
-```dart
-// ❌ Bad — full resolution image
-Image.network('https://example.com/huge_4k_photo.jpg')
-// Downloads 10MB, decodes to 50MB in memory → jank + OOM
-
-// ✅ Good 1 — cached_network_image (caching + resizing)
-// pubspec.yaml: cached_network_image: ^3.3.0
-CachedNetworkImage(
-  imageUrl: 'https://example.com/photo.jpg',
-  memCacheWidth: 300,  // Decode at 300px width → saves memory
-  placeholder: (_, __) => const CircularProgressIndicator(),
-  errorWidget: (_, __, ___) => const Icon(Icons.error),
-)
-
-// ✅ Good 2 — precache images
-Future<void> _preloadImages() async {
-  await precacheImage(
-    NetworkImage('https://example.com/hero.jpg'),
-    context,
-  );
-}
-
-// ✅ Good 3 — use appropriate format
-// PNG for transparency, WebP for photos, SVG for icons
-Image.asset('assets/logo.webp')  // Smaller than PNG
-
-// ✅ Good 4 — resize for thumbnails
-Image(
-  image: ResizeImage(
-    NetworkImage('https://example.com/photo.jpg'),
-    width: 100,  // Decode at 100px
-  ),
-)
-
-// ✅ Good 5 — use ListView.builder with images
-// Don't load all images at once
-```
+### Common Performance Issues
+| Issue | Cause | Fix |
+|-------|-------|-----|
+| Jank on scroll | No ListView.builder, full-res images | Use .builder + memCacheWidth + RepaintBoundary |
+| Unnecessary rebuilds | No const, broad Consumer | const widgets, Selector, extract widgets |
+| OOM crash | 4K images in memory | memCacheWidth/memCacheHeight, thumbnails |
+| Frozen UI | Heavy computation on main thread | compute(), Isolate.run() |
+| Slow startup | Blocking main() | Lazy init, splash screen |
 
 ### Image Memory
 ```
-Image resolution vs memory:
-  100x100 px   → ~40 KB
-  500x500 px   → ~1 MB
-  1000x1000 px → ~4 MB
-  4000x4000 px → ~64 MB  ← OOM risk!
+100x100 px   → ~40 KB
+500x500 px   → ~1 MB
+1000x1000 px → ~4 MB
+4000x4000 px → ~64 MB  ← OOM risk!
 
 Always specify memCacheWidth/memCacheHeight
 ```
 
+### Rebuild Optimization
+- `const` constructors — never rebuild
+- Extract widgets — limit rebuild scope
+- `Selector`/`.select()` — rebuild on specific field change
+- `Consumer` child parameter — static subtrees not rebuilt
+- `RepaintBoundary` — cache painting
+
 ---
 
-## Q5: How do you handle heavy computations?
+## 🧪 Code Example
 
 ```dart
-// ❌ Bad — heavy work on UI thread → jank
-void processData() {
-  final result = hugeList.map((e) => complexCalculation(e)).toList();
-  // Blocks UI thread → dropped frames
+// ── Avoid unnecessary rebuilds ──
+
+// ❌ Bad — entire Column rebuilds when counter changes
+class BadCounter extends StatefulWidget {
+  State<BadCounter> createState() => _BadCounterState();
+}
+class _BadCounterState extends State<BadCounter> {
+  int _count = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Column(children: [
+      const ExpensiveWidget(),  // Rebuilds unnecessarily!
+      Text('$_count'),
+      ElevatedButton(
+        onPressed: () => setState(() => _count++),
+        child: const Text('Add'),
+      ),
+    ]);
+  }
 }
 
-// ✅ Good 1 — compute() (isolates)
+// ✅ Good — const + extracted widget
+class GoodCounter extends StatelessWidget {
+  const GoodCounter({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return const Column(children: [
+      ExpensiveWidget(),  // const — no rebuild
+      _CountDisplay(),     // Only this rebuilds
+    ]);
+  }
+}
+
+// ── Optimize lists ──
+ListView.builder(
+  cacheExtent: 500,  // Build 500px ahead
+  itemCount: items.length,
+  itemBuilder: (context, index) => RepaintBoundary(
+    child: ItemWidget(
+      key: ValueKey(items[index].id),  // Preserve state on reorder
+      item: items[index],
+    ),
+  ),
+)
+
+// ── Optimize images ──
+CachedNetworkImage(
+  imageUrl: 'https://example.com/photo.jpg',
+  memCacheWidth: 300,  // Decode at 300px → saves memory
+  placeholder: (_, __) => const CircularProgressIndicator(),
+  errorWidget: (_, __, ___) => const Icon(Icons.error),
+)
+
+// ── Heavy computation in isolate ──
 Future<List<Result>> processData() async {
   return compute(_processInIsolate, hugeList);
 }
@@ -249,128 +133,59 @@ List<Result> _processInIsolate(List<Data> data) {
   return data.map((e) => complexCalculation(e)).toList();
 }
 
-// ✅ Good 2 — Isolate.run (Dart 2.19+)
+// Or Isolate.run (Dart 2.19+)
 final result = await Isolate.run(() {
   return hugeList.map(complexCalculation).toList();
 });
 
-// ✅ Good 3 — Isolate.spawn for long-running
-void startWorker() async {
-  final receivePort = ReceivePort();
-  await Isolate.spawn(_workerEntry, receivePort.sendPort);
+// ── Reduce app size ──
+// flutter build apk --split-per-abi --obfuscate --split-debug-info=./symbols
+// flutter build appbundle --release
+```
 
-  receivePort.listen((message) {
-    print('Result: $message');
-  });
-}
-
-void _workerEntry(SendPort sendPort) {
-  // Runs in separate isolate
-  final result = heavyComputation();
-  sendPort.send(result);
-}
-
-// ✅ Good 4 — chunk work into frames
-Future<void> processInChunks(List<Data> items) async {
-  const chunkSize = 50;
-  for (var i = 0; i < items.length; i += chunkSize) {
-    final end = (i + chunkSize).clamp(0, items.length);
-    processChunk(items.sublist(i, end));
-    await Future.delayed(Duration.zero);  // Yield to UI
-  }
-}
+### Output
+```
+A performance-optimized Flutter app with:
+- const widgets preventing unnecessary rebuilds
+- ListView.builder with RepaintBoundary for smooth scrolling
+- CachedNetworkImage with memCacheWidth for low memory usage
+- Isolates for heavy computation (no UI blocking)
+- Split-per-abi + obfuscation for smaller app size
 ```
 
 ---
 
-## Q6: How do you reduce app size?
+## ❓ Interview Questions
 
-```bash
-# 1. Build with --split-per-abi (smaller per-arch APKs)
-flutter build apk --split-per-abi
-# arm64-v8a: ~15MB (modern devices)
-# armeabi-v7a: ~12MB (older devices)
-# x86_64: ~15MB (emulators)
+1. **How do you profile a Flutter app?**
+   - Run in profile mode: `flutter run --profile` (debug mode is too slow for profiling). Open DevTools with `dart devtools` or press 'D' in terminal. Use the Performance tab to see frame rendering and GPU/CPU timeline. Use the Flutter Inspector to track widget rebuilds. Key metrics: 60fps = 16ms per frame. If a frame exceeds 16ms, you get jank. The Performance overlay shows two graphs: UI (build + layout) and GPU (rasterize). Green = good (<16ms), yellow = jank (16-32ms), red = severe (>32ms). Never profile in debug mode — JIT and assertions skew results.
 
-# 2. Build App Bundle (recommended for Play Store)
-flutter build appbundle
-# Play Store delivers only needed ABI/resources
+2. **How do you avoid unnecessary rebuilds?**
+   - Four techniques: (1) `const` constructors — `const Text('Hello')` is created once and never rebuilds. (2) Extract widgets — move stateful logic to a separate widget so only that widget rebuilds. (3) `Selector<Model, T>` (Provider) or `.select()` (Riverpod) — rebuild only when a specific field changes, not on any model change. (4) `Consumer` with `child` parameter — pass static widgets as `child` so they're built once and not rebuilt. Use DevTools "Track widget rebuilds" to find widgets that rebuild too frequently. The most common mistake is putting `const ExpensiveWidget()` inside a StatefulWidget's build — it still rebuilds because the parent rebuilds.
 
-# 3. Tree-shake icons
-flutter build apk --tree-shake-icons
+3. **How do you optimize lists?**
+   - Use `ListView.builder` (lazy, only builds visible items) instead of `ListView` (builds all items at once). Add `RepaintBoundary` around each item to cache painting — prevents repainting on scroll. Use `cacheExtent: 500` to pre-build items ahead for smoother scrolling. Add `ValueKey` with unique ID for efficient diffing on reorder. Use `itemExtent` if items have fixed height — skips layout calculations. For dividers, use `ListView.separated`. For complex scroll layouts, use `CustomScrollView` with slivers. Avoid `shrinkWrap: true` in nested lists — it forces measuring all children.
 
-# 4. Obfuscate (smaller + secure)
-flutter build apk --obfuscate --split-debug-info=./symbols
-```
+4. **How do you optimize images?**
+   - Use `cached_network_image` with `memCacheWidth`/`memCacheHeight` to decode images at display size (e.g., `memCacheWidth: 300` decodes at 300px instead of 4000px — 200x memory reduction). Use `ResizeImage` for precise control. Use `precacheImage()` to preload critical images. Request thumbnail URLs from the server instead of downloading 4K images for 100px tiles. Use WebP format (~30% smaller than PNG). Clear image cache on `AppLifecycleState.paused` for large galleries: `PaintingBinding.instance.imageCache.clear()`. A 4K image = ~64MB in memory; 200px = ~320KB — always specify cache dimensions.
 
-### Reduce Asset Size
-```yaml
-# pubspec.yaml — only include needed assets
-flutter:
-  assets:
-    - assets/images/  # Entire folder
+5. **How do you handle heavy computations?**
+   - Never run heavy work on the UI thread — it blocks rendering and causes jank. Use `compute(function, data)` to run a function in a separate isolate. The function must be top-level or static. Use `Isolate.run(() { ... })` (Dart 2.19+) for simpler API. For long-running work, use `Isolate.spawn()` with `SendPort`/`ReceivePort` for two-way communication. For incremental work without isolates, chunk processing with `Future.delayed(Duration.zero)` to yield to the UI thread between chunks. Rule: any computation >16ms should go to an isolate. Don't use isolates for I/O — Dart's async I/O is already non-blocking.
 
-# ✅ Better — list specific files
-  assets:
-    - assets/images/logo.png
-    - assets/images/hero.webp
-```
+6. **How do you reduce app size?**
+   - Build with `--split-per-abi` for per-architecture APKs (~40% smaller per APK). Build App Bundle (AAB) for Play Store — Play delivers only needed ABI/resources (~30% smaller). Use `--tree-shake-icons` to remove unused Material icons. Use `--obfuscate --split-debug-info=./symbols` for smaller + obfuscated binary (~5% smaller). Use WebP images (~30% smaller than PNG). List specific asset files instead of entire folders. Remove unused dependencies. Enable R8/ProGuard on Android. Result: a 20MB debug APK can become ~8MB release AAB. Measure with `flutter build apk --analyze-size`.
 
-| Optimization | Size Reduction |
-|-------------|----------------|
-| `--split-per-abi` | ~40% (per APK) |
-| App Bundle | ~30% (Play Store) |
-| WebP images | ~30% vs PNG |
-| `--obfuscate` | ~5% |
-| Remove unused deps | Varies |
+7. **How do you use the Performance overlay?**
+   - Enable with `MaterialApp(showPerformanceOverlay: true)`. Two graphs appear: GPU (rasterization time) and UI (build + layout time). Green = <16ms (good, 60fps), yellow = 16-32ms (jank), red = >32ms (severe jank). If UI graph is high: reduce rebuilds (const, Selector), simplify widget tree, use ListView.builder. If GPU graph is high: reduce shadows, gradients, clip, use RepaintBoundary, optimize images (memCacheWidth), avoid opacity in lists. The overlay only shows in debug/profile mode. For detailed analysis, use DevTools Performance tab with timeline.
 
----
+8. **What is jank and how do you fix it?**
+   - Jank is when a frame takes longer than the budget (16ms for 60fps), causing a dropped frame — the user sees stutter. Causes and fixes: (1) Heavy build phase → simplify widget tree, use const, extract widgets. (2) Heavy layout → avoid deep nesting, use itemExtent, avoid shrinkWrap. (3) Heavy painting → reduce shadows/gradients/clip, use RepaintBoundary. (4) Heavy computation on UI thread → use isolates. (5) Large images → memCacheWidth/memCacheHeight. (6) Shader compilation jank → Impeller (pre-compiled shaders). Profile with `flutter run --profile` + DevTools to find the exact cause. First-frame jank is often shader compilation — Impeller fixes this.
 
-## Q7: How do you use the Performance overlay?
+9. **What is `const` and why is it important for performance?**
+   - `const` creates a compile-time constant — the same instance is reused across all rebuilds, so const widgets never rebuild. `const Text('Hello')` is created once; `Text('Hello')` creates a new instance every build. const must be deeply const — all children must also be const. Flutter's diffing uses `identical()` for const widgets (fast) vs `==` for non-const (slower). Use const wherever possible — it's the single biggest performance win in Flutter. Add `const` to constructors, then use `const` when instantiating. Lint rule `prefer_const_constructors` enforces this. Can't use const with dynamic values: `Text(DateTime.now().toString())` can't be const.
 
-```dart
-// Enable performance overlay
-MaterialApp(
-  showPerformanceOverlay: true,  // Shows FPS + GPU graph
-  home: MyApp(),
-)
-
-// Or in code
-// Check if in profile mode
-if (kProfileMode) {
-  // Show debug overlays
-}
-```
-
-### Reading the Overlay
-```
-┌─────────────────────┐
-│  GPU   │   UI       │  ← Two graphs
-│ ▓▓▓▓▓ │ ▓▓▓▓▓▓▓▓▓  │
-│  4ms   │   12ms      │  ← Time per frame
-└─────────────────────┘
-
-Green  = < 16ms (good, 60fps)
-Yellow = 16-32ms (jank)
-Red    = > 32ms (severe jank)
-
-GPU graph = rasterization time (painting, compositing)
-UI graph  = build + layout time (widget tree)
-```
-
-### Common Fixes
-```
-UI graph high (build/layout slow):
-  → Reduce rebuilds (const, Selector)
-  → Simplify widget tree
-  → Use ListView.builder
-
-GPU graph high (paint/raster slow):
-  → Reduce shadows, gradients, clip
-  → Use RepaintBoundary
-  → Optimize images (memCacheWidth)
-  → Avoid opacity in lists
-```
+10. **How do you optimize app startup time?**
+    - Only do critical initialization in `main()` (<500ms) — show UI first, load data async. Defer Firebase, analytics, config to after first frame. Use a native splash screen (no blank screen during Dart init). Use `FutureBuilder` for screen-level async data. Lazy-load heavy screens — don't build until needed. Pre-compile shaders with `flutter run --cache-sksl`. Use `--release` mode (AOT, not JIT). Minimize main() imports. Profile startup with `flutter run --trace-startup --profile`. The key insight: `runApp()` should be called as early as possible — everything else can happen after the first frame.
 
 ---
 

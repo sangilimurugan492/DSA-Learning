@@ -4,15 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63e6e312-ba97-461c-9408-efe0eb739fb1" name="Changes" comment="Added All problems with explanation.">
+    <list default="true" id="63e6e312-ba97-461c-9408-efe0eb739fb1" name="Changes" comment="Added Interview prep documents in weekly basis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/binary_search/find_minimum_in_rotated_sorted_array/FindMinimumInRotatedSortedArray.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/binary_search/find_minimum_in_rotated_sorted_array/FindMinimumInRotatedSortedArray.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/binary_search/find_minimum_in_rotated_sorted_array/FindMinimumInRotatedSortedArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/binary_search/find_minimum_in_rotated_sorted_array/FindMinimumInRotatedSortedArray.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/binary_search/median_of_two_sorted_arrays/MedianOfTwoSortedSubArray.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/binary_search/median_of_two_sorted_arrays/MedianOfTwoSortedSubArray.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/binary_search/median_of_two_sorted_arrays/MedianOfTwoSortedSubArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/binary_search/median_of_two_sorted_arrays/MedianOfTwoSortedSubArray.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/binary_search/search_in_rotated_sorted_array/SearchInRotatedSortedArray.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/binary_search/search_in_rotated_sorted_array/SearchInRotatedSortedArray.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/binary_search/search_in_rotated_sorted_array/SearchInRotatedSortedArray.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/binary_search/search_in_rotated_sorted_array/SearchInRotatedSortedArray.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/system_design/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/system_design/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/insert_interval/InsertInterval.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/greedy/insert_interval/InsertInterval.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/insert_interval/InsertInterval.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/greedy/insert_interval/InsertInterval.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/advanced/ArchitecturePatterns.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/advanced/ArchitecturePatterns.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/advanced/CICD.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/advanced/CICD.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/advanced/DependencyInjection.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/advanced/DependencyInjection.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/advanced/FlutterInternals.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/advanced/FlutterInternals.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/advanced/Performance.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/advanced/Performance.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/advanced/PlatformChannels.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/advanced/PlatformChannels.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/DartBasics.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/DartBasics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Layouts.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Layouts.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Navigation.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Navigation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/StateManagement.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/StateManagement.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Widgets.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Widgets.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/intermediate/Animations.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/intermediate/Animations.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/intermediate/CustomWidgets.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/intermediate/CustomWidgets.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/intermediate/FirebaseIntegration.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/intermediate/FirebaseIntegration.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/intermediate/HTTPNetworking.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/intermediate/HTTPNetworking.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/intermediate/StateManagementAdvanced.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/intermediate/StateManagementAdvanced.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/intermediate/Testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/intermediate/Testing.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/scenario_based/DebuggingScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/scenario_based/DebuggingScenarios.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/scenario_based/NavigationScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/scenario_based/NavigationScenarios.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/scenario_based/PerformanceScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/scenario_based/PerformanceScenarios.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/scenario_based/StateManagementScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/scenario_based/StateManagementScenarios.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/scenario_based/UIScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/scenario_based/UIScenarios.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/BLoC.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/BLoC.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/BestPractices.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/BestPractices.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/Comparison.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/Comparison.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/Fundamentals.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/Fundamentals.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/GetX.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/GetX.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/MobX.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/MobX.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/Provider.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/Provider.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/Redux.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/Redux.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/Riverpod.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/Riverpod.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interview_schedule/daily/Week1_Daily_Checklist.md" beforeDir="false" afterPath="$PROJECT_DIR$/interview_schedule/daily/Week1_Daily_Checklist.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/Basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/Functions.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/Functions.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +62,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Interview_preparation" />
+        <entry key="$PROJECT_DIR$" value="Problem_explanation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,7 +96,7 @@
     "Kotlin.AddStringKt.executor": "Run",
     "Kotlin.AddTowNumbersKt.executor": "Run",
     "Kotlin.AssignCookiesKt.executor": "Run",
-    "Kotlin.BackspaceStringCompareKt.executor": "Debug",
+    "Kotlin.BackspaceStringCompareKt.executor": "Run",
     "Kotlin.BestTimeToBuyAndSellStockIIKt (1).executor": "Run",
     "Kotlin.BestTimeToBuyAndSellStockIIKt.executor": "Run",
     "Kotlin.BestTimeToBuyAndSellStockIKt.executor": "Debug",
@@ -88,6 +119,7 @@
     "Kotlin.FruitsIntoBasketsKt.executor": "Run",
     "Kotlin.GrumpyBookStoreOwnerKt.executor": "Run",
     "Kotlin.HeightCheckerKt.executor": "Debug",
+    "Kotlin.InsertIntervalKt.executor": "Debug",
     "Kotlin.IntegerToRomanKt.executor": "Run",
     "Kotlin.IntersectionTwoArrayIIKt.executor": "Run",
     "Kotlin.IntervalGroupsKt.executor": "Run",
@@ -144,13 +176,13 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Problem__explanation",
+    "git-widget-placeholder": "Interview__prep__1",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/d2c-sangili.murugan/IdeaProjects/Learning/simulation",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -165,7 +197,7 @@
       <recent name="$PROJECT_DIR$/array_hashing_technique" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.BackspaceStringCompareKt">
+  <component name="RunManager" selected="Kotlin.InsertIntervalKt">
     <configuration name="simulation.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="filePath" value="$PROJECT_DIR$/simulation/bin/simulation.dart" />
       <option name="workingDirectory" value="$PROJECT_DIR$/simulation" />
@@ -173,13 +205,6 @@
     </configuration>
     <configuration name="BackspaceStringCompareKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="array.two_pointer.backspace_string_compare.BackspaceStringCompareKt" />
-      <module name="Learning" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BestTimeToBuyAndSellStockIIKt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="array.greedy.best_time_to_buy_and_sell_stock_ii.BestTimeToBuyAndSellStockIIKt" />
       <module name="Learning" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -206,13 +231,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="InsertIntervalKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.greedy.insert_interval.InsertIntervalKt" />
+      <module name="Learning" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.InsertIntervalKt" />
         <item itemvalue="Kotlin.BackspaceStringCompareKt" />
         <item itemvalue="Kotlin.ContainerWithMostWaterKt" />
         <item itemvalue="Kotlin.HeightCheckerKt" />
         <item itemvalue="Kotlin.CountNumberOfNiceSubarraysKt" />
-        <item itemvalue="Kotlin.BestTimeToBuyAndSellStockIIKt (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -328,7 +360,15 @@
       <option name="project" value="LOCAL" />
       <updated>1786555048976</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added Interview prep documents in weekly basis">
+      <option name="closed" value="true" />
+      <created>1787241743965</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1787241743965</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -348,18 +388,8 @@
     <MESSAGE value="Added New Problems with explanation." />
     <MESSAGE value="Added All Mobile related Topic and Interview Preparation Concepts." />
     <MESSAGE value="Added All problems with explanation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added All problems with explanation." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/DSA/array/two_pointer/backspace_string_compare/BackspaceStringCompare.kt</url>
-          <line>62</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Added Interview prep documents in weekly basis" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Interview prep documents in weekly basis" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Learning$ZigZagConversionStringKt.ic" NAME="ZigZagConversionStringKt Coverage Results" MODIFIED="1772600950334" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />

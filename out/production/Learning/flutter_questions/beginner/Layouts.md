@@ -1,30 +1,11 @@
 # Layouts
 
-## Q1: How do Row and Column work?
+## 📖 Explanation
 
-```dart
-// Row — horizontal layout (main axis = horizontal)
-Row(
-  mainAxisAlignment: MainAxisAlignment.spaceEvenly,  // Main axis
-  crossAxisAlignment: CrossAxisAlignment.center,      // Cross axis
-  children: [
-    const Icon(Icons.star),
-    const Icon(Icons.star),
-    const Icon(Icons.star),
-  ],
-)
+Flutter's layout system is based on widgets composing other widgets. The core principle is: **"Constraints go down. Sizes go up."** The parent passes constraints (minWidth, maxWidth, minHeight, maxHeight) to the child, the child sizes itself within those constraints, and returns its size to the parent.
 
-// Column — vertical layout (main axis = vertical)
-Column(
-  mainAxisAlignment: MainAxisAlignment.center,
-  crossAxisAlignment: CrossAxisAlignment.stretch,  // Stretch across cross axis
-  children: [
-    const Text('Title', style: TextStyle(fontSize: 24)),
-    const Text('Subtitle'),
-    ElevatedButton(onPressed: () {}, child: const Text('Action')),
-  ],
-)
-```
+### Row and Column
+`Row` lays out children horizontally (main axis = horizontal). `Column` lays out children vertically (main axis = vertical). Both use `MainAxisAlignment` (main axis) and `CrossAxisAlignment` (cross axis).
 
 ### MainAxisAlignment (main axis)
 | Value | Behavior |
@@ -45,52 +26,7 @@ Column(
 | `stretch` | Fill cross-axis |
 | `baseline` | Align by text baseline (Row only) |
 
----
-
-## Q2: What is Flex, Expanded, and Flexible?
-
-```dart
-// Expanded — fills available space (fit: tight)
-Row(
-  children: [
-    const Text('Label'),
-    Expanded(
-      flex: 1,  // Takes 1 part of available space
-      child: Container(color: Colors.red, height: 50),
-    ),
-    Expanded(
-      flex: 2,  // Takes 2 parts — twice as wide
-      child: Container(color: Colors.blue, height: 50),
-    ),
-  ],
-)
-
-// Flexible — can be tight or loose
-Row(
-  children: [
-    Flexible(
-      flex: 1,
-      fit: FlexFit.tight,  // Tight = fill space (like Expanded)
-      child: Container(color: Colors.red),
-    ),
-    Flexible(
-      flex: 1,
-      fit: FlexFit.loose,  // Loose = natural size, up to available
-      child: const Text('Flexible'),
-    ),
-  ],
-)
-
-// Spacer — shorthand for Expanded with empty child
-Row(
-  children: [
-    const Text('Left'),
-    const Spacer(),  // Expanded(child: SizedBox.shrink())
-    const Text('Right'),
-  ],
-)
-```
-
+### Flex, Expanded, and Flexible
 | Widget | Fit | Behavior |
 |--------|-----|----------|
 | `Expanded` | tight | Fills all available space |
@@ -98,71 +34,11 @@ Row(
 | `Flexible(fit: loose)` | loose | Natural size, max = available |
 | `Spacer()` | tight | Empty expanded (gap) |
 
----
+### Stack
+`Stack` overlaps children — last child is on top. `Positioned` children use absolute positioning. Non-positioned children use `Stack`'s `alignment`. `IndexedStack` shows only one child at a time (state preserved).
 
-## Q3: What is Stack and how do you position children?
-
-```dart
-// Stack — children overlap (last child on top)
-Stack(
-  alignment: Alignment.center,  // Default alignment for non-positioned
-  children: [
-    // Bottom layer
-    Container(
-      width: 200,
-      height: 200,
-      color: Colors.blue,
-    ),
-
-    // Positioned — absolute position within stack
-    Positioned(
-      top: 10,
-      right: 10,
-      child: Container(
-        width: 40,
-        height: 40,
-        color: Colors.red,
-      ),
-    ),
-
-    // Centered (non-positioned — uses Stack alignment)
-    const Text('Overlay', style: TextStyle(color: Colors.white)),
-
-    // Bottom bar
-    Positioned(
-      left: 0,
-      right: 0,
-      bottom: 0,
-      child: Container(
-        height: 50,
-        color: Colors.black54,
-        child: const Center(child: Text('Bottom Bar')),
-      ),
-    ),
-  ],
-)
+### Constraint System
 ```
-
-### IndexedStack — show only one child at a time
-```dart
-IndexedStack(
-  index: _currentIndex,  // 0, 1, 2...
-  children: [
-    Page1(),
-    Page2(),
-    Page3(),
-  ],
-)
-// Only Page at index is visible — others are kept in tree (state preserved)
-```
-
----
-
-## Q4: How does the constraint system work in Flutter?
-
-```
-Flutter Layout = "Constraints go down. Sizes go up."
-
 Parent passes constraints (minWidth, maxWidth, minHeight, maxHeight)
   ↓
 Child sizes itself within constraints
@@ -172,231 +48,20 @@ Child returns its size to parent
 Parent positions child
 ```
 
-```dart
-// Common constraint scenarios:
+Common constraint types:
+- **Tight** — exact size (e.g., `SizedBox`)
+- **Loose** — range (e.g., `ConstrainedBox`)
+- **Unbounded** — infinite (in scroll views)
 
-// 1. Tight constraints — exact size
-SizedBox(
-  width: 100,
-  height: 50,
-  child: Container(color: Colors.red),
-)
+### Common Layout Widgets
+- **Padding**: `Padding`, `EdgeInsets.all/symmetric/only/fromLTRB`
+- **Alignment**: `Center`, `Align`
+- **Sizing**: `SizedBox`, `AspectRatio`, `FractionallySizedBox`, `FittedBox`
+- **Wrap**: `Wrap` (wraps children to next line)
+- **SafeArea**: Avoids notches and system UI
+- **LayoutBuilder**: Get parent constraints at build time
 
-// 2. Loose constraints — range
-ConstrainedBox(
-  constraints: const BoxConstraints(
-    minWidth: 50,
-    maxWidth: 200,
-    minHeight: 30,
-    maxHeight: 100,
-  ),
-  child: Container(color: Colors.blue),
-)
-
-// 3. Unbounded constraints — infinite (in scroll views)
-ListView(
-  children: [
-    // Each item gets unbounded height → must size itself
-    Container(height: 100, color: Colors.red),
-  ],
-)
-
-// 4. Expand to parent
-Container(
-  color: Colors.green,
-  child: const Expanded(child: SizedBox.shrink()),
-)
-```
-
-### Common Layout Errors
-```
-// ❌ "RenderFlex overflowed by X pixels"
-Row(
-  children: [
-    Container(width: 200, color: Colors.red),  // Too wide
-    Container(width: 200, color: Colors.blue), // Can't fit
-  ],
-)
-// Fix: Wrap in Expanded or Flexible, or use SingleChildScrollView
-
-// ❌ "RenderBox was not laid out"
-// Missing material ancestor, or constraints issue
-
-// ❌ "Vertical viewport was given unbounded height"
-ListView(
-  shrinkWrap: true,  // Fix: shrinkWrap or give bounded parent
-  physics: const NeverScrollableScrollPhysics(),
-  children: [...],
-)
-```
-
----
-
-## Q5: What are common layout widgets?
-
-```dart
-// Padding
-Padding(
-  padding: const EdgeInsets.all(16),
-  child: const Text('Padded'),
-)
-
-// EdgeInsets variations
-const EdgeInsets.all(8)                      // All sides
-const EdgeInsets.symmetric(horizontal: 8, vertical: 4)  // Symmetric
-const EdgeInsets.only(left: 8, top: 4)        // Specific sides
-const EdgeInsets.fromLTRB(8, 4, 8, 4)        // L, T, R, B
-
-// Center
-const Center(child: Text('Centered'))
-
-// Align
-const Align(
-  alignment: Alignment.topLeft,
-  child: Text('Top-left'),
-)
-
-// SizedBox — fixed size or gap
-const SizedBox(height: 16)  // Gap
-const SizedBox(width: 100, height: 50, child: Text('Fixed'))
-
-// AspectRatio
-AspectRatio(
-  aspectRatio: 16 / 9,
-  child: Container(color: Colors.red),
-)
-
-// FractionallySizedBox — percentage of parent
-FractionallySizedBox(
-  widthFactor: 0.8,  // 80% of parent width
-  child: Container(color: Colors.blue),
-)
-
-// FittedBox — scale child to fit
-const FittedBox(
-  fit: BoxFit.scaleDown,
-  child: Text('Long text that needs to fit'),
-)
-
-// Wrap — wraps children to next line
-Wrap(
-  spacing: 8,       // Horizontal gap
-  runSpacing: 4,     // Vertical gap between lines
-  children: [
-    Chip(label: Text('Tag 1')),
-    Chip(label: Text('Tag 2')),
-    Chip(label: Text('Tag 3')),
-  ],
-)
-
-// SafeArea — avoid notches and system UI
-SafeArea(
-  child: const Text('Safe from notches'),
-)
-
-// LayoutBuilder — get parent constraints
-LayoutBuilder(
-  builder: (context, constraints) {
-    if (constraints.maxWidth > 600) {
-      return WideLayout();
-    }
-    return NarrowLayout();
-  },
-)
-```
-
----
-
-## Q6: How do you create responsive layouts?
-
-```dart
-// 1. MediaQuery — screen size
-Widget build(BuildContext context) {
-  final size = MediaQuery.of(context).size;
-  final width = size.width;
-  final isTablet = width > 600;
-  final isLandscape = width > size.height;
-
-  return GridView.count(
-    crossAxisCount: isTablet ? 3 : 2,
-    children: items,
-  );
-}
-
-// 2. LayoutBuilder — parent constraints
-LayoutBuilder(
-  builder: (context, constraints) {
-    final columns = constraints.maxWidth > 600 ? 3 : 1;
-    return GridView.count(
-      crossAxisCount: columns,
-      children: items,
-    );
-  },
-)
-
-// 3. OrientationBuilder
-OrientationBuilder(
-  builder: (context, orientation) {
-    return GridView.count(
-      crossAxisCount: orientation == Orientation.portrait ? 2 : 4,
-      children: items,
-    );
-  },
-)
-
-// 4. Breakpoint utility class
-class Breakpoints {
-  static const double mobile = 480;
-  static const double tablet = 768;
-  static const double desktop = 1024;
-}
-
-ResponsiveWidget(
-  mobile: MobileLayout(),
-  tablet: TabletLayout(),
-  desktop: DesktopLayout(),
-)
-```
-
----
-
-## Q7: What is the difference between ListView and SingleChildScrollView?
-
-```dart
-// ListView — lazy loading, only builds visible items
-ListView.builder(
-  itemCount: 10000,
-  itemBuilder: (context, index) => ListTile(
-    title: Text('Item $index'),
-  ),
-)
-// Only ~10 items built at a time — efficient for large lists
-
-// SingleChildScrollView — renders ALL children at once
-SingleChildScrollView(
-  child: Column(
-    children: [
-      for (int i = 0; i < 10000; i++)
-        ListTile(title: Text('Item $i')),
-    ],
-  ),
-)
-// ❌ Builds all 10000 items — memory and performance issues
-
-// ListView (without builder) — also renders all children
-ListView(
-  children: [
-    ListTile(title: Text('Item 1')),
-    ListTile(title: Text('Item 2')),
-  ],
-)
-// Fine for small lists, bad for large ones
-
-// ✅ Use .builder for large/dynamic lists
-// ✅ Use SingleChildScrollView for forms, small content
-// ✅ Use CustomScrollView + Slivers for complex scroll layouts
-```
-
+### ListView vs SingleChildScrollView
 | Widget | Builds | Use Case |
 |--------|--------|----------|
 | `ListView.builder` | Only visible | Large/dynamic lists |
@@ -404,88 +69,16 @@ ListView(
 | `SingleChildScrollView` | All children | Forms, mixed content |
 | `CustomScrollView` | Only visible slivers | Complex scroll layouts |
 
----
+### Clipping Widgets
+| Widget | Shape |
+|--------|-------|
+| `ClipRRect` | Rounded rectangle |
+| `ClipOval` | Oval/circle |
+| `ClipPath` | Custom path |
 
-## Q8: What is `ClipRRect`, `ClipOval`, and `ClipPath`?
+> **Performance:** Clipping is expensive (uses `saveLayer`). For rounded corners, prefer `Container` with `BoxDecoration(borderRadius:)` instead of `ClipRRect`.
 
-```dart
-// ClipRRect — clip to rounded rectangle
-ClipRRect(
-  borderRadius: BorderRadius.circular(16),
-  child: Image.network('https://example.com/photo.jpg'),
-)
-
-// ClipOval — clip to oval/circle
-ClipOval(
-  child: SizedBox(
-    width: 100,
-    height: 100,
-    child: Image.network('https://example.com/avatar.jpg', fit: BoxFit.cover),
-  ),
-)
-
-// ClipPath — clip to custom path
-ClipPath(
-  clipper: MyCustomClipper(),
-  child: Container(
-    width: 200,
-    height: 100,
-    color: Colors.blue,
-  ),
-)
-
-class MyCustomClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    final path = Path();
-    path.moveTo(0, 0);
-    path.lineTo(size.width, 0);
-    path.lineTo(size.width / 2, size.height);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
-}
-```
-
-> **Performance:** Clipping is expensive — it uses `saveLayer` internally. For simple rounded corners, prefer `Container` with `BoxDecoration(borderRadius:)` instead of `ClipRRect` — it's cheaper.
-
----
-
-## Q9: What is `FittedBox` and how does it differ from `FractionallySizedBox`?
-
-```dart
-// FittedBox — scales child to fit within bounds
-const FittedBox(
-  fit: BoxFit.scaleDown,  // Scale down only (never up)
-  child: Text('Long text that might overflow'),
-)
-
-// BoxFit options:
-// fill       — stretch to fill (distorts)
-// contain    — fit entirely (letterbox)
-// cover      — fill, crop overflow
-// fitWidth   — fit width, crop height
-// fitHeight  — fit height, crop width
-// scaleDown  — contain, but never scale up
-// none       — no scaling (overflow)
-
-// FractionallySizedBox — size as percentage of parent
-FractionallySizedBox(
-  widthFactor: 0.8,   // 80% of parent width
-  heightFactor: 0.5,  // 50% of parent height
-  child: Container(color: Colors.blue),
-)
-
-// AspectRatio — fixed width:height ratio
-AspectRatio(
-  aspectRatio: 16 / 9,
-  child: Container(color: Colors.red),
-)
-```
-
+### Sizing Widgets
 | Widget | Purpose | Scales Content? |
 |--------|---------|-----------------|
 | `FittedBox` | Fit child into bounds | ✅ Yes |
@@ -493,54 +86,137 @@ AspectRatio(
 | `AspectRatio` | Fixed ratio | ❌ No |
 | `SizedBox` | Fixed size | ❌ No |
 
-> **Use `FittedBox`** when text or content might overflow and you want it to shrink-to-fit. Use `FractionallySizedBox` for responsive percentage-based layouts.
+### Sliver Helpers
+- `SliverToBoxAdapter` — wrap a non-sliver widget in a sliver
+- `SliverFillRemaining` — fill remaining space in `CustomScrollView`
+- `SliverFillViewport` — full-screen pages
 
 ---
 
-## Q10: What is `SliverFillRemaining` and `SliverToBoxAdapter`?
+## 🧪 Code Example
 
 ```dart
-// SliverToBoxAdapter — wrap a non-sliver widget in a sliver
-CustomScrollView(
-  slivers: [
-    SliverToBoxAdapter(child: const Text('Header')),  // Non-sliver → sliver
-    SliverList(delegate: SliverChildBuilderDelegate(
-      (context, index) => ListTile(title: Text('Item $index')),
-      childCount: 20,
-    )),
-    SliverToBoxAdapter(child: const Text('Footer')),
-  ],
-)
+import 'package:flutter/material.dart';
 
-// SliverFillRemaining — fill remaining space in CustomScrollView
-CustomScrollView(
-  slivers: [
-    SliverAppBar(title: const Text('App Bar')),
-    SliverList(delegate: SliverChildBuilderDelegate(
-      (context, index) => ListTile(title: Text('Item $index')),
-      childCount: 5,
-    )),
-    // Fills remaining space — useful for loading spinners at bottom
-    SliverFillRemaining(
-      hasScrollBody: false,  // Don't scroll the child
-      child: const Center(child: CircularProgressIndicator()),
-    ),
-  ],
-)
+void main() {
+  runApp(const MyApp());
+}
 
-// SliverFillViewport — full-screen pages
-SliverFillViewport(
-  delegate: SliverChildBuilderDelegate(
-    (context, index) => Container(
-      color: Colors.primaries[index],
-      child: Center(child: Text('Page $index')),
-    ),
-    childCount: 5,
-  ),
-)
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text('Layouts Demo')),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // Row with Expanded
+            Row(
+              children: [
+                const Text('Label'),
+                Expanded(
+                  flex: 1,
+                  child: Container(color: Colors.red, height: 50),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(color: Colors.blue, height: 50),
+                ),
+              ],
+            ),
+
+            const SizedBox(height: 16),
+
+            // Stack with Positioned
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(width: 200, height: 100, color: Colors.green),
+                const Positioned(
+                  top: 10,
+                  right: 10,
+                  child: Icon(Icons.star, color: Colors.white),
+                ),
+                const Text('Overlay',
+                    style: TextStyle(color: Colors.white)),
+              ],
+            ),
+
+            const SizedBox(height: 16),
+
+            // Wrap
+            Wrap(
+              spacing: 8,
+              runSpacing: 4,
+              children: [
+                Chip(label: Text('Tag 1')),
+                Chip(label: Text('Tag 2')),
+                Chip(label: Text('Tag 3')),
+              ],
+            ),
+
+            const SizedBox(height: 16),
+
+            // Responsive with LayoutBuilder
+            LayoutBuilder(
+              builder: (context, constraints) {
+                final isWide = constraints.maxWidth > 600;
+                return Text(isWide ? 'Tablet' : 'Phone');
+              },
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
 ```
 
-> **Key:** `SliverToBoxAdapter` is the bridge between regular widgets and slivers. Use it when you need to place a single non-sliver widget (like `Text`, `Container`, `Image`) inside a `CustomScrollView`.
+### Output
+```
+A running Flutter app with:
+- Row with red (1/3 width) and blue (2/3 width) containers
+- Stack with green background, star icon top-right, "Overlay" text centered
+- Wrap with three chips
+- LayoutBuilder text showing "Phone" or "Tablet" based on width
+```
+
+---
+
+## ❓ Interview Questions
+
+1. **How do Row and Column work?**
+   - `Row` lays out children horizontally (main axis = horizontal, cross axis = vertical). `Column` lays out children vertically (main axis = vertical, cross axis = horizontal). `MainAxisAlignment` controls alignment on the main axis (start, center, end, spaceBetween, spaceAround, spaceEvenly). `CrossAxisAlignment` controls alignment on the cross axis (start, center, end, stretch, baseline). Use `Expanded` or `Flexible` to distribute space among children.
+
+2. **What is Flex, Expanded, and Flexible?**
+   - `Expanded` fills all available space on the main axis with `fit: tight` — it takes a `flex` factor to distribute space proportionally. `Flexible` can be `tight` (same as Expanded) or `loose` (natural size, up to available space). `Spacer()` is shorthand for `Expanded(child: SizedBox.shrink())` — creates a gap. Use `Expanded` when a child should fill remaining space; use `Flexible(fit: loose)` when a child should be at most the available size but can be smaller.
+
+3. **What is Stack and how do you position children?**
+   - `Stack` overlaps children — the last child is on top. `Positioned` children use absolute positioning (top, right, bottom, left). Non-positioned children use `Stack`'s `alignment` property. `IndexedStack` shows only one child at a time while keeping all children in the tree (state preserved). Use `Stack` for overlays, badges, and layered UI. Avoid deeply nested `Stack`s — they're hard to debug.
+
+4. **How does the constraint system work in Flutter?**
+   - Flutter layout follows: "Constraints go down. Sizes go up." The parent passes `BoxConstraints` (minWidth, maxWidth, minHeight, maxHeight) to the child. The child sizes itself within those constraints and returns its size. The parent then positions the child. Tight constraints = exact size (SizedBox). Loose constraints = range (ConstrainedBox). Unbounded = infinite (in scroll views). Common errors: "RenderFlex overflowed" (children too wide for Row) — fix with Expanded or SingleChildScrollView. "Vertical viewport was given unbounded height" — fix with shrinkWrap or bounded parent.
+
+5. **What are common layout widgets?**
+   - `Padding` (with `EdgeInsets.all/symmetric/only/fromLTRB`), `Center`, `Align`, `SizedBox` (fixed size/gap), `AspectRatio` (fixed ratio), `FractionallySizedBox` (percentage of parent), `FittedBox` (scale to fit), `Wrap` (wraps children to next line), `SafeArea` (avoid notches), `LayoutBuilder` (get parent constraints). Use `SizedBox` for gaps instead of `Container` — it's lighter.
+
+6. **How do you create responsive layouts?**
+   - Three approaches: (1) `MediaQuery.of(context).size` — screen size, use for app-level decisions. (2) `LayoutBuilder` — parent constraints, use for widget-level decisions (more efficient, only rebuilds when constraints change). (3) `OrientationBuilder` — portrait/landscape. Define breakpoints: mobile <480, tablet <768, desktop <1024. For complex responsive apps, use `flutter_screenutil` or a `ResponsiveWidget` pattern with mobile/tablet/desktop variants.
+
+7. **What is the difference between ListView and SingleChildScrollView?**
+   - `ListView.builder` — lazy loading, only builds visible items. Best for large/dynamic lists. `ListView()` (without builder) — renders all children at once. Fine for small lists (<20), bad for large ones. `SingleChildScrollView` — renders ALL children at once. Use for forms and mixed content, not for large lists. `CustomScrollView` with slivers — only builds visible slivers, best for complex scroll layouts. Always use `.builder` for lists with 20+ items.
+
+8. **What is `ClipRRect`, `ClipOval`, and `ClipPath`?**
+   - `ClipRRect` clips to a rounded rectangle (uses `borderRadius`). `ClipOval` clips to an oval/circle. `ClipPath` clips to a custom path via a `CustomClipper`. Clipping is expensive — it uses `saveLayer` internally. For simple rounded corners, prefer `Container` with `BoxDecoration(borderRadius:)` instead of `ClipRRect` — it's cheaper. Use `ClipOval` for circular avatars. Use `ClipPath` for custom shapes (triangles, hexagons).
+
+9. **What is `FittedBox` and how does it differ from `FractionallySizedBox`?**
+   - `FittedBox` scales its child to fit within bounds — it actually scales content (text, images). `BoxFit` options: fill (stretch), contain (fit entirely), cover (fill + crop), scaleDown (contain but never up). `FractionallySizedBox` sizes the child as a percentage of the parent — it doesn't scale content, just allocates space. Use `FittedBox` when text/content might overflow and should shrink-to-fit. Use `FractionallySizedBox` for responsive percentage-based layouts. `AspectRatio` maintains a fixed width:height ratio.
+
+10. **What is `SliverFillRemaining` and `SliverToBoxAdapter`?**
+    - `SliverToBoxAdapter` wraps a non-sliver widget (like `Text`, `Container`, `Image`) so it can be used inside a `CustomScrollView` alongside other slivers. It's the bridge between regular widgets and slivers. `SliverFillRemaining` fills the remaining space in a `CustomScrollView` — useful for loading spinners at the bottom or "no more items" messages. `SliverFillViewport` creates full-screen pages. Use these when building complex scrollable layouts with `CustomScrollView`.
 
 ---
 

@@ -20,6 +20,18 @@ A comprehensive collection of Flutter and Dart interview questions organized by 
 - [Firebase Integration](intermediate/FirebaseIntegration.md) — Auth, Firestore, Storage, Messaging
 - [Testing](intermediate/Testing.md) — Unit, widget, integration tests
 
+### 🔵 State Management (Deep Dive)
+- [Fundamentals](state_management/Fundamentals.md) — State types, setState, lifecycle
+- [Provider](state_management/Provider.md) — ChangeNotifier, Consumer, Selector
+- [Riverpod](state_management/Riverpod.md) — Providers, AsyncValue, Notifier
+- [BLoC](state_management/BLoC.md) — Events, states, Cubit, BlocBuilder
+- [MobX](state_management/MobX.md) — Observables, actions, computed, reactions
+- [GetX](state_management/GetX.md) — Rx variables, Obx, DI, navigation
+- [Redux](state_management/Redux.md) — Store, actions, reducers, middleware
+- [Comparison](state_management/Comparison.md) — All solutions compared
+- [Best Practices](state_management/BestPractices.md) — Immutability, DI, testing, performance
+
+
 ### 🔴 Advanced
 - [Performance](advanced/Performance.md) — Profiling, rebuilds, memory, jank
 - [Platform Channels](advanced/PlatformChannels.md) — Method/Event channels, FFI

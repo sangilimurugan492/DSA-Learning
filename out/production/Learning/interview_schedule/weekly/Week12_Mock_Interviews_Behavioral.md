@@ -8,12 +8,12 @@
 
 | Day | Time | Theory (1.5 hr) | DSA (30 min) |
 |-----|------|-----------------|--------------|
-| Mon | 2hr | 🔴 [General Behavioral](../behavioral_questions/GeneralBehavioralQuestions.md) + [Android Behavioral](../behavioral_questions/AndroidBehavioralQuestions.md) | 2 hard problems |
-| Tue | 2hr | 🔴 [Kotlin Behavioral](../behavioral_questions/KotlinBehavioralQuestions.md) + [Java Behavioral](../behavioral_questions/JavaBehavioralQuestions.md) | 2 hard problems |
-| Wed | 2hr | 🔴 [Compose Behavioral](../behavioral_questions/ComposeBehavioralQuestions.md) + [Flutter Behavioral](../behavioral_questions/FlutterBehavioralQuestions.md) | 2 hard problems |
-| Thu | 2hr | 🔴 [Java Intermediate](../java_questions/intermediate/) — Collections, Concurrency, Generics, Lambda, Exception, OOP | 2 timed problems |
-| Fri | 2hr | 🔴 [Java Advanced](../java_questions/advanced/) — JVM, GC, Concurrency, DesignPatterns, Reflection, AndroidWithJava | 2 timed problems |
-| Sat | 4hr | 🔴 [Java Scenarios](../java_questions/scenario_based/) + All scenario-based review (Android, Kotlin, Compose, Flutter, Firebase) | 2 timed problems |
+| Mon | 2hr | 🔴 [General Behavioral](../../behavioral_questions/GeneralBehavioralQuestions.md) + [Android Behavioral](../../behavioral_questions/AndroidBehavioralQuestions.md) | 2 hard problems |
+| Tue | 2hr | 🔴 [Kotlin Behavioral](../../behavioral_questions/KotlinBehavioralQuestions.md) + [Java Behavioral](../../behavioral_questions/JavaBehavioralQuestions.md) | 2 hard problems |
+| Wed | 2hr | 🔴 [Compose Behavioral](../../behavioral_questions/ComposeBehavioralQuestions.md) + [Flutter Behavioral](../../behavioral_questions/FlutterBehavioralQuestions.md) | 2 hard problems |
+| Thu | 2hr | 🔴 [Java Intermediate](../../java_questions/intermediate/) — Collections, Concurrency, Generics, Lambda, Exception, OOP | 2 timed problems |
+| Fri | 2hr | 🔴 [Java Advanced](../../java_questions/advanced/) — JVM, GC, Concurrency, DesignPatterns, Reflection, AndroidWithJava | 2 timed problems |
+| Sat | 4hr | 🔴 [Java Scenarios](../../java_questions/scenario_based/) + All scenario-based review (Android, Kotlin, Compose, Flutter, Firebase) | 2 timed problems |
 | Sun | 4hr | 🔴 **MOCK INTERVIEWS** — 3 full mock interviews (45 min each) + final review | 2 timed problems |
 
 ---
@@ -23,57 +23,57 @@
 ### Behavioral Questions (7 files) 🔴
 | File | Key Concepts |
 |------|-------------|
-| [General Behavioral](../behavioral_questions/GeneralBehavioralQuestions.md) | STAR method, leadership, conflict, teamwork |
-| [Android Behavioral](../behavioral_questions/AndroidBehavioralQuestions.md) | Android-specific experience questions |
-| [Kotlin Behavioral](../behavioral_questions/KotlinBehavioralQuestions.md) | Kotlin experience, migration, best practices |
-| [Java Behavioral](../behavioral_questions/JavaBehavioralQuestions.md) | Java experience, JVM, concurrency |
-| [Compose Behavioral](../behavioral_questions/ComposeBehavioralQuestions.md) | Compose migration, architecture decisions |
-| [Flutter Behavioral](../behavioral_questions/FlutterBehavioralQuestions.md) | Flutter experience, cross-platform decisions |
-| [README](../behavioral_questions/README.md) | Overview |
+| [General Behavioral](../../behavioral_questions/GeneralBehavioralQuestions.md) | STAR method, leadership, conflict, teamwork |
+| [Android Behavioral](../../behavioral_questions/AndroidBehavioralQuestions.md) | Android-specific experience questions |
+| [Kotlin Behavioral](../../behavioral_questions/KotlinBehavioralQuestions.md) | Kotlin experience, migration, best practices |
+| [Java Behavioral](../../behavioral_questions/JavaBehavioralQuestions.md) | Java experience, JVM, concurrency |
+| [Compose Behavioral](../../behavioral_questions/ComposeBehavioralQuestions.md) | Compose migration, architecture decisions |
+| [Flutter Behavioral](../../behavioral_questions/FlutterBehavioralQuestions.md) | Flutter experience, cross-platform decisions |
+| [README](../../behavioral_questions/README.md) | Overview |
 
 ### Java Intermediate (6 files) 🔴
 | File | Key Concepts |
 |------|-------------|
-| [Collections](../java_questions/intermediate/Collections.md) | List, Set, Map, Queue, Iterator |
-| [Concurrency](../java_questions/intermediate/Concurrency.md) | Thread, Runnable, synchronized, volatile |
-| [Exception Handling](../java_questions/intermediate/ExceptionHandling.md) | try-catch-finally, custom exceptions |
-| [Generics](../java_questions/intermediate/Generics.md) | Type erasure, wildcards, bounds |
-| [Lambda & Streams](../java_questions/intermediate/LambdaAndStreams.md) | Functional interfaces, stream API, collectors |
-| [OOP Concepts](../java_questions/intermediate/OOPConcepts.md) | Inheritance, polymorphism, encapsulation, abstraction |
+| [Collections](../../java_questions/intermediate/Collections.md) | List, Set, Map, Queue, Iterator |
+| [Concurrency](../../java_questions/intermediate/Concurrency.md) | Thread, Runnable, synchronized, volatile |
+| [Exception Handling](../../java_questions/intermediate/ExceptionHandling.md) | try-catch-finally, custom exceptions |
+| [Generics](../../java_questions/intermediate/Generics.md) | Type erasure, wildcards, bounds |
+| [Lambda & Streams](../../java_questions/intermediate/LambdaAndStreams.md) | Functional interfaces, stream API, collectors |
+| [OOP Concepts](../../java_questions/intermediate/OOPConcepts.md) | Inheritance, polymorphism, encapsulation, abstraction |
 
 ### Java Advanced (6 files) 🔴
 | File | Key Concepts |
 |------|-------------|
-| [JVM Internals](../java_questions/advanced/JVMInternals.md) | Class loader, memory model, execution engine |
-| [Garbage Collection](../java_questions/advanced/GarbageCollection.md) | Mark-sweep, G1, ZGC, memory leaks |
-| [Concurrency Advanced](../java_questions/advanced/ConcurrencyAdvanced.md) | ExecutorService, CompletableFuture, locks, atomic |
-| [Design Patterns](../java_questions/advanced/DesignPatterns.md) | GoF patterns in Java |
-| [Reflection & Annotations](../java_questions/advanced/ReflectionAndAnnotations.md) | Class, Method, Field, custom annotations |
-| [Android with Java](../java_questions/advanced/AndroidWithJava.md) | Java in Android, interop with Kotlin |
+| [JVM Internals](../../java_questions/advanced/JVMInternals.md) | Class loader, memory model, execution engine |
+| [Garbage Collection](../../java_questions/advanced/GarbageCollection.md) | Mark-sweep, G1, ZGC, memory leaks |
+| [Concurrency Advanced](../../java_questions/advanced/ConcurrencyAdvanced.md) | ExecutorService, CompletableFuture, locks, atomic |
+| [Design Patterns](../../java_questions/advanced/DesignPatterns.md) | GoF patterns in Java |
+| [Reflection & Annotations](../../java_questions/advanced/ReflectionAndAnnotations.md) | Class, Method, Field, custom annotations |
+| [Android with Java](../../java_questions/advanced/AndroidWithJava.md) | Java in Android, interop with Kotlin |
 
 ### Java Scenarios (6 files) 🟡
 | File | Key Concepts |
 |------|-------------|
-| [Android Java Scenarios](../java_questions/scenario_based/AndroidJavaScenarios.md) | Java-specific Android problems |
-| [Collection Scenarios](../java_questions/scenario_based/CollectionScenarios.md) | Collection design problems |
-| [Concurrency Scenarios](../java_questions/scenario_based/ConcurrencyScenarios.md) | Thread safety problems |
-| [Debugging Scenarios](../java_questions/scenario_based/DebuggingScenarios.md) | Java debugging |
-| [OOP Scenarios](../java_questions/scenario_based/OOPScenarios.md) | OOP design problems |
-| [README](../java_questions/scenario_based/README.md) | Overview |
+| [Android Java Scenarios](../../java_questions/scenario_based/AndroidJavaScenarios.md) | Java-specific Android problems |
+| [Collection Scenarios](../../java_questions/scenario_based/CollectionScenarios.md) | Collection design problems |
+| [Concurrency Scenarios](../../java_questions/scenario_based/ConcurrencyScenarios.md) | Thread safety problems |
+| [Debugging Scenarios](../../java_questions/scenario_based/DebuggingScenarios.md) | Java debugging |
+| [OOP Scenarios](../../java_questions/scenario_based/OOPScenarios.md) | OOP design problems |
+| [README](../../java_questions/scenario_based/README.md) | Overview |
 
 ### All Scenario-Based Review 🔴
 | Folder | Link |
 |--------|------|
-| Android Scenarios | [android_questions/scenario_based/](../android_questions/scenario_based/) |
-| Kotlin Scenarios | [kotlin_questions/scenario_based/](../kotlin_questions/scenario_based/) |
-| Compose Scenarios | [jetpack_compose_questions/scenario_based/](../jetpack_compose_questions/scenario_based/) |
-| Flutter Scenarios | [flutter_questions/scenario_based/](../flutter_questions/scenario_based/) |
-| Firebase Scenarios | [firebase_questions/scenario_based/](../firebase_questions/scenario_based/) |
-| Security Scenarios | [security_questions/SecurityScenarios.md](../security_questions/SecurityScenarios.md) |
-| Testing Scenarios | [testing_questions/TestingScenarios.md](../testing_questions/TestingScenarios.md) |
-| CICD Scenarios | [cicd_questions/CICDScenarios.md](../cicd_questions/CICDScenarios.md) |
-| WebRTC Scenarios | [webrtc_questions/WebRTCScenarios.md](../webrtc_questions/WebRTCScenarios.md) |
-| Git Scenarios | [github_questions/ScenarioBased.md](../github_questions/ScenarioBased.md) |
+| Android Scenarios | [android_questions/scenario_based/](../../android_questions/scenario_based/) |
+| Kotlin Scenarios | [kotlin_questions/scenario_based/](../../kotlin_questions/scenario_based/) |
+| Compose Scenarios | [jetpack_compose_questions/scenario_based/](../../jetpack_compose_questions/scenario_based/) |
+| Flutter Scenarios | [flutter_questions/scenario_based/](../../flutter_questions/scenario_based/) |
+| Firebase Scenarios | [firebase_questions/scenario_based/](../../firebase_questions/scenario_based/) |
+| Security Scenarios | [security_questions/SecurityScenarios.md](../../security_questions/SecurityScenarios.md) |
+| Testing Scenarios | [testing_questions/TestingScenarios.md](../../testing_questions/TestingScenarios.md) |
+| CICD Scenarios | [cicd_questions/CICDScenarios.md](../../cicd_questions/CICDScenarios.md) |
+| WebRTC Scenarios | [webrtc_questions/WebRTCScenarios.md](../../webrtc_questions/WebRTCScenarios.md) |
+| Git Scenarios | [github_questions/ScenarioBased.md](../../github_questions/ScenarioBased.md) |
 
 ---
 
@@ -81,12 +81,12 @@
 
 | Day | Problem | Source | Time Limit |
 |-----|---------|--------|-----------|
-| Mon | Pick any hard (DP) | [DSA/dp/](../DSA/dp/) | 40 min |
-| Mon | Pick any hard (graph) | [DSA/graph/](../DSA/graph/) | 40 min |
-| Tue | Pick any hard (heap) | [DSA/heap/](../DSA/heap/) | 35 min |
-| Tue | Pick any hard (stack) | [DSA/stack/](../DSA/stack/) | 35 min |
-| Wed | Pick any hard (trie) | [DSA/trie/](../DSA/trie/) | 40 min |
-| Wed | Pick any hard (backtracking) | [DSA/BackTracking/](../DSA/BackTracking/) | 40 min |
+| Mon | Pick any hard (DP) | [DSA/dp/](../../DSA/dp/) | 40 min |
+| Mon | Pick any hard (graph) | [DSA/graph/](../../DSA/graph/) | 40 min |
+| Tue | Pick any hard (heap) | [DSA/heap/](../../DSA/heap/) | 35 min |
+| Tue | Pick any hard (stack) | [DSA/stack/](../../DSA/stack/) | 35 min |
+| Wed | Pick any hard (trie) | [DSA/trie/](../../DSA/trie/) | 40 min |
+| Wed | Pick any hard (backtracking) | [DSA/BackTracking/](../../DSA/BackTracking/) | 40 min |
 | Thu | Timed: any medium | Any folder | 25 min |
 | Thu | Timed: any hard | Any folder | 45 min |
 | Fri | Timed: any medium | Any folder | 25 min |

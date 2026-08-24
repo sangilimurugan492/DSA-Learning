@@ -1,13 +1,56 @@
 # Dependency Injection
 
-## Q1: What is Dependency Injection and why use it?
+## 📖 Explanation
+
+Dependency Injection (DI) is a design pattern where objects receive their dependencies from an external source rather than creating them internally. This makes code loosely coupled, testable, and reusable.
+
+### Why Use DI?
+- **Testability** — Inject mock dependencies in tests
+- **Loose coupling** — Classes don't create their own dependencies
+- **Single responsibility** — Class doesn't manage dependency lifecycle
+- **Reusability** — Swap implementations easily
+
+### DI Approaches in Flutter
+| Approach | Package | Compile-Safe | Use Case |
+|----------|---------|-------------|----------|
+| `get_it` | get_it | ❌ | Service locator, simple setup |
+| `injectable` | injectable + get_it | ✅ | Compile-time DI with code generation |
+| Riverpod | flutter_riverpod | ✅ | DI + state management combined |
+| Constructor injection | None | ✅ | Manual, no package needed |
+
+### get_it Registration Types
+| Type | Instance | Use Case |
+|------|----------|----------|
+| `registerSingleton` | Created immediately | Eager init (config) |
+| `registerLazySingleton` | Created on first access | Most services |
+| `registerFactory` | New instance each call | ViewModels, BLoCs |
+
+### Injectable Annotations
+| Annotation | Equivalent | Behavior |
+|-----------|-----------|----------|
+| `@injectable` | `registerFactory` | New instance each call |
+| `@singleton` | `registerSingleton` | One instance, eager |
+| `@lazySingleton` | `registerLazySingleton` | One instance, lazy |
+| `@module` | — | Register external deps |
+
+### Riverpod vs get_it for DI
+| Feature | Riverpod | get_it |
+|---------|----------|--------|
+| Compile-safe | ✅ | ❌ |
+| Testable | ✅ (override) | ✅ (register) |
+| Lifecycle | Auto-dispose | Manual |
+| Scoped | ✅ | ❌ (global) |
+| Learning curve | Medium | Low |
+
+---
+
+## 🧪 Code Example
 
 ```dart
 // ❌ Without DI — tight coupling, hard to test
 class UserService {
   final _api = ApiClient();  // Created inside — can't mock
   final _db = Database();     // Hard dependency
-
   Future<User> getUser(int id) => _api.getUser(id);
 }
 
@@ -15,29 +58,11 @@ class UserService {
 class UserService {
   final ApiClient api;
   final Database db;
-
   UserService(this.api, this.db);  // Injected via constructor
-
   Future<User> getUser(int id) => api.getUser(id);
 }
 
-// Test — inject mock
-final service = UserService(MockApiClient(), MockDatabase());
-```
-
-### Benefits
-- **Testability** — inject mocks in tests
-- **Loose coupling** — classes don't create their dependencies
-- **Single responsibility** — class doesn't manage dependency lifecycle
-- **Reusability** — swap implementations easily
-
----
-
-## Q2: How do you use `get_it` for DI?
-
-```dart
-// pubspec.yaml: get_it: ^7.6.0
-
+// ── get_it setup ──
 import 'package:get_it/get_it.dart';
 
 final getIt = GetIt.instance;
@@ -56,7 +81,6 @@ void setupDI() {
   ));
 }
 
-// Initialize in main()
 void main() {
   setupDI();
   runApp(const MyApp());
@@ -65,223 +89,8 @@ void main() {
 // Usage — anywhere in the app
 final api = getIt<ApiClient>();
 final userService = getIt<UserService>();
-```
 
-### Registration Types
-| Type | Instance | Use Case |
-|------|----------|----------|
-| `registerSingleton` | Created immediately | Eager init (config) |
-| `registerLazySingleton` | Created on first access | Most services |
-| `registerFactory` | New instance each call | ViewModels, BLoCs |
-
----
-
-## Q3: How do you use `injectable` for compile-time DI?
-
-```dart
-// pubspec.yaml: injectable: ^2.3.0, get_it: ^7.6.0
-// dev_dependencies: injectable_generator, build_runner
-
-// 1. Annotate classes
-@injectable
-class ApiClient {
-  Future<User> getUser(int id) async => /* ... */;
-}
-
-@injectable
-class Database {
-  Future<void> save(User user) async => /* ... */;
-}
-
-@injectable
-class UserService {
-  final ApiClient api;
-  final Database db;
-
-  UserService(this.api, this.db);  // Auto-resolved by injectable
-}
-
-// 2. Register modules (for third-party or external deps)
-@module
-abstract class RegisterModule {
-  @lazySingleton
-  Dio dio() => Dio(BaseOptions(baseUrl: 'https://api.example.com'));
-
-  @lazySingleton
-  SharedPreferences sharedPreferences() => SharedPreferences.getInstance() as SharedPreferences;
-}
-
-// 3. Generate code
-// dart run build_runner build
-
-// 4. Initialize in main()
-import 'injection.config.dart';
-
-void main() async {
-  await configureDependencies();  // Generated function
-  runApp(const MyApp());
-}
-
-// Usage — same as get_it
-final userService = getIt<UserService>();
-```
-
-### Injectable Annotations
-| Annotation | Equivalent | Behavior |
-|-----------|-----------|----------|
-| `@injectable` | `registerFactory` | New instance each call |
-| `@singleton` | `registerSingleton` | One instance, eager |
-| `@lazySingleton` | `registerLazySingleton` | One instance, lazy |
-| `@module` | — | Register external deps |
-
----
-
-## Q4: How do you use Riverpod for DI?
-
-```dart
-// Riverpod is both state management AND DI
-// No need for get_it — providers ARE the DI
-
-// Service providers
-final apiClientProvider = Provider<ApiClient>((ref) {
-  return ApiClient();
-});
-
-final databaseProvider = Provider<Database>((ref) {
-  return Database();
-});
-
-// Repository depends on other providers
-final userRepositoryProvider = Provider<UserRepository>((ref) {
-  return UserRepositoryImpl(
-    api: ref.watch(apiClientProvider),
-    db: ref.watch(databaseProvider),
-  );
-});
-
-// Use case depends on repository
-final getUserUseCaseProvider = Provider<GetUserUseCase>((ref) {
-  return GetUserUseCase(ref.watch(userRepositoryProvider));
-});
-
-// BLoC/Notifier depends on use case
-final userNotifierProvider = AsyncNotifierProvider<UserNotifier, User?>(UserNotifier.new);
-
-class UserNotifier extends AsyncNotifier<User?> {
-  late final getUser = ref.read(getUserUseCaseProvider);
-
-  @override
-  Future<User?> build() async {
-    return getUser(1);
-  }
-}
-
-// Testing — override providers
-final container = ProviderContainer(overrides: [
-  apiClientProvider.overrideWithValue(MockApiClient()),
-  databaseProvider.overrideWithValue(MockDatabase()),
-]);
-```
-
-### Riverpod vs get_it for DI
-| Feature | Riverpod | get_it |
-|---------|----------|--------|
-| Compile-safe | ✅ | ❌ |
-| Testable | ✅ (override) | ✅ (register) |
-| Lifecycle | Auto-dispose | Manual |
-| Scoped | ✅ | ❌ (global) |
-| Learning curve | Medium | Low |
-
----
-
-## Q5: How do you inject dependencies into BLoC?
-
-```dart
-// With get_it
-class UserBloc extends Bloc<UserEvent, UserState> {
-  final UserRepository repository;
-
-  UserBloc(this.repository) : super(UserInitial()) {
-    on<FetchUser>(_onFetch);
-  }
-
-  Future<void> _onFetch(FetchUser event, Emitter<UserState> emit) async {
-    emit(UserLoading());
-    try {
-      final user = await repository.getUser(event.id);
-      emit(UserLoaded(user));
-    } catch (e) {
-      emit(UserError(e.toString()));
-    }
-  }
-}
-
-// Provide BLoC with dependencies
-BlocProvider(
-  create: (context) => UserBloc(getIt<UserRepository>()),
-  child: UserScreen(),
-)
-
-// With injectable
-@injectable
-class UserBloc extends Bloc<UserEvent, UserState> {
-  final UserRepository repository;
-
-  UserBloc(this.repository) : super(UserInitial()) { ... }
-}
-
-// In widget
-BlocProvider(
-  create: (context) => getIt<UserBloc>(),
-  child: UserScreen(),
-)
-```
-
----
-
-## Q6: How do you scope dependencies?
-
-```dart
-// get_it — scoped registration
-final getIt = GetIt.instance;
-
-// Register with scope
-getIt.registerSingleton<ApiClient>(ApiClient());
-
-// Push scope (e.g., for a feature)
-getIt.pushNewScope(scopeName: 'auth');
-getIt.registerSingleton<AuthSession>(AuthSession(token: 'xxx'));
-
-// Use in auth scope
-final session = getIt<AuthSession>();
-
-// Pop scope when done (disposes scoped deps)
-getIt.dropScope('auth');
-// AuthSession no longer available
-
-// Riverpod — auto-scoped with ProviderScope
-ProviderScope(
-  overrides: [
-    userRepositoryProvider.overrideWithValue(MockUserRepository()),
-  ],
-  child: TestApp(),
-)
-
-// Nested ProviderScope for feature-level scoping
-ProviderScope(
-  overrides: [cartProvider.overrideWithValue(CartModel())],
-  child: CartScreen(),
-)
-```
-
----
-
-## Q7: How do you set up a complete DI container?
-
-```dart
-// injection_container.dart
-final getIt = GetIt.instance;
-
+// ── Complete DI container ──
 Future<void> setupDependencies() async {
   // External
   final sharedPreferences = await SharedPreferences.getInstance();
@@ -295,14 +104,6 @@ Future<void> setupDependencies() async {
 
   getIt.registerLazySingleton<ApiClient>(() => ApiClient(getIt<Dio>()));
 
-  // Data sources
-  getIt.registerLazySingleton<UserRemoteDataSource>(
-    () => UserRemoteDataSource(getIt<ApiClient>()),
-  );
-  getIt.registerLazySingleton<UserLocalDataSource>(
-    () => UserLocalDataSource(getIt<SharedPreferences>()),
-  );
-
   // Repositories
   getIt.registerLazySingleton<UserRepository>(
     () => UserRepositoryImpl(
@@ -315,29 +116,59 @@ Future<void> setupDependencies() async {
   getIt.registerFactory<GetUserUseCase>(
     () => GetUserUseCase(getIt<UserRepository>()),
   );
-  getIt.registerFactory<SaveUserUseCase>(
-    () => SaveUserUseCase(getIt<UserRepository>()),
-  );
 
   // BLoCs (factory — new instance per screen)
   getIt.registerFactory<UserBloc>(
-    () => UserBloc(
-      getUser: getIt<GetUserUseCase>(),
-      saveUser: getIt<SaveUserUseCase>(),
-    ),
+    () => UserBloc(getUser: getIt<GetUserUseCase>()),
   );
 }
 
-// main.dart
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await setupDependencies();
-  runApp(const MyApp());
-}
-
-// Any widget
-final userBloc = getIt<UserBloc>();
+// ── Scoping ──
+getIt.pushNewScope(scopeName: 'auth');
+getIt.registerSingleton<AuthSession>(AuthSession(token: 'xxx'));
+// Use in auth scope
+final session = getIt<AuthSession>();
+// Pop scope when done (disposes scoped deps)
+getIt.dropScope('auth');  // AuthSession no longer available
 ```
+
+### Output
+```
+A Flutter app with dependency injection:
+- get_it service locator registered with singletons, lazy singletons, and factories
+- ApiClient, Database as lazy singletons
+- UserRepository with injected data sources
+- UserBloc as factory (new instance per screen)
+- Scoped dependencies for feature-level isolation
+```
+
+---
+
+## ❓ Interview Questions
+
+1. **What is Dependency Injection and why use it?**
+   - Dependency Injection is a pattern where objects receive their dependencies from an external source (constructor, service locator, or framework) instead of creating them internally. Without DI, a class creates its own dependencies (`final _api = ApiClient()`), making it tightly coupled and untestable. With DI, dependencies are injected (`UserService(this.api, this.db)`), making the class testable (inject mocks), loosely coupled (swap implementations), and focused on single responsibility (doesn't manage lifecycle). In Flutter, use `get_it` (service locator), `injectable` (compile-time DI), or Riverpod (DI + state management).
+
+2. **How do you use `get_it` for DI?**
+   - `get_it` is a service locator for Dart. Register dependencies in a setup function: `getIt.registerSingleton<ApiClient>(ApiClient())` (created immediately), `getIt.registerLazySingleton<Database>(() => Database())` (created on first access), `getIt.registerFactory<UserService>(() => UserService(getIt<ApiClient>(), getIt<Database>()))` (new instance each call). Call `setupDI()` in `main()` before `runApp()`. Access anywhere via `getIt<ApiClient>()`. Use singletons for shared services (ApiClient, Database), lazy singletons for most services (repositories), and factories for per-screen instances (BLoCs, ViewModels).
+
+3. **How do you use `injectable` for compile-time DI?**
+   - `injectable` generates DI code using annotations, providing compile-time safety. Annotate classes: `@injectable` (factory), `@singleton` (eager singleton), `@lazySingleton` (lazy singleton). Use `@module` to register external dependencies (Dio, SharedPreferences). Run `dart run build_runner build` to generate `injection.config.dart`. Call `configureDependencies()` in `main()`. Benefits: compile-time safety (no runtime registration errors), less boilerplate (auto-resolves constructor dependencies), and easy to maintain. The generated code uses `get_it` under the hood.
+
+4. **How do you use Riverpod for DI?**
+   - Riverpod is both state management and DI. Define providers: `final apiClientProvider = Provider<ApiClient>((ref) => ApiClient())`. Depend on other providers: `final userRepositoryProvider = Provider<UserRepository>((ref) => UserRepositoryImpl(api: ref.watch(apiClientProvider), db: ref.watch(databaseProvider)))`. Use cases and BLoCs depend on repository providers. Testing: override providers with `ProviderContainer(overrides: [apiClientProvider.overrideWithValue(MockApiClient())])`. Benefits: compile-safe (no runtime errors like get_it), auto-dispose (lifecycle managed), scoped (ProviderScope for feature-level isolation). No need for get_it when using Riverpod.
+
+5. **How do you inject dependencies into BLoC?**
+   - Inject via constructor: `UserBloc(this.repository) : super(UserInitial())`. Provide with BLoC: `BlocProvider(create: (context) => UserBloc(getIt<UserRepository>()), child: UserScreen())`. With injectable: annotate BLoC with `@injectable`, then `BlocProvider(create: (context) => getIt<UserBloc>())`. With Riverpod: define a provider that creates the BLoC with its dependencies. The BLoC never creates its own dependencies — it receives them through the constructor. This makes the BLoC testable — inject mock repositories in tests.
+
+6. **How do you scope dependencies?**
+   - In `get_it`, use `pushNewScope(scopeName: 'auth')` to create a scoped container. Register scoped dependencies after pushing the scope. Use `getIt<AuthSession>()` to access scoped deps. Call `getIt.dropScope('auth')` to dispose scoped dependencies when leaving the feature. In Riverpod, use nested `ProviderScope` with overrides: `ProviderScope(overrides: [cartProvider.overrideWithValue(CartModel())], child: CartScreen())`. Scoped providers are isolated — the nested scope has its own instance while other screens use the root scope. Scoping is useful for feature-level dependencies (auth session, feature-specific config).
+
+7. **How do you set up a complete DI container?**
+   - Create `injection_container.dart` with a `setupDependencies()` async function. Register in order: (1) External packages (SharedPreferences, Dio) — eager singletons. (2) Core services (ApiClient) — lazy singletons. (3) Data sources (remote, local) — lazy singletons. (4) Repositories — lazy singletons with injected data sources. (5) Use cases — factories with injected repositories. (6) BLoCs — factories with injected use cases. Call `await setupDependencies()` in `main()` after `WidgetsFlutterBinding.ensureInitialized()`. Access anywhere via `getIt<T>()`. This gives a clean dependency graph where each layer only depends on the layer below it.
+
+8. **What is the difference between Singleton, Lazy Singleton, and Factory?**
+   - **Singleton** (`registerSingleton`): Instance is created immediately at registration. Use for critical services that must be ready before app starts (SharedPreferences, Firebase). **Lazy Singleton** (`registerLazySingleton`): Instance is created on first access. Use for most services (ApiClient, Database, repositories) — saves startup time by deferring creation. **Factory** (`registerFactory`): New instance is created every time `getIt<T>()` is called. Use for BLoCs and ViewModels — each screen gets its own instance with its own state. Singletons share state across the app; factories give isolated state per access.
 
 ---
 

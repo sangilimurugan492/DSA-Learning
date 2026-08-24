@@ -1,9 +1,10 @@
 # BLoC
 
-## Q1: What is BLoC and how does it work?
+## 📖 Explanation
 
-BLoC (Business Logic Component) uses streams to manage state: **Events → BLoC → States**.
+BLoC (Business Logic Component) is an event-driven state management pattern: **Events → BLoC → States**. It uses streams to transform user actions (events) into UI states. BLoC enforces strict separation between UI and business logic.
 
+### BLoC Flow
 ```
 User Action → Event → BLoC (process) → State → UI Rebuild
 
@@ -15,471 +16,254 @@ User Action → Event → BLoC (process) → State → UI Rebuild
                     UI rebuilds
 ```
 
-```dart
-// pubspec.yaml: flutter_bloc: ^8.1.0
+### BLoC vs Cubit
+| Feature | BLoC | Cubit |
+|---------|------|-------|
+| Trigger | Event class | Function call |
+| Boilerplate | More (events + states) | Less (states only) |
+| Traceability | Event → State mapping | Function → State |
+| Best for | Complex flows | Simpler state |
 
-// Cubit — simpler version (function → state)
+### Key Widgets
+| Widget | Purpose |
+|--------|---------|
+| `BlocProvider` | Provides BLoC to widget tree |
+| `BlocBuilder` | Rebuilds UI on state change |
+| `BlocListener` | Side effects (navigation, snackbar) |
+| `BlocConsumer` | Builder + Listener combined |
+| `BlocSelector` | Rebuild on specific state |
+| `MultiBlocProvider` | Provide multiple BLoCs |
+
+### BLoC Best Practices
+- Events = user intent (what happened)
+- States = UI representation (what to show)
+- BLoC = business logic (what to do)
+- Never build UI in BLoC — BLoC is pure Dart
+- Always close BLoC in `dispose()` (or use `BlocProvider`)
+- Use `Equatable` for events and states (value equality)
+
+---
+
+## 🧪 Code Example
+
+```dart
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:equatable/equatable.dart';
+
+// ── Cubit (simpler — function → state) ──
 class CounterCubit extends Cubit<int> {
   CounterCubit() : super(0);  // Initial state
 
-  void increment() => emit(state + 1);  // Function → new state
+  void increment() => emit(state + 1);
   void decrement() => emit(state - 1);
   void reset() => emit(0);
 }
 
-// BLoC — event-driven (event → state)
-abstract class CounterEvent {}
-class Increment extends CounterEvent {}
-class Decrement extends CounterEvent {}
-
-class CounterBloc extends Bloc<CounterEvent, int> {
-  CounterBloc() : super(0) {
-    on<Increment>((event, emit) => emit(state + 1));
-    on<Decrement>((event, emit) => emit(state - 1));
-  }
-}
-```
-
-### Cubit vs BLoC
-| Feature | Cubit | BLoC |
-|---------|-------|------|
-| Trigger | Function call | Event object |
-| Boilerplate | Less | More |
-| Testing | Simpler | More structured |
-| Traceability | Medium | High (events logged) |
-| Use case | Simple state | Complex flows |
-
----
-
-## Q2: How do you provide and consume BLoC?
-
-```dart
-// Provide BLoC
+// Usage
 BlocProvider(
-  create: (context) => CounterCubit(),
-  child: const CounterScreen(),
+  create: (_) => CounterCubit(),
+  child: BlocBuilder<CounterCubit, int>(
+    builder: (context, count) => Text('$count'),
+  ),
 )
 
-// MultiBlocProvider — multiple BLoCs
-MultiBlocProvider(
-  providers: [
-    BlocProvider(create: (_) => AuthBloc(authRepository)),
-    BlocProvider(create: (_) => CartBloc()),
-    BlocProvider(create: (_) => ThemeBloc()),
-  ],
-  child: const MyApp(),
-)
+// ── BLoC (event-driven — event → state) ──
 
-// Consume with BlocBuilder
-class CounterScreen extends StatelessWidget {
-  const CounterScreen({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<CounterCubit, int>(
-      builder: (context, count) {
-        return Text('$count');  // Rebuilds on state change
-      },
-    );
-  }
+// Events
+abstract class CartEvent extends Equatable {
+  const CartEvent();
+  @override List<Object> get props => [];
 }
 
-// BlocBuilder with buildWhen — optimize rebuilds
-BlocBuilder<CounterCubit, int>(
-  buildWhen: (previous, current) => previous != current,  // Only rebuild if changed
-  builder: (context, count) => Text('$count'),
-)
-
-// BlocSelector — select specific value
-BlocSelector<CartBloc, CartState, int>(
-  selector: (state) => state.itemCount,  // Only rebuild when itemCount changes
-  builder: (context, itemCount) => Text('$itemCount items'),
-)
-
-// context.read — trigger events (no rebuild)
-ElevatedButton(
-  onPressed: () => context.read<CounterCubit>().increment(),  // Cubit
-  child: const Text('+'),
-)
-
-ElevatedButton(
-  onPressed: () => context.read<CounterBloc>().add(Increment()),  // BLoC
-  child: const Text('+'),
-)
-```
-
----
-
-## Q3: How do you structure a BLoC for a feature?
-
-```dart
-// Feature: Authentication
-
-// 1. Events
-abstract class AuthEvent {}
-class LoginRequested extends AuthEvent {
-  final String email;
-  final String password;
-  LoginRequested(this.email, this.password);
+class AddItem extends CartEvent {
+  final Item item;
+  const AddItem(this.item);
+  @override List<Object> get props => [item];
 }
-class LogoutRequested extends AuthEvent {}
-class CheckAuthStatus extends AuthEvent {}
 
-// 2. States
-abstract class AuthState {}
-class AuthInitial extends AuthState {}
-class AuthLoading extends AuthState {}
-class Authenticated extends AuthState {
-  final User user;
-  Authenticated(this.user);
+class RemoveItem extends CartEvent {
+  final Item item;
+  const RemoveItem(this.item);
+  @override List<Object> get props => [item];
 }
-class Unauthenticated extends AuthState {}
-class AuthError extends AuthState {
+
+class ClearCart extends CartEvent {}
+
+// States
+abstract class CartState extends Equatable {
+  const CartState();
+  @override List<Object> get props => [];
+}
+
+class CartInitial extends CartState {}
+
+class CartLoading extends CartState {}
+
+class CartLoaded extends CartState {
+  final List<Item> items;
+  const CartLoaded(this.items);
+
+  double get totalPrice =>
+      items.fold(0.0, (sum, item) => sum + item.price);
+
+  @override List<Object> get props => [items];
+}
+
+class CartError extends CartState {
   final String message;
-  AuthError(this.message);
+  const CartError(this.message);
+  @override List<Object> get props => [message];
 }
 
-// 3. BLoC
-class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  final AuthRepository repository;
+// BLoC
+class CartBloc extends Bloc<CartEvent, CartState> {
+  final UserRepository repository;
 
-  AuthBloc(this.repository) : super(AuthInitial()) {
-    on<LoginRequested>(_onLogin);
-    on<LogoutRequested>(_onLogout);
-    on<CheckAuthStatus>(_onCheckStatus);
+  CartBloc(this.repository) : super(CartInitial()) {
+    on<AddItem>(_onAddItem);
+    on<RemoveItem>(_onRemoveItem);
+    on<ClearCart>(_onClearCart);
   }
 
-  Future<void> _onLogin(LoginRequested event, Emitter<AuthState> emit) async {
-    emit(AuthLoading());
-    try {
-      final user = await repository.login(event.email, event.password);
-      emit(Authenticated(user));
-    } catch (e) {
-      emit(AuthError(e.toString()));
+  Future<void> _onAddItem(AddItem event, Emitter<CartState> emit) async {
+    final current = state is CartLoaded
+        ? (state as CartLoaded).items
+        : <Item>[];
+    emit(CartLoaded([...current, event.item]));
+  }
+
+  Future<void> _onRemoveItem(RemoveItem event, Emitter<CartState> emit) async {
+    if (state is CartLoaded) {
+      final items = (state as CartLoaded).items
+          .where((i) => i != event.item)
+          .toList();
+      emit(CartLoaded(items));
     }
   }
 
-  Future<void> _onLogout(LogoutRequested event, Emitter<AuthState> emit) async {
-    emit(AuthLoading());
-    await repository.logout();
-    emit(Unauthenticated());
-  }
-
-  Future<void> _onCheckStatus(CheckAuthStatus event, Emitter<AuthState> emit) async {
-    final user = await repository.getCurrentUser();
-    if (user != null) {
-      emit(Authenticated(user));
-    } else {
-      emit(Unauthenticated());
-    }
+  Future<void> _onClearCart(ClearCart event, Emitter<CartState> emit) async {
+    emit(const CartLoaded([]));
   }
 }
 
-// 4. UI
-class AuthScreen extends StatelessWidget {
-  const AuthScreen({super.key});
+// ── UI: BlocProvider + BlocBuilder ──
+class CartScreen extends StatelessWidget {
+  const CartScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AuthBloc, AuthState>(
-      listener: (context, state) {
-        // Side effects (navigation, snackbar)
-        if (state is AuthError) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(state.message)),
-          );
-        }
-        if (state is Authenticated) {
-          context.go('/home');
-        }
-      },
-      builder: (context, state) {
-        return switch (state) {
-          AuthInitial() => const LoginForm(),
-          AuthLoading() => const CircularProgressIndicator(),
-          Authenticated(user: final user) => HomeScreen(user: user),
-          Unauthenticated() => const LoginForm(),
-          AuthError(message: final msg) => LoginForm(errorMessage: msg),
-        };
-      },
+    return BlocProvider(
+      create: (_) => CartBloc(getIt<UserRepository>()),
+      child: BlocBuilder<CartBloc, CartState>(
+        builder: (context, state) {
+          if (state is CartLoading) {
+            return const CircularProgressIndicator();
+          }
+          if (state is CartError) {
+            return Text('Error: ${state.message}');
+          }
+          if (state is CartLoaded) {
+            return ListView.builder(
+              itemCount: state.items.length,
+              itemBuilder: (_, i) => ListTile(
+                title: Text(state.items[i].name),
+                trailing: IconButton(
+                  icon: const Icon(Icons.remove),
+                  onPressed: () =>
+                    context.read<CartBloc>().add(RemoveItem(state.items[i])),
+                ),
+              ),
+            );
+          }
+          return const Text('Cart empty');
+        },
+      ),
     );
   }
 }
-```
 
----
-
-## Q4: What is BlocBuilder vs BlocListener vs BlocConsumer?
-
-| Widget | Rebuilds? | Side Effects? | Use Case |
-|--------|-----------|---------------|----------|
-| `BlocBuilder` | ✅ Yes | ❌ No | Rebuild UI on state change |
-| `BlocListener` | ❌ No | ✅ Yes | Navigation, snackbar, dialog |
-| `BlocConsumer` | ✅ Yes | ✅ Yes | Both rebuild + side effects |
-
-```dart
-// BlocBuilder — rebuild UI
-BlocBuilder<AuthBloc, AuthState>(
-  builder: (context, state) {
-    if (state is AuthLoading) return const CircularProgressIndicator();
-    return const LoginForm();
-  },
-)
-
-// BlocListener — side effects only (no rebuild)
-BlocListener<AuthBloc, AuthState>(
-  listenWhen: (previous, current) => current is Authenticated,
+// ── BlocListener (side effects) ──
+BlocListener<CartBloc, CartState>(
   listener: (context, state) {
-    if (state is Authenticated) {
-      context.go('/home');  // Navigate
+    if (state is CartLoaded && state.items.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Cart cleared!')),
+      );
     }
-  },
-  child: const LoginForm(),  // Static UI
-)
-
-// BlocConsumer — both rebuild + side effects
-BlocConsumer<AuthBloc, AuthState>(
-  listenWhen: (previous, current) => current is AuthError || current is Authenticated,
-  listener: (context, state) {
-    if (state is AuthError) {
+    if (state is CartError) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(state.message)),
       );
     }
-    if (state is Authenticated) {
-      context.go('/home');
-    }
   },
-  buildWhen: (previous, current) => current is! AuthError,  // Don't rebuild on error
-  builder: (context, state) {
-    if (state is AuthLoading) return const CircularProgressIndicator();
-    return const LoginForm();
-  },
+  child: BlocBuilder<CartBloc, CartState>(...),
 )
+
+// ── BlocConsumer (builder + listener) ──
+BlocConsumer<CartBloc, CartState>(
+  listener: (context, state) { /* side effects */ },
+  builder: (context, state) { /* UI */ },
+)
+
+// ── MultiBlocProvider ──
+MultiBlocProvider(
+  providers: [
+    BlocProvider(create: (_) => CartBloc()),
+    BlocProvider(create: (_) => AuthBloc()),
+    BlocProvider(create: (_) => ThemeBloc()),
+  ],
+  child: const MyApp(),
+)
+```
+
+### Output
+```
+A Flutter app with BLoC state management:
+- Cubit for simple counter (function → state)
+- CartBloc with Events (AddItem, RemoveItem, ClearCart) → States (CartLoaded, CartError)
+- BlocProvider for dependency injection
+- BlocBuilder for UI rebuilds, BlocListener for side effects
+- Equatable for value equality in events/states
+- MultiBlocProvider for multiple BLoCs
 ```
 
 ---
 
-## Q5: How do you handle complex state with BLoC?
+## ❓ Interview Questions
 
-```dart
-// Immutable state class (use equatable or freezed)
-class CartState {
-  final List<CartItem> items;
-  final bool isLoading;
-  final String? error;
-  final double? total;
+1. **What is BLoC and how does it work?**
+   - BLoC (Business Logic Component) uses an event-driven pattern: Events → BLoC → States. Events are immutable classes representing user intent (`AddItem`, `RemoveItem`). States are immutable classes representing UI state (`CartLoaded`, `CartError`). The BLoC registers event handlers with `on<Event>((event, emit) { ... })` and transforms events into states by calling `emit(newState)`. The UI dispatches events: `context.read<CartBloc>().add(AddItem(item))`. The UI rebuilds with `BlocBuilder<Bloc, State>`. BLoC enforces strict separation: UI only dispatches events and renders states — all logic is in the BLoC. This makes it highly testable and traceable.
 
-  const CartState({
-    this.items = const [],
-    this.isLoading = false,
-    this.error,
-    this.total,
-  });
+2. **What is the difference between BLoC and Cubit?**
+   - **Cubit** is simpler — functions directly emit states. `class CounterCubit extends Cubit<int> { void increment() => emit(state + 1); }`. UI calls `context.read<CounterCubit>().increment()`. Less boilerplate (no event classes). Good for simple state. **BLoC** is event-driven — events trigger state changes. `class CounterBloc extends Bloc<CounterEvent, int> { on<Increment>((event, emit) => emit(state + 1)); }`. UI dispatches `context.read<CounterBloc>().add(Increment())`. More boilerplate (events + states) but better traceability — every state change is triggered by an explicit event. Use Cubit for simple state, BLoC for complex flows with many transitions.
 
-  CartState copyWith({
-    List<CartItem>? items,
-    bool? isLoading,
-    String? error,
-    double? total,
-  }) {
-    return CartState(
-      items: items ?? this.items,
-      isLoading: isLoading ?? this.isLoading,
-      error: error,
-      total: total ?? this.total,
-    );
-  }
-}
+3. **What is BlocBuilder vs BlocListener vs BlocConsumer?**
+   - `BlocBuilder<Bloc, State>(builder: (context, state) => Widget)` — rebuilds the widget tree on every state change. Use for UI that depends on state. `BlocListener<Bloc, State>(listener: (context, state) { ... })` — calls a callback on state change WITHOUT rebuilding. Use for side effects: navigation, snackbars, dialogs. `BlocConsumer<Bloc, State>(listener: ..., builder: ...)` — combines both: rebuilds UI AND calls listener. Use when you need both UI rebuild and side effects. `BlocSelector<Bloc, State, T>(selector: (state) => state.field, builder: ...)` — rebuilds only when selected field changes (like Selector in Provider).
 
-// Events
-abstract class CartEvent {}
-class LoadCart extends CartEvent {}
-class AddToCart extends CartEvent {
-  final Product product;
-  AddToCart(this.product);
-}
-class RemoveFromCart extends CartEvent {
-  final String productId;
-  RemoveFromCart(this.productId);
-}
-class ClearCart extends CartEvent {}
+4. **Why use Equatable in BLoC?**
+   - `Equatable` provides value equality (`==` and `hashCode`) without writing boilerplate. Without Equatable, Dart uses reference equality — two `CartLoaded([item])` instances are not equal even if items are identical. This causes unnecessary rebuilds because BlocBuilder thinks state changed. With Equatable: `class CartLoaded extends Equatable { final List<Item> items; @override List<Object> get props => [items]; }` — BlocBuilder compares `props` and only rebuilds if they changed. Always use Equatable for events (prevents duplicate event processing) and states (prevents unnecessary rebuilds). Include all relevant fields in `props`.
 
-// BLoC with complex state
-class CartBloc extends Bloc<CartEvent, CartState> {
-  final CartRepository repository;
+5. **How do you test BLoC?**
+   - Use `bloc_test` package: `blocTest<CartBloc, CartState>('emits [CartLoaded] when AddItem', build: () => CartBloc(mockRepo), act: (bloc) => bloc.add(AddItem(item)), expect: () => [CartLoaded([item])])`. Mock dependencies with `mocktail` — inject mock repository into BLoC constructor. Test all events and expected state sequences. Test error cases: `when(() => repo.save()).thenThrow(Exception())`, `expect: () => [CartError('message')]`. Use `verify: (bloc) { verify(() => mockRepo.save()).called(1); }` to verify side effects. Always `close()` the BLoC in `tearDown` to prevent memory leaks. Test that unexpected events don't emit states.
 
-  CartBloc(this.repository) : super(const CartState()) {
-    on<LoadCart>(_onLoadCart);
-    on<AddToCart>(_onAddToCart);
-    on<RemoveFromCart>(_onRemoveFromCart);
-    on<ClearCart>(_onClearCart);
-  }
+6. **How do you handle async operations in BLoC?**
+   - In event handlers, use `async/await`: `on<FetchData>(_onFetchData); Future<void> _onFetchData(FetchData event, Emitter<CartState> emit) async { emit(CartLoading()); try { final data = await repo.fetch(); emit(CartLoaded(data)); } catch (e) { emit(CartError(e.toString())); } }`. Emit loading state first, then data or error. Use `emit` for each state transition. For debouncing: `on<Search>(_onSearch, transformer: restartable())`. For concurrent events: `transformer: concurrent()`. For sequential: `transformer: sequential()`. Always check that the BLoC is not closed before emitting: `if (isClosed) return;`.
 
-  Future<void> _onLoadCart(LoadCart event, Emitter<CartState> emit) async {
-    emit(state.copyWith(isLoading: true, error: null));
-    try {
-      final items = await repository.getCart();
-      final total = _calculateTotal(items);
-      emit(state.copyWith(items: items, total: total, isLoading: false));
-    } catch (e) {
-      emit(state.copyWith(isLoading: false, error: e.toString()));
-    }
-  }
+7. **What is BlocProvider and how does it manage lifecycle?**
+   - `BlocProvider(create: (_) => MyBloc())` creates and provides the BLoC to the widget tree. It automatically calls `bloc.close()` when the provider is removed from the tree (e.g., screen popped) — prevents memory leaks. Use `BlocProvider.value(value: existingBloc, child: ...)` to provide an existing BLoC without auto-close (manage lifecycle manually). Access BLoC: `context.read<MyBloc>()` (no rebuild) or `BlocBuilder<MyBloc, MyState>` (rebuild). `MultiBlocProvider` provides multiple BLoCs. BlocProvider uses `InheritedWidget` internally. Provide BLoCs at the appropriate scope — app-level BLoC at root, screen-level BLoC at the screen.
 
-  Future<void> _onAddToCart(AddToCart event, Emitter<CartState> emit) async {
-    emit(state.copyWith(isLoading: true));
-    try {
-      await repository.addItem(event.product);
-      final items = [...state.items, CartItem(product: event.product)];
-      emit(state.copyWith(
-        items: items,
-        total: _calculateTotal(items),
-        isLoading: false,
-      ));
-    } catch (e) {
-      emit(state.copyWith(isLoading: false, error: e.toString()));
-    }
-  }
+8. **How do you handle state persistence in BLoC?**
+   - Use `HydratedBloc` (from `hydrated_bloc` package) for automatic state persistence. Extend `HydratedBloc<Event, State>` instead of `Bloc`. Override `fromJson` and `toJson`: `@override State fromJson(Map<String, dynamic> json) => State.fromJson(json); @override Map<String, dynamic> toJson(State state) => state.toJson();`. HydratedBloc automatically saves state to `SharedPreferences` on every emit and restores on app start. Use for: theme, locale, auth state, onboarding completion. For manual persistence: listen to BLoC state changes and save to SharedPreferences/Hive. Always persist only serializable state — not controllers or streams.
 
-  double _calculateTotal(List<CartItem> items) {
-    return items.fold(0, (sum, item) => sum + item.price * item.quantity);
-  }
-}
-```
+9. **What is EventTransformer in BLoC?**
+   - `EventTransformer` controls how events are processed. Default: sequential (one at a time, in order). Options: `restartable()` — cancels previous event handler when new event arrives (use for search). `concurrent()` — processes events concurrently (use for independent events). `sequential()` — processes one at a time (default). `droppable()` — ignores new events while processing (use for prevent double-submit). Apply: `on<Search>(_onSearch, transformer: restartable())`. From `bloc_concurrency` package. Use `restartable` for search (cancel old query), `droppable` for submit buttons (prevent duplicates), `concurrent` for independent actions, `sequential` for dependent actions.
 
----
-
-## Q6: How do you test BLoC?
-
-```dart
-// pubspec.yaml: bloc_test: ^9.1.0
-
-void main() {
-  group('AuthBloc', () {
-    late AuthBloc bloc;
-    late MockAuthRepository repository;
-
-    setUp(() {
-      repository = MockAuthRepository();
-      bloc = AuthBloc(repository);
-    });
-
-    tearDown(() => bloc.close());
-
-    blocTest<AuthBloc, AuthState>(
-      'emits [loading, authenticated] on successful login',
-      build: () {
-        when(repository.login('email', 'pass'))
-            .thenAnswer((_) async => User('Alice'));
-        return bloc;
-      },
-      act: (bloc) => bloc.add(LoginRequested('email', 'pass')),
-      wait: const Duration(milliseconds: 100),
-      expect: () => [
-        AuthLoading(),
-        Authenticated(User('Alice')),
-      ],
-    );
-
-    blocTest<AuthBloc, AuthState>(
-      'emits [loading, error] on failed login',
-      build: () {
-        when(repository.login('email', 'wrong'))
-            .thenThrow(Exception('Invalid credentials'));
-        return bloc;
-      },
-      act: (bloc) => bloc.add(LoginRequested('email', 'wrong')),
-      expect: () => [
-        isA<AuthLoading>(),
-        isA<AuthError>(),
-      ],
-    );
-
-    blocTest<AuthBloc, AuthState>(
-      'emits [unauthenticated] on logout',
-      build: () => bloc,
-      act: (bloc) => bloc.add(LogoutRequested()),
-      expect: () => [
-        isA<AuthLoading>(),
-        isA<Unauthenticated>(),
-      ],
-    );
-  });
-
-  group('Widget tests', () {
-    testWidgets('Counter increments', (tester) async {
-      await tester.pumpWidget(
-        BlocProvider(
-          create: (_) => CounterCubit(),
-          child: const MaterialApp(home: CounterScreen()),
-        ),
-      );
-
-      expect(find.text('0'), findsOneWidget);
-
-      await tester.tap(find.text('+'));
-      await tester.pump();
-
-      expect(find.text('1'), findsOneWidget);
-    });
-  });
-}
-```
-
----
-
-## Q7: How do you use BLoC with streams and transformers?
-
-```dart
-// Event transformers — debounce, throttle, etc.
-class SearchBloc extends Bloc<SearchEvent, SearchState> {
-  final SearchRepository repository;
-
-  SearchBloc(this.repository) : super(const SearchState()) {
-    // Debounce search events
-    on<SearchQueryChanged>(
-      _onSearch,
-      transformer: debounce(const Duration(milliseconds: 300)),
-    );
-  }
-
-  Future<void> _onSearch(SearchQueryChanged event, Emitter<SearchState> emit) async {
-    emit(state.copyWith(isLoading: true));
-    try {
-      final results = await repository.search(event.query);
-      emit(state.copyWith(results: results, isLoading: false));
-    } catch (e) {
-      emit(state.copyWith(error: e.toString(), isLoading: false));
-    }
-  }
-}
-
-// Custom transformer
-EventTransformer<T> debounce<T>(Duration duration) {
-  return (events, mapper) => events.debounceTime(duration).switchMap(mapper);
-}
-
-// Restartable — cancel previous event processing
-on<FetchData>(
-  _onFetchData,
-  transformer: restartable(),
-)
-
-// Concurrent — process events in parallel
-on<FetchData>(
-  _onFetchData,
-  transformer: concurrent(),
-)
-
-// Sequential — process events one at a time
-on<FetchData>(
-  _onFetchData,
-  transformer: sequential(),
-)
-```
+10. **When should you choose BLoC over other state management?**
+    - Choose BLoC when: (1) App is large/complex with many state transitions. (2) Team is 5+ developers — BLoC's strict structure helps coordination. (3) You need high testability — BLoC is the most testable option. (4) You need event-driven architecture with traceability. (5) You need complex event transformation (debounce, throttle, concurrent). Don't choose BLoC for: simple apps (use Provider/Riverpod), rapid prototyping (use GetX), or when the team isn't familiar with reactive programming. BLoC has the most boilerplate (events, states, BLoC class) but provides the most structure. For medium apps, Cubit is a good middle ground — less boilerplate than BLoC, more structured than Provider.
 
 ---
 
 ## 🔗 Related Topics
-- [Riverpod](Riverpod.md)
 - [Provider](Provider.md)
-- [Best Practices](BestPractices.md)
+- [Riverpod](Riverpod.md)
+- [State Management Advanced](../intermediate/StateManagementAdvanced.md)

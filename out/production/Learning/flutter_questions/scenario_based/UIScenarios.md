@@ -1,507 +1,331 @@
-# UI/UX Scenarios
+# UI Scenarios
 
-## Scenario 1: Responsive Layout (Mobile + Tablet)
+## 📖 Explanation
 
-### Problem
-The app needs to show a single-column list on phones and a two-column grid on tablets.
+Real-world UI scenarios in Flutter — building responsive layouts, custom widgets, forms, animations, and handling different screen sizes and orientations.
+
+### Common UI Scenarios
+| Scenario | Key Widgets |
+|----------|-------------|
+| Responsive layout | `LayoutBuilder`, `MediaQuery`, `Flexible` |
+| Forms with validation | `Form`, `TextFormField`, `GlobalKey` |
+| Custom widgets | `CustomPaint`, `CustomClipper`, `Tween` |
+| Lists with pull-to-refresh | `RefreshIndicator`, `ListView.builder` |
+| Bottom sheets & dialogs | `showModalBottomSheet`, `showDialog` |
+| Dark mode | `ThemeData`, `ThemeMode` |
+| Adaptive design | `Platform.isIOS`, `Cupertino` widgets |
+
+### Responsive Design Breakpoints
+| Width | Device | Layout |
+|-------|--------|--------|
+| < 600px | Phone | Single column |
+| 600-900px | Tablet | Two column |
+| > 900px | Desktop/Tablet | Three column |
+
+### Material vs Cupertino
+| Aspect | Material | Cupertino |
+|--------|----------|-----------|
+| Platform | Android | iOS |
+| Package | `flutter/material.dart` | `flutter/cupertino.dart` |
+| Style | Elevation, FAB | Flat, blur, large titles |
+| Example | `AppBar`, `ElevatedButton` | `CupertinoNavigationBar`, `CupertinoButton` |
+
+---
+
+## 🧪 Code Example
 
 ```dart
-// ❌ Bad — fixed column count
-GridView.count(
-  crossAxisCount: 2,  // Always 2 — too cramped on phones
-  children: items,
-)
-```
-
-### Solution: LayoutBuilder + breakpoints
-
-```dart
-// ✅ Good — responsive based on available width
-class ProductGrid extends StatelessWidget {
-  final List<Product> products;
-  const ProductGrid({super.key, required this.products});
+// ── Scenario 1: Responsive Layout ──
+class ResponsiveLayout extends StatelessWidget {
+  const ResponsiveLayout({super.key});
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
-      builder: (context, constraints) {
-        // Determine columns based on width
-      int columns;
-      if (constraints.maxWidth > 1200) {
-        columns = 4;  // Desktop
-      } else if (constraints.maxWidth > 800) {
-        columns = 3;  // Tablet landscape
-      } else if (constraints.maxWidth > 600) {
-        columns = 2;  // Tablet portrait
-      } else {
-        columns = 1;  // Phone
-      }
-
-      final itemWidth = constraints.maxWidth / columns;
-
-      return GridView.builder(
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          maxCrossAxisExtent: itemWidth,
-          childAspectRatio: 0.75,
-          crossAxisSpacing: 8,
-          mainAxisSpacing: 8,
-        ),
-        itemCount: products.length,
-        itemBuilder: (context, index) => ProductCard(
-          product: products[index],
-        ),
-      );
-    },
-    );
-  }
-}
-
-// ✅ Good — master-detail layout on tablet
-class AdaptiveScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        if (constraints.maxWidth > 600) {
-          // Tablet — side by side
-          return Row(
-            children: [
-              SizedBox(width: 300, child: MasterList()),
-              const VerticalDivider(width: 1),
-              const Expanded(child: DetailPanel()),
-            ],
-          );
+      builder: (_, constraints) {
+        if (constraints.maxWidth > 900) {
+          return const ThreeColumnLayout();  // Desktop/Tablet
+        } else if (constraints.maxWidth > 600) {
+          return const TwoColumnLayout();     // Tablet
         }
-        // Phone — single panel
-        return const MasterList();
+        return const SingleColumnLayout();    // Phone
       },
     );
   }
 }
-```
 
-### Key Takeaway
-- `LayoutBuilder` gives parent constraints — use for responsive layouts
-- Breakpoints: 600 (tablet), 800 (tablet landscape), 1200 (desktop)
-- `SliverGridDelegateWithMaxCrossAxisExtent` auto-calculates columns
-- Master-detail pattern: side-by-side on tablet, stacked on phone
-
----
-
-## Scenario 2: Custom Bottom Sheet with Animation
-
-### Problem
-Create a bottom sheet that slides up with a drag handle and can be dismissed by swiping down.
-
-```dart
-// ✅ Good — showModalBottomSheet with custom shape
-void showCustomSheet(BuildContext context) {
-  showModalBottomSheet(
-    context: context,
-    isScrollControlled: true,  // Full height support
-    backgroundColor: Colors.transparent,
-    builder: (context) => const CustomSheet(),
-  );
-}
-
-class CustomSheet extends StatelessWidget {
-  const CustomSheet({super.key});
+// Adaptive grid
+class AdaptiveGrid extends StatelessWidget {
+  const AdaptiveGrid({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+    return GridView.builder(
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 200,  // Auto-calculates columns
+        crossAxisSpacing: 8,
+        mainAxisSpacing: 8,
+        childAspectRatio: 0.75,
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          // Drag handle
-          Container(
-            margin: const EdgeInsets.symmetric(vertical: 8),
-            width: 40,
-            height: 4,
-            decoration: BoxDecoration(
-              color: Colors.grey[300],
-              borderRadius: BorderRadius.circular(2),
-            ),
-          ),
-          // Content
-          Padding(
-            padding: EdgeInsets.fromLTRB(
-              16, 8, 16,
-              16 + MediaQuery.of(context).viewInsets.bottom,  // Keyboard
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Text('Options', style: TextStyle(fontSize: 20)),
-                const SizedBox(height: 16),
-                ListTile(
-                  leading: const Icon(Icons.edit),
-                  title: const Text('Edit'),
-                  onTap: () => Navigator.pop(context, 'edit'),
-                ),
-                ListTile(
-                  leading: const Icon(Icons.delete),
-                  title: const Text('Delete'),
-                  onTap: () => Navigator.pop(context, 'delete'),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+      itemCount: 50,
+      itemBuilder: (_, i) => Card(child: Center(child: Text('Item $i'))),
     );
   }
 }
 
-// ✅ Good — DraggableScrollableSheet for flexible height
-showModalBottomSheet(
-  context: context,
-  isScrollControlled: true,
-  builder: (_) => DraggableScrollableSheet(
-    initialChildSize: 0.4,  // 40% of screen
-    minChildSize: 0.2,     // Min when dragged down
-    maxChildSize: 0.9,     // Max when dragged up
-    expand: false,
-    builder: (context, scrollController) {
-      return Container(
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-        ),
-        child: ListView.builder(
-          controller: scrollController,
-          itemCount: 50,
-          itemBuilder: (_, i) => ListTile(title: Text('Item $i')),
-        ),
-      );
-    },
+// ── Scenario 2: Dark Mode Toggle ──
+class ThemeModel extends ChangeNotifier {
+  ThemeMode _mode = ThemeMode.system;
+  ThemeMode get mode => _mode;
+
+  void toggle() {
+    _mode = _mode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
+    notifyListeners();
+  }
+}
+
+// In MaterialApp
+Consumer<ThemeModel>(
+  builder: (_, theme, __) => MaterialApp(
+    theme: ThemeData(brightness: Brightness.light, useMaterial3: true),
+    darkTheme: ThemeData(brightness: Brightness.dark, useMaterial3: true),
+    themeMode: theme.mode,
+    home: const HomeScreen(),
   ),
-);
-```
-
-### Key Takeaway
-- `showModalBottomSheet` with `isScrollControlled: true` for full-height sheets
-- `DraggableScrollableSheet` for flexible, draggable bottom sheets
-- Add `MediaQuery.of(context).viewInsets.bottom` for keyboard padding
-- `backgroundColor: Colors.transparent` + custom `BoxDecoration` for rounded corners
-- Drag handle is a simple `Container` with rounded decoration
-
----
-
-## Scenario 3: Shimmer Loading Effect
-
-### Problem
-Show a shimmer/skeleton loading animation while data is being fetched.
-
-```dart
-// ✅ Good — shimmer effect with AnimatedBuilder
-class ShimmerEffect extends StatefulWidget {
-  final Widget child;
-  const ShimmerEffect({super.key, required this.child});
-
-  @override
-  State<ShimmerEffect> createState() => _ShimmerEffectState();
-}
-
-class _ShimmerEffectState extends State<ShimmerEffect>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 1500),
-    )..repeat();
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _controller,
-      builder: (context, child) {
-        return ShaderMask(
-          shaderCallback: (bounds) {
-            return LinearGradient(
-              begin: Alignment(-1 + _controller.value * 2, 0),
-              end: Alignment(_controller.value * 2, 0),
-              colors: [
-                Colors.grey[300]!,
-                Colors.grey[100]!,
-                Colors.grey[300]!,
-              ],
-            ).createShader(bounds);
-          },
-          child: child,
-        );
-      },
-      child: widget.child,
-    );
-  }
-}
-
-// Skeleton card
-class SkeletonCard extends StatelessWidget {
-  const SkeletonCard({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const ShimmerEffect(
-      child: Card(
-        child: ListTile(
-          leading: CircleAvatar(backgroundColor: Colors.white),
-          title: SizedBox(
-            height: 16,
-            child: ColoredBox(color: Colors.white),
-          ),
-          subtitle: SizedBox(
-            height: 12,
-            child: ColoredBox(color: Colors.white),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-// Usage in screen
-class ProductScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder<List<Product>>(
-      future: fetchProducts(),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState != ConnectionState.done) {
-          return ListView.builder(
-            itemCount: 5,
-            itemBuilder: (_, __) => const SkeletonCard(),
-          );
-        }
-        return ListView.builder(
-          itemCount: snapshot.data!.length,
-          itemBuilder: (_, i) => ProductCard(product: snapshot.data![i]),
-        );
-      },
-    );
-  }
-}
-
-// Or use shimmer package
-// pubspec.yaml: shimmer: ^3.0.0
-Shimmer.fromColors(
-  baseColor: Colors.grey[300]!,
-  highlightColor: Colors.grey[100]!,
-  child: const SkeletonCard(),
 )
-```
 
-### Key Takeaway
-- Shimmer = `ShaderMask` with animated `LinearGradient`
-- `AnimationController..repeat()` for continuous animation
-- Show skeleton cards (same layout as real cards) during loading
-- `shimmer` package is simpler if you don't need custom animation
-- Always dispose `AnimationController` to prevent memory leaks
-
----
-
-## Scenario 4: Custom Dismissible List with Actions
-
-### Problem
-A list where swiping left reveals delete, swiping right reveals archive.
-
-```dart
-// ✅ Good — Dismissible with confirmDismiss
-class SwipeableList extends StatelessWidget {
-  final List<Item> items;
-  const SwipeableList({super.key, required this.items});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: items.length,
-      itemBuilder: (context, index) {
-        final item = items[index];
-        return Dismissible(
-          key: ValueKey(item.id),
-          background: Container(
-            color: Colors.green,
-            alignment: Alignment.centerLeft,
-            padding: const EdgeInsets.only(left: 20),
-            child: const Icon(Icons.archive, color: Colors.white),
-          ),
-          secondaryBackground: Container(
-            color: Colors.red,
-            alignment: Alignment.centerRight,
-            padding: const EdgeInsets.only(right: 20),
-            child: const Icon(Icons.delete, color: Colors.white),
-          ),
-          confirmDismiss: (direction) async {
-            if (direction == DismissDirection.startToEnd) {
-              // Swipe right → archive
-              return await _showConfirmDialog(context, 'Archive?');
-            } else {
-              // Swipe left → delete
-              return await _showConfirmDialog(context, 'Delete?');
-            }
-          },
-          onDismissed: (direction) {
-            if (direction == DismissDirection.startToEnd) {
-              _archiveItem(item);
-            } else {
-              _deleteItem(item);
-            }
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text(direction == DismissDirection.startToEnd
-                    ? 'Archived'
-                    : 'Deleted'),
-                action: SnackBarAction(
-                  label: 'Undo',
-                  onPressed: () => _restoreItem(item, index),
-                ),
-              ),
-            );
-          },
-          child: ListTile(
-            title: Text(item.title),
-            subtitle: Text(item.subtitle),
-          ),
-        );
-      },
-    );
-  }
-
-  Future<bool> _showConfirmDialog(BuildContext context, String action) async {
-    return await showDialog<bool>(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(action),
-        content: Text('Are you sure?'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: const Text('Cancel'),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(context, true),
-            child: const Text('Confirm'),
-          ),
-        ],
-      ),
-    ) ?? false;
-  }
-}
-```
-
-### Key Takeaway
-- `Dismissible` with `background` (swipe right) and `secondaryBackground` (swipe left)
-- `confirmDismiss` — return false to cancel, true to proceed
-- `onDismissed` — perform the action based on direction
-- Always provide an Undo action via `SnackBarAction`
-- Use `ValueKey` with unique ID for proper animation
-
----
-
-## Scenario 5: Custom Pull-to-Refresh
-
-### Problem
-Implement pull-to-refresh with a custom indicator and loading state.
-
-```dart
-// ✅ Good 1 — RefreshIndicator (built-in)
-class RefreshableList extends StatefulWidget {
-  @override
-  State<RefreshableList> createState() => _RefreshableListState();
-}
-
-class _RefreshableListState extends State<RefreshableList> {
-  List<Item> _items = [];
-  bool _isLoading = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _loadData();
-  }
-
-  Future<void> _loadData() async {
-    setState(() => _isLoading = true);
-    try {
-      _items = await api.fetchItems();
-    } finally {
-      if (mounted) setState(() => _isLoading = false);
-    }
-  }
+// ── Scenario 3: Pull-to-Refresh List ──
+class RefreshableList extends StatelessWidget {
+  const RefreshableList({super.key});
 
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
-      onRefresh: _loadData,
-      color: Colors.blue,
-      backgroundColor: Colors.white,
-      displacement: 20,
-      child: _isLoading && _items.isEmpty
-          ? const Center(child: CircularProgressIndicator())
-          : ListView.builder(
-              itemCount: _items.length,
-              itemBuilder: (_, i) => ListTile(title: Text(_items[i].title)),
-            ),
+      onRefresh: () async {
+        await context.read<ProductBloc>().refresh();
+      },
+      child: ListView.builder(
+        itemCount: products.length,
+        itemBuilder: (_, i) => ListTile(
+          title: Text(products[i].name),
+          subtitle: Text('\$${products[i].price}'),
+        ),
+      ),
     );
   }
 }
 
-// ✅ Good 2 — Custom refresh with Liquid Pull to Refresh
-// pubspec.yaml: liquid_pull_to_refresh: ^4.0.0
-LiquidPullToRefresh(
-  onRefresh: _loadData,
-  color: Colors.blue,
-  backgroundColor: Colors.white,
-  animSpeedFactor: 2,
-  child: ListView.builder(
-    itemCount: _items.length,
-    itemBuilder: (_, i) => ListTile(title: Text(_items[i].title)),
-  ),
-)
+// ── Scenario 4: Bottom Sheet ──
+void showFilterSheet(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,  // Full height
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+    ),
+    builder: (_) => Padding(
+      padding: EdgeInsets.only(
+        bottom: MediaQuery.of(context).viewInsets.bottom,
+      ),
+      child: const FilterOptions(),
+    ),
+  );
+}
 
-// ✅ Good 3 — Custom sliver refresh
+// ── Scenario 5: Custom Widget with CustomPaint ──
+class CircularProgressBar extends StatelessWidget {
+  final double progress;  // 0.0 to 1.0
+  const CircularProgressBar({super.key, required this.progress});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomPaint(
+      size: const Size(100, 100),
+      painter: _CirclePainter(progress),
+    );
+  }
+}
+
+class _CirclePainter extends CustomPainter {
+  final double progress;
+  _CirclePainter(this.progress);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final center = Offset(size.width / 2, size.height / 2);
+    final radius = size.width / 2;
+
+    // Background circle
+    canvas.drawCircle(center, radius,
+      Paint()..color = Colors.grey.shade300..style = PaintingStyle.stroke..strokeWidth = 8);
+
+    // Progress arc
+    canvas.drawArc(
+      Rect.fromCircle(center: center, radius: radius),
+      -pi / 2,  // Start from top
+      2 * pi * progress,
+      false,
+      Paint()
+        ..color = Colors.blue
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 8
+        ..strokeCap = StrokeCap.round,
+    );
+  }
+
+  @override
+  bool shouldRepaint(_CirclePainter old) => old.progress != progress;
+}
+
+// ── Scenario 6: Form with Validation ──
+class RegistrationForm extends StatefulWidget {
+  const RegistrationForm({super.key});
+  @override State<RegistrationForm> createState() => _RegistrationFormState();
+}
+class _RegistrationFormState extends State<RegistrationForm> {
+  final _formKey = GlobalKey<FormState>();
+  final _nameController = TextEditingController();
+  final _emailController = TextEditingController();
+  final _phoneController = TextEditingController();
+  bool _acceptTerms = false;
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _emailController.dispose();
+    _phoneController.dispose();
+    super.dispose();
+  }
+
+  void _submit() {
+    if (!_formKey.currentState!.validate()) return;
+    if (!_acceptTerms) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Please accept terms')));
+      return;
+    }
+    // Submit registration
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Column(children: [
+        TextFormField(
+          controller: _nameController,
+          decoration: const InputDecoration(labelText: 'Full Name'),
+          validator: (v) => v!.isEmpty ? 'Name required' : null,
+        ),
+        TextFormField(
+          controller: _emailController,
+          decoration: const InputDecoration(labelText: 'Email'),
+          validator: (v) => v!.contains('@') ? null : 'Invalid email',
+          keyboardType: TextInputType.emailAddress,
+        ),
+        TextFormField(
+          controller: _phoneController,
+          decoration: const InputDecoration(labelText: 'Phone'),
+          validator: (v) => v!.length >= 10 ? null : 'Invalid phone',
+          keyboardType: TextInputType.phone,
+        ),
+        CheckboxListTile(
+          value: _acceptTerms,
+          onChanged: (v) => setState(() => _acceptTerms = v!),
+          title: const Text('Accept Terms & Conditions'),
+        ),
+        ElevatedButton(onPressed: _submit, child: const Text('Register')),
+      ]),
+    );
+  }
+}
+
+// ── Scenario 7: Adaptive Platform UI ──
+class AdaptiveButton extends StatelessWidget {
+  final VoidCallback onPressed;
+  final Widget child;
+  const AdaptiveButton({super.key, required this.onPressed, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    if (Platform.isIOS) {
+      return CupertinoButton(onPressed: onPressed, child: child);
+    }
+    return ElevatedButton(onPressed: onPressed, child: child);
+  }
+}
+
+// ── Scenario 8: Sliver App Bar (Collapsible Header) ──
 CustomScrollView(
   slivers: [
-    CupertinoSliverRefreshControl(
-      onRefresh: () async {
-        await _loadData();
-      },
+    SliverAppBar(
+      expandedHeight: 200,
+      pinned: true,
+      flexibleSpace: FlexibleSpaceBar(
+        title: const Text('Products'),
+        background: Image.network('url', fit: BoxFit.cover),
+      ),
     ),
     SliverList(
       delegate: SliverChildBuilderDelegate(
-        (_, i) => ListTile(title: Text(_items[i].title)),
-        childCount: _items.length,
+        (_, i) => ListTile(title: Text('Product $i')),
+        childCount: 50,
       ),
     ),
   ],
 )
 ```
 
-### Key Takeaway
-- `RefreshIndicator` — Material design pull-to-refresh
-- `CupertinoSliverRefreshControl` — iOS-style pull-to-refresh (in slivers)
-- `LiquidPullToRefresh` — custom animated indicator
-- `onRefresh` must return `Future<void>` — completes when refresh is done
-- Show loading indicator only on first load, not on refresh
+### Output
+```
+A Flutter app with comprehensive UI scenarios:
+- Responsive layout (1/2/3 columns based on width)
+- Dark mode toggle with ThemeModel
+- Pull-to-refresh with RefreshIndicator
+- Modal bottom sheet with rounded corners
+- Custom circular progress with CustomPaint
+- Multi-field registration form with validation
+- Adaptive button (Cupertino on iOS, Material on Android)
+- Collapsible SliverAppBar with image header
+```
+
+---
+
+## ❓ Interview Questions
+
+1. **How do you make a Flutter app responsive?**
+   - Use `LayoutBuilder` to check available width and switch layouts: `if (constraints.maxWidth > 900) return WideLayout(); else return NarrowLayout()`. Use `MediaQuery.of(context).size` for screen dimensions. Use `Flexible`/`Expanded` for proportional sizing. Use `GridView` with `SliverGridDelegateWithMaxCrossAxisExtent` for auto-adjusting grids. Use `OrientationBuilder` for portrait/landscape. Avoid hardcoded pixel values — use `MediaQuery`, `EdgeInsets`, and relative sizing. Test on different screen sizes with the device preview in DevTools. For tablets/desktop, consider `NavigationRail` instead of `BottomNavigationBar`. For split views, use `Row` with `Flexible` on phone and `Row` on tablet. The `flutter_adaptive_scaffold` package provides adaptive layouts out of the box.
+
+2. **How do you implement dark mode in Flutter?**
+   - Define `theme` (light) and `darkTheme` (dark) in `MaterialApp`. Set `themeMode` to `ThemeMode.system` (follows system), `ThemeMode.light`, or `ThemeMode.dark`. Store the user's preference in `SharedPreferences`. For dynamic switching: create a `ThemeModel extends ChangeNotifier` with `ThemeMode` property. Provide at root. `MaterialApp` uses `Consumer<ThemeModel>` to read `themeMode`. Toggle: `themeMode = themeMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark; notifyListeners()`. For colors, use `Theme.of(context).colorScheme.primary` instead of hardcoded colors — it adapts to light/dark automatically. Test with `ThemeMode.dark` in widget tests. Persist the choice so it survives app restarts.
+
+3. **How do you build a custom widget with CustomPaint?**
+   - Extend `CustomPainter` and override `paint(Canvas, Size)` and `shouldRepaint(oldDelegate)`. In `paint()`, use `Canvas` methods: `drawCircle`, `drawRect`, `drawPath`, `drawArc`, `drawLine`. Create `Paint` objects with color, style (fill/stroke), strokeWidth. Use `Path` for complex shapes: `moveTo`, `lineTo`, `cubicTo`, `close`. Return `true` from `shouldRepaint` when the data changes. Display with `CustomPaint(size: Size(100, 100), painter: MyPainter(data))`. For animations, use `AnimatedBuilder` with `CustomPaint` and pass the animation value to the painter. CustomPaint is for drawing — it doesn't handle touch. For touch, wrap in `GestureDetector` and use hit testing. Keep `paint()` efficient — it runs on every repaint.
+
+4. **How do you create a form with validation?**
+   - Use `Form` widget with `GlobalKey<FormState>`. Wrap fields in `TextFormField` with `validator: (value) { return value!.isEmpty ? 'Required' : null; }`. On submit: `if (_formKey.currentState!.validate()) { /* valid */ }`. For real-time validation: `autovalidateMode: AutovalidateMode.onUserInteraction`. Use `TextEditingController` to read/write values. Always `dispose()` controllers. For complex forms: use a BLoC/Riverpod to manage form state and emit `FormValid`/`FormInvalid` states. Use `InputDecoration` for labels, hints, icons, error text. For custom validation (async): show a loading indicator and validate in the BLoC. Use `FocusNode` to manage focus between fields. Test validation by entering invalid data and verifying error text appears.
+
+5. **How do you implement pull-to-refresh?**
+   - Use `RefreshIndicator(onRefresh: () async { await refreshData(); }, child: ListView.builder(...))`. The `onRefresh` callback must return a `Future` — `RefreshIndicator` shows the spinner until the future completes. Call your data refresh method (BLoC, Provider, API). The list rebuilds with new data after refresh. Make sure the `ListView` is scrollable — `RefreshIndicator` needs a scrollable child. For BLoC: `onRefresh: () => context.read<ProductBloc>().add(RefreshEvent())`. For error handling: if refresh fails, show a snackbar. For pull-to-refresh + pagination: handle both `RefreshIndicator` (pull down → reset to page 0) and scroll listener (scroll to bottom → load more). Test by pulling down in widget tests with `tester.fling()` and `tester.pump()`.
+
+6. **How do you handle different screen sizes and orientations?**
+   - Use `MediaQuery.of(context).size` for dimensions, `MediaQuery.of(context).orientation` for portrait/landscape. Use `LayoutBuilder` for constraint-based layouts. Use `OrientationBuilder(builder: (_, orientation) { return orientation == Orientation.portrait ? PortraitLayout() : LandscapeLayout(); })`. Use `Flexible` and `Expanded` for proportional layouts. Use `SliverGridDelegateWithMaxCrossAxisExtent` for auto-adjusting grids. Avoid `SizedBox(width: 400)` — use `MediaQuery.sizeOf(context).width * 0.8`. For tablets: use `NavigationRail`, split views, and multi-column layouts. For foldable devices: use `DisplayFeature` to avoid placing widgets on the hinge. Test with `flutter run -d <tablet>` or device preview in DevTools. Handle safe areas with `SafeArea` for notches.
+
+7. **How do you show a bottom sheet or dialog?**
+   - Bottom sheet: `showModalBottomSheet(context: context, isScrollControlled: true, builder: (_) => MySheet())`. Use `isScrollControlled: true` for full-height sheets. Handle keyboard with `Padding(padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom))`. Custom shape: `shape: RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20)))`. Dialog: `showDialog(context: context, builder: (_) => AlertDialog(title: Text('Title'), actions: [TextButton(onPressed: () => Navigator.pop(context), child: Text('OK'))])`. For custom dialogs: use `Dialog` widget. Return data: `Navigator.pop(context, result)`. Dismiss on tap outside: `barrierDismissible: true`. For persistent bottom sheets: `showBottomSheet` (not modal). Always check `context.mounted` after async operations before showing.
+
+8. **How do you build adaptive UI for iOS and Android?**
+   - Use `Platform.isIOS` / `Platform.isAndroid` to switch between `Cupertino` and `Material` widgets. Create adaptive wrappers: `class AdaptiveButton { Widget build() => Platform.isIOS ? CupertinoButton(...) : ElevatedButton(...) }`. Use `Theme.of(context).platform` for testing (set to `TargetPlatform.iOS` in tests). For navigation: use `CupertinoPageRoute` on iOS (slide transition) and `MaterialPageRoute` on Android. For full adaptive design: use the `flutter_platform_widgets` package which provides `PlatformWidget`, `PlatformScaffold`, `PlatformAppBar`. Cupertino widgets: `CupertinoNavigationBar`, `CupertinoButton`, `CupertinoTextField`, `CupertinoSwitch`, `CupertinoActionSheet`. Material widgets: `AppBar`, `ElevatedButton`, `TextField`, `Switch`, `BottomSheet`. Always test on both platforms.
+
+9. **How do you implement a collapsible app bar?**
+   - Use `CustomScrollView` with `SliverAppBar`. Set `expandedHeight: 200`, `pinned: true` (stays visible when collapsed), `flexibleSpace: FlexibleSpaceBar(title: Text('Title'), background: Image.network('url', fit: BoxFit.cover))`. The app bar collapses as you scroll up and expands when scrolling down. Use `floating: true` for the app bar to appear immediately on scroll down (without reaching the top). Use `snap: true` (requires `floating: true`) for the app bar to snap into view. For parallax effect: use `StretchMode` in `FlexibleSpaceBar`. Place content below in `SliverList` or `SliverGrid`. For a persistent header that doesn't collapse: use `SliverPersistentHeader`. For tabs below the app bar: use `SliverAppBar` with `bottom: TabBar(...)`.
+
+10. **How do you create a reusable custom widget?**
+    - Create a `StatelessWidget` or `StatefulWidget` with parameters: `class MyCard extends StatelessWidget { final String title; final String subtitle; final VoidCallback? onTap; const MyCard({super.key, required this.title, this.subtitle, this.onTap}); }`. Use `const` constructor. Make optional parameters nullable or provide defaults. Use `Key` for proper widget identity. Use `Semantics` for accessibility. Provide a `dark` variant or use `Theme.of(context)` for colors. Document with `///` dartdoc. Make it composable — accept `child` or `children`. For complex widgets: use `StatefulWidget` with controllers. For animations: use `AnimatedWidget` or `TweenAnimationBuilder`. Test with different parameter values. Publish as a package if reusable across projects. Keep the API simple — expose only what's needed.
 
 ---
 
 ## 🔗 Related Topics
-- [Layouts](../beginner/Layouts.md)
-- [Animations](../intermediate/Animations.md)
 - [Custom Widgets](../intermediate/CustomWidgets.md)
+- [Animations](../intermediate/Animations.md)
+- [Navigation Scenarios](NavigationScenarios.md)

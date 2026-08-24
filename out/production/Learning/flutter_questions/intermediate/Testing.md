@@ -1,398 +1,292 @@
 # Testing
 
-## Q1: What are the types of tests in Flutter?
+## 📖 Explanation
 
+Testing in Flutter ensures your app works correctly and prevents regressions. Flutter supports three types of tests: **Unit tests** (logic), **Widget tests** (single widget), and **Integration tests** (full app flow).
+
+### Test Types
+| Test Type | What It Tests | Speed | Dependencies |
+|-----------|--------------|-------|-------------|
+| Unit | Functions, classes, logic | Fast | None |
+| Widget | Single widget UI | Medium | Flutter framework |
+| Integration | Full app flow | Slow | Device/emulator |
+
+### Testing Pyramid
 ```
-Test Pyramid (bottom to top):
-
-    Integration Tests (few)     — Full app flow on device/emulator
-         ▲
-    Widget Tests (some)          — Test single widget + interactions
-         ▲
-    Unit Tests (many)             — Test pure logic, functions, classes
+        /\
+       /  \        Integration (few)
+      /----\
+     /      \      Widget (some)
+    /----------\
+   /            \    Unit (many)
+  /________________\
 ```
 
-| Test Type | Tests | Speed | Dependencies | Use Case |
-|-----------|-------|-------|-------------|----------|
-| Unit | Logic | Fast (<10ms) | None | Models, services, utils |
-| Widget | UI | Medium (<1s) | Flutter framework | Single widget behavior |
-| Integration | E2E | Slow (seconds) | Device/emulator | User flows |
+### Key Testing Packages
+| Package | Purpose |
+|---------|---------|
+| `flutter_test` | Unit + widget tests (built-in) |
+| `mockito` | Mock dependencies |
+| `mocktail` | Mock dependencies (no codegen) |
+| `integration_test` | Integration tests |
+| `bloc_test` | Test BLoC state changes |
+| `patrol` | Advanced integration testing |
 
+### Arrange-Act-Assert Pattern
 ```dart
-// File naming convention:
-// test/unit_test.dart          → Unit tests
-// test/widget/widget_test.dart  → Widget tests
-// integration_test/app_test.dart → Integration tests
+test('description', () {
+  // Arrange — set up test data
+  final calculator = Calculator();
 
-// Run tests
-// flutter test                          → All unit + widget tests
-// flutter test test/widget/             → Specific directory
-// flutter test --name "counter"          → By name
-// flutter test integration_test/         → Integration tests
+  // Act — perform the action
+  final result = calculator.add(2, 3);
+
+  // Assert — verify the result
+  expect(result, 5);
+});
 ```
+
+### Mocking
+- `Mockito` — `class MockRepo extends Mock implements Repo {}`, `when(mock.method()).thenAnswer(...)`, `verify(mock.method()).called(1)`
+- `Mocktail` — same API but no code generation, no `@GenerateMocks`
+- Mock dependencies (API clients, databases) to test in isolation
+
+### Widget Testing Helpers
+| Helper | Purpose |
+|--------|---------|
+| `testWidgets()` | Widget test entry point |
+| `tester.pumpWidget()` | Render a widget |
+| `tester.pump()` | Advance one frame |
+| `tester.pumpAndSettle()` | Advance until settled |
+| `tester.tap()` | Simulate tap |
+| `tester.enterText()` | Enter text |
+| `tester.drag()` | Simulate drag |
+| `expect(find.byType(...), findsOneWidget)` | Find widget |
+| `find.text('Hello')` | Find by text |
+| `find.byKey(Key('key'))` | Find by key |
 
 ---
 
-## Q2: How do you write unit tests?
+## 🧪 Code Example
 
 ```dart
+// ── Unit Test ──
 import 'package:flutter_test/flutter_test.dart';
-import 'package:my_app/models/user.dart';
-import 'package:my_app/services/calculator.dart';
 
 void main() {
   group('Calculator', () {
     late Calculator calculator;
 
     setUp(() {
-      calculator = Calculator();
+      calculator = Calculator();  // Fresh instance for each test
     });
 
-    tearDown(() {
-      // Cleanup after each test
-    });
-
-    test('add returns sum of two numbers', () {
+    test('adds two numbers correctly', () {
       expect(calculator.add(2, 3), 5);
+      expect(calculator.add(-1, 1), 0);
+      expect(calculator.add(0, 0), 0);
     });
 
-    test('divide throws on zero', () {
+    test('divides two numbers correctly', () {
+      expect(calculator.divide(10, 2), 5);
+    });
+
+    test('throws on division by zero', () {
       expect(() => calculator.divide(10, 0), throwsA(isA<ArgumentError>()));
     });
 
-    test('list contains item', () {
-      final list = [1, 2, 3];
-      expect(list, contains(2));
-    });
-
-    test('string starts with', () {
-      expect('Hello World', startsWith('Hello'));
-    });
-  });
-
-  group('User model', () {
-    test('fromJson creates correct user', () {
-      final user = User.fromJson({
-        'id': 1,
-        'name': 'Alice',
-        'email': 'alice@test.com',
-      });
-
-      expect(user.id, 1);
-      expect(user.name, 'Alice');
-      expect(user.email, 'alice@test.com');
-    });
-
-    test('toJson returns correct map', () {
-      final user = User(id: 1, name: 'Alice', email: 'alice@test.com');
-      final json = user.toJson();
-
-      expect(json['id'], 1);
-      expect(json['name'], 'Alice');
+    tearDown(() {
+      // Clean up if needed
     });
   });
 }
-```
 
-### Common Matchers
-```dart
-expect(value, equals(5));           // Exact equality
-expect(value, isTrue);              // Boolean true
-expect(value, isNull);              // Null
-expect(value, isA<int>());          // Type check
-expect(list, contains(3));          // Contains
-expect(list, hasLength(3));         // Length
-expect(string, startsWith('Hi'));   // String prefix
-expect(string, contains('world'));  // String contains
-expect(() => fn(), throwsException);// Throws
-expect(value, greaterThan(10));     // Comparison
-expect(value, lessThanOrEqualTo(5));
-expect(value, inInclusiveRange(1, 10));
-```
+// ── Unit Test with Mocking (mocktail) ──
+import 'package:mocktail/mocktail.dart';
 
----
+class MockUserRepository extends Mock implements UserRepository {}
 
-## Q3: How do you mock dependencies?
-
-```dart
-// pubspec.yaml: mockito: ^5.4.0, build_runner
-
-// 1. Create mock
-import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
-
-@GenerateMocks([ApiClient])
-import 'user_service_test.mocks.dart';
-
-class ApiClient {
-  Future<User> fetchUser(int id) async => /* ... */;
-}
-
-class UserService {
-  final ApiClient api;
-  UserService(this.api);
-
-  Future<String> getUserName(int id) async {
-    final user = await api.fetchUser(id);
-    return user.name;
-  }
-}
-
-// 2. Test with mock
 void main() {
-  late MockApiClient mockApi;
-  late UserService service;
+  late MockUserRepository mockRepo;
+  late GetUserUseCase useCase;
 
   setUp(() {
-    mockApi = MockApiClient();
-    service = UserService(mockApi);
+    mockRepo = MockUserRepository();
+    useCase = GetUserUseCase(mockRepo);
+    registerFallbackValue(User(id: 0, name: '', email: ''));
   });
 
-  test('getUserName returns user name', () async {
-    // Arrange — stub the mock
-    when(mockApi.fetchUser(1)).thenAnswer(
-      (_) async => User(id: 1, name: 'Alice'),
-    );
+  test('returns user when repository succeeds', () async {
+    // Arrange
+    when(() => mockRepo.getUser(1)).thenAnswer((_) async =>
+      const User(id: 1, name: 'Alice', email: 'alice@test.com'));
 
     // Act
-    final name = await service.getUserName(1);
+    final result = await useCase(1);
 
     // Assert
-    expect(name, 'Alice');
-    verify(mockApi.fetchUser(1)).called(1);  // Verify called once
+    expect(result.name, 'Alice');
+    verify(() => mockRepo.getUser(1)).called(1);
   });
 
-  test('getUserName throws when API fails', () async {
-    when(mockApi.fetchUser(1)).thenThrow(Exception('Network error'));
+  test('throws when repository fails', () async {
+    when(() => mockRepo.getUser(1))
+      .thenThrow(Exception('Network error'));
 
-    expect(() => service.getUserName(1), throwsException);
+    expect(() => useCase(1), throwsException);
   });
 }
 
-// 3. Generate mocks: dart run build_runner build
-```
-
----
-
-## Q4: How do you write widget tests?
-
-```dart
-import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter/material.dart';
-import 'package:my_app/widgets/counter_widget.dart';
-
+// ── Widget Test ──
 void main() {
   testWidgets('Counter increments on tap', (tester) async {
-    // 1. Pump the widget
-    await tester.pumpWidget(const MaterialApp(home: CounterWidget()));
+    // Arrange — pump the widget
+    await tester.pumpWidget(const MaterialApp(home: CounterScreen()));
 
-    // 2. Verify initial state
+    // Verify initial state
     expect(find.text('Count: 0'), findsOneWidget);
 
-    // 3. Tap the button
-    await tester.tap(find.byType(ElevatedButton));
-    await tester.pump();  // Rebuild after state change
+    // Act — tap the button
+    await tester.tap(find.byIcon(Icons.add));
+    await tester.pump();  // Trigger rebuild
 
-    // 4. Verify updated state
+    // Assert
     expect(find.text('Count: 1'), findsOneWidget);
   });
 
-  testWidgets('Form validates empty email', (tester) async {
-    await tester.pumpWidget(MaterialApp(home: LoginForm()));
+  testWidgets('Form validation shows error on empty submit', (tester) async {
+    await tester.pumpWidget(const MaterialApp(home: LoginForm()));
 
-    // Tap submit without entering email
-    await tester.tap(find.text('Submit'));
+    // Tap submit without entering text
+    await tester.tap(find.byType(ElevatedButton));
     await tester.pump();
 
-    // Validation error should appear
+    // Verify error message
     expect(find.text('Email is required'), findsOneWidget);
   });
 
-  testWidgets('List displays items', (tester) async {
+  testWidgets('List displays items from data', (tester) async {
+    final items = ['Apple', 'Banana', 'Cherry'];
+
     await tester.pumpWidget(MaterialApp(
-      home: ItemList(items: ['Apple', 'Banana', 'Cherry']),
+      home: ItemList(items: items),
     ));
 
-    // Find all list items
-    expect(find.byType(ListTile), findsNWidgets(3));
+    // Verify all items are displayed
     expect(find.text('Apple'), findsOneWidget);
     expect(find.text('Banana'), findsOneWidget);
-  });
-
-  testWidgets('Navigation works', (tester) async {
-    await tester.pumpWidget(MaterialApp(
-      home: HomeScreen(),
-      routes: {'/detail': (_) => const DetailScreen()},
-    ));
-
-    await tester.tap(find.text('Go to Detail'));
-    await tester.pumpAndSettle();  // Wait for animation
-
-    expect(find.byType(DetailScreen), findsOneWidget);
+    expect(find.text('Cherry'), findsOneWidget);
+    expect(find.byType(ListTile), findsNWidgets(3));
   });
 }
-```
 
-### Common Finders
-```dart
-find.text('Hello')              // By text
-find.byType(ElevatedButton)    // By widget type
-find.byIcon(Icons.add)         // By icon
-find.byKey(ValueKey('email'))  // By key
-find.byType(TextField)         // By widget type
-find.descendant(
-  of: find.byType(Card),
-  matching: find.text('Title'),
-)                               // Find within parent
-find.ancestor(
-  of: find.text('Title'),
-  matching: find.byType(Card),
-)                               // Find parent of child
-```
+// ── BLoC Test ──
+import 'package:bloc_test/bloc_test.dart';
 
----
+void main() {
+  group('CartBloc', () {
+    late CartBloc bloc;
 
-## Q5: How do you test with Provider/Riverpod?
+    setUp(() {
+      bloc = CartBloc();
+    });
 
-```dart
-// Testing with Provider
-testWidgets('Counter displays from provider', (tester) async {
-  await tester.pumpWidget(
-    ChangeNotifierProvider(
-      create: (_) => CounterModel()..increment(),
-      child: const MaterialApp(home: CounterScreen()),
-    ),
-  );
+    tearDown(() => bloc.close());
 
-  expect(find.text('1'), findsOneWidget);
-});
-
-// Testing with Riverpod
-testWidgets('Counter from riverpod', (tester) async {
-  await tester.pumpWidget(
-    ProviderScope(
-      overrides: [
-        counterProvider.overrideWith((ref) => CounterModel()..increment()),
+    blocTest<CartBloc, CartState>(
+      'emits [CartUpdated] when AddItem is added',
+      build: () => bloc,
+      act: (bloc) => bloc.add(AddItem(const Item(name: 'Apple'))),
+      expect: () => [
+        isA<CartUpdated>().having((s) => s.items.length, 'count', 1),
       ],
-      child: const MaterialApp(home: CounterScreen()),
-    ),
-  );
+    );
 
-  expect(find.text('1'), findsOneWidget);
-});
+    blocTest<CartBloc, CartState>(
+      'emits [CartUpdated] with empty list when ClearCart',
+      build: () => bloc,
+      act: (bloc) => bloc.add(ClearCart()),
+      expect: () => [CartUpdated([])],
+    );
+  });
+}
 
-// Testing with BLoC
-testWidgets('Counter from bloc', (tester) async {
-  await tester.pumpWidget(
-    BlocProvider(
-      create: (_) => CounterCubit()..increment(),
-      child: const MaterialApp(home: CounterScreen()),
-    ),
-  );
-
-  expect(find.text('1'), findsOneWidget);
-});
-```
-
----
-
-## Q6: How do you write integration tests?
-
-```dart
-// integration_test/app_test.dart
-// pubspec.yaml: integration_test: ^0.0.1
-
-import 'package:flutter_test/flutter_test.dart';
+// ── Integration Test ──
 import 'package:integration_test/integration_test.dart';
-import 'package:my_app/main.dart' as app;
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('Login flow end to end', (tester) async {
-    // 1. Start the app
+  testWidgets('Full login flow', (tester) async {
     app.main();
     await tester.pumpAndSettle();
 
-    // 2. Enter credentials
+    // Enter credentials
     await tester.enterText(find.byKey(const Key('email_field')), 'test@test.com');
-    await tester.enterText(find.byKey(const Key('password_field')), 'password123');
-
-    // 3. Tap login
+    await tester.enterText(find.byKey(const Key('password_field')), 'password');
     await tester.tap(find.byKey(const Key('login_button')));
     await tester.pumpAndSettle();
 
-    // 4. Verify home screen
-    expect(find.text('Welcome, Test User'), findsOneWidget);
-  });
-
-  testWidgets('Add item to cart', (tester) async {
-    app.main();
-    await tester.pumpAndSettle();
-
-    // Navigate to products
-    await tester.tap(find.text('Products'));
-    await tester.pumpAndSettle();
-
-    // Add first product to cart
-    await tester.tap(find.byIcon(Icons.add_shopping_cart).first);
-    await tester.pumpAndSettle();
-
-    // Go to cart
-    await tester.tap(find.byIcon(Icons.shopping_cart));
-    await tester.pumpAndSettle();
-
-    // Verify item in cart
-    expect(find.byType(ListTile), findsNWidgets(1));
+    // Verify home screen
+    expect(find.text('Welcome, test@test.com'), findsOneWidget);
   });
 }
 
-// Run: flutter test integration_test/
+// ── Run tests ──
+// flutter test                          # All unit + widget tests
+// flutter test test/unit/               # Specific folder
+// flutter test --coverage               # With coverage report
+// flutter test integration_test/        # Integration tests
+// flutter test --name "Counter"         # By test name
+```
+
+### Output
+```
+A Flutter app with comprehensive tests:
+- Unit tests: Calculator logic with Arrange-Act-Assert
+- Mocked unit tests: UserRepository mock with mocktail
+- Widget tests: CounterScreen, LoginForm validation, ItemList rendering
+- BLoC tests: CartBloc state transitions with bloc_test
+- Integration test: Full login flow with pumpAndSettle
 ```
 
 ---
 
-## Q7: What is golden test (screenshot testing)?
+## ❓ Interview Questions
 
-```dart
-// Golden test — compares widget rendering to a reference image
-testWidgets('MyWidget looks correct', (tester) async {
-  await tester.pumpWidget(
-    const MaterialApp(home: Scaffold(body: MyWidget())),
-  );
+1. **What are the types of tests in Flutter?**
+   - Three types: **Unit tests** — test individual functions, classes, and business logic in isolation. Fast, no UI. Use `test()` and `expect()`. **Widget tests** — test a single widget's rendering and interaction. Medium speed. Use `testWidgets()` and `WidgetTester` to pump, tap, and verify. **Integration tests** — test the full app flow on a device/emulator. Slow but realistic. Use `integration_test` package with `IntegrationTestWidgetsFlutterBinding`. Follow the testing pyramid: many unit tests, some widget tests, few integration tests. Run unit/widget with `flutter test`, integration with `flutter test integration_test/`.
 
-  await expectLater(
-    find.byType(MyWidget),
-    matchesGoldenFile('goldens/my_widget.png'),
-  );
-});
+2. **How do you write a unit test in Flutter?**
+   - Use the `flutter_test` package. Structure with `test('description', () { ... })` or `group('GroupName', () { ... })`. Follow Arrange-Act-Assert: (1) Arrange — create test data and dependencies. (2) Act — call the method being tested. (3) Assert — verify the result with `expect(actual, expected)`. Use `setUp()` for common setup (fresh instance per test), `tearDown()` for cleanup. Test edge cases: null input, empty lists, boundary values, error cases (`expect(() => fn(), throwsException)`). Use `group()` to organize related tests. Run with `flutter test test/my_test.dart`.
 
-// Generate golden images (first run)
-// flutter test --update-goldens
+3. **How do you mock dependencies in tests?**
+   - Use `mocktail` (no code generation) or `mockito` (with code generation). With mocktail: `class MockRepo extends Mock implements UserRepository {}`, then `when(() => mockRepo.getUser(1)).thenAnswer((_) async => user)` for stubbing, `verify(() => mockRepo.getUser(1)).called(1)` for verification. Mock external dependencies (API clients, databases, SharedPreferences) so tests are fast and deterministic. Inject mocks through constructors. For Provider: override providers in tests. For Riverpod: `ProviderContainer(overrides: [...])`. For BLoC: inject mock repository into the BLoC constructor.
 
-// Golden test with multiple states
-testWidgets('Button states', (tester) async {
-  await tester.pumpWidget(MaterialApp(
-    home: Scaffold(
-      body: Column(
-        children: [
-          PrimaryButton(label: 'Normal', onPressed: () {}),
-          const PrimaryButton(label: 'Loading', onPressed: null, isLoading: true),
-        ],
-      ),
-    ),
-  ));
+4. **How do you write a widget test?**
+   - Use `testWidgets('description', (tester) async { ... })`. Pump the widget: `await tester.pumpWidget(MaterialApp(home: MyWidget()))`. Interact: `await tester.tap(find.byType(ElevatedButton))`, `await tester.enterText(find.byKey(Key('email')), 'test@test.com')`, `await tester.drag(find.byType(ListView), Offset(0, -100))`. After interaction, call `await tester.pump()` (one frame) or `await tester.pumpAndSettle()` (until all animations finish). Verify: `expect(find.text('Hello'), findsOneWidget)`, `expect(find.byType(LoadingIndicator), findsNothing)`. Wrap in `MaterialApp` for context (theme, direction, media query).
 
-  await expectLater(
-    find.byType(Column),
-    matchesGoldenFile('goldens/button_states.png'),
-  );
-});
-```
+5. **What is the difference between `pump()` and `pumpAndSettle()`?**
+   - `tester.pump()` advances the widget tree by one frame (16ms). Use after a single state change or animation step. `tester.pump(Duration(seconds: 1))` advances by a specific duration. `tester.pumpAndSettle()` repeatedly pumps frames until all animations and scheduled frames are complete — no more pending work. Use after triggering an action that starts animations (tap, scroll, state change). `pumpAndSettle` can time out if there's a continuous animation (like a loading spinner) — use `pump(Duration(...))` instead. Rule: use `pump()` for immediate rebuilds, `pumpAndSettle()` when animations need to complete.
+
+6. **How do you test BLoC?**
+   - Use the `bloc_test` package. `blocTest<BlocType, StateType>('description', build: () => MyBloc(), act: (bloc) => bloc.add(MyEvent()), expect: () => [ExpectedState()])`. This builds the BLoC, dispatches events, and verifies emitted states. For async events, `wait: Duration(seconds: 1)`. Mock dependencies by injecting them into the BLoC constructor. Test all events and state transitions. Test error cases — verify error states are emitted. Use `blocTest` with `verify: (bloc) { verify(mock.method()).called(1); }` to verify side effects. Close the BLoC in `tearDown` to prevent memory leaks.
+
+7. **How do you write an integration test?**
+   - Use the `integration_test` package. Create `integration_test/app_test.dart`. Initialize with `IntegrationTestWidgetsFlutterBinding.ensureInitialized()`. Write `testWidgets('flow', (tester) async { app.main(); await tester.pumpAndSettle(); ... })`. Call `app.main()` to start the real app. Use `find.byKey()` for reliable widget finding. Simulate user actions: tap, enter text, scroll, swipe. Verify the outcome. Run with `flutter test integration_test/` (headless) or `flutter test integration_test/ -d <device>` (on device). Integration tests test the full app including navigation, real APIs (use mock server), and platform plugins.
+
+8. **How do you measure test coverage?**
+   - Run `flutter test --coverage` — generates `coverage/lcov.info`. View with `genhtml coverage/lcov.info -o coverage/html` then open `coverage/html/index.html`. Coverage shows which lines of code are executed during tests. Target 80%+ for business logic, 60%+ for widgets. Use `ignore: 3` comments to exclude lines. Don't chase 100% — focus on critical business logic, edge cases, and error paths. Upload to Codecov in CI with `codecov/codecov-action`. Use `flutter test --coverage --coverage-path=coverage/lcov.info`. Focus coverage on domain and data layers — presentation layer is better covered by widget/integration tests.
+
+9. **How do you test async code?**
+   - For `Future`-based code: `test('async test', () async { final result = await service.fetchData(); expect(result, expected); })`. For `Stream`-based code: use `expectLater(stream, emitsInOrder([event1, event2, emitsDone]))` or `stream.toList()` to collect all events. For timers/delays: use `fakeAsync` — `test('timer', fakeAsync((async) { final timer = Timer(Duration(seconds: 1), callback); async.elapse(Duration(seconds: 1)); expect(callbackCalled, isTrue); }))`. For pending timers: use `tester.pumpAndSettle()` in widget tests. Always await `Future`s in tests — don't leave them unawaited. Test both success and failure paths for async code.
+
+10. **What are best practices for testing in Flutter?**
+    - (1) Follow the testing pyramid — many unit, some widget, few integration tests. (2) Test behavior, not implementation — don't test private methods. (3) Use Arrange-Act-Assert for readability. (4) One assertion per test (or related assertions). (5) Test edge cases: null, empty, boundary, error. (6) Mock external dependencies — tests should be fast and deterministic. (7) Name tests descriptively: `'returns empty list when API returns 404'`. (8) Use `setUp`/`tearDown` for common setup/cleanup. (9) Run tests in CI on every PR. (10) Don't test Flutter framework — test your code. (11) Use `find.byKey` for stable widget finding. (12) Aim for 80% coverage on business logic.
 
 ---
 
 ## 🔗 Related Topics
 - [State Management Advanced](StateManagementAdvanced.md)
-- [Custom Widgets](CustomWidgets.md)
 - [CI/CD](../advanced/CICD.md)
+- [Architecture Patterns](../advanced/ArchitecturePatterns.md)
