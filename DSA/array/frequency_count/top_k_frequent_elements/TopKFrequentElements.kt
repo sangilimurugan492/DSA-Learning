@@ -1,54 +1,79 @@
 package array.frequency_count.top_k_frequent_elements
 
 /**
+ * Top K Frequent Elements — LeetCode #347
  * https://leetcode.com/problems/top-k-frequent-elements/
  *
- * Given an integer array nums and integer k, return the k most frequent elements.
+ * Problem:
+ * -------
+ * Given an integer array nums and an integer k, return the k most frequent elements.
  *
- * Example 1:
- * Input: nums = [1,1,1,2,2,3], k = 2 → Output: [1,2]
- * Example 2:
- * Input: nums = [1], k = 1 → Output: [1]
+ * Example 1:  nums = [1,1,1,2,2,3], k = 2 → [1,2]
+ * Example 2:  nums = [1], k = 1 → [1]
  *
  * FAANG Importance: ⭐⭐⭐⭐⭐ (Top 15 most asked)
+ *
+ * Three approaches:
+ * 1. Brute Force: O(N²) — for each unique element, scan array to count frequency
+ * 2. HashMap + Sort: O(N + U log U) — build freq map, sort by frequency
+ * 3. Bucket Sort: O(N) — bucket by frequency, traverse from highest
  */
 
 fun main() {
+    println("=== Method 1: Brute Force ===")
     println(topKFrequentBruteForce(intArrayOf(1, 1, 1, 2, 2, 3), 2).toList())
     println(topKFrequentBruteForce(intArrayOf(1), 1).toList())
-    println("---")
+
+    println("\n=== Method 2: HashMap + Sort ===")
     println(topKFrequentSort(intArrayOf(1, 1, 1, 2, 2, 3), 2).toList())
-    println("---")
+
+    println("\n=== Method 3: Bucket Sort ===")
     println(topKFrequentBucketSort(intArrayOf(1, 1, 1, 2, 2, 3), 2).toList())
 }
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// METHOD 1: BRUTE FORCE — O(N²)
+// ═══════════════════════════════════════════════════════════════════════════════
+
 /**
- * BRUTE FORCE
- * Time Complexity: O(N²) — count frequency for each unique element
- * Space Complexity: O(N) — frequency map + result
+ * BRUTE FORCE — For each unique element, scan the entire array to count its frequency.
+ * Then sort by frequency and take top k.
  *
- * For each unique element, count its frequency by scanning the array.
- * Then find the k elements with highest frequency.
+ * Time Complexity:  O(N²) — for each of U unique elements, scan N elements.
+ *                    Sorting U elements adds O(U log U), dominated by O(N²).
+ * Space Complexity: O(U) — store unique elements + frequencies.
  */
 fun topKFrequentBruteForce(nums: IntArray, k: Int): IntArray {
-    val freq = hashMapOf<Int, Int>()
+    val seen = mutableSetOf<Int>()
+    val freqList = mutableListOf<Pair<Int, Int>>() // (element, frequency)
+
     for (num in nums) {
-        freq[num] = freq.getOrDefault(num, 0) + 1
+        if (num in seen) continue
+        seen.add(num)
+        // Count frequency by scanning the entire array
+        var count = 0
+        for (other in nums) {
+            if (other == num) count++
+        }
+        freqList.add(num to count)
     }
-    // Sort by frequency descending, take k
-    return freq.entries
-        .sortedByDescending { it.value }
+
+    return freqList
+        .sortedByDescending { it.second }
         .take(k)
-        .map { it.key }
+        .map { it.first }
         .toIntArray()
 }
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// METHOD 2: HASHMAP + SORT — O(N + U log U)
+// ═══════════════════════════════════════════════════════════════════════════════
+
 /**
- * BETTER — HashMap + Sort
- * Time Complexity: O(N + U log U) where U = unique elements
- * Space Complexity: O(N)
+ * HASHMAP + SORT — Build a frequency map in one pass, then sort entries by frequency.
  *
- * Build frequency map, sort entries by frequency, take top k.
+ * Time Complexity:  O(N + U log U) — N to build map, U log U to sort (U = unique elements).
+ * Space Complexity: O(N) — frequency map + result.
  */
 fun topKFrequentSort(nums: IntArray, k: Int): IntArray {
     val freq = hashMapOf<Int, Int>()
@@ -61,20 +86,23 @@ fun topKFrequentSort(nums: IntArray, k: Int): IntArray {
         .toIntArray()
 }
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// METHOD 3: BUCKET SORT — O(N)
+// ═══════════════════════════════════════════════════════════════════════════════
+
 /**
- * OPTIMAL — Bucket Sort
- * Time Complexity: O(N) — no sorting needed!
- * Space Complexity: O(N)
- *
- * Key insight: Frequency can be at most N. Create buckets where
- * bucket[i] = list of numbers with frequency i.
+ * BUCKET SORT — Key insight: frequency can be at most N.
+ * Create buckets where bucket[i] = list of numbers with frequency i.
  * Traverse from highest bucket to collect k elements.
  *
  * Trace for [1,1,1,2,2,3], k=2:
- * freq = {1:3, 2:2, 3:1}
- * buckets: [ [], [3], [2], [1], [], [], [] ]
- *                    freq=1 freq=2 freq=3
- * Traverse from end: bucket[3]=[1], bucket[2]=[2] → [1,2] ✅
+ *   freq = {1:3, 2:2, 3:1}
+ *   buckets: [ [], [3], [2], [1], [], [], [] ]
+ *                      freq=1 freq=2 freq=3
+ *   Traverse from end: bucket[3]=[1], bucket[2]=[2] → [1,2] ✅
+ *
+ * Time Complexity:  O(N) — no sorting needed!
+ * Space Complexity: O(N) — frequency map + buckets.
  */
 fun topKFrequentBucketSort(nums: IntArray, k: Int): IntArray {
     val freq = hashMapOf<Int, Int>()

@@ -84,6 +84,185 @@ Dart supports short-form constructors, named constructors, factory constructors,
 | Mixin | `with` | Reuse code across hierarchies |
 | Extension | `extension` | Add methods to existing types |
 
+**Abstract Class vs Interface vs Mixin — Real-time examples:**
+
+```dart
+// ─────────────────────────────────────────────────────────────
+// 1. ABSTRACT CLASS — "Partial implementation, shared base"
+//    Use when: Multiple classes share common behavior + you want
+//    to provide some default implementation.
+// ─────────────────────────────────────────────────────────────
+abstract class PaymentProcessor {
+  // Shared state (abstract classes CAN have fields)
+  double amount;
+
+  PaymentProcessor(this.amount);
+
+  // Concrete method — shared by all subclasses
+  void logTransaction() {
+    print('Processing \$$amount via ${runtimeType}');
+  }
+
+  // Abstract method — subclasses MUST implement
+  void processPayment();
+}
+
+class StripeProcessor extends PaymentProcessor {
+  StripeProcessor(double amount) : super(amount);
+
+  @override
+  void processPayment() {
+    logTransaction();
+    print('Charging \$$amount via Stripe API');
+  }
+}
+
+class PayPalProcessor extends PaymentProcessor {
+  PayPalProcessor(double amount) : super(amount);
+
+  @override
+  void processPayment() {
+    logTransaction();
+    print('Charging \$$amount via PayPal API');
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// 2. INTERFACE — "Contract only, no implementation"
+//    Use when: You want to enforce that a class provides certain
+//    methods, but you don't share any implementation.
+//    In Dart, ANY class can be used as an interface via `implements`.
+// ─────────────────────────────────────────────────────────────
+abstract class Comparable {
+  int compareTo(Comparable other);  // Contract only — no implementation
+}
+
+class Product implements Comparable {
+  final String name;
+  final double price;
+
+  Product(this.name, this.price);
+
+  @override
+  int compareTo(Comparable other) {
+    if (other is Product) {
+      return price.compareTo(other.price);
+    }
+    return 0;
+  }
+}
+
+// ─────────────────────────────────────────────────────────────
+// 3. MIXIN — "Reusable behavior, no parent-child relationship"
+//    Use when: You want to share behavior across UNRELATED classes
+//    that don't share a common parent.
+// ─────────────────────────────────────────────────────────────
+
+// Mixin 1: Logging capability
+mixin Loggable {
+  void log(String message) {
+    print('[${DateTime.now()}] $message');
+  }
+}
+
+// Mixin 2: Validation capability
+mixin Validatable {
+  bool isValid();
+
+  void validateOrThrow() {
+    if (!isValid()) {
+      throw ArgumentError('Validation failed for $runtimeType');
+    }
+  }
+}
+
+// Mixin 3: Serialization capability
+mixin Serializable {
+  Map<String, dynamic> toJson();
+
+  String toJsonString() {
+    return toJson().toString();
+  }
+}
+
+// Mixin with constraint — can only be used on classes that extend Animal
+mixin Swimmer on Animal {
+  void swim() {
+    print('$name is swimming 🏊');
+  }
+}
+
+abstract class Animal {
+  String get name;
+}
+
+// ─────────────────────────────────────────────────────────────
+// APPLYING MIXINS — combine capabilities without inheritance
+// ─────────────────────────────────────────────────────────────
+class User with Loggable, Validatable, Serializable {
+  final String email;
+  final int age;
+
+  User(this.email, this.age);
+
+  @override
+  bool isValid() => email.contains('@') && age >= 0;
+
+  @override
+  Map<String, dynamic> toJson() => {'email': email, 'age': age};
+
+  void save() {
+    validateOrThrow();  // From Validatable mixin
+    log('Saving user $email');  // From Loggable mixin
+    print('JSON: ${toJsonString()}');  // From Serializable mixin
+  }
+}
+
+class Fish extends Animal with Swimmer {
+  @override
+  final String name;
+
+  Fish(this.name);
+}
+
+// ─────────────────────────────────────────────────────────────
+// REAL-TIME SCENARIO: E-commerce app
+// ─────────────────────────────────────────────────────────────
+void main() {
+  // Abstract class in action
+  final stripe = StripeProcessor(99.99);
+  stripe.processPayment();
+  // Processing $99.99 via StripeProcessor
+  // Charging $99.99 via Stripe API
+
+  // Interface in action
+  final p1 = Product('Laptop', 999.0);
+  final p2 = Product('Mouse', 25.0);
+  print(p1.compareTo(p2) > 0 ? 'Laptop is pricier' : 'Mouse is pricier');
+  // Laptop is pricier
+
+  // Mixins in action — User gets logging + validation + serialization
+  final user = User('alice@example.com', 30);
+  user.save();
+  // [2026-08-27 ...] Saving user alice@example.com
+  // JSON: {email: alice@example.com, age: 30}
+
+  // Mixin with constraint — Fish can swim because it extends Animal
+  final nemo = Fish('Nemo');
+  nemo.swim();
+  // Nemo is swimming 🏊
+}
+```
+
+**When to use what?**
+
+| Concept | When to use | Can have state? | Can have implementation? | Multiple allowed? |
+|--------|-------------|:---------------:|:------------------------:|:-----------------:|
+| `abstract class` | Shared base with partial implementation | ✅ | ✅ (partial) | ❌ (single `extends`) |
+| `interface` (implements) | Pure contract, enforce API | ❌ | ❌ (must reimplement all) | ✅ (multiple) |
+| `mixin` (with) | Reusable behavior across unrelated classes | ✅ | ✅ | ✅ (multiple) |
+
+
 ### Async Programming
 Dart uses `Future` and `Stream` for async operations, with `async`/`await` syntax.
 
@@ -96,7 +275,45 @@ Dart uses `Future` and `Stream` for async operations, with `async`/`await` synta
 | `async*` | Async generator (yields values) |
 | `yield` | Emits a value in a stream |
 
+**`async`/`await` vs `async*`/`yield`:**
+
+| Feature | `async` + `await` | `async*` + `yield` |
+|---------|--------------------|--------------------|
+| Returns | `Future<T>` (single value) | `Stream<T>` (multiple values) |
+| Keyword | `async` | `async*` (note the `*`) |
+| Emits via | `return` | `yield` |
+| Consumer | `await future` | `await for (var x in stream)` |
+| Use case | One-shot async result | Async sequence / events |
+
+```dart
+// async + await → single value (Future)
+Future<int> fetchCount() async {
+  await Future.delayed(Duration(seconds: 1));
+  return 42;
+}
+
+// async* + yield → multiple values (Stream)
+Stream<int> countDown(int from) async* {
+  for (int i = from; i >= 1; i--) {
+    await Future.delayed(Duration(seconds: 1));
+    yield i;  // Emits each value to the stream
+  }
+}
+
+void main() async {
+  // Consuming a Future
+  int count = await fetchCount();
+  print('Count: $count');  // Count: 42
+
+  // Consuming a Stream with await for
+  await for (int n in countDown(3)) {
+    print('Tick: $n');  // Tick: 3 → Tick: 2 → Tick: 1
+  }
+}
+```
+
 ### Isolates
+
 Dart is single-threaded. Isolates provide true parallelism — each isolate has its own memory heap (no shared state).
 
 | Feature | Main Isolate | Worker Isolate |
@@ -105,6 +322,66 @@ Dart is single-threaded. Isolates provide true parallelism — each isolate has 
 | UI | ✅ Runs UI | ❌ No UI |
 | Concurrency | Single-threaded | True parallelism |
 | Communication | Direct | Message passing (SendPort) |
+
+**Why Isolates?** Dart runs on a single thread (event loop). Heavy CPU work (parsing, image processing, crypto) blocks the UI. Isolates solve this by running work on a separate thread with its own memory — no shared state means no locks, no race conditions.
+
+**Three ways to use isolates:**
+
+| Method | Use Case | Two-way communication? |
+|--------|----------|------------------------|
+| `Isolate.run()` | One-shot heavy task, get result back | ❌ (returns Future) |
+| `compute()` | Flutter wrapper for `Isolate.run()` | ❌ (returns Future) |
+| `Isolate.spawn()` | Long-running isolate, continuous messaging | ✅ (SendPort/ReceivePort) |
+
+```dart
+import 'dart:isolate';
+
+// 1. Isolate.run() — simplest: run a function in a separate isolate, get result back
+int heavyComputation(int n) {
+  // Simulate CPU-heavy work (e.g., prime counting, image processing)
+  int sum = 0;
+  for (int i = 0; i < n; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+void main() async {
+  // Runs heavyComputation on a separate isolate — UI stays smooth!
+  int result = await Isolate.run(() => heavyComputation(100000000));
+  print('Result: $result');  // Result: 4999999950000000
+
+  // 2. Isolate.spawn() — long-running isolate with two-way communication
+  final receivePort = ReceivePort();
+  final isolate = await Isolate.spawn(
+    (SendPort sendPort) {
+      // This runs in the worker isolate
+      sendPort.send('Worker ready!');
+      sendPort.send('Processing data...');
+      sendPort.send('Done!');
+    },
+    receivePort.sendPort,
+  );
+
+  // Listen for messages from the worker isolate
+  await for (final msg in receivePort) {
+    print('From worker: $msg');
+    if (msg == 'Done!') {
+      receivePort.close();
+      isolate.kill();
+      break;
+    }
+  }
+}
+```
+
+**Key points:**
+- **No shared memory:** Isolates can't access each other's variables. They communicate only by passing messages (copies of data).
+- **`Isolate.run()`** is best for one-shot tasks — it spawns an isolate, runs your function, returns the result, and kills the isolate automatically.
+- **`compute()`** is Flutter's convenience wrapper — same as `Isolate.run()` but works on all Flutter versions.
+- **`Isolate.spawn()`** is for long-running workers that need continuous two-way communication via `SendPort`/`ReceivePort`.
+- **Don't use isolates for I/O** (network, file, database) — Dart's async I/O is already non-blocking and doesn't block the event loop.
+
 
 ### Records and Patterns (Dart 3+)
 Records are anonymous aggregate types. Patterns enable destructuring and exhaustive switch expressions.
@@ -205,6 +482,49 @@ Length: 0
 Hi, I am Alice
 Is adult: true
 ```
+
+### Async Generator (`async*` + `yield`) Example
+
+```dart
+// async* generator — emits a sequence of values to a Stream
+Stream<String> emitMessages(List<String> messages) async* {
+  for (final msg in messages) {
+    await Future.delayed(Duration(milliseconds: 100));
+    yield msg;  // Emits one value at a time
+  }
+}
+
+// yield* — delegates to another stream (flattens all values)
+Stream<int> nestedCount() async* {
+  yield* Stream.fromIterable([1, 2, 3]);  // Emits 1, 2, 3
+  yield* Stream.fromIterable([4, 5]);     // Emits 4, 5
+}
+
+void main() async {
+  // Consume stream with await for
+  await for (final msg in emitMessages(['Hello', 'World', 'Dart'])) {
+    print('Received: $msg');
+  }
+
+  // Consume nested stream
+  await for (final n in nestedCount()) {
+    print('Number: $n');
+  }
+}
+```
+
+### Output
+```
+Received: Hello
+Received: World
+Received: Dart
+Number: 1
+Number: 2
+Number: 3
+Number: 4
+Number: 5
+```
+
 
 ---
 

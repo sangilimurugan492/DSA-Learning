@@ -17,7 +17,7 @@ package array.binary_search.split_array_largest_sum
  * FAANG Importance: ⭐⭐⭐⭐⭐ (Hard — Binary search on answer — asked at Google, Meta)
  *
  * Two approaches:
- * 1. Brute Force: O(n^2 * m) — try all possible splits
+ * 1. Brute Force DP: O(n^2 * m) — DP over all split points
  * 2. Binary Search: O(n * log(sum(nums))) — binary search on the answer space [max(nums), sum(nums)]
  */
 
@@ -119,7 +119,6 @@ fun splitArrayBruteForce(nums: IntArray, m: Int): Int {
  * Verification: maxSum=21 → [1,2,3,4,5,6]=21, [7,8]=15, [9,10]=19 → 3 subarrays, max=21. Works!
  *               maxSum=20 → need 4 subarrays > 3. Doesn't work!
  * So the answer is 21.
-
  *
  * Time Complexity:  O(n * log(sum(nums))) — binary search with O(n) greedy check per step.
  * Space Complexity: O(1) — constant variables.

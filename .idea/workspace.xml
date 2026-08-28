@@ -6,91 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="63e6e312-ba97-461c-9408-efe0eb739fb1" name="Changes" comment="Added Interview prep documents in weekly basis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/insert_interval/InsertInterval.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/greedy/insert_interval/InsertInterval.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/greedy/insert_interval/InsertInterval.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/greedy/insert_interval/InsertInterval.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/advanced/ArchitecturePatterns.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/advanced/ArchitecturePatterns.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/advanced/CICD.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/advanced/CICD.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/advanced/DependencyInjection.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/advanced/DependencyInjection.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/advanced/FlutterInternals.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/advanced/FlutterInternals.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/advanced/Performance.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/advanced/Performance.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/advanced/PlatformChannels.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/advanced/PlatformChannels.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/binary_search/split_array_largest_sum/SplitArrayLargestSum.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/binary_search/split_array_largest_sum/SplitArrayLargestSum.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/binary_search/split_array_largest_sum/SplitArrayLargestSum.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/binary_search/split_array_largest_sum/SplitArrayLargestSum.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/frequency_count/top_k_frequent_elements/TopKFrequentElements.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/frequency_count/top_k_frequent_elements/TopKFrequentElements.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/array/frequency_count/top_k_frequent_elements/TopKFrequentElements.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/frequency_count/top_k_frequent_elements/TopKFrequentElements.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/DartBasics.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/DartBasics.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Layouts.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Layouts.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Navigation.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Navigation.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/StateManagement.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/StateManagement.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/beginner/Widgets.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/beginner/Widgets.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/intermediate/Animations.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/intermediate/Animations.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/intermediate/CustomWidgets.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/intermediate/CustomWidgets.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/intermediate/FirebaseIntegration.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/intermediate/FirebaseIntegration.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/intermediate/HTTPNetworking.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/intermediate/HTTPNetworking.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/intermediate/StateManagementAdvanced.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/intermediate/StateManagementAdvanced.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/intermediate/Testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/intermediate/Testing.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/scenario_based/DebuggingScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/scenario_based/DebuggingScenarios.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/scenario_based/NavigationScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/scenario_based/NavigationScenarios.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/scenario_based/PerformanceScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/scenario_based/PerformanceScenarios.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/scenario_based/StateManagementScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/scenario_based/StateManagementScenarios.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/scenario_based/UIScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/scenario_based/UIScenarios.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/BLoC.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/BLoC.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/BestPractices.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/BestPractices.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/Comparison.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/Comparison.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/Fundamentals.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/Fundamentals.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/GetX.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/GetX.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/MobX.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/MobX.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/Provider.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/Provider.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/Redux.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/Redux.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flutter_questions/state_management/Riverpod.md" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_questions/state_management/Riverpod.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interview_schedule/daily/Week1_Daily_Checklist.md" beforeDir="false" afterPath="$PROJECT_DIR$/interview_schedule/daily/Week1_Daily_Checklist.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/Basics.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kotlin_questions/beginner/Functions.md" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin_questions/beginner/Functions.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/greedy/insert_interval/InsertInterval.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/greedy/insert_interval/InsertInterval.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/backspace_string_compare/BackspaceStringCompareKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/two_pointer/backspace_string_compare/BackspaceStringCompareKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/advanced/ArchitecturePatterns.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/advanced/ArchitecturePatterns.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/advanced/CICD.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/advanced/CICD.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/advanced/DependencyInjection.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/advanced/DependencyInjection.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/advanced/FlutterInternals.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/advanced/FlutterInternals.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/advanced/Performance.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/advanced/Performance.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/advanced/PlatformChannels.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/advanced/PlatformChannels.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Basics.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/DartBasics.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/DartBasics.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Layouts.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Layouts.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Navigation.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Navigation.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/StateManagement.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/StateManagement.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Widgets.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/beginner/Widgets.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/intermediate/Animations.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/intermediate/Animations.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/intermediate/CustomWidgets.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/intermediate/CustomWidgets.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/intermediate/FirebaseIntegration.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/intermediate/FirebaseIntegration.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/intermediate/HTTPNetworking.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/intermediate/HTTPNetworking.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/intermediate/StateManagementAdvanced.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/intermediate/StateManagementAdvanced.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/intermediate/Testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/intermediate/Testing.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/scenario_based/DebuggingScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/scenario_based/DebuggingScenarios.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/scenario_based/NavigationScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/scenario_based/NavigationScenarios.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/scenario_based/PerformanceScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/scenario_based/PerformanceScenarios.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/scenario_based/StateManagementScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/scenario_based/StateManagementScenarios.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/scenario_based/UIScenarios.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/scenario_based/UIScenarios.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/BLoC.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/BLoC.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/BestPractices.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/BestPractices.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/Comparison.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/Comparison.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/Fundamentals.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/Fundamentals.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/GetX.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/GetX.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/MobX.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/MobX.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/Provider.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/Provider.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/Redux.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/Redux.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/Riverpod.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/flutter_questions/state_management/Riverpod.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/interview_schedule/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week1-2_Fundamentals.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week10_Design_Patterns_System_Design.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week11_Specialized_Topics.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week12_Mock_Interviews_Behavioral.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week3-4_Android_Core.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week5-6_Advanced_Android.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week7-8_Jetpack_Compose.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/Week9_DSA_Intensive.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/Basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/Basics.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/Functions.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/kotlin_questions/beginner/Functions.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/frequency_count/top_k_frequent_elements/TopKFrequentElements.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/frequency_count/top_k_frequent_elements/TopKFrequentElements.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/frequency_count/finding_fair_pairs/FindingFairPairsKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/frequency_count/finding_fair_pairs/FindingFairPairsKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/frequency_count/top_k_frequent_elements/TopKFrequentElementsKt$topKFrequentBruteForce$$inlined$sortedByDescending$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/frequency_count/top_k_frequent_elements/TopKFrequentElementsKt$topKFrequentBruteForce$$inlined$sortedByDescending$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/frequency_count/top_k_frequent_elements/TopKFrequentElementsKt$topKFrequentSort$$inlined$sortedByDescending$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/frequency_count/top_k_frequent_elements/TopKFrequentElementsKt$topKFrequentSort$$inlined$sortedByDescending$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/frequency_count/top_k_frequent_elements/TopKFrequentElementsKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/frequency_count/top_k_frequent_elements/TopKFrequentElementsKt.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,6 +128,7 @@
     "Kotlin.ReverseLinkedListKt.executor": "Run",
     "Kotlin.RotateLinkedListKt.executor": "Run",
     "Kotlin.RunningSum1DArrayKt.executor": "Run",
+    "Kotlin.SearchInRotatedSortedArrayKt.executor": "Run",
     "Kotlin.SearchInsertPositionKt.executor": "Run",
     "Kotlin.SortColorsDutchNationalFlagKt.executor": "Run",
     "Kotlin.SortedSquaresKt.executor": "Run",
@@ -214,6 +140,7 @@
     "Kotlin.SubArrayWithKDifferentIntegerKt.executor": "Debug",
     "Kotlin.TextJustificationKt.executor": "Run",
     "Kotlin.ThreeSumKt.executor": "Run",
+    "Kotlin.TopKFrequentElementsKt.executor": "Debug",
     "Kotlin.TrappingRainWaterIKt.executor": "Run",
     "Kotlin.TwoSumIIKt.executor": "Run",
     "Kotlin.TwoSumLevelTwoWithSortedArrayKt.executor": "Run",
@@ -244,7 +171,7 @@
       <recent name="$PROJECT_DIR$/array_hashing_technique" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.InsertIntervalKt">
+  <component name="RunManager" selected="Kotlin.FindMinimumInRotatedSortedArrayKt">
     <configuration name="simulation.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="filePath" value="$PROJECT_DIR$/simulation/bin/simulation.dart" />
       <option name="workingDirectory" value="$PROJECT_DIR$/simulation" />
@@ -257,22 +184,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContainerWithMostWaterKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="array.two_pointer.container_with_most_water.ContainerWithMostWaterKt" />
-      <module name="Learning" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CountNumberOfNiceSubarraysKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="array.two_pointer.count_number_of_nice_subarrays.CountNumberOfNiceSubarraysKt" />
-      <module name="Learning" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HeightCheckerKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="array.linear_scan.height_checker.HeightCheckerKt" />
+    <configuration name="FindMinimumInRotatedSortedArrayKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.binary_search.find_minimum_in_rotated_sorted_array.FindMinimumInRotatedSortedArrayKt" />
       <module name="Learning" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -285,13 +198,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SearchInRotatedSortedArrayKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.binary_search.search_in_rotated_sorted_array.SearchInRotatedSortedArrayKt" />
+      <module name="Learning" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TopKFrequentElementsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.frequency_count.top_k_frequent_elements.TopKFrequentElementsKt" />
+      <module name="Learning" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.FindMinimumInRotatedSortedArrayKt" />
+        <item itemvalue="Kotlin.SearchInRotatedSortedArrayKt" />
+        <item itemvalue="Kotlin.TopKFrequentElementsKt" />
         <item itemvalue="Kotlin.InsertIntervalKt" />
         <item itemvalue="Kotlin.BackspaceStringCompareKt" />
-        <item itemvalue="Kotlin.ContainerWithMostWaterKt" />
-        <item itemvalue="Kotlin.HeightCheckerKt" />
-        <item itemvalue="Kotlin.CountNumberOfNiceSubarraysKt" />
       </list>
     </recent_temporary>
   </component>
@@ -415,7 +342,15 @@
       <option name="project" value="LOCAL" />
       <updated>1787241743965</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added Interview prep documents in weekly basis">
+      <option name="closed" value="true" />
+      <created>1787584822257</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1787584822257</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -445,6 +380,16 @@
           <url>file://$PROJECT_DIR$/DSA/array/greedy/insert_interval/InsertInterval.kt</url>
           <line>81</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/DSA/array/frequency_count/top_k_frequent_elements/TopKFrequentElements.kt</url>
+          <line>90</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/DSA/array/binary_search/find_minimum_in_rotated_sorted_array/FindMinimumInRotatedSortedArray.kt</url>
+          <line>100</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

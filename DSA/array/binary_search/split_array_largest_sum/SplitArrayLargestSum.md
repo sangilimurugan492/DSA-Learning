@@ -175,6 +175,6 @@ fun canSplit(nums: IntArray, maxSum: Int, m: Int): Boolean {
 | Problem | LeetCode | Difficulty |
 |---------|----------|------------|
 | Split Array Largest Sum | [#410](https://leetcode.com/problems/split-array-largest-sum/) | Hard |
-| Capacity To Ship Packages | [#810](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/) | Medium |
+| Capacity To Ship Packages | [#1011](https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/) | Medium |
 | Divide Chocolate | [#1231](https://leetcode.com/problems/divide-chocolate/) | Hard |
 | Koko Eating Bananas | [#875](https://leetcode.com/problems/koko-eating-bananas/) | Medium |
