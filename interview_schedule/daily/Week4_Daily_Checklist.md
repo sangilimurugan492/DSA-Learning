@@ -1,5 +1,5 @@
 # 📅 Week 4: Android Intermediate + Flutter Nav/State + Kotlin Scenarios
-> **Sep 10 (Thu) – Sep 16 (Wed)** | Topics: 21 files | DSA: ~18 problems
+> **Sep 10 (Thu) – Sep 16 (Wed)** | Topics: 21 files | DSA: ~18 problems → [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md)
 > [← Week 3](Week3_Daily_Checklist.md) | [Back to Daily Checklist](../Daily_Checklist.md) | [Week 5 →](Week5_Daily_Checklist.md)
 
 ---
@@ -18,14 +18,13 @@
 - Android MVVM (ViewModel + StateFlow) ↔ Flutter Provider/BLoC (ChangeNotifier + Consumer)
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Linked List › Single | 🟢 Easy]** Reverse Linked List (15 min) — [ReverseLinkedList.kt](../../DSA/linked_list/single/reverse_linked_list/ReverseLinkedList.kt)
-- [ ] **[Linked List › Single | 🟢 Easy]** Linked List Cycle (15 min) — [LinkedListCycle.kt](../../DSA/linked_list/single/linked_list_cycle/LinkedListCycle.kt)
+- [ ] Practice 2 problems from [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md) (Linked List pattern)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can implement MVVM with ViewModel + StateFlow
 - [ ] Can explain MVC vs MVP vs MVVM vs MVI
 - [ ] Can use InheritedWidget in Flutter
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -44,14 +43,13 @@
 - Android Retrofit ↔ Flutter http/dio — both use interceptors
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Linked List › Single | 🟢 Easy]** Merge Two Sorted Lists (15 min) — [MergeTwoSortedLists.kt](../../DSA/linked_list/single/merge_two_sorted_lists/MergeTwoSortedLists.kt)
-- [ ] **[Linked List › Single | 🟡 Medium]** Remove Nth from End (20 min) — [RemoveNthNodeFromLast.kt](../../DSA/linked_list/single/remove_nth_node_from_last/RemoveNthNodeFromLast.kt)
+- [ ] Practice 2 problems from [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md) (Linked List pattern)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can set up Room with Entity, DAO, relations
 - [ ] Can configure Retrofit with interceptors
 - [ ] Can fetch data from API in Flutter
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -69,10 +67,7 @@
 - [ ] Practice: Build a Flutter app with animation
 
 **🧮 DSA Practice (1.5 hr):**
-- [ ] **[Linked List › Single | 🟢 Easy]** Middle of Linked List (15 min) — [MiddleOfLinkedList.kt](../../DSA/linked_list/single/middle_of_linked_list/MiddleOfLinkedList.kt)
-- [ ] **[Linked List › Single | 🟡 Medium]** Palindrome Linked List (25 min) — [PalindromeLinkedList.kt](../../DSA/linked_list/single/palindrome_linked_list/PalindromeLinkedList.kt)
-- [ ] **[Array › HashSet Lookup | 🟡 Medium]** Valid Sudoku (review) (25 min) — [ValidSudoku.kt](../../DSA/array/hashset_lookup/valid_sudoku/ValidSudoku.kt)
-- [ ] **[Array › Complement Search | 🟡 Medium]** Two Sum II (review) (20 min) — [TwoSumII.kt](../../DSA/array/complement_search/two_sum_ii/TwoSumII.kt)
+- [ ] Practice 4 problems from [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md) (Linked List + Array review)
 
 **🎁 EXTRA TOPIC:**
 - [ ] 🔄 Flutter state management comparison — Compare setState vs InheritedWidget vs Provider
@@ -83,7 +78,7 @@
 - [ ] Can migrate from SharedPreferences to DataStore
 - [ ] Can implement Paging 3 with PagingSource
 - [ ] Can build a Flutter animation
-- [ ] Solved 4 DSA problems
+- [ ] Practiced 4 DSA problems from tracker
 
 ---
 
@@ -99,10 +94,7 @@
 - [ ] 🟡 Collection Scenarios — [CollectionScenarios.md](../../kotlin_questions/scenario_based/CollectionScenarios.md)
 
 **🧮 DSA Practice (1.5 hr):**
-- [ ] **[Array › Greedy | 🟡 Medium]** Merge Intervals (20 min) — [MergeIntervals.kt](../../DSA/array/greedy/merge_intervals/MergeIntervals.kt)
-- [ ] **[Array › Greedy | 🟡 Medium]** Meeting Rooms (25 min) — [MeetingRoom.kt](../../DSA/array/greedy/meeting_rooms/MeetingRoom.kt)
-- [ ] **[Array › Matrix | 🟡 Medium]** Rotate Image (25 min) — [RotateImage.kt](../../DSA/array/matrix/rotate_image/RotateImage.kt)
-- [ ] **[Array › Matrix | 🟡 Medium]** Spiral Matrix (review) (20 min) — [SpiralMatrix.kt](../../DSA/array/matrix/spiral_matrix/SpiralMatrix.kt)
+- [ ] Practice 4 problems from [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md) (Greedy + Matrix pattern)
 
 **🎁 EXTRA TOPIC:**
 - [ ] 🔄 Kotlin Data/Sealed Classes deep dive — Write real-world examples for sealed class hierarchies
@@ -111,7 +103,7 @@
 - [ ] Can use data binding with @BindingAdapter
 - [ ] Can solve Kotlin null safety scenarios
 - [ ] Can solve Kotlin OOP design problems
-- [ ] Solved 4 DSA problems
+- [ ] Practiced 4 DSA problems from tracker
 
 ---
 
@@ -126,14 +118,13 @@
 - [ ] 🟡 Performance Scenarios — [PerformanceScenarios.md](../../kotlin_questions/scenario_based/PerformanceScenarios.md)
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Linked List › Single | 🟢 Easy]** Reverse Linked List (review) (15 min) — [ReverseLinkedList.kt](../../DSA/linked_list/single/reverse_linked_list/ReverseLinkedList.kt)
-- [ ] **[Array › HashSet Lookup | 🟢 Easy]** Contains Duplicates (review) (15 min) — [ContainsDuplicates.kt](../../DSA/array/hashset_lookup/contains_duplicates/ContainsDuplicates.kt)
+- [ ] Practice 2 problems from [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md) (Review problems)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can draw MVVM architecture from memory
 - [ ] Can write Room Entity + DAO from memory
 - [ ] Can solve Kotlin concurrency scenarios
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -148,14 +139,13 @@
 - [ ] Practice: Write solutions for 3 real-world Kotlin problems
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Array › Two Pointer | 🟢 Easy]** Valid Palindrome (15 min) — [ValidPalindrom.kt](../../DSA/array/two_pointer/valid_palindrom/ValidPalindrom.kt)
-- [ ] **[Array › Two Pointer | 🟢 Easy]** Is Subsequence (15 min) — [IsSubSequence.kt](../../DSA/array/two_pointer/is_sub_sequence/IsSubSequence.kt)
+- [ ] Practice 2 problems from [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md) (Two Pointer pattern)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can draw NavGraph from memory
 - [ ] Can write WorkManager code from memory
 - [ ] Can solve Kotlin real-world scenarios
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -167,10 +157,7 @@
 - [ ] Identify weak areas
 
 **🧮 DSA Practice (1 hr):**
-- [ ] **[Array › Greedy | 🟡 Medium]** Non-Overlapping Intervals (25 min) — [NonOverlappingIntervals.kt](../../DSA/array/greedy/non_overlapping_intervals/NonOverlappingIntervals.kt)
-- [ ] **[Array › Greedy | 🟡 Medium]** Gas Station (review) (30 min) — [GasStation.kt](../../DSA/array/greedy/gas_station/GasStation.kt)
-- [ ] **[Linked List › Single | 🟡 Medium]** Remove Nth from End (review) (20 min) — [RemoveNthNodeFromLast.kt](../../DSA/linked_list/single/remove_nth_node_from_last/RemoveNthNodeFromLast.kt)
-- [ ] **[Array › Matrix | 🟡 Medium]** Game of Life (25 min) — [GameOfLife.kt](../../DSA/array/matrix/game_of_life/GameOfLife.kt)
+- [ ] Practice 4 problems from [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md) (Greedy + Matrix + review)
 
 **✅ Week 4 Self-Assessment:**
 - [ ] Can implement MVVM with ViewModel + StateFlow
@@ -182,7 +169,7 @@
 - [ ] Can implement Paging 3 with PagingSource
 - [ ] Can use data binding with @BindingAdapter
 - [ ] Can solve Kotlin scenario-based problems
-- [ ] Solved 18 DSA problems this week
+- [ ] Practiced 18 DSA problems from tracker this week
 
 ---
 

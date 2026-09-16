@@ -1,5 +1,5 @@
 # 📅 Week 6: Android Advanced + Flutter Advanced + CICD + Security
-> **Sep 24 (Thu) – Sep 30 (Wed)** | Topics: 20 files | DSA: ~18 problems
+> **Sep 24 (Thu) – Sep 30 (Wed)** | Topics: 20 files | DSA: ~18 problems → [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md)
 > [← Week 5](Week5_Daily_Checklist.md) | [Back to Daily Checklist](../Daily_Checklist.md) | [Week 7 →](Week7_Daily_Checklist.md)
 
 ---
@@ -18,15 +18,14 @@
 - Android CICD (GitHub Actions + Firebase App Distribution) ↔ Flutter CICD (Codemagic + Fastlane) — both automate build+deploy
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Array › Bit Manipulation | 🟡 Medium]** Sum of Two Integers (25 min) — [SumOfTwoIntegers.kt](../../DSA/array/bit_manipulation/sum_of_two_integers/SumOfTwoIntegers.kt)
-- [ ] **[Array › Bit Manipulation | 🟢 Easy]** Power of Two (15 min) — [PowerOfTwo.kt](../../DSA/array/bit_manipulation/power_of_two/PowerOfTwo.kt)
+- [ ] Practice 2 problems from [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md) (Bit Manipulation pattern)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can write a Jenkinsfile pipeline
 - [ ] Can write a GitHub Actions workflow
 - [ ] Can use AndroidKeyStore to generate/store keys
 - [ ] Can encrypt/decrypt data with AES
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -46,15 +45,14 @@
 - Android Hilt ↔ Flutter get_it/injectable — both DI frameworks
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Array › Bit Manipulation | 🟡 Medium]** Counting Bits (25 min) — [CountingBits.kt](../../DSA/array/bit_manipulation/counting_bits/CountingBits.kt)
-- [ ] **[Tree › Binary Tree | 🟡 Medium]** Lowest Common Ancestor (25 min) — [LowestCommonAncestor.kt](../../DSA/tree/binary_tree/LowestCommonAncestor.kt)
+- [ ] Practice 2 problems from [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md) (Bit Manipulation + Tree pattern)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can implement SSL pinning
 - [ ] Can implement BiometricPrompt with fallback
 - [ ] Can explain Flutter Clean Architecture
 - [ ] Can set up DI in Flutter with get_it
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -71,10 +69,7 @@
 - [ ] 🔴 Flutter Platform Channels — [PlatformChannels.md](../../flutter_questions/advanced/PlatformChannels.md) — *MethodChannel, EventChannel, FFI*
 
 **🧮 DSA Practice (1.5 hr):**
-- [ ] **[Tree › Traversal | 🟢 Easy]** Tree Traversals (In/Pre/Post) (15 min) — [TreeTraversals.kt](../../DSA/tree/traversal/TreeTraversals.kt)
-- [ ] **[Tree › Traversal | 🟡 Medium]** Binary Tree Level Order Traversal (20 min) — [BinaryTreeLevelOrderTraversal.kt](../../DSA/tree/traversal/BinaryTreeLevelOrderTraversal.kt)
-- [ ] **[Tree › Traversal | 🟡 Medium]** Binary Tree Right Side View (25 min) — [BinaryTreeRightSideView.kt](../../DSA/tree/traversal/BinaryTreeRightSideView.kt)
-- [ ] **[Tree › Binary Tree | 🟢 Easy]** Invert Binary Tree (15 min) — [InvertBinaryTree.kt](../../DSA/tree/binary_tree/invert_binary_tree/InvertBinaryTree.kt)
+- [ ] Practice 4 problems from [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md) (Tree Traversal pattern)
 
 **🎁 EXTRA TOPIC:**
 - [ ] 🔄 Security audit walkthrough — Write a security checklist for an Android + Flutter app
@@ -84,7 +79,7 @@
 - [ ] Can explain Flutter element tree vs render object tree
 - [ ] Can optimize Flutter performance (const widgets, rebuilds)
 - [ ] Can use Platform Channels for native communication
-- [ ] Solved 4 DSA problems
+- [ ] Practiced 4 DSA problems from tracker
 
 ---
 
@@ -99,10 +94,7 @@
 - [ ] 🟡 UI Scenarios — [UIScenarios.md](../../android_questions/scenario_based/UIScenarios.md) — *Complex lists, animations, custom views*
 
 **🧮 DSA Practice (1.5 hr):**
-- [ ] **[Array › String Parsing | 🟡 Medium]** Integer to Roman (25 min) — [IntegerToRoman.kt](../../DSA/array/string_parsing/integer_to_roman/IntegerToRoman.kt)
-- [ ] **[Array › String Parsing | 🟡 Medium]** Longest Palindromic String (30 min) — [LongestPalidromString.kt](../../DSA/array/string_parsing/longest_palidrom_string/LongestPalidromString.kt)
-- [ ] **[Array › String Parsing | 🟡 Medium]** ZigZag Conversion (25 min) — [ZigZagConversionString.kt](../../DSA/array/string_parsing/zig_zag_conversion_string/ZigZagConversionString.kt)
-- [ ] **[Array › Set Operations | 🟡 Medium]** Group Anagrams (25 min) — [GroupAnagrams.kt](../../DSA/array/set_operations/group_anagrams/GroupAnagrams.kt)
+- [ ] Practice 4 problems from [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md) (String Parsing + Set Operations pattern)
 
 **🎁 EXTRA TOPIC:**
 - [ ] 🔄 Flutter platform channels deep dive — Write a MethodChannel example for Android + iOS
@@ -111,7 +103,7 @@
 - [ ] Can solve Android architecture scenario problems
 - [ ] Can debug memory leaks and ANRs
 - [ ] Can handle lifecycle scenarios (config changes, process death)
-- [ ] Solved 4 DSA problems
+- [ ] Practiced 4 DSA problems from tracker
 
 ---
 
@@ -126,13 +118,12 @@
 - [ ] 🔄 Spaced Repetition: SSL Pinning — write pinning config
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Array › Set Operations | 🟢 Easy]** Find Difference Between Two Arrays (15 min) — [FindTheDifferenceBetweenTwoArray.kt](../../DSA/array/set_operations/find_the_difference_between_two_array/FindTheDifferenceBetweenTwoArray.kt)
-- [ ] **[Array › Frequency Count | 🟡 Medium]** Count the Number of Pairs (review) (20 min) — [CountTheNumberOfPairs.kt](../../DSA/array/frequency_count/count_the_number_of_pairs/CountTheNumberOfPairs.kt)
+- [ ] Practice 2 problems from [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md) (Set Operations + Frequency Count pattern)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can write Hilt module from memory
 - [ ] Can write key generation code from memory
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -147,14 +138,13 @@
 - [ ] 🔄 Spaced Repetition: Platform Channels — write MethodChannel code
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Array › Voting & Floyd's | 🟢 Easy]** Majority Element (15 min) — [MajorityOfElements.kt](../../DSA/array/voting_floyd/majority_of_elements/MajorityOfElements.kt)
-- [ ] **[Array › Voting & Floyd's | 🟡 Medium]** Majority Element II (25 min) — [MajorityElementII.kt](../../DSA/array/voting_floyd/majority_element_ii/MajorityElementII.kt)
+- [ ] Practice 2 problems from [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md) (Voting & Floyd's pattern)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can write Jenkinsfile from memory
 - [ ] Can write GitHub Actions workflow from memory
 - [ ] Can draw Flutter element tree
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -166,10 +156,7 @@
 - [ ] Identify weak areas
 
 **🧮 DSA Practice (1 hr):**
-- [ ] **[Array › Voting & Floyd's | 🟡 Medium]** Find Duplicate Number (review) (25 min) — [FindDupplicateNumber.kt](../../DSA/array/voting_floyd/find_dupplicate_number/FindDupplicateNumber.kt)
-- [ ] **[Array › Voting & Floyd's | 🟢 Easy]** Missing Number in Array (15 min) — [MissingNumberInArray.kt](../../DSA/array/voting_floyd/missing_number_in_array/MissingNumberInArray.kt)
-- [ ] **[Array › Greedy | 🟢 Easy]** Lemonade Change (15 min) — [LemonadeChange.kt](../../DSA/array/greedy/lemonade_change/LemonadeChange.kt)
-- [ ] **[Array › Greedy | 🟡 Medium]** Jump Game II (25 min) — [JumpGameII.kt](../../DSA/array/greedy/jump_game_ii/JumpGameII.kt)
+- [ ] Practice 4 problems from [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md) (Voting & Floyd's + Greedy review)
 
 **✅ Week 6 Self-Assessment:**
 - [ ] Can write a Jenkinsfile pipeline
@@ -184,7 +171,7 @@
 - [ ] Can explain Flutter internals (element tree, RenderObject)
 - [ ] Can use Platform Channels for native communication
 - [ ] Can optimize Flutter performance
-- [ ] Solved 18 DSA problems this week
+- [ ] Practiced 18 DSA problems from tracker this week
 
 ---
 

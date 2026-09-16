@@ -1,9 +1,17 @@
 package simulation.spiral_matrix_ii
 
 /**
- * https://leetcode.com/problems/spiral-matrix/?envType=problem-list-v2&envId=simulation
- * Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
- * Output: [1,2,3,6,9,8,7,4,5]
+ * https://leetcode.com/problems/spiral-matrix-ii/
+ *
+ * Given a positive integer n, generate an n x n matrix filled with elements from 1 to n² in spiral order.
+ *
+ * Example 1:
+ * Input: n = 3
+ * Output: [[1,2,3],[8,9,4],[7,6,5]]
+ *
+ * Example 2:
+ * Input: n = 1
+ * Output: [[1]]
  */
 fun main() {
     generateMatrix(3).forEachIndexed{ i, re ->

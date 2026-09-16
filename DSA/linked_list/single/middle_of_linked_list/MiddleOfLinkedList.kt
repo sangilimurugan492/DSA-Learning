@@ -1,4 +1,4 @@
-package linked_list.single.middle_of_linked_list
+package DSA.linked_list.single.middle_of_linked_list
 
 import linked_list.single.list_node.ListNode
 

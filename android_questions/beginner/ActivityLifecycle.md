@@ -7,27 +7,27 @@ An Activity represents a single screen with a UI. The Activity lifecycle is a se
 ### Lifecycle States
 ```
         ┌──────────┐
-        │ onCreate  │  ← Activity is created
+        │ onCreate │  ← Activity is created
         └────┬─────┘
              ▼
         ┌──────────┐
-        │ onStart   │  ← Activity becomes visible
+        │ onStart  │  ← Activity becomes visible
         └────┬─────┘
              ▼
         ┌──────────┐
-        │ onResume  │  ← Activity is interactive (foreground)
+        │ onResume │  ← Activity is interactive (foreground)
         └────┬─────┘
              ▼
         ┌──────────┐
-        │ onPause   │  ← Activity loses focus (partially visible)
+        │ onPause  │  ← Activity loses focus (partially visible)
         └────┬─────┘
              ▼
         ┌──────────┐
-        │ onStop    │  ← Activity is no longer visible
+        │ onStop   │  ← Activity is no longer visible
         └────┬─────┘
              ▼
         ┌──────────┐
-        │ onDestroy │  ← Activity is destroyed
+        │ onDestroy│  ← Activity is destroyed
         └──────────┘
 ```
 

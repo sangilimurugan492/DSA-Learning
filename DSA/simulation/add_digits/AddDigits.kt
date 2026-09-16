@@ -2,7 +2,7 @@ package array_traversals.simulation
 
 fun main() {
     println(addDigits(54))
-    println(addDigitsOP(54))
+    println(addDigitsOP(514))
 }
 
 

@@ -23,15 +23,59 @@ package array.matrix.rotate_image
  */
 fun main() {
     val matrix1 = arrayOf(intArrayOf(1,2,3), intArrayOf(4,5,6), intArrayOf(7,8,9))
-    rotateTransposeReverse(matrix1)
+    rotateBruteForce(matrix1)
+    println("Brute Force:")
     matrix1.forEach { println(it.toList()) }
 
     println("---")
 
     val matrix2 = arrayOf(intArrayOf(1,2,3), intArrayOf(4,5,6), intArrayOf(7,8,9))
-    rotateLayerByLayer(matrix2)
+    rotateTransposeReverse(matrix2)
+    println("Optimal (Transpose + Reverse):")
     matrix2.forEach { println(it.toList()) }
+
+    println("---")
+
+    val matrix3 = arrayOf(intArrayOf(1,2,3), intArrayOf(4,5,6), intArrayOf(7,8,9))
+    rotateLayerByLayer(matrix3)
+    println("Optimal (Layer by Layer):")
+    matrix3.forEach { println(it.toList()) }
 }
+
+/**
+ * Time Complexity O(N²)
+ * Space Complexity O(N²)
+ *
+ * Approach: Brute Force — Use an auxiliary matrix
+ *
+ * Create a new N×N matrix. For each cell (i, j) in the original,
+ * place it at position (j, n-1-i) in the new matrix.
+ *
+ * rotated[j][n - 1 - i] = matrix[i][j]
+ *
+ * Then copy the rotated matrix back into the original (since the problem
+ * requires in-place modification of the input reference).
+ *
+ * This is NOT truly in-place — it uses O(N²) extra space.
+ */
+fun rotateBruteForce(matrix: Array<IntArray>) {
+    val n = matrix.size
+    val rotated = Array(n) { IntArray(n) }
+
+    for (i in 0 until n) {
+        for (j in 0 until n) {
+            rotated[j][n - 1 - i] = matrix[i][j]
+        }
+    }
+
+    // Copy back to original matrix
+    for (i in 0 until n) {
+        for (j in 0 until n) {
+            matrix[i][j] = rotated[i][j]
+        }
+    }
+}
+
 
 /**
  * Time Complexity O(N²)

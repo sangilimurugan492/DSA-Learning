@@ -1,5 +1,5 @@
 # 📅 Week 3: Android Beginner + Flutter Widgets/Layouts + Kotlin Intermediate
-> **Sep 3 (Thu) – Sep 9 (Wed)** | Topics: 21 files | DSA: ~18 problems
+> **Sep 3 (Thu) – Sep 9 (Wed)** | Topics: 21 files | DSA: ~18 problems → [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md)
 > [← Week 2](Week2_Daily_Checklist.md) | [Back to Daily Checklist](../Daily_Checklist.md) | [Week 4 →](Week4_Daily_Checklist.md)
 
 ---
@@ -17,14 +17,13 @@
 - Android Activity Lifecycle ↔ Flutter Widget Lifecycle (createState→initState→build→dispose)
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Stack › Valid Parentheses | 🟢 Easy]** Valid Parentheses (15 min) — [ValidParentheses.kt](../../DSA/stack/valid_parentheses/ValidParentheses.kt)
-- [ ] **[Stack › Min Stack | 🟡 Medium]** Min Stack (20 min) — [MinStack.kt](../../DSA/stack/min_stack/MinStack.kt)
+- [ ] Practice 2 problems from [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md) (Stack pattern)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can draw the activity lifecycle diagram
 - [ ] Can explain app components (Activity, Service, BroadcastReceiver, ContentProvider)
 - [ ] Can create a Kotlin class with inheritance and interface
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -41,14 +40,13 @@
 - Android Intents ↔ Flutter Navigation (Navigator.push/pop) — Android uses Intent, Flutter uses route objects
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Stack › Evaluate RPN | 🟡 Medium]** Evaluate Reverse Polish Notation (20 min) — [EvaluateReversePolishNotation.kt](../../DSA/stack/evaluate_reverse_polish_notation/EvaluateReversePolishNotation.kt)
-- [ ] **[Stack › Daily Temperatures | 🟡 Medium]** Daily Temperatures (25 min) — [DailyTemperatures.kt](../../DSA/stack/daily_temperatures/DailyTemperatures.kt)
+- [ ] Practice 2 problems from [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md) (Stack pattern)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can explain fragment lifecycle and communication
 - [ ] Can differentiate explicit vs implicit intents
 - [ ] Can use Kotlin collection operators (map, filter, reduce)
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -65,10 +63,7 @@
 - [ ] 🔴 Lambdas & Higher-Order Functions — [LambdasAndHigherOrderFunctions.md](../../kotlin_questions/intermediate/LambdasAndHigherOrderFunctions.md) — *SAM, inline, function types*
 
 **🧮 DSA Practice (1.5 hr):**
-- [ ] **[Stack › Next Greater Element I | 🟢 Easy]** Next Greater Element I (25 min) — [NextGreaterElementI.kt](../../DSA/stack/next_greater_element_i/NextGreaterElementI.kt)
-- [ ] **[Stack › Next Greater Element II | 🟡 Medium]** Next Greater Element II (25 min) — [NextGreaterElementII.kt](../../DSA/stack/next_greater_element_ii/NextGreaterElementII.kt)
-- [ ] **[Stack › Online Stock Span | 🟡 Medium]** Online Stock Span (25 min) — [OnlineStockSpan.kt](../../DSA/stack/online_stock_span/OnlineStockSpan.kt)
-- [ ] **[Stack › Min Parentheses to Remove | 🟡 Medium]** Minimum Parentheses to Remove (25 min) — [MinimumParentheseToRemove.kt](../../DSA/stack/minimum_parentheses_to_remove/MinimumParentheseToRemove.kt)
+- [ ] Practice 4 problems from [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md) (Monotonic Stack pattern)
 
 **🎁 EXTRA TOPIC:**
 - [ ] 🔄 Android vs Flutter layouts deep dive — Compare ConstraintLayout vs Flutter Row/Column/Stack
@@ -78,7 +73,7 @@
 - [ ] Can request runtime permissions
 - [ ] Can use all 5 scope functions correctly
 - [ ] Can write extension functions
-- [ ] Solved 4 DSA problems
+- [ ] Practiced 4 DSA problems from tracker
 
 ---
 
@@ -94,10 +89,7 @@
 - [ ] Practice: Build a Flutter app with form validation
 
 **🧮 DSA Practice (1.5 hr):**
-- [ ] **[Simulation › Add Binary | 🟢 Easy]** Add Binary (15 min) — [AddBinary.kt](../../DSA/simulation/add_binary/AddBinary.kt)
-- [ ] **[Simulation › Add Strings | 🟢 Easy]** Add Strings (15 min) — [AddString.kt](../../DSA/simulation/add_string/AddString.kt)
-- [ ] **[Simulation › FizzBuzz | 🟢 Easy]** FizzBuzz (10 min) — [FizzBuzz.kt](../../DSA/simulation/fizz_buzz/FizzBuzz.kt)
-- [ ] **[Simulation › Add Digits | 🟢 Easy]** Add Digits (15 min) — [AddDigits.kt](../../DSA/simulation/add_digits/AddDigits.kt)
+- [ ] Practice 4 problems from [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md) (Simulation pattern)
 
 **🎁 EXTRA TOPIC:**
 - [ ] 🔄 Kotlin Scope Functions deep dive — Write real-world examples for let, run, with, apply, also
@@ -107,7 +99,7 @@
 - [ ] Can use inline + reified generics
 - [ ] Can overload operators
 - [ ] Built a Flutter form with validation
-- [ ] Solved 4 DSA problems
+- [ ] Practiced 4 DSA problems from tracker
 
 ---
 
@@ -123,13 +115,12 @@
 - [ ] 🔄 Spaced Repetition: Scope Functions — write examples for each
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Simulation › Spiral Matrix | 🟡 Medium]** Spiral Matrix (25 min) — [SpiralMatrix.kt](../../DSA/simulation/spiral_matrix/SpiralMatrix.kt)
-- [ ] **[Simulation › Spiral Matrix II | 🟡 Medium]** Spiral Matrix II (25 min) — [SpiralMatrixII.kt](../../DSA/simulation/spiral_matrix_ii/SpiralMatrixII.kt)
+- [ ] Practice 2 problems from [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md) (Simulation pattern)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can draw activity and fragment lifecycle from memory
 - [ ] Can use Kotlin collection operators fluently
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -144,13 +135,12 @@
 - [ ] 🔄 Spaced Repetition: Extensions — write an extension function
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Simulation › Text Justification | 🔴 Hard]** Text Justification (35 min) — [TextJustification.kt](../../DSA/simulation/text_justification/TextJustification.kt)
-- [ ] **[Stack › Longest Valid Parentheses | 🔴 Hard]** Longest Valid Parentheses (35 min) — [LongestValidParentheses.kt](../../DSA/stack/longest_valid_parentheses/LongestValidParentheses.kt)
+- [ ] Practice 2 problems from [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md) (Hard problems)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can implement a RecyclerView adapter from memory
 - [ ] Can write a sealed class with exhaustive when
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -162,10 +152,7 @@
 - [ ] Identify weak areas
 
 **🧮 DSA Practice (1 hr):**
-- [ ] **[Stack › Largest Rectangle in Histogram | 🔴 Hard]** Largest Rectangle in Histogram (35 min) — [LargestRectangleInHistogram.kt](../../DSA/stack/largest_rectangle_in_histogram/LargestRectangleInHistogram.kt)
-- [ ] **[Stack › Car Fleet | 🟡 Medium]** Car Fleet (25 min) — [CarFleet.kt](../../DSA/stack/car_fleet/CarFleet.kt)
-- [ ] **[Stack | 🟡 Medium]** Pick 1 more from [DSA/stack/](../../DSA/stack/)
-- [ ] **[Simulation | 🟡 Medium]** Pick 1 more from [DSA/simulation/](../../DSA/simulation/)
+- [ ] Practice 4 problems from [Week 3-4 Practice Tracker](../../DSA/Week3-4_Practice_Tracker.md) (Hard + review)
 
 **✅ Week 3 Self-Assessment:**
 - [ ] Can draw activity lifecycle diagram
@@ -180,7 +167,7 @@
 - [ ] Can use inline + reified generics
 - [ ] Can overload operators
 - [ ] Can use higher-order functions and lambdas
-- [ ] Solved 18 DSA problems this week
+- [ ] Practiced 18 DSA problems from tracker this week
 
 ---
 
