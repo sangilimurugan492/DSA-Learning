@@ -1,5 +1,5 @@
 # 📅 Week 5: Kotlin Advanced + Flutter Intermediate + Android Advanced
-> **Sep 17 (Thu) – Sep 23 (Wed)** | Topics: 20 files | DSA: ~18 problems
+> **Sep 17 (Thu) – Sep 23 (Wed)** | Topics: 20 files | DSA: ~18 problems → [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md)
 > [← Week 4](Week4_Daily_Checklist.md) | [Back to Daily Checklist](../Daily_Checklist.md) | [Week 6 →](Week6_Daily_Checklist.md)
 
 ---
@@ -19,14 +19,13 @@
 - Kotlin StateFlow ↔ Flutter StreamController — both hot streams
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Tree › Binary Tree | 🟢 Easy]** Maximum Depth of Binary Tree (15 min) — [MaximumDepthOfBinaryTree.kt](../../DSA/tree/binary_tree/MaximumDepthOfBinaryTree.kt)
-- [ ] **[Tree › Binary Tree | 🟢 Easy]** Same Tree (15 min) — [SameTree.kt](../../DSA/tree/binary_tree/SameTree.kt)
+- [ ] Practice 2 problems from [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md) (Tree › Binary Tree pattern)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can explain coroutine dispatchers and when to use each
 - [ ] Can differentiate StateFlow vs SharedFlow
 - [ ] Can set up Firebase in Flutter
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -44,15 +43,14 @@
 - Android Hilt/Dagger (DI) ↔ Flutter get_it/injectable — both compile-time vs runtime DI
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Tree › BST | 🟢 Easy]** Search in BST (15 min) — [SearchInBST.kt](../../DSA/tree/bst/SearchInBST.kt)
-- [ ] **[Tree › BST | 🟡 Medium]** Validate BST (20 min) — [ValidateBST.kt](../../DSA/tree/bst/ValidateBST.kt)
+- [ ] Practice 2 problems from [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md) (Tree › BST pattern)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can explain generics variance (in/out) in Kotlin
 - [ ] Can create a type-safe DSL
 - [ ] Can set up Hilt with @Module, @InstallIn, @Inject
 - [ ] Can identify and fix memory leaks
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -69,10 +67,7 @@
 - [ ] 🔴 Custom Views — [CustomViews.md](../../android_questions/advanced/CustomViews.md) — *onMeasure, onDraw, Canvas, Paint*
 
 **🧮 DSA Practice (1.5 hr):**
-- [ ] **[Heap › Kth Largest Element | 🟡 Medium]** Kth Largest Element (25 min) — [KthLargestElement.kt](../../DSA/heap/kth_largest_element/KthLargestElement.kt)
-- [ ] **[Heap › Top K Frequent Elements | 🟡 Medium]** Top K Frequent Elements (25 min) — [TopKFrequentElements.kt](../../DSA/heap/top_k_frequent_elements/TopKFrequentElements.kt)
-- [ ] **[Heap › Merge K Sorted Lists | 🔴 Hard]** Merge K Sorted Lists (35 min) — [MergeKSortedLists.kt](../../DSA/heap/merge_k_sorted_lists/MergeKSortedLists.kt)
-- [ ] **[Heap › Find Median from Data Stream | 🔴 Hard]** Find Median from Data Stream (35 min) — [FindMedianFromDataStream.kt](../../DSA/heap/find_median_from_data_stream/FindMedianFromDataStream.kt)
+- [ ] Practice 4 problems from [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md) (Heap pattern)
 
 **🎁 EXTRA TOPIC:**
 - [ ] 🔄 Coroutines deep dive — Write examples for launch, async, withContext, supervisorJob, coroutineScope
@@ -82,7 +77,7 @@
 - [ ] Can use kotlinx.serialization with @Serializable
 - [ ] Can write unit tests and instrumented tests
 - [ ] Can create a custom View with onMeasure/onDraw
-- [ ] Solved 4 DSA problems
+- [ ] Practiced 4 DSA problems from tracker
 
 ---
 
@@ -99,10 +94,7 @@
 - [ ] Practice: Write a Flutter widget test
 
 **🧮 DSA Practice (1.5 hr):**
-- [ ] **[Tree › Binary Tree | 🟢 Easy]** Balanced Binary Tree (15 min) — [BalancedBinaryTree.kt](../../DSA/tree/binary_tree/BalancedBinaryTree.kt)
-- [ ] **[Tree › Binary Tree | 🟡 Medium]** Diameter of Binary Tree (20 min) — [DiameterOfBinaryTree.kt](../../DSA/tree/binary_tree/DiameterOfBinaryTree.kt)
-- [ ] **[Tree › BST | 🟡 Medium]** Insert into BST (20 min) — [InsertIntoBST.kt](../../DSA/tree/bst/InsertIntoBST.kt)
-- [ ] **[Tree › BST | 🟡 Medium]** Delete Node in BST (25 min) — [DeleteNodeInBST.kt](../../DSA/tree/bst/DeleteNodeInBST.kt)
+- [ ] Practice 4 problems from [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md) (Tree › Binary Tree + BST pattern)
 
 **🎁 EXTRA TOPIC:**
 - [ ] 🔄 Flutter animations deep dive — Build a Flutter app with Hero + implicit/explicit animations
@@ -112,7 +104,7 @@
 - [ ] Can configure ProGuard/R8
 - [ ] Can explain Play Integrity
 - [ ] Can write a Flutter widget test
-- [ ] Solved 4 DSA problems
+- [ ] Practiced 4 DSA problems from tracker
 
 ---
 
@@ -127,14 +119,13 @@
 - [ ] 🔄 Spaced Repetition: Performance — list common memory leak causes
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Trie › Implement Trie | 🟡 Medium]** Implement Trie (Prefix Tree) (25 min) — [ImplementTrie.kt](../../DSA/trie/implement_trie/ImplementTrie.kt)
-- [ ] **[Trie › Word Search II | 🔴 Hard]** Word Search II (40 min) — [WordSearchII.kt](../../DSA/trie/word_search_ii/WordSearchII.kt)
+- [ ] Practice 2 problems from [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md) (Trie pattern)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can write coroutine code from memory
 - [ ] Can write Hilt module from memory
 - [ ] Can implement a Trie from scratch
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -149,14 +140,13 @@
 - [ ] 🔄 Spaced Repetition: Modularization — draw module structure
 
 **🧮 DSA Practice (30 min):**
-- [ ] **[Array › Bit Manipulation | 🟢 Easy]** Single Number (review) (15 min) — [SingleNumber.kt](../../DSA/array/bit_manipulation/single_number/SingleNumber.kt)
-- [ ] **[Array › Bit Manipulation | 🟡 Medium]** Single Number II (review) (20 min) — [SingleNumberII.kt](../../DSA/array/bit_manipulation/single_number_ii/SingleNumberII.kt)
+- [ ] Practice 2 problems from [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md) (Bit Manipulation pattern)
 
 **✅ End-of-Day Self-Check:**
 - [ ] Can write generics variance examples from memory
 - [ ] Can write a type-safe DSL from memory
 - [ ] Can write custom view code from memory
-- [ ] Solved 2 DSA problems
+- [ ] Practiced 2 DSA problems from tracker
 
 ---
 
@@ -168,10 +158,7 @@
 - [ ] Identify weak areas
 
 **🧮 DSA Practice (1 hr):**
-- [ ] **[Array › Bit Manipulation | 🟢 Easy]** Number of 1 Bits (15 min) — [NumberOf1Bits.kt](../../DSA/array/bit_manipulation/number_of_1_bits/NumberOf1Bits.kt)
-- [ ] **[Array › Bit Manipulation | 🟢 Easy]** Missing Number (15 min) — [MissingNumber.kt](../../DSA/array/bit_manipulation/missing_number/MissingNumber.kt)
-- [ ] **[Tree › Binary Tree | 🟢 Easy]** Subtree of Another Tree (20 min) — [SubtreeOfAnotherTree.kt](../../DSA/tree/binary_tree/SubtreeOfAnotherTree.kt)
-- [ ] **[Tree › BST | 🟡 Medium]** Kth Smallest Element in BST (25 min) — [KthSmallestElementInBST.kt](../../DSA/tree/bst/KthSmallestElementInBST.kt)
+- [ ] Practice 4 problems from [Week 5-6 Practice Tracker](../../DSA/Week5-6_Practice_Tracker.md) (Bit Manipulation + Tree review)
 
 **✅ Week 5 Self-Assessment:**
 - [ ] Can explain coroutine dispatchers and when to use each
@@ -186,7 +173,7 @@
 - [ ] Can write unit tests and instrumented tests
 - [ ] Can structure a multi-module app
 - [ ] Can configure ProGuard/R8
-- [ ] Solved 18 DSA problems this week
+- [ ] Practiced 18 DSA problems from tracker this week
 
 ---
 

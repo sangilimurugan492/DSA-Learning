@@ -15,6 +15,9 @@ fun main() {
     }
     println(searchBST(root, 2)?.`val`)  // 2
     println(searchBST(root, 5)?.`val`)  // null
+
+    println(searchBSTIterative(root, 2)?.`val`)  // 2
+    println(searchBSTIterative(root, 5)?.`val`)  // null
 }
 
 /**

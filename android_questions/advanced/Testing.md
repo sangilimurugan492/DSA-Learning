@@ -6,9 +6,11 @@ Testing ensures code correctness and prevents regressions. Android testing follo
 
 ### Testing Pyramid
 ```
-        /\
-       /UI\          ← Few, slow, brittle
-      /------\
+          / \
+         /   \
+        /     \
+       /  UI   \     ← Few, slow, brittle
+      /---------\
      /Integration\   ← Medium
     /--------------\
    /  Unit Tests    \  ← Many, fast, reliable

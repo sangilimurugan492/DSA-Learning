@@ -73,7 +73,7 @@ fun removeNthFromEndTwoPass(head: ListNode?, n: Int): ListNode? {
     }
 
     // 5. Skip the target node
-    curr?.next = curr.next?.next
+    curr!!.next = curr.next!!.next
 
     return dummy.next
 }
@@ -109,7 +109,7 @@ fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
     }
 
     // 4. Skip the nth node
-    slow?.next = slow.next?.next
+    slow!!.next = slow.next!!.next
 
     return dummy.next
 }
