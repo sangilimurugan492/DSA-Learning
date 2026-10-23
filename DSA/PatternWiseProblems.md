@@ -3,7 +3,10 @@
 > Complete scan of the `DSA/` folder — every problem mapped to its pattern.
 > **Total Problems: 260+** across **20+ patterns** and **12 data structure categories**.
 
+> 🎯 **Studying these patterns?** Follow the structured [PatternWise_Prep 8-Week Plan](PatternWise_Prep/MASTER_PLAN.md) (Mon–Thu 2 hrs, Sat 2 hrs, Sun 3 hrs mock test) — each week targets specific patterns with progressive hints.
+
 ---
+
 
 ## 📑 Table of Contents
 

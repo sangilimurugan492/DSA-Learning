@@ -4,7 +4,15 @@ A comprehensive Kotlin-based Data Structures & Algorithms learning repository, o
 
 ---
 
+> ## 🎯 [PatternWise_Prep — 8-Week Structured Preparation Plan](PatternWise_Prep/MASTER_PLAN.md)
+> **New structured prep (Oct 13 – Dec 10, 2026):** 5 days/week (Mon–Thu 2 hrs, Sat 2 hrs, Sun 3 hrs mock test) covering all patterns week-by-week with progressive hints.
+> - 📋 [Master Plan](PatternWise_Prep/MASTER_PLAN.md) | 📈 [Progress Tracker](PatternWise_Prep/Progress_Tracker.md) | 🧪 [Mock Test Log](PatternWise_Prep/Mock_Test_Log.md)
+> - Weekly plans: [W1](PatternWise_Prep/weeks/Week01.md) · [W2](PatternWise_Prep/weeks/Week02.md) · [W3](PatternWise_Prep/weeks/Week03.md) · [W4](PatternWise_Prep/weeks/Week04.md) · [W5](PatternWise_Prep/weeks/Week05.md) · [W6](PatternWise_Prep/weeks/Week06.md) · [W7](PatternWise_Prep/weeks/Week07.md) · [W8](PatternWise_Prep/weeks/Week08.md)
+
+---
+
 ## 📑 Table of Contents
+
 
 1. [Array (Pattern-Based)](#1-array-pattern-based)
    - [1.1 Linear Scan](#11-linear-scan)
