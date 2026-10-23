@@ -27,27 +27,27 @@
 | Oct 28 | Wed | Java | Beginner Qs | ⬜ |
 | Oct 29 | Thu | CI/CD | Deep-Dive + Quiz | ⬜ |
 
-### Week 3 (Oct 30 – Nov 5) — Foundations
+### Week 3 (Nov 2 – Nov 8) — Foundations
 | Date | Day | Topic | Focus | Status |
 |------|-----|-------|-------|--------|
-| Oct 30 | Fri | System Design | Beginner Qs | ⬜ |
-| Oct 31 | Sat | Android | Beginner Qs | ⬜ |
-| Nov 1 | Sun | Kotlin | Beginner Qs | ⬜ |
-| Nov 2 | Mon | Flutter | Beginner Qs | ⬜ |
-| Nov 3 | Tue | — | 🛑 REST | — |
-| Nov 4 | Wed | Java | Beginner Qs | ⬜ |
-| Nov 5 | Thu | Testing | Deep-Dive + Quiz | ⬜ |
+| Nov 2 | Mon | System Design | Beginner Qs | ⬜ |
+| Nov 3 | Tue | Android | Beginner Qs | ⬜ |
+| Nov 4 | Wed | Kotlin | Beginner Qs | ⬜ |
+| Nov 5 | Thu | Flutter | Beginner Qs | ⬜ |
+| Nov 6 | Fri | — | 🛑 REST | — |
+| Nov 7 | Sat | Java | Beginner Qs | ⬜ |
+| Nov 8 | Sun | Testing | Deep-Dive + Quiz | ⬜ |
 
-### Week 4 (Nov 6 – Nov 12) — Foundations
+### Week 4 (Nov 9 – Nov 15) — Foundations
 | Date | Day | Topic | Focus | Status |
 |------|-----|-------|-------|--------|
-| Nov 6 | Fri | System Design | Beginner Qs | ⬜ |
-| Nov 7 | Sat | Android | Beginner Qs | ⬜ |
-| Nov 8 | Sun | Kotlin | Beginner Qs | ⬜ |
-| Nov 9 | Mon | Flutter | Beginner Qs | ⬜ |
-| Nov 10 | Tue | — | 🛑 REST | — |
-| Nov 11 | Wed | Java | Beginner Qs | ⬜ |
-| Nov 12 | Thu | Security | Deep-Dive + Quiz | ⬜ |
+| Nov 9 | Mon | System Design | Beginner Qs | ⬜ |
+| Nov 10 | Tue | Android | Beginner Qs | ⬜ |
+| Nov 11 | Wed | Kotlin | Beginner Qs | ⬜ |
+| Nov 12 | Thu | Flutter | Beginner Qs | ⬜ |
+| Nov 13 | Fri | — | 🛑 REST | — |
+| Nov 14 | Sat | Java | Beginner Qs | ⬜ |
+| Nov 15 | Sun | Security | Deep-Dive + Quiz | ⬜ |
 
 ---
 
@@ -64,53 +64,53 @@
 | Nov 18 | Wed | Java | Intermediate Qs | ⬜ |
 | Nov 19 | Thu | Firebase | Deep-Dive + Quiz | ⬜ |
 
-### Week 6 (Nov 20 – Nov 26) — Intermediate
+### Week 6 (Nov 23 – Nov 29) — Intermediate
 | Date | Day | Topic | Focus | Status |
 |------|-----|-------|-------|--------|
-| Nov 20 | Fri | System Design | Intermediate Qs | ⬜ |
-| Nov 21 | Sat | Android | Intermediate Qs | ⬜ |
-| Nov 22 | Sun | Kotlin | Intermediate Qs | ⬜ |
-| Nov 23 | Mon | Flutter | Intermediate + State Mgmt | ⬜ |
-| Nov 24 | Tue | — | 🛑 REST | — |
-| Nov 25 | Wed | Java | Intermediate Qs | ⬜ |
-| Nov 26 | Thu | WebRTC | Deep-Dive + Quiz | ⬜ |
+| Nov 23 | Mon | System Design | Intermediate Qs | ⬜ |
+| Nov 24 | Tue | Android | Intermediate Qs | ⬜ |
+| Nov 25 | Wed | Kotlin | Intermediate Qs | ⬜ |
+| Nov 26 | Thu | Flutter | Intermediate + State Mgmt | ⬜ |
+| Nov 27 | Fri | — | 🛑 REST | — |
+| Nov 28 | Sat | Java | Intermediate Qs | ⬜ |
+| Nov 29 | Sun | WebRTC | Deep-Dive + Quiz + 🎤 SD Drill | ⬜ |
 
-### Week 7 (Nov 27 – Dec 3) — Intermediate
+### Week 7 (Nov 30 – Dec 6) — Intermediate
 | Date | Day | Topic | Focus | Status |
 |------|-----|-------|-------|--------|
-| Nov 27 | Fri | System Design | Intermediate Qs | ⬜ |
-| Nov 28 | Sat | Android | Intermediate Qs | ⬜ |
-| Nov 29 | Sun | Kotlin | Intermediate Qs | ⬜ |
-| Nov 30 | Mon | Flutter | Intermediate + State Mgmt | ⬜ |
-| Dec 1 | Tue | — | 🛑 REST | — |
-| Dec 2 | Wed | Java | Intermediate Qs | ⬜ |
-| Dec 3 | Thu | Jetpack Compose | Deep-Dive + Quiz | ⬜ |
+| Nov 30 | Mon | System Design | Intermediate Qs | ⬜ |
+| Dec 1 | Tue | Android | Intermediate Qs | ⬜ |
+| Dec 2 | Wed | Kotlin | Intermediate Qs | ⬜ |
+| Dec 3 | Thu | Flutter | Intermediate + State Mgmt | ⬜ |
+| Dec 4 | Fri | — | 🛑 REST | — |
+| Dec 5 | Sat | Java | Intermediate Qs | ⬜ |
+| Dec 6 | Sun | Jetpack Compose | Deep-Dive + Quiz + 🎤 SD Drill | ⬜ |
 
-### Week 8 (Dec 4 – Dec 10) — Intermediate
+### Week 8 (Dec 7 – Dec 13) — Intermediate
 | Date | Day | Topic | Focus | Status |
 |------|-----|-------|-------|--------|
-| Dec 4 | Fri | System Design | Intermediate Qs | ⬜ |
-| Dec 5 | Sat | Android | Intermediate Qs | ⬜ |
-| Dec 6 | Sun | Kotlin | Intermediate Qs | ⬜ |
-| Dec 7 | Mon | Flutter | Intermediate + State Mgmt | ⬜ |
-| Dec 8 | Tue | — | 🛑 REST | — |
-| Dec 9 | Wed | Java | Intermediate Qs | ⬜ |
-| Dec 10 | Thu | GitHub | Deep-Dive + Quiz | ⬜ |
+| Dec 7 | Mon | System Design | Intermediate Qs | ⬜ |
+| Dec 8 | Tue | Android | Intermediate Qs | ⬜ |
+| Dec 9 | Wed | Kotlin | Intermediate Qs | ⬜ |
+| Dec 10 | Thu | Flutter | Intermediate + State Mgmt | ⬜ |
+| Dec 11 | Fri | — | 🛑 REST | — |
+| Dec 12 | Sat | Java | Intermediate Qs | ⬜ |
+| Dec 13 | Sun | GitHub | Deep-Dive + Quiz + 🎤 SD Drill | ⬜ |
 
 ---
 
 ## Phase 3 — Advanced & Mock (Weeks 9–12)
 
-### Week 9 (Dec 11 – Dec 17) — Advanced
+### Week 9 (Dec 14 – Dec 20) — Advanced
 | Date | Day | Topic | Focus | Status |
 |------|-----|-------|-------|--------|
-| Dec 11 | Fri | System Design | Advanced Qs | ⬜ |
-| Dec 12 | Sat | Android | Advanced Qs | ⬜ |
-| Dec 13 | Sun | Kotlin | Advanced Qs | ⬜ |
-| Dec 14 | Mon | Flutter | Advanced Qs | ⬜ |
-| Dec 15 | Tue | — | 🛑 REST | — |
-| Dec 16 | Wed | Java | Advanced Qs | ⬜ |
-| Dec 17 | Thu | SOLID Principles | Deep-Dive + Quiz | ⬜ |
+| Dec 14 | Mon | System Design | Advanced Qs | ⬜ |
+| Dec 15 | Tue | Android | Advanced Qs | ⬜ |
+| Dec 16 | Wed | Kotlin | Advanced Qs | ⬜ |
+| Dec 17 | Thu | Flutter | Advanced Qs | ⬜ |
+| Dec 18 | Fri | — | 🛑 REST | — |
+| Dec 19 | Sat | Java | Advanced Qs | ⬜ |
+| Dec 20 | Sun | SOLID Principles | Deep-Dive + Quiz + 🎤 SD Drill | ⬜ |
 
 ### Week 10 (Dec 18 – Dec 24) — Advanced
 | Date | Day | Topic | Focus | Status |
@@ -139,6 +139,21 @@
 |------|-----|-------|-------|--------|
 | Jan 1 | Fri | System Design | Full Review | ⬜ |
 | Jan 2 | Sat | Android | Full Review | ⬜ |
+| Jan 3 | Sun | Kotlin | Full Review | ⬜ |
+| Jan 4 | Mon | Flutter | Full Review | ⬜ |
+| Jan 5 | Tue | — | 🛑 REST | — |
+| Jan 6 | Wed | Java | Full Review | ⬜ |
+| Jan 7 | Thu | ALL TOPICS | Grand Quiz + Final Mock | ⬜ |
+
+---
+
+## 📝 Notes & Weak Areas
+
+| Date | Topic | What was weak? | Revisit date |
+|------|-------|----------------|---------------|
+| | | | |
+
+ll Review | ⬜ |
 | Jan 3 | Sun | Kotlin | Full Review | ⬜ |
 | Jan 4 | Mon | Flutter | Full Review | ⬜ |
 | Jan 5 | Tue | — | 🛑 REST | — |

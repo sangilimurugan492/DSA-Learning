@@ -1,16 +1,16 @@
-# 📅 Week 8 — Intermediate (Dec 4 – Dec 10)
+# 📅 Week 8 — Intermediate (Dec 7 – Dec 13)
 
 > Phase 2: Intermediate · Difficulty: `intermediate/` folders
 
 | Day | Date | Topic | Files to Study | Question Bank |
 |-----|------|-------|-----------------|---------------|
-| Fri | Dec 4 | **System Design** | [Mobile_System_Design_Interview_Guide.md](../../system_design/mobile/Mobile_System_Design_Interview_Guide.md) (estimation) · [Mobile_System_Design_Cheat_Sheet.md](../../system_design/mobile/Mobile_System_Design_Cheat_Sheet.md) (review) | [system_design/](../../system_design/) |
-| Sat | Dec 5 | **Android** | [Paging3.md](../../android_questions/intermediate/Paging3.md) · [Navigation.md](../../android_questions/intermediate/Navigation.md) | [android_questions/intermediate](../../android_questions/intermediate/) |
-| Sun | Dec 6 | **Kotlin + KMP** | [DelegatedProperties.md](../../kotlin_questions/advanced/DelegatedProperties.md) · [InlineAndReified.md](../../kotlin_questions/intermediate/InlineAndReified.md) · KMP: [DependencyInjection.md](../../kmp_questions/intermediate/DependencyInjection.md) · [Networking.md](../../kmp_questions/intermediate/Networking.md) · [Testing.md](../../kmp_questions/intermediate/Testing.md) | [kotlin_questions/advanced](../../kotlin_questions/advanced/) · [kmp_questions/intermediate](../../kmp_questions/intermediate/) |
-| Mon | Dec 7 | **Flutter** | [Testing.md](../../flutter_questions/intermediate/Testing.md) · [Animations.md](../../flutter_questions/intermediate/Animations.md) | [flutter_questions/intermediate](../../flutter_questions/intermediate/) |
-| Tue | Dec 8 | 🛑 REST | — | — |
-| Wed | Dec 9 | **Java** | [OOPConcepts.md](../../java_questions/intermediate/OOPConcepts.md) · [ExceptionHandling.md](../../java_questions/intermediate/ExceptionHandling.md) | [java_questions/intermediate](../../java_questions/intermediate/) |
-| Thu | Dec 10 | **GitHub** 🎯 | [GitBasics.md](../../github_questions/GitBasics.md) · [Branching.md](../../github_questions/Branching.md) · [PullRequests.md](../../github_questions/PullRequests.md) | [github_questions/](../../github_questions/) |
+| Mon | Dec 7 | **System Design** | [example_ecommerce_app_design.md](../../system_design/mobile/example_ecommerce_app_design.md) · [example_food_delivery_app_design.md](../../system_design/mobile/example_food_delivery_app_design.md) | [system_design/](../../system_design/) |
+| Tue | Dec 8 | **Android** | [Paging3.md](../../android_questions/intermediate/Paging3.md) · [Navigation.md](../../android_questions/intermediate/Navigation.md) | [android_questions/intermediate](../../android_questions/intermediate/) |
+| Wed | Dec 9 | **Kotlin + KMP** | [DelegatedProperties.md](../../kotlin_questions/advanced/DelegatedProperties.md) · [InlineAndReified.md](../../kotlin_questions/intermediate/InlineAndReified.md) · KMP: [DependencyInjection.md](../../kmp_questions/intermediate/DependencyInjection.md) · [Networking.md](../../kmp_questions/intermediate/Networking.md) · [Testing.md](../../kmp_questions/intermediate/Testing.md) | [kotlin_questions/advanced](../../kotlin_questions/advanced/) · [kmp_questions/intermediate](../../kmp_questions/intermediate/) |
+| Thu | Dec 10 | **Flutter** | [Testing.md](../../flutter_questions/intermediate/Testing.md) · [Animations.md](../../flutter_questions/intermediate/Animations.md) | [flutter_questions/intermediate](../../flutter_questions/intermediate/) |
+| Fri | Dec 11 | 🛑 REST | — | — |
+| Sat | Dec 12 | **Java** | [OOPConcepts.md](../../java_questions/intermediate/OOPConcepts.md) · [ExceptionHandling.md](../../java_questions/intermediate/ExceptionHandling.md) | [java_questions/intermediate](../../java_questions/intermediate/) |
+| Sun | Dec 13 | **GitHub** 🎯 | [GitBasics.md](../../github_questions/GitBasics.md) · [Branching.md](../../github_questions/Branching.md) · [PullRequests.md](../../github_questions/PullRequests.md) + 🎤 SD Drill (15 min) | [github_questions/](../../github_questions/) |
 
 ## ✅ Daily Checklist
 - [ ] Read the day's questions (10 min)

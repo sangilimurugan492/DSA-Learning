@@ -1,6 +1,6 @@
 # 📅 Week 4 — Linked List (Single + Double + Circular)
 
-> **Dates:** Nov 6 (Fri) – Nov 12 (Thu)
+> **Dates:** Nov 9 (Mon) – Nov 15 (Sun)
 > **Pattern Focus:** Singly Linked List, Doubly Linked List, Circular Linked List, classic LL patterns (fast/slow, reversal, dummy head)
 > **Reminder:** Try each problem 10–25 min WITHOUT hints. Reveal hints one at a time. Compare with your solutions in `DSA/linked_list/` only AFTER solving.
 
@@ -13,16 +13,16 @@
 
 | Day | Date | Problems | Time |
 |-----|------|----------|------|
-| Fri | Nov 6 | #1–#8 (Easy single LL) | 2 hrs |
-| Sat | Nov 7 | #9–#16 (Easy DLL/CLL + medium single) | 2 hrs |
-| Sun | Nov 8 | #17–#24 (Medium single LL) | 2 hrs |
-| Mon | Nov 9 | #25–#32 (Design + DLL medium) | 2 hrs |
-| Wed | Nov 11 | #33–#37 (Hard LL) + revision | 2 hrs |
-| Thu | Nov 12 | 🧪 Mock Test 4 + Review | 3 hrs |
+| Mon | Nov 9 | #1–#8 (Easy single LL) | 2 hrs |
+| Tue | Nov 10 | #9–#16 (Easy DLL/CLL + medium single) | 2 hrs |
+| Wed | Nov 11 | #17–#24 (Medium single LL) | 2 hrs |
+| Thu | Nov 12 | #25–#32 (Design + DLL medium) | 2 hrs |
+| Sat | Nov 14 | #33–#37 (Hard LL) + revision | 2 hrs |
+| Sun | Nov 15 | 🧪 Mock Test 4 + Review | 3 hrs |
 
 ---
 
-## 🟢 FRIDAY, Nov 6 — Easy Single Linked List
+## 🟢 MONDAY, Nov 9 — Easy Single Linked List
 
 ### 1. Reverse Linked List — 🟢
 **LeetCode #206** | Solution: `DSA/linked_list/single/ReverseLinkedList.kt`
@@ -237,7 +237,7 @@ fun deleteNode(node: ListNode?) {
 
 ---
 
-## 🟢 SATURDAY, Nov 7 — DLL/CLL Basics + Medium Single
+## 🟢 TUESDAY, Nov 10 — DLL/CLL Basics + Medium Single
 
 ### 9. Reverse Doubly Linked List — 🟢
 **Solution:** `DSA/linked_list/double/ReverseDoublyLinkedList.kt`
@@ -454,7 +454,7 @@ fun reorderList(head: ListNode?) {
 
 ---
 
-## 🟡 SUNDAY, Nov 8 — Medium Single Linked List
+## 🟡 WEDNESDAY, Nov 11 — Medium Single Linked List
 
 ### 17. Swap Nodes in Pairs — 🟡
 **LeetCode #24** | Solution: `DSA/linked_list/single/SwapNodesInPairs.kt`
@@ -679,7 +679,7 @@ fun sortedListToBST(head: ListNode?): TreeNode? {
 
 ---
 
-## 🟡 MONDAY, Nov 9 — Design + DLL Medium
+## 🟡 THURSDAY, Nov 12 — Design + DLL Medium
 
 ### 25. Design Hash Set — 🟡
 **LeetCode #705** | Solution: `DSA/linked_list/single/DesignHashSet.kt`
@@ -910,7 +910,7 @@ fun splitCircularList(head: ListNode?): Pair<ListNode?, ListNode?> {
 
 ---
 
-## 🟢 WEDNESDAY, Nov 11 — Hard Linked List + Revision
+## 🟢 SATURDAY, Nov 14 — Hard Linked List + Revision
 
 ### 33. Reverse Linked List II — 🟡
 **LeetCode #92** | Solution: `DSA/linked_list/single/ReverseLinkedListII.kt`
@@ -1053,7 +1053,7 @@ fun reverseKGroup(head: ListNode?, k: Int): ListNode? {
 
 ---
 
-## 🧪 THURSDAY, Nov 12 — Mock Test 4 (3 hrs)
+## 🧪 SUNDAY, Nov 15 — Mock Test 4 (3 hrs)
 
 **Part 1 — Timed Test (2 hrs, no hints for first 30 min):**
 

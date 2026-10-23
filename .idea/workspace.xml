@@ -5,54 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63e6e312-ba97-461c-9408-efe0eb739fb1" name="Changes" comment="Added Interview prep documents in weekly basis">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week04_Practice.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week05_Practice.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week06_Practice.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week07_Practice.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week08_Practice.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week04Tests.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week05Tests.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week06Tests.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week07Tests.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week08Tests.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week04.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week05.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week06.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week07.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week08.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week04.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week05.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week06.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week07.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week08.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week09.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week10.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week11.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week12.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/MASTER_PLAN.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week04_Practice.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week05_Practice.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week06_Practice.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week07_Practice.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week08_Practice.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week04.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week05.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week06.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week07.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week08.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week04.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week05.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week06.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week07.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week08.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week09.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week10.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week11.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week12.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/META-INF/Learning.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/META-INF/Learning.kotlin_module" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/MASTER_PLAN.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/MASTER_PLAN.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/Mock_Test_Log.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/Mock_Test_Log.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/Progress_Tracker.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/Progress_Tracker.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/TestRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/TestRunner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week02Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week02Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week03Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week03Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week04Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week04Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week05Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week05Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week06Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week06Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week07Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week07Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week08Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week08Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week01.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week02.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week02.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week03.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week03.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week04.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week04.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week05.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week05.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week06.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week06.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week07.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week07.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week08.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week08.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Topic_Prep/MASTER_PLAN.md" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Topic_Prep/MASTER_PLAN.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Topic_Prep/Progress_Tracker.md" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Topic_Prep/Progress_Tracker.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week01.md" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week02.md" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week02.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week03.md" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week03.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week04.md" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week04.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week05.md" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week05.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week06.md" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week06.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week07.md" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week07.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week08.md" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week08.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week09.md" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week09.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week10.md" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week10.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week11.md" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week11.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week12.md" beforeDir="false" afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week12.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -440,7 +427,15 @@
       <option name="project" value="LOCAL" />
       <updated>1792728478425</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Added Interview prep documents in weekly basis">
+      <option name="closed" value="true" />
+      <created>1792729845754</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1792729845754</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -38,25 +38,81 @@ class Week05Tests {
 // 👇 WEEK 5 SOLUTIONS — implement as you solve 👇
 // ═══════════════════════════════════════════════════════════
 
-fun maxDepth(root: TreeNode?): Int = TODO()
-fun isSameTree(p: TreeNode?, q: TreeNode?): Boolean = TODO()
-fun isBalanced(root: TreeNode?): Boolean = TODO()
-fun invertTree(root: TreeNode?): TreeNode? = TODO()
-fun isSymmetric(root: TreeNode?): Boolean = TODO()
-fun diameterOfBinaryTree(root: TreeNode?): Int = TODO()
-fun lowestCommonAncestor(root: TreeNode?, p: TreeNode?, q: TreeNode?): TreeNode? = TODO()
-fun isValidBST(root: TreeNode?): Boolean = TODO()
-fun levelOrder(root: TreeNode?): List<List<Int>> = TODO()
-fun rightSideView(root: TreeNode?): List<Int> = TODO()
-fun findKthLargest(nums: IntArray, k: Int): Int = TODO()
+fun maxDepth(root: TreeNode?): Int {
+    // TODO: recursive 1 + max(depths)
+    return 0
+}
+
+fun isSameTree(p: TreeNode?, q: TreeNode?): Boolean {
+    // TODO: recurse on both, compare values
+    return false
+}
+
+fun isBalanced(root: TreeNode?): Boolean {
+    // TODO: post-order height with −1 short-circuit
+    return false
+}
+
+fun invertTree(root: TreeNode?): TreeNode? {
+    // TODO: swap children recursively
+    return null
+}
+
+fun isSymmetric(root: TreeNode?): Boolean {
+    // TODO: mirror-compare subtrees
+    return false
+}
+
+fun diameterOfBinaryTree(root: TreeNode?): Int {
+    // TODO: post-order left+right edges
+    return 0
+}
+
+fun lowestCommonAncestor(root: TreeNode?, p: TreeNode?, q: TreeNode?): TreeNode? {
+    // TODO: split-point DFS
+    return null
+}
+
+fun isValidBST(root: TreeNode?): Boolean {
+    // TODO: min/max bounds recursion
+    return false
+}
+
+fun levelOrder(root: TreeNode?): List<List<Int>> {
+    // TODO: BFS queue by level
+    return listOf()
+}
+
+fun rightSideView(root: TreeNode?): List<Int> {
+    // TODO: BFS, take last per level
+    return listOf()
+}
+
+fun findKthLargest(nums: IntArray, k: Int): Int {
+    // TODO: quickselect or size-k min-heap
+    return 0
+}
 
 class MedianFinder {
-    fun addNum(num: Int): Unit = TODO()
-    fun findMedian(): Double = TODO()
+    fun addNum(num: Int): Unit {
+        // TODO: two heaps rebalance
+    }
+    fun findMedian(): Double {
+        // TODO: top of both heaps
+        return 0.0
+    }
 }
 
 class Trie {
-    fun insert(word: String): Unit = TODO()
-    fun search(word: String): Boolean = TODO()
-    fun startsWith(prefix: String): Boolean = TODO()
+    fun insert(word: String): Unit {
+        // TODO: walk/create children nodes
+    }
+    fun search(word: String): Boolean {
+        // TODO: trie walk, check end flag
+        return false
+    }
+    fun startsWith(prefix: String): Boolean {
+        // TODO: trie walk, prefix exists
+        return false
+    }
 }

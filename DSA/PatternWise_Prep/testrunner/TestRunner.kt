@@ -3,7 +3,7 @@ package testrunner
 /**
  * TestRunner.kt — Core engine + shared helpers + main entry point.
  *
- * Each week lives in its own file: Week01Tests.kt … Week08Tests.kt
+ * Each week lives in its own file: Week01Tests.kt … Week12Tests.kt
  * (each contains that week's test class AND that week's solution stubs).
  *
  * How to use:
@@ -111,6 +111,10 @@ fun main() {
 //    Week06Tests().runAll()   // Week 6 — Greedy + Binary Search + Bit
 //    Week07Tests().runAll()   // Week 7 — Backtracking + DP
 //    Week08Tests().runAll()   // Week 8 — Graph + Simulation + Matrix
+//    Week09Tests().runAll()   // Week 9 — Advanced Graphs + Intervals
+//    Week10Tests().runAll()   // Week 10 — Advanced DP (2D / Strings / Grids)
+//    Week11Tests().runAll()   // Week 11 — Monotonic Stack + Design + Trie
+//    Week12Tests().runAll()   // Week 12 — Final Grand Revision
     // ▲▲▲ COMMENT OUT the weeks you don't want ▲▲▲
 
     TestRunner.summary()

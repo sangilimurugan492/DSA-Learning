@@ -1,16 +1,16 @@
-# 📅 Week 11 — Advanced Scenarios (Dec 25 – Dec 31)
+# 📅 Week 11 — Advanced & Mock (Dec 28 – Jan 3)
 
 > Phase 3: Advanced & Mock · Difficulty: `scenario_based/` folders
 
 | Day | Date | Topic | Files to Study | Question Bank |
 |-----|------|-------|-----------------|---------------|
-| Fri | Dec 25 | **System Design** | [10_Offline_First_App_Answer.md](../../system_design/mobile_interview_playbook/10_Offline_First_App_Answer.md) · [12_Udemy_Like_App_Design_Answer.md](../../system_design/mobile_interview_playbook/12_Udemy_Like_App_Design_Answer.md) | [system_design/mobile_interview_playbook](../../system_design/mobile_interview_playbook/) |
-| Sat | Dec 26 | **Android** | [ArchitectureScenarios.md](../../android_questions/scenario_based/ArchitectureScenarios.md) · [BackgroundTaskScenarios.md](../../android_questions/scenario_based/BackgroundTaskScenarios.md) | [android_questions/scenario_based](../../android_questions/scenario_based/) |
-| Sun | Dec 27 | **Kotlin** | [PerformanceScenarios.md](../../kotlin_questions/scenario_based/PerformanceScenarios.md) · [RealWorldScenarios.md](../../kotlin_questions/scenario_based/RealWorldScenarios.md) | [kotlin_questions/scenario_based](../../kotlin_questions/scenario_based/) |
-| Mon | Dec 28 | **Flutter** | [DebuggingScenarios.md](../../flutter_questions/scenario_based/DebuggingScenarios.md) · [NavigationScenarios.md](../../flutter_questions/scenario_based/NavigationScenarios.md) | [flutter_questions/scenario_based](../../flutter_questions/scenario_based/) |
-| Tue | Dec 29 | 🛑 REST | — | — |
-| Wed | Dec 30 | **Java** | [OOPScenarios.md](../../java_questions/scenario_based/OOPScenarios.md) · [CollectionScenarios.md](../../java_questions/scenario_based/CollectionScenarios.md) | [java_questions/scenario_based](../../java_questions/scenario_based/) |
-| Thu | Dec 31 | **KMP** 🎯 | [Basics.md](../../kmp_questions/beginner/Basics.md) · [ExpectActual.md](../../kmp_questions/beginner/ExpectActual.md) · [PlatformSpecific.md](../../kmp_questions/beginner/PlatformSpecific.md) · [Architecture.md](../../kmp_questions/intermediate/Architecture.md) · [LibraryDevelopment.md](../../kmp_questions/advanced/LibraryDevelopment.md) · [CICD.md](../../kmp_questions/advanced/CICD.md) · [Performance.md](../../kmp_questions/advanced/Performance.md) · [KMPScenarios.md](../../kmp_questions/scenario_based/KMPScenarios.md) | [kmp_questions/](../../kmp_questions/) |
+| Mon | Dec 28 | **System Design** | [00_Interview_Answer_Template.md](../../system_design/mobile_interview_playbook/00_Interview_Answer_Template.md) · [01_Ecommerce_App_Answer.md](../../system_design/mobile_interview_playbook/01_Ecommerce_App_Answer.md) · [02_Chat_App_Answer.md](../../system_design/mobile_interview_playbook/02_Chat_App_Answer.md) | [system_design/mobile_interview_playbook](../../system_design/mobile_interview_playbook/) |
+| Tue | Dec 29 | **Android** | [ArchitectureScenarios.md](../../android_questions/scenario_based/ArchitectureScenarios.md) · [BackgroundTaskScenarios.md](../../android_questions/scenario_based/BackgroundTaskScenarios.md) | [android_questions/scenario_based](../../android_questions/scenario_based/) |
+| Wed | Dec 30 | **Kotlin** | [PerformanceScenarios.md](../../kotlin_questions/scenario_based/PerformanceScenarios.md) · [RealWorldScenarios.md](../../kotlin_questions/scenario_based/RealWorldScenarios.md) | [kotlin_questions/scenario_based](../../kotlin_questions/scenario_based/) |
+| Thu | Dec 31 | **Flutter** | [DebuggingScenarios.md](../../flutter_questions/scenario_based/DebuggingScenarios.md) · [NavigationScenarios.md](../../flutter_questions/scenario_based/NavigationScenarios.md) | [flutter_questions/scenario_based](../../flutter_questions/scenario_based/) |
+| Fri | Jan 1 | 🛑 REST | — | — |
+| Sat | Jan 2 | **Java** | [OOPScenarios.md](../../java_questions/scenario_based/OOPScenarios.md) · [CollectionScenarios.md](../../java_questions/scenario_based/CollectionScenarios.md) | [java_questions/scenario_based](../../java_questions/scenario_based/) |
+| Sun | Jan 3 | **KMP (full deep-dive)** 🎯 | [Basics.md](../../kmp_questions/beginner/Basics.md) · [ExpectActual.md](../../kmp_questions/beginner/ExpectActual.md) · [PlatformSpecific.md](../../kmp_questions/beginner/PlatformSpecific.md) · [Architecture.md](../../kmp_questions/intermediate/Architecture.md) · [LibraryDevelopment.md](../../kmp_questions/advanced/LibraryDevelopment.md) · [CICD.md](../../kmp_questions/advanced/CICD.md) · [Performance.md](../../kmp_questions/advanced/Performance.md) · [KMPScenarios.md](../../kmp_questions/scenario_based/KMPScenarios.md) + 🎤 SD Drill (15 min) | [kmp_questions/](../../kmp_questions/) |
 
 ## ✅ Daily Checklist
 - [ ] Read the day's questions (10 min)

@@ -43,21 +43,92 @@ class Week06Tests {
 // 👇 WEEK 6 SOLUTIONS — implement as you solve 👇
 // ═══════════════════════════════════════════════════════════
 
-fun maxProfit(prices: IntArray): Int = TODO()
-fun findContentChildren(g: IntArray, s: IntArray): Int = TODO()
-fun lemonadeChange(bills: IntArray): Boolean = TODO()
-fun singleNumber(nums: IntArray): Int = TODO()
-fun maxProfitII(prices: IntArray): Int = TODO()
-fun canJump(nums: IntArray): Boolean = TODO()
-fun jump(nums: IntArray): Int = TODO()
-fun canCompleteCircuit(gas: IntArray, cost: IntArray): Int = TODO()
-fun merge(intervals: Array<IntArray>): Array<IntArray> = TODO()
-fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> = TODO()
-fun eraseOverlapIntervals(intervals: Array<IntArray>): Int = TODO()
-fun findMinArrowShots(points: Array<IntArray>): Int = TODO()
-fun leastInterval(tasks: CharArray, n: Int): Int = TODO()
-fun partitionLabels(s: String): List<Int> = TODO()
-fun searchRotated(nums: IntArray, target: Int): Int = TODO()
-fun findMin(nums: IntArray): Int = TODO()
-fun countBits(n: Int): IntArray = TODO()
-fun candy(ratings: IntArray): Long = TODO()
+fun maxProfit(prices: IntArray): Int {
+    // TODO: min-so-far, max diff
+    return 0
+}
+
+fun findContentChildren(g: IntArray, s: IntArray): Int {
+    // TODO: sort both, greedy match
+    return 0
+}
+
+fun lemonadeChange(bills: IntArray): Boolean {
+    // TODO: track $5/$10 counts
+    return false
+}
+
+fun singleNumber(nums: IntArray): Int {
+    // TODO: XOR all
+    return 0
+}
+
+fun maxProfitII(prices: IntArray): Int {
+    // TODO: sum positive diffs
+    return 0
+}
+
+fun canJump(nums: IntArray): Boolean {
+    // TODO: greedy farthest reach
+    return false
+}
+
+fun jump(nums: IntArray): Int {
+    // TODO: BFS-layer greedy jumps
+    return 0
+}
+
+fun canCompleteCircuit(gas: IntArray, cost: IntArray): Int {
+    // TODO: total diff + reset start
+    return 0
+}
+
+fun merge(intervals: Array<IntArray>): Array<IntArray> {
+    // TODO: sort by start, extend last
+    return arrayOf()
+}
+
+fun insert(intervals: Array<IntArray>, newInterval: IntArray): Array<IntArray> {
+    // TODO: before / merge / after
+    return arrayOf()
+}
+
+fun eraseOverlapIntervals(intervals: Array<IntArray>): Int {
+    // TODO: sort by end, greedy keep
+    return 0
+}
+
+fun findMinArrowShots(points: Array<IntArray>): Int {
+    // TODO: sort by end, count bursts
+    return 0
+}
+
+fun leastInterval(tasks: CharArray, n: Int): Int {
+    // TODO: max-frequency frame formula
+    return 0
+}
+
+fun partitionLabels(s: String): List<Int> {
+    // TODO: last-index map, extend cut
+    return listOf()
+}
+
+fun searchRotated(nums: IntArray, target: Int): Int {
+    // TODO: binary search, sorted-half check
+    return 0
+}
+
+fun findMin(nums: IntArray): Int {
+    // TODO: binary search vs right end
+    return 0
+}
+
+fun countBits(n: Int): IntArray {
+    // TODO: DP: bits[i] = bits[i>>1] + (i&1)
+    return intArrayOf()
+}
+
+fun candy(ratings: IntArray): Long {
+    // TODO: two-pass left/right envelopes
+    return 0L
+}

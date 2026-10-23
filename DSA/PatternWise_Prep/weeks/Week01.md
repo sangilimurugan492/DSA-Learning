@@ -1,6 +1,6 @@
 # 📅 Week 1 — Two Pointer + Two Pointer In-Place
 
-> **Dates:** Oct 13 (Tue) – Oct 22 (Thu)
+> **Dates:** Oct 13 (Tue) – Oct 25 (Sun)
 > **Pattern Focus:** Two Pointer (opposite ends / different speeds) + In-Place modification
 > **Reminder:** Try each problem 10–25 min WITHOUT hints. Reveal hints one at a time. Compare with your solution in `DSA/array/two_pointer/` and `DSA/array/two_pointer_inplace/` only AFTER solving.
 
@@ -16,8 +16,8 @@
 | Tue | Oct 13 | #1–#5 (Warm-up: Easy Two Pointer) | 2 hrs |
 | Wed | Oct 14 | #6–#10 (Easy → Medium) | 2 hrs |
 | Thu | Oct 15 | #11–#17 (Medium + Trapping Rain Water) | 2 hrs |
-| Wed | Oct 21 | #18–#25 (Two Pointer In-Place) | 2 hrs |
-| Thu | Oct 22 | 🧪 Mock Test 1 + Review | 3 hrs |
+| Sat | Oct 24 | #18–#25 (Two Pointer In-Place) | 2 hrs |
+| Sun | Oct 25 | 🧪 Mock Test 1 + Review | 3 hrs |
 
 ---
 
@@ -497,7 +497,7 @@ fun trap(height: IntArray): Int {
 
 ---
 
-## 🟢 WEDNESDAY, Oct 21 — Two Pointer In-Place + Revision
+## 🟢 SATURDAY, Oct 24 — Two Pointer In-Place + Revision
 
 ### 18. Remove Duplicates from Sorted Array — 🟢
 **LeetCode #26** | Solution: `DSA/array/two_pointer_inplace/RemoveDuplicateFromSortedArray.kt`
@@ -713,7 +713,7 @@ fun removeElement(nums: IntArray, `val`: Int): Int {
 
 ---
 
-## 🧪 THURSDAY, Oct 22 — Mock Test 1 (3 hrs)
+## 🧪 SUNDAY, Oct 25 — Mock Test 1 (3 hrs)
 
 **Part 1 — Timed Test (2 hrs, no hints for first 30 min):**
 
@@ -736,9 +736,9 @@ fun removeElement(nums: IntArray, `val`: Int): Int {
 
 ## ✅ Week 1 Completion Checklist
 
-- [ ] Tue: 5 easy two-pointer problems solved
-- [ ] Wed: 5 problems (3Sum family) solved
-- [ ] Thu: 7 problems incl. Trapping Rain Water
+- [x] Tue: 5 easy two-pointer problems solved
+- [x] Wed: 5 problems (3Sum family) solved
+- [x] Thu: 7 problems incl. Trapping Rain Water
 - [ ] Sat: 8 in-place problems solved
 - [ ] Sun: Mock Test 1 completed & logged
 - [ ] Progress Tracker updated

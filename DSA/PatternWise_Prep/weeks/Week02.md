@@ -1,6 +1,6 @@
 # 📅 Week 2 — Sliding Window + Prefix Sum + Kadane's
 
-> **Dates:** Oct 23 (Fri) – Oct 29 (Thu)
+> **Dates:** Oct 26 (Mon) – Nov 1 (Sun)
 > **Pattern Focus:** Sliding Window (fixed & variable size), Prefix Sum, Kadane's Algorithm
 > **Reminder:** Try each problem 10–25 min WITHOUT hints. Reveal hints one at a time. Compare with your solutions in `DSA/array/sliding_window/`, `DSA/array/prefix_sum/`, `DSA/array/kadane_algorithm/` only AFTER solving.
 
@@ -13,16 +13,16 @@
 
 | Day | Date | Problems | Time |
 |-----|------|----------|------|
-| Fri | Oct 23 | #1–#4 (Fixed window + Prefix Sum basics) | 2 hrs |
-| Sat | Oct 24 | #5–#8 (Variable window + Kadane's) | 2 hrs |
-| Sun | Oct 25 | #9–#13 (Prefix Sum + HashMap combos) | 2 hrs |
-| Mon | Oct 26 | #14–#18 (Hard window problems) | 2 hrs |
-| Wed | Oct 28 | Revision: re-solve 4 weakest + Week 1 mixed | 2 hrs |
-| Thu | Oct 29 | 🧪 Mock Test 2 + Review | 3 hrs |
+| Mon | Oct 26 | #1–#4 (Fixed window + Prefix Sum basics) | 2 hrs |
+| Tue | Oct 27 | #5–#8 (Variable window + Kadane's) | 2 hrs |
+| Wed | Oct 28 | #9–#13 (Prefix Sum + HashMap combos) | 2 hrs |
+| Thu | Oct 29 | #14–#18 (Hard window problems) | 2 hrs |
+| Sat | Oct 31 | Revision: re-solve 4 weakest + Week 1 mixed | 2 hrs |
+| Sun | Nov 1 | 🧪 Mock Test 2 + Review | 3 hrs |
 
 ---
 
-## 🟢 FRIDAY, Oct 23 — Fixed Window + Prefix Sum Basics
+## 🟢 MONDAY, Oct 26 — Fixed Window + Prefix Sum Basics
 
 ### 1. Max Average Subarray (Fixed K) — 🟢
 **LeetCode #643** | Solution: `DSA/array/sliding_window/MaximumAverageSubArray.kt`
@@ -132,7 +132,7 @@ fun maxSubArray(nums: IntArray): Int {
 
 ---
 
-## 🟡 SATURDAY, Oct 24 — Variable Window + Kadane's Variants
+## 🟡 TUESDAY, Oct 27 — Variable Window + Kadane's Variants
 
 ### 5. Fruits into Baskets — 🟡
 **LeetCode #904** | Solution: `DSA/array/sliding_window/FruitsIntoBaskets.kt`
@@ -248,7 +248,7 @@ fun maxProduct(nums: IntArray): Int {
 
 ---
 
-## 🟡 SUNDAY, Oct 25 — Prefix Sum + HashMap Combos
+## 🟡 WEDNESDAY, Oct 28 — Prefix Sum + HashMap Combos
 
 ### 9. Maximum Sum Circular Subarray — 🟡
 **LeetCode #918** | Solution: `DSA/array/kadane_algorithm/MaximumSumCircularSubarray.kt`
@@ -390,7 +390,7 @@ fun longestSubarrayWithSumK(nums: IntArray, k: Int): Int {
 
 ---
 
-## 🟡 MONDAY, Oct 26 — Hard Window Problems
+## 🟡 THURSDAY, Oct 29 — Hard Window Problems
 
 ### 14. Longest Substring Without Repeating Characters — 🟡
 **LeetCode #3** | Solution: `DSA/array/sliding_window/LongestSubstringWithoutRepeatingCharacters.kt`
@@ -533,7 +533,7 @@ fun minWindow(s: String, t: String): String {
 
 ---
 
-## 🟢 WEDNESDAY, Oct 28 — Revision + Mixed Practice
+## 🟢 SATURDAY, Oct 31 — Revision + Mixed Practice
 
 1. Re-solve the 3–4 problems you found hardest this week (from scratch, no hints)
 2. Mixed practice — 3 problems from Week 1 (Two Pointer):
@@ -544,7 +544,7 @@ fun minWindow(s: String, t: String): String {
 
 ---
 
-## 🧪 THURSDAY, Oct 29 — Mock Test 2 (3 hrs)
+## 🧪 SUNDAY, Nov 1 — Mock Test 2 (3 hrs)
 
 **Part 1 — Timed Test (2 hrs, no hints for first 30 min):**
 

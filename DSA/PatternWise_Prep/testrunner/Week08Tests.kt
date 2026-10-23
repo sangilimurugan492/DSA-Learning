@@ -44,21 +44,90 @@ class Week08Tests {
 // 👇 WEEK 8 SOLUTIONS — implement as you solve 👇
 // ═══════════════════════════════════════════════════════════
 
-fun addBinary(a: String, b: String): String = TODO()
-fun addStrings(num1: String, num2: String): String = TODO()
-fun addDigits(num: Int): Int = TODO()
-fun fizzBuzz(n: Int): List<String> = TODO()
-fun numIslands(grid: Array<CharArray>): Int = TODO()
-fun pacificAtlantic(heights: Array<IntArray>): List<List<Int>> = TODO()
-fun orangesRotting(grid: Array<IntArray>): Int = TODO()
-fun canFinish(numCourses: Int, prerequisites: Array<IntArray>): Boolean = TODO()
-fun findOrder(numCourses: Int, prerequisites: Array<IntArray>): IntArray = TODO()
-fun findCircleNum(isConnected: Array<IntArray>): Int = TODO()
-fun validTree(n: Int, edges: Array<IntArray>): Boolean = TODO()
-fun setZeroes(matrix: Array<IntArray>): Unit = TODO()
-fun spiralOrder(matrix: Array<IntArray>): List<Int> = TODO()
-fun rotate(matrix: Array<IntArray>): Unit = TODO()
-fun myAtoi(s: String): Int = TODO()
-fun intToRoman(num: Int): String = TODO()
-fun ladderLength(beginWord: String, endWord: String, wordList: List<String>): Int = TODO()
-fun fullJustify(words: Array<String>, maxWidth: Int): List<String> = TODO()
+fun addBinary(a: String, b: String): String {
+    // TODO: reverse walk with carry
+    return ""
+}
+
+fun addStrings(num1: String, num2: String): String {
+    // TODO: reverse walk with carry
+    return ""
+}
+
+fun addDigits(num: Int): Int {
+    // TODO: digital root, 1 + (num−1) % 9
+    return 0
+}
+
+fun fizzBuzz(n: Int): List<String> {
+    // TODO: %3/%5 rules
+    return listOf()
+}
+
+fun numIslands(grid: Array<CharArray>): Int {
+    // TODO: flood fill (DFS/BFS) per land
+    return 0
+}
+
+fun pacificAtlantic(heights: Array<IntArray>): List<List<Int>> {
+    // TODO: reverse BFS from both oceans
+    return listOf()
+}
+
+fun orangesRotting(grid: Array<IntArray>): Int {
+    // TODO: multi-source BFS minutes
+    return 0
+}
+
+fun canFinish(numCourses: Int, prerequisites: Array<IntArray>): Boolean {
+    // TODO: Kahn's topo sort, no cycle
+    return false
+}
+
+fun findOrder(numCourses: Int, prerequisites: Array<IntArray>): IntArray {
+    // TODO: Kahn's order
+    return intArrayOf()
+}
+
+fun findCircleNum(isConnected: Array<IntArray>): Int {
+    // TODO: DSU or DFS per node
+    return 0
+}
+
+fun validTree(n: Int, edges: Array<IntArray>): Boolean {
+    // TODO: edges == n−1 and connected
+    return false
+}
+
+fun setZeroes(matrix: Array<IntArray>): Unit {
+    // TODO: first row/col as markers
+}
+
+fun spiralOrder(matrix: Array<IntArray>): List<Int> {
+    // TODO: four boundaries shrink
+    return listOf()
+}
+
+fun rotate(matrix: Array<IntArray>): Unit {
+    // TODO: transpose + reverse rows
+}
+
+fun myAtoi(s: String): Int {
+    // TODO: skip spaces, sign, clamp digits
+    return 0
+}
+
+fun intToRoman(num: Int): String {
+    // TODO: greedy value-symbol table
+    return ""
+}
+
+fun ladderLength(beginWord: String, endWord: String, wordList: List<String>): Int {
+    // TODO: BFS with wildcard patterns
+    return 0
+}
+
+fun fullJustify(words: Array<String>, maxWidth: Int): List<String> {
+    // TODO: greedy lines, distribute spaces
+    return listOf()
+}

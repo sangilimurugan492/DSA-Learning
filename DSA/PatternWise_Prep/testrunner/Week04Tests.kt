@@ -41,24 +41,86 @@ class Week04Tests {
 // 👇 WEEK 4 SOLUTIONS — implement as you solve 👇
 // ═══════════════════════════════════════════════════════════
 
-fun reverseList(head: ListNode?): ListNode? = TODO()
-fun middleNode(head: ListNode?): ListNode? = TODO()
-fun hasCycle(head: ListNode?): Boolean = TODO()
-fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? = TODO()
-fun deleteDuplicatesLL(head: ListNode?): ListNode? = TODO()
-fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? = TODO()
-fun reorderList(head: ListNode?): Unit = TODO()
-fun swapPairs(head: ListNode?): ListNode? = TODO()
-fun rotateRight(head: ListNode?, k: Int): ListNode? = TODO()
-fun detectCycle(head: ListNode?): ListNode? = TODO()
-fun isPalindromeLL(head: ListNode?): Boolean = TODO()
-fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? = TODO()
-
-class LRUCache(private val capacity: Int) {
-    fun get(key: Int): Int = TODO()
-    fun put(key: Int, value: Int): Unit = TODO()
+fun reverseList(head: ListNode?): ListNode? {
+    // TODO: prev/curr pointer flip
+    return null
 }
 
-fun mergeKLists(lists: Array<ListNode?>): ListNode? = TODO()
-fun sortList(head: ListNode?): ListNode? = TODO()
-fun reverseKGroup(head: ListNode?, k: Int): ListNode? = TODO()
+fun middleNode(head: ListNode?): ListNode? {
+    // TODO: fast/slow pointers
+    return null
+}
+
+fun hasCycle(head: ListNode?): Boolean {
+    // TODO: Floyd's tortoise-hare
+    return false
+}
+
+fun mergeTwoLists(l1: ListNode?, l2: ListNode?): ListNode? {
+    // TODO: dummy node, splice smaller
+    return null
+}
+
+fun deleteDuplicatesLL(head: ListNode?): ListNode? {
+    // TODO: skip nodes equal to next
+    return null
+}
+
+fun removeNthFromEnd(head: ListNode?, n: Int): ListNode? {
+    // TODO: two pointers, n-gap
+    return null
+}
+
+fun reorderList(head: ListNode?): Unit {
+    // TODO: middle + reverse + merge halves
+}
+
+fun swapPairs(head: ListNode?): ListNode? {
+    // TODO: swap adjacent pairs recursively
+    return null
+}
+
+fun rotateRight(head: ListNode?, k: Int): ListNode? {
+    // TODO: close ring, break at n − k%n
+    return null
+}
+
+fun detectCycle(head: ListNode?): ListNode? {
+    // TODO: Floyd's, then re-walk from head
+    return null
+}
+
+fun isPalindromeLL(head: ListNode?): Boolean {
+    // TODO: middle + reverse half compare
+    return false
+}
+
+fun addTwoNumbers(l1: ListNode?, l2: ListNode?): ListNode? {
+    // TODO: digit-by-digit with carry
+    return null
+}
+
+class LRUCache(private val capacity: Int) {
+    fun get(key: Int): Int {
+        // TODO: hashmap + doubly-linked list
+        return 0
+    }
+    fun put(key: Int, value: Int): Unit {
+        // TODO: evict from head when over capacity
+    }
+}
+
+fun mergeKLists(lists: Array<ListNode?>): ListNode? {
+    // TODO: min-heap of heads
+    return null
+}
+
+fun sortList(head: ListNode?): ListNode? {
+    // TODO: merge sort with mid split
+    return null
+}
+
+fun reverseKGroup(head: ListNode?, k: Int): ListNode? {
+    // TODO: count k, reverse group, recurse
+    return null
+}

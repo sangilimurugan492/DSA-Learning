@@ -40,18 +40,77 @@ class Week03Tests {
 // 👇 WEEK 3 SOLUTIONS — implement as you solve 👇
 // ═══════════════════════════════════════════════════════════
 
-fun containsDuplicate(nums: IntArray): Boolean = TODO()
-fun checkIfExist(arr: IntArray): Boolean = TODO()
-fun isAnagram(s: String, t: String): Boolean = TODO()
-fun intersection(nums1: IntArray, nums2: IntArray): IntArray = TODO()
-fun findDifference(nums1: IntArray, nums2: IntArray): List<List<Int>> = TODO()
-fun twoSumUnsorted(nums: IntArray, target: Int): IntArray = TODO()
-fun isValid(s: String): Boolean = TODO()
-fun longestConsecutive(nums: IntArray): Int = TODO()
-fun groupAnagrams(strs: Array<String>): List<List<String>> = TODO()
-fun topKFrequent(nums: IntArray, k: Int): IntArray = TODO()
-fun dailyTemperatures(temperatures: IntArray): IntArray = TODO()
-fun evalRPN(tokens: Array<String>): Int = TODO()
-fun carFleet(target: Int, position: IntArray, speed: IntArray): Int = TODO()
-fun longestValidParentheses(s: String): Int = TODO()
-fun largestRectangleArea(heights: IntArray): Int = TODO()
+fun containsDuplicate(nums: IntArray): Boolean {
+    // TODO: hashset
+    return false
+}
+
+fun checkIfExist(arr: IntArray): Boolean {
+    // TODO: hashset of 2× and ÷2 lookups
+    return false
+}
+
+fun isAnagram(s: String, t: String): Boolean {
+    // TODO: char counts
+    return false
+}
+
+fun intersection(nums1: IntArray, nums2: IntArray): IntArray {
+    // TODO: set intersect
+    return intArrayOf()
+}
+
+fun findDifference(nums1: IntArray, nums2: IntArray): List<List<Int>> {
+    // TODO: set difference both ways
+    return listOf()
+}
+
+fun twoSumUnsorted(nums: IntArray, target: Int): IntArray {
+    // TODO: hashmap complement index
+    return intArrayOf()
+}
+
+fun isValid(s: String): Boolean {
+    // TODO: stack of openers
+    return false
+}
+
+fun longestConsecutive(nums: IntArray): Int {
+    // TODO: hashset, extend from sequence starts
+    return 0
+}
+
+fun groupAnagrams(strs: Array<String>): List<List<String>> {
+    // TODO: map by sorted-word / count key
+    return listOf()
+}
+
+fun topKFrequent(nums: IntArray, k: Int): IntArray {
+    // TODO: frequency map + sort/bucket
+    return intArrayOf()
+}
+
+fun dailyTemperatures(temperatures: IntArray): IntArray {
+    // TODO: monotonic decreasing stack
+    return intArrayOf()
+}
+
+fun evalRPN(tokens: Array<String>): Int {
+    // TODO: operand stack
+    return 0
+}
+
+fun carFleet(target: Int, position: IntArray, speed: IntArray): Int {
+    // TODO: sort desc, stack arrival times
+    return 0
+}
+
+fun longestValidParentheses(s: String): Int {
+    // TODO: stack of indices with −1 base
+    return 0
+}
+
+fun largestRectangleArea(heights: IntArray): Int {
+    // TODO: monotonic increasing stack
+    return 0
+}

@@ -1,7 +1,7 @@
 # 🎯 Pattern-Wise DSA Preparation — Master Plan
 
 > **Start Date:** Tuesday, Oct 13, 2026
-> **End Date:** Thursday, Dec 10, 2026 (8 Weeks)
+> **End Date:** Sunday, Dec 13, 2026 (8 Weeks)
 > **Method:** Solve every problem YOURSELF first. Reveal hints ONE AT A TIME only when stuck. Compare with your existing solution only AFTER solving.
 
 ---
@@ -43,20 +43,24 @@ For every problem, follow this exact order:
 
 ---
 
-## 🗂️ 8-Week Pattern Roadmap
+## 🗂️ 12-Week Pattern Roadmap
 
 | Week | Dates | Patterns | Problems | Week File |
 |------|-------|----------|----------|-----------|
-| **1** | Oct 13 – Oct 22 | Two Pointer + Two Pointer In-Place | 37 | [Week01.md](weeks/Week01.md) |
-| **2** | Oct 23 – Oct 29 | Sliding Window + Prefix Sum + Kadane's | 18 | [Week02.md](weeks/Week02.md) |
-| **3** | Oct 30 – Nov 5 | HashMap/HashSet + Complement + Set Ops + Frequency + Stack | 26 | [Week03.md](weeks/Week03.md) |
-| **4** | Nov 6 – Nov 12 | Linked List (Single + Double + Circular) | 37 | [Week04.md](weeks/Week04.md) |
-| **5** | Nov 13 – Nov 19 | Tree + Heap + Trie | 22 | [Week05.md](weeks/Week05.md) |
-| **6** | Nov 20 – Nov 26 | Greedy + Binary Search + Bit Manipulation | 28 | [Week06.md](weeks/Week06.md) |
-| **7** | Nov 27 – Dec 3 | Backtracking + Dynamic Programming | 23 | [Week07.md](weeks/Week07.md) |
-| **8** | Dec 4 – Dec 10 | Graph + Simulation + Matrix + String Parsing + Final Revision | 25 | [Week08.md](weeks/Week08.md) |
+| **1** | Oct 13 – Oct 25 | Two Pointer + Two Pointer In-Place | 37 | [Week01.md](weeks/Week01.md) |
+| **2** | Oct 26 – Nov 1 | Sliding Window + Prefix Sum + Kadane's | 18 | [Week02.md](weeks/Week02.md) |
+| **3** | Nov 2 – Nov 8 | HashMap/HashSet + Complement + Set Ops + Frequency + Stack | 26 | [Week03.md](weeks/Week03.md) |
+| **4** | Nov 9 – Nov 15 | Linked List (Single + Double + Circular) | 37 | [Week04.md](weeks/Week04.md) |
+| **5** | Nov 16 – Nov 22 | Tree + Heap + Trie | 22 | [Week05.md](weeks/Week05.md) |
+| **6** | Nov 23 – Nov 29 | Greedy + Binary Search + Bit Manipulation | 28 | [Week06.md](weeks/Week06.md) |
+| **7** | Nov 30 – Dec 6 | Backtracking + Dynamic Programming | 23 | [Week07.md](weeks/Week07.md) |
+| **8** | Dec 7 – Dec 13 | Graph + Simulation + Matrix + String Parsing + Final Revision | 25 | [Week08.md](weeks/Week08.md) |
+| **9** | Dec 14 – Dec 20 | Advanced Graphs: Dijkstra + Union-Find + Topo Sort + Intervals | 20 | [Week09.md](weeks/Week09.md) |
+| **10** | Dec 21 – Dec 27 | Advanced DP: 2D / Strings / Grids | 20 | [Week10.md](weeks/Week10.md) |
+| **11** | Dec 28 – Jan 3 | Monotonic Stack + Design (LRU/LFU/Min Stack) + Advanced Trie/Strings | 20 | [Week11.md](weeks/Week11.md) |
+| **12** | Jan 4 – Jan 10 | Full Revision + Company-Style Mixed Sets + Final Grand Mock | 20 | [Week12.md](weeks/Week12.md) |
 
-**Total: ~215 problems across 20+ patterns**
+**Total: ~295 problems across 30+ patterns**
 
 ---
 
@@ -74,14 +78,14 @@ For every problem, follow this exact order:
 
 | Week | Dates | Pattern | Solved | Total | % | Mock Score |
 |------|-------|---------|--------|-------|---|------------|
-| 1 | Oct 13 – Oct 22 | Two Pointer | 0 | 37 | 0% | — |
-| 2 | Oct 23 – Oct 29 | Sliding Window + Prefix Sum + Kadane's | 0 | 18 | 0% | — |
-| 3 | Oct 30 – Nov 5 | HashMap + Stack | 0 | 26 | 0% | — |
-| 4 | Nov 6 – Nov 12 | Linked List | 0 | 37 | 0% | — |
-| 5 | Nov 13 – Nov 19 | Tree + Heap + Trie | 0 | 22 | 0% | — |
-| 6 | Nov 20 – Nov 26 | Greedy + Binary Search + Bit Manip | 0 | 28 | 0% | — |
-| 7 | Nov 27 – Dec 3 | Backtracking + DP | 0 | 23 | 0% | — |
-| 8 | Dec 4 – Dec 10 | Graph + Simulation + Revision | 0 | 25 | 0% | — |
+| 1 | Oct 13 – Oct 25 | Two Pointer | 0 | 37 | 0% | — |
+| 2 | Oct 26 – Nov 1 | Sliding Window + Prefix Sum + Kadane's | 0 | 18 | 0% | — |
+| 3 | Nov 2 – Nov 8 | HashMap + Stack | 0 | 26 | 0% | — |
+| 4 | Nov 9 – Nov 15 | Linked List | 0 | 37 | 0% | — |
+| 5 | Nov 16 – Nov 22 | Tree + Heap + Trie | 0 | 22 | 0% | — |
+| 6 | Nov 23 – Nov 29 | Greedy + Binary Search + Bit Manip | 0 | 28 | 0% | — |
+| 7 | Nov 30 – Dec 6 | Backtracking + DP | 0 | 23 | 0% | — |
+| 8 | Dec 7 – Dec 13 | Graph + Simulation + Revision | 0 | 25 | 0% | — |
 
 ---
 

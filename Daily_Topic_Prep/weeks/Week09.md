@@ -1,16 +1,16 @@
-# 📅 Week 9 — Advanced (Dec 11 – Dec 17)
+# 📅 Week 9 — Advanced & Mock (Dec 14 – Dec 20)
 
 > Phase 3: Advanced & Mock · Difficulty: `advanced/` folders
 
 | Day | Date | Topic | Files to Study | Question Bank |
 |-----|------|-------|-----------------|---------------|
-| Fri | Dec 11 | **System Design** | [00_Interview_Answer_Template.md](../../system_design/mobile_interview_playbook/00_Interview_Answer_Template.md) · [01_Ecommerce_App_Answer.md](../../system_design/mobile_interview_playbook/01_Ecommerce_App_Answer.md) | [system_design/mobile_interview_playbook](../../system_design/mobile_interview_playbook/) |
-| Sat | Dec 12 | **Android** | [CustomViews.md](../../android_questions/advanced/CustomViews.md) · [DependencyInjection.md](../../android_questions/advanced/DependencyInjection.md) | [android_questions/advanced](../../android_questions/advanced/) |
-| Sun | Dec 13 | **Kotlin + KMP advanced** | [DSL.md](../../kotlin_questions/advanced/DSL.md) · [ValueClasses.md](../../kotlin_questions/advanced/ValueClasses.md) · [Serialization.md](../../kotlin_questions/advanced/Serialization.md) · KMP: [ComposeMultiplatform.md](../../kmp_questions/advanced/ComposeMultiplatform.md) · [Migration.md](../../kmp_questions/advanced/Migration.md) | [kotlin_questions/advanced](../../kotlin_questions/advanced/) · [kmp_questions/advanced](../../kmp_questions/advanced/) |
-| Mon | Dec 14 | **Flutter** | [FlutterInternals.md](../../flutter_questions/advanced/FlutterInternals.md) · [DartAdvanced.md](../../flutter_questions/advanced/DartAdvanced.md) | [flutter_questions/advanced](../../flutter_questions/advanced/) |
-| Tue | Dec 15 | 🛑 REST | — | — |
-| Wed | Dec 16 | **Java** | [ConcurrencyAdvanced.md](../../java_questions/advanced/ConcurrencyAdvanced.md) · [DesignPatterns.md](../../java_questions/advanced/DesignPatterns.md) | [java_questions/advanced](../../java_questions/advanced/) |
-| Thu | Dec 17 | **SOLID Principles** 🎯 | [S.md](../../solid/S.md) · [O.md](../../solid/O.md) · [L.md](../../solid/L.md) · [I.md](../../solid/I.md) · [D.md](../../solid/D.md) | [solid/](../../solid/) |
+| Mon | Dec 14 | **System Design** | [example_ride_sharing_app_design.md](../../system_design/mobile/example_ride_sharing_app_design.md) · [example_payment_app_design.md](../../system_design/mobile/example_payment_app_design.md) | [system_design/](../../system_design/) |
+| Tue | Dec 15 | **Android** | [CustomViews.md](../../android_questions/advanced/CustomViews.md) · [DependencyInjection.md](../../android_questions/advanced/DependencyInjection.md) | [android_questions/advanced](../../android_questions/advanced/) |
+| Wed | Dec 16 | **Kotlin + KMP advanced** | [DSL.md](../../kotlin_questions/advanced/DSL.md) · [ValueClasses.md](../../kotlin_questions/advanced/ValueClasses.md) · [Serialization.md](../../kotlin_questions/advanced/Serialization.md) · KMP: [ComposeMultiplatform.md](../../kmp_questions/advanced/ComposeMultiplatform.md) · [Migration.md](../../kmp_questions/advanced/Migration.md) | [kotlin_questions/advanced](../../kotlin_questions/advanced/) · [kmp_questions/advanced](../../kmp_questions/advanced/) |
+| Thu | Dec 17 | **Flutter** | [FlutterInternals.md](../../flutter_questions/advanced/FlutterInternals.md) · [DartAdvanced.md](../../flutter_questions/advanced/DartAdvanced.md) | [flutter_questions/advanced](../../flutter_questions/advanced/) |
+| Fri | Dec 18 | 🛑 REST | — | — |
+| Sat | Dec 19 | **Java** | [ConcurrencyAdvanced.md](../../java_questions/advanced/ConcurrencyAdvanced.md) · [DesignPatterns.md](../../java_questions/advanced/DesignPatterns.md) | [java_questions/advanced](../../java_questions/advanced/) |
+| Sun | Dec 20 | **SOLID Principles** 🎯 | [S.md](../../solid/S.md) · [O.md](../../solid/O.md) · [L.md](../../solid/L.md) · [I.md](../../solid/I.md) · [D.md](../../solid/D.md) + 🎤 SD Drill (15 min) | [solid/](../../solid/) |
 
 ## ✅ Daily Checklist
 - [ ] Read the day's questions (10 min)

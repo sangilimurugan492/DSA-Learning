@@ -1,6 +1,6 @@
 # 📅 Week 7 — Backtracking + Dynamic Programming
 
-> **Dates:** Nov 27 (Fri) – Dec 3 (Thu)
+> **Dates:** Nov 30 (Mon) – Dec 6 (Sun)
 > **Pattern Focus:** Backtracking (CHOOSE → EXPLORE → UNDO), 1D DP, 2D DP, Subsequence DP
 > **Reminder:** Try each problem 10–25 min WITHOUT hints. Reveal hints one at a time. Compare with your solutions in `DSA/BackTracking/`, `DSA/dp/` only AFTER solving.
 
@@ -13,16 +13,16 @@
 
 | Day | Date | Problems | Time |
 |-----|------|----------|------|
-| Fri | Nov 27 | #1–#6 (Easy DP + backtracking basics) | 2 hrs |
-| Sat | Nov 28 | #7–#12 (1D DP) | 2 hrs |
-| Sun | Nov 29 | #13–#17 (2D DP) | 2 hrs |
-| Mon | Nov 30 | #18–#21 (Subsequence DP + backtracking) | 2 hrs |
-| Wed | Dec 2 | #22–#23 (Hard) + revision | 2 hrs |
-| Thu | Dec 3 | 🧪 Mock Test 7 + Review | 3 hrs |
+| Mon | Nov 30 | #1–#6 (Easy DP + backtracking basics) | 2 hrs |
+| Tue | Dec 1 | #7–#12 (1D DP) | 2 hrs |
+| Wed | Dec 2 | #13–#17 (2D DP) | 2 hrs |
+| Thu | Dec 3 | #18–#21 (Subsequence DP + backtracking) | 2 hrs |
+| Sat | Dec 5 | #22–#23 (Hard) + revision | 2 hrs |
+| Sun | Dec 6 | 🧪 Mock Test 7 + Review | 3 hrs |
 
 ---
 
-## 🟢 FRIDAY, Nov 27 — Easy DP + Backtracking Basics
+## 🟢 MONDAY, Nov 30 — Easy DP + Backtracking Basics
 
 ### 1. Climbing Stairs — 🟢
 **LeetCode #70** | Solution: `DSA/dp/one_d/ClimbingStairs.kt`
@@ -186,7 +186,7 @@ fun exist(board: Array<CharArray>, word: String): Boolean {
 
 ---
 
-## 🟡 SATURDAY, Nov 28 — 1D DP
+## 🟡 TUESDAY, Dec 1 — 1D DP
 
 ### 7. House Robber — 🟡
 **LeetCode #198** | Solution: `DSA/dp/one_d/HouseRobber.kt`
@@ -350,7 +350,7 @@ fun wordBreak(s: String, wordDict: List<String>): Boolean {
 
 ---
 
-## 🟡 SUNDAY, Nov 29 — 2D DP
+## 🟡 WEDNESDAY, Dec 2 — 2D DP
 
 ### 13. Unique Paths — 🟡
 **LeetCode #62** | Solution: `DSA/dp/two_d/UniquePaths.kt`
@@ -483,7 +483,7 @@ fun longestPalindromeSubseq(s: String): Int {
 
 ---
 
-## 🟡 MONDAY, Nov 30 — Subsequence DP + Backtracking
+## 🟡 THURSDAY, Dec 3 — Subsequence DP + Backtracking
 
 ### 18. Longest Increasing Subsequence — 🟡
 **LeetCode #300** | Solution: `DSA/dp/subsequence/LongestIncreasingSubsequence.kt`
@@ -594,7 +594,7 @@ fun partition(s: String): List<List<String>> {
 
 ---
 
-## 🟢 WEDNESDAY, Dec 2 — Hard Problems + Revision
+## 🟢 SATURDAY, Dec 5 — Hard Problems + Revision
 
 ### 22. N-Queens — 🔴
 **LeetCode #51** | Solution: `DSA/BackTracking/n_queens/NQueens.kt`
@@ -659,7 +659,7 @@ fun solveSudoku(board: Array<CharArray>) {
 
 ---
 
-## 🧪 THURSDAY, Dec 3 — Mock Test 7 (3 hrs)
+## 🧪 SUNDAY, Dec 6 — Mock Test 7 (3 hrs)
 
 **Part 1 — Timed Test (2 hrs, no hints for first 30 min):**
 

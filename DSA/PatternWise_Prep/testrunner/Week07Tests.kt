@@ -44,21 +44,92 @@ class Week07Tests {
 // 👇 WEEK 7 SOLUTIONS — implement as you solve 👇
 // ═══════════════════════════════════════════════════════════
 
-fun climbStairs(n: Int): Int = TODO()
-fun minCostClimbingStairs(cost: IntArray): Int = TODO()
-fun subsets(nums: IntArray): List<List<Int>> = TODO()
-fun combinationSum(candidates: IntArray, target: Int): List<List<Int>> = TODO()
-fun permute(nums: IntArray): List<List<Int>> = TODO()
-fun rob(nums: IntArray): Int = TODO()
-fun coinChange(coins: IntArray, amount: Int): Int = TODO()
-fun coinChangeII(amount: Int, coins: IntArray): Int = TODO()
-fun numDecodings(s: String): Int = TODO()
-fun wordBreak(s: String, wordDict: List<String>): Boolean = TODO()
-fun uniquePaths(m: Int, n: Int): Int = TODO()
-fun minPathSum(grid: Array<IntArray>): Int = TODO()
-fun longestCommonSubsequence(text1: String, text2: String): Int = TODO()
-fun minDistance(word1: String, word2: String): Int = TODO()
-fun lengthOfLIS(nums: IntArray): Int = TODO()
-fun canPartition(nums: IntArray): Boolean = TODO()
-fun findTargetSumWays(nums: IntArray, target: Int): Int = TODO()
-fun solveNQueens(n: Int): List<List<String>> = TODO()
+fun climbStairs(n: Int): Int {
+    // TODO: two-variable Fibonacci
+    return 0
+}
+
+fun minCostClimbingStairs(cost: IntArray): Int {
+    // TODO: rolling dp[i−1], dp[i−2]
+    return 0
+}
+
+fun subsets(nums: IntArray): List<List<Int>> {
+    // TODO: backtrack pick/skip
+    return listOf()
+}
+
+fun combinationSum(candidates: IntArray, target: Int): List<List<Int>> {
+    // TODO: backtrack reuse allowed
+    return listOf()
+}
+
+fun permute(nums: IntArray): List<List<Int>> {
+    // TODO: backtrack with used flags
+    return listOf()
+}
+
+fun rob(nums: IntArray): Int {
+    // TODO: rob/skip rolling max
+    return 0
+}
+
+fun coinChange(coins: IntArray, amount: Int): Int {
+    // TODO: bottom-up min coins
+    return 0
+}
+
+fun coinChangeII(amount: Int, coins: IntArray): Int {
+    // TODO: 1-D count combos, coins outer
+    return 0
+}
+
+fun numDecodings(s: String): Int {
+    // TODO: DP with 1/2-digit check
+    return 0
+}
+
+fun wordBreak(s: String, wordDict: List<String>): Boolean {
+    // TODO: dp[i] reachable via dict words
+    return false
+}
+
+fun uniquePaths(m: Int, n: Int): Int {
+    // TODO: 1-D grid DP
+    return 0
+}
+
+fun minPathSum(grid: Array<IntArray>): Int {
+    // TODO: grid DP in place
+    return 0
+}
+
+fun longestCommonSubsequence(text1: String, text2: String): Int {
+    // TODO: 2-D LCS table
+    return 0
+}
+
+fun minDistance(word1: String, word2: String): Int {
+    // TODO: edit-distance 2-D DP
+    return 0
+}
+
+fun lengthOfLIS(nums: IntArray): Int {
+    // TODO: patience tails array
+    return 0
+}
+
+fun canPartition(nums: IntArray): Boolean {
+    // TODO: subset-sum to total/2
+    return false
+}
+
+fun findTargetSumWays(nums: IntArray, target: Int): Int {
+    // TODO: subset-sum transform
+    return 0
+}
+
+fun solveNQueens(n: Int): List<List<String>> {
+    // TODO: backtrack with col/diag sets
+    return listOf()
+}

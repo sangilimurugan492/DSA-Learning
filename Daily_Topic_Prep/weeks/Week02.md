@@ -1,16 +1,16 @@
-# 📅 Week 2 — Foundations (Oct 23 – Oct 29)
+# 📅 Week 2 — Foundations (Oct 26 – Nov 1)
 
 > Phase 1: Foundations · Difficulty: `beginner/` folders
 
 | Day | Date | Topic | Files to Study | Question Bank |
 |-----|------|-------|-----------------|---------------|
-| Fri | Oct 23 | **System Design** | [STUDY_ROADMAP.md](../../system_design/STUDY_ROADMAP.md) (intro sections) · [Mobile_System_Design_Interview_Guide.md](../../system_design/mobile/Mobile_System_Design_Interview_Guide.md) | [system_design/](../../system_design/) |
-| Sat | Oct 24 | **Android** | [ActivityLifecycle.md](../../android_questions/beginner/ActivityLifecycle.md) · [Basics.md](../../android_questions/beginner/Basics.md) · [Intents.md](../../android_questions/beginner/Intents.md) | [android_questions/beginner](../../android_questions/beginner/) |
-| Sun | Oct 25 | **Kotlin** | [Functions.md](../../kotlin_questions/beginner/Functions.md) · [ControlFlow.md](../../kotlin_questions/beginner/ControlFlow.md) · [StringTemplates.md](../../kotlin_questions/beginner/StringTemplates.md) | [kotlin_questions/beginner](../../kotlin_questions/beginner/) |
-| Mon | Oct 26 | **Flutter** | [Navigation.md](../../flutter_questions/beginner/Navigation.md) · [Layouts.md](../../flutter_questions/beginner/Layouts.md) | [flutter_questions/beginner](../../flutter_questions/beginner/) |
-| Tue | Oct 27 | 🛑 REST | — | — |
-| Wed | Oct 28 | **Java** | [VariablesAndDataTypes.md](../../java_questions/beginner/VariablesAndDataTypes.md) · [ControlFlow.md](../../java_questions/beginner/ControlFlow.md) · [Arrays.md](../../java_questions/beginner/Arrays.md) | [java_questions/beginner](../../java_questions/beginner/) |
-| Thu | Oct 29 | **CI/CD** 🎯 | [GitHubActions.md](../../cicd_questions/GitHubActions.md) · [CICDScenarios.md](../../cicd_questions/CICDScenarios.md) | [cicd_questions/](../../cicd_questions/) |
+| Mon | Oct 26 | **System Design** | [Mobile_System_Design_Interview_Guide.md](../../system_design/mobile/Mobile_System_Design_Interview_Guide.md) · [fundamentals/README.md](../../system_design/fundamentals/README.md) | [system_design/](../../system_design/) |
+| Tue | Oct 27 | **Android** | [Permissions.md](../../android_questions/beginner/Permissions.md) · [ActivityLifecycle.md](../../android_questions/beginner/ActivityLifecycle.md) (review) | [android_questions/beginner](../../android_questions/beginner/) |
+| Wed | Oct 28 | **Kotlin** | [Functions.md](../../kotlin_questions/beginner/Functions.md) · [ControlFlow.md](../../kotlin_questions/beginner/ControlFlow.md) · [StringTemplates.md](../../kotlin_questions/beginner/StringTemplates.md) | [kotlin_questions/beginner](../../kotlin_questions/beginner/) |
+| Thu | Oct 29 | **Flutter** | [Navigation.md](../../flutter_questions/beginner/Navigation.md) · [Layouts.md](../../flutter_questions/beginner/Layouts.md) | [flutter_questions/beginner](../../flutter_questions/beginner/) |
+| Fri | Oct 30 | 🛑 REST | — | — |
+| Sat | Oct 31 | **Java** | [OOPBasics.md](../../java_questions/beginner/OOPBasics.md) · [Basics.md](../../java_questions/beginner/Basics.md) (review) | [java_questions/beginner](../../java_questions/beginner/) |
+| Sun | Nov 1 | **CI/CD** 🎯 | [GitHubActions.md](../../cicd_questions/GitHubActions.md) · [CICDScenarios.md](../../cicd_questions/CICDScenarios.md) | [cicd_questions/](../../cicd_questions/) |
 
 ## ✅ Daily Checklist
 - [ ] Read the day's questions (10 min)

@@ -1,16 +1,16 @@
-# 📅 Week 4 — Foundations (Nov 6 – Nov 12)
+# 📅 Week 4 — Foundations (Nov 9 – Nov 15)
 
-> Phase 1: Foundations · Difficulty: `beginner/` folders
+> Phase 1: Foundations · Difficulty: `beginner/` folders (wrap-up + intro `intermediate/`)
 
 | Day | Date | Topic | Files to Study | Question Bank |
 |-----|------|-------|-----------------|---------------|
-| Fri | Nov 6 | **System Design** | [STUDY_ROADMAP.md](../../system_design/STUDY_ROADMAP.md) (database sections) · [Mobile_System_Design_Cheat_Sheet.md](../../system_design/mobile/Mobile_System_Design_Cheat_Sheet.md) (review) | [system_design/](../../system_design/) |
-| Sat | Nov 7 | **Android** | [FragmentLifecycle.md](../../android_questions/beginner/FragmentLifecycle.md) · [Permissions.md](../../android_questions/beginner/Permissions.md) | [android_questions/beginner](../../android_questions/beginner/) |
-| Sun | Nov 8 | **Kotlin** | [ScopeFunctions.md](../../kotlin_questions/intermediate/ScopeFunctions.md) · [LambdasAndHigherOrderFunctions.md](../../kotlin_questions/intermediate/LambdasAndHigherOrderFunctions.md) | [kotlin_questions/intermediate](../../kotlin_questions/intermediate/) |
-| Mon | Nov 9 | **Flutter** | [Layouts.md](../../flutter_questions/beginner/Layouts.md) (review) · [Navigation.md](../../flutter_questions/beginner/Navigation.md) (review) | [flutter_questions/beginner](../../flutter_questions/beginner/) |
-| Tue | Nov 10 | 🛑 REST | — | — |
-| Wed | Nov 11 | **Java** | [JVMInternals.md](../../java_questions/advanced/JVMInternals.md) (intro) · [GarbageCollection.md](../../java_questions/advanced/GarbageCollection.md) (intro) | [java_questions/advanced](../../java_questions/advanced/) |
-| Thu | Nov 12 | **Security** 🎯 | [Keystore.md](../../security_questions/Keystore.md) · [DataEncryption.md](../../security_questions/DataEncryption.md) | [security_questions/](../../security_questions/) |
+| Mon | Nov 9 | **System Design** | [components/README.md](../../system_design/components/README.md) · [estimation/README.md](../../system_design/estimation/README.md) | [system_design/](../../system_design/) |
+| Tue | Nov 10 | **Android** | [FragmentLifecycle.md](../../android_questions/beginner/FragmentLifecycle.md) · [Permissions.md](../../android_questions/beginner/Permissions.md) | [android_questions/beginner](../../android_questions/beginner/) |
+| Wed | Nov 11 | **Kotlin** | [ScopeFunctions.md](../../kotlin_questions/intermediate/ScopeFunctions.md) · [LambdasAndHigherOrderFunctions.md](../../kotlin_questions/intermediate/LambdasAndHigherOrderFunctions.md) | [kotlin_questions/intermediate](../../kotlin_questions/intermediate/) |
+| Thu | Nov 12 | **Flutter** | [Layouts.md](../../flutter_questions/beginner/Layouts.md) (review) · [Navigation.md](../../flutter_questions/beginner/Navigation.md) (review) | [flutter_questions/beginner](../../flutter_questions/beginner/) |
+| Fri | Nov 13 | 🛑 REST | — | — |
+| Sat | Nov 14 | **Java** | [JVMInternals.md](../../java_questions/advanced/JVMInternals.md) (intro) · [GarbageCollection.md](../../java_questions/advanced/GarbageCollection.md) (intro) | [java_questions/advanced](../../java_questions/advanced/) |
+| Sun | Nov 15 | **Security** 🎯 | [Keystore.md](../../security_questions/Keystore.md) · [DataEncryption.md](../../security_questions/DataEncryption.md) | [security_questions/](../../security_questions/) |
 
 ## ✅ Daily Checklist
 - [ ] Read the day's questions (10 min)

@@ -1,6 +1,6 @@
 # 📅 Week 3 — HashMap/HashSet + Complement + Set Ops + Frequency + Stack
 
-> **Dates:** Oct 30 (Fri) – Nov 5 (Thu)
+> **Dates:** Nov 2 (Mon) – Nov 8 (Sun)
 > **Pattern Focus:** HashSet/HashMap lookups, complement search, set operations, frequency counting, Stack (incl. monotonic stack)
 > **Reminder:** Try each problem 10–25 min WITHOUT hints. Reveal hints one at a time. Compare with your solutions in `DSA/array/hashset_lookup/`, `DSA/array/complement_search/`, `DSA/array/set_operations/`, `DSA/array/frequency_count/`, `DSA/stack/` only AFTER solving.
 
@@ -13,16 +13,16 @@
 
 | Day | Date | Problems | Time |
 |-----|------|----------|------|
-| Fri | Oct 30 | #1–#8 (Easy HashSet/Set Ops warm-up) | 2 hrs |
-| Sat | Oct 31 | #9–#16 (Medium HashMap + Frequency) | 2 hrs |
-| Sun | Nov 1 | #17–#22 (Stack basics + monotonic) | 2 hrs |
-| Mon | Nov 2 | #23–#26 (Hard stack) | 2 hrs |
-| Wed | Nov 4 | Revision: weakest 4 + Week 1–2 mixed | 2 hrs |
-| Thu | Nov 5 | 🧪 Mock Test 3 + Review | 3 hrs |
+| Mon | Nov 2 | #1–#8 (Easy HashSet/Set Ops warm-up) | 2 hrs |
+| Tue | Nov 3 | #9–#16 (Medium HashMap + Frequency) | 2 hrs |
+| Wed | Nov 4 | #17–#22 (Stack basics + monotonic) | 2 hrs |
+| Thu | Nov 5 | #23–#26 (Hard stack) | 2 hrs |
+| Sat | Nov 7 | Revision: weakest 4 + Week 1–2 mixed | 2 hrs |
+| Sun | Nov 8 | 🧪 Mock Test 3 + Review | 3 hrs |
 
 ---
 
-## 🟢 FRIDAY, Oct 30 — Easy HashSet / Set Operations Warm-up
+## 🟢 MONDAY, Nov 2 — Easy HashSet / Set Operations Warm-up
 
 ### 1. Contains Duplicates — 🟢
 **LeetCode #217** | Solution: `DSA/array/hashset_lookup/ContainsDuplicates.kt`
@@ -241,7 +241,7 @@ fun isValid(s: String): Boolean {
 
 ---
 
-## 🟡 SATURDAY, Oct 31 — Medium HashMap + Frequency
+## 🟡 TUESDAY, Nov 3 — Medium HashMap + Frequency
 
 ### 9. Two Sum II (Sorted) — 🟡
 **LeetCode #167** | Solution: `DSA/array/complement_search/TwoSumII.kt`
@@ -461,7 +461,7 @@ fun topKFrequent(nums: IntArray, k: Int): IntArray {
 
 ---
 
-## 🟡 SUNDAY, Nov 1 — Stack Basics + Monotonic Stack
+## 🟡 WEDNESDAY, Nov 4 — Stack Basics + Monotonic Stack
 
 ### 17. Min Stack — 🟡
 **LeetCode #155** | Solution: `DSA/stack/MinStack.kt`
@@ -634,7 +634,7 @@ fun evalRPN(tokens: Array<String>): Int {
 
 ---
 
-## 🟡 MONDAY, Nov 2 — Hard Stack Problems
+## 🟡 THURSDAY, Nov 5 — Hard Stack Problems
 
 ### 23. Minimum Parentheses to Remove — 🟡
 **LeetCode #1249** | Solution: `DSA/stack/MinimumParentheseToRemove.kt`
@@ -750,7 +750,7 @@ fun largestRectangleArea(heights: IntArray): Int {
 
 ---
 
-## 🟢 WEDNESDAY, Nov 4 — Revision + Mixed Practice
+## 🟢 SATURDAY, Nov 7 — Revision + Mixed Practice
 
 1. Re-solve the 3–4 hardest problems this week (from scratch, no hints)
 2. Mixed practice from Weeks 1–2:
@@ -761,7 +761,7 @@ fun largestRectangleArea(heights: IntArray): Int {
 
 ---
 
-## 🧪 THURSDAY, Nov 5 — Mock Test 3 (3 hrs)
+## 🧪 SUNDAY, Nov 8 — Mock Test 3 (3 hrs)
 
 **Part 1 — Timed Test (2 hrs, no hints for first 30 min):**
 

@@ -1,16 +1,16 @@
-# 📅 Week 10 — Advanced Scenarios (Dec 18 – Dec 24)
+# 📅 Week 10 — Advanced & Mock (Dec 21 – Dec 27)
 
 > Phase 3: Advanced & Mock · Difficulty: `scenario_based/` folders
 
 | Day | Date | Topic | Files to Study | Question Bank |
 |-----|------|-------|-----------------|---------------|
-| Fri | Dec 18 | **System Design** | [02_Chat_App_Answer.md](../../system_design/mobile_interview_playbook/02_Chat_App_Answer.md) · [05_Social_Media_Feed_Answer.md](../../system_design/mobile_interview_playbook/05_Social_Media_Feed_Answer.md) | [system_design/mobile_interview_playbook](../../system_design/mobile_interview_playbook/) |
-| Sat | Dec 19 | **Android** | [DebuggingScenarios.md](../../android_questions/scenario_based/DebuggingScenarios.md) · [LifecycleScenarios.md](../../android_questions/scenario_based/LifecycleScenarios.md) | [android_questions/scenario_based](../../android_questions/scenario_based/) |
-| Sun | Dec 20 | **Kotlin** | [ConcurrencyScenarios.md](../../kotlin_questions/scenario_based/ConcurrencyScenarios.md) · [NullSafetyScenarios.md](../../kotlin_questions/scenario_based/NullSafetyScenarios.md) | [kotlin_questions/scenario_based](../../kotlin_questions/scenario_based/) |
-| Mon | Dec 21 | **Flutter** | [PerformanceScenarios.md](../../flutter_questions/scenario_based/PerformanceScenarios.md) · [StateManagementScenarios.md](../../flutter_questions/scenario_based/StateManagementScenarios.md) | [flutter_questions/scenario_based](../../flutter_questions/scenario_based/) |
-| Tue | Dec 22 | 🛑 REST | — | — |
-| Wed | Dec 23 | **Java** | [ConcurrencyScenarios.md](../../java_questions/scenario_based/ConcurrencyScenarios.md) · [DebuggingScenarios.md](../../java_questions/scenario_based/DebuggingScenarios.md) | [java_questions/scenario_based](../../java_questions/scenario_based/) |
-| Thu | Dec 24 | **Behavioral (STAR)** 🎯 | [GeneralBehavioralQuestions.md](../../behavioral_questions/GeneralBehavioralQuestions.md) · [critical_issues_star_report.md](../../behavioral_questions/critical_issues_star_report.md) · [AndroidBehavioralQuestions.md](../../behavioral_questions/AndroidBehavioralQuestions.md) | [behavioral_questions/](../../behavioral_questions/) |
+| Mon | Dec 21 | **System Design** | [example_offline_first_app_design.md](../../system_design/mobile/example_offline_first_app_design.md) · [example_job_search_app_design.md](../../system_design/mobile/example_job_search_app_design.md) | [system_design/](../../system_design/) |
+| Tue | Dec 22 | **Android** | [DebuggingScenarios.md](../../android_questions/scenario_based/DebuggingScenarios.md) · [LifecycleScenarios.md](../../android_questions/scenario_based/LifecycleScenarios.md) | [android_questions/scenario_based](../../android_questions/scenario_based/) |
+| Wed | Dec 23 | **Kotlin** | [ConcurrencyScenarios.md](../../kotlin_questions/scenario_based/ConcurrencyScenarios.md) · [NullSafetyScenarios.md](../../kotlin_questions/scenario_based/NullSafetyScenarios.md) | [kotlin_questions/scenario_based](../../kotlin_questions/scenario_based/) |
+| Thu | Dec 24 | **Flutter** | [PerformanceScenarios.md](../../flutter_questions/scenario_based/PerformanceScenarios.md) · [StateManagementScenarios.md](../../flutter_questions/scenario_based/StateManagementScenarios.md) | [flutter_questions/scenario_based](../../flutter_questions/scenario_based/) |
+| Fri | Dec 25 | 🛑 REST | — | — |
+| Sat | Dec 26 | **Java** | [ConcurrencyScenarios.md](../../java_questions/scenario_based/ConcurrencyScenarios.md) · [DebuggingScenarios.md](../../java_questions/scenario_based/DebuggingScenarios.md) | [java_questions/scenario_based](../../java_questions/scenario_based/) |
+| Sun | Dec 27 | **Behavioral (STAR)** 🎯 | [GeneralBehavioralQuestions.md](../../behavioral_questions/GeneralBehavioralQuestions.md) · [critical_issues_star_report.md](../../behavioral_questions/critical_issues_star_report.md) · [AndroidBehavioralQuestions.md](../../behavioral_questions/AndroidBehavioralQuestions.md) + 🎤 SD Drill (15 min) | [behavioral_questions/](../../behavioral_questions/) |
 
 ## ✅ Daily Checklist
 - [ ] Read the day's questions (10 min)

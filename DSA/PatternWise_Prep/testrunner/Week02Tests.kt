@@ -42,19 +42,82 @@ class Week02Tests {
 // 👇 WEEK 2 SOLUTIONS — implement as you solve 👇
 // ═══════════════════════════════════════════════════════════
 
-fun findMaxAverage(nums: IntArray, k: Int): Double = TODO()
-fun runningSum(nums: IntArray): IntArray = TODO()
-fun maxSubArray(nums: IntArray): Int = TODO()
-fun totalFruit(fruits: IntArray): Int = TODO()
-fun longestSubarray(nums: IntArray): Int = TODO()
-fun maxSatisfied(customers: IntArray, grumpy: IntArray, minutes: Int): Int = TODO()
-fun maxProduct(nums: IntArray): Int = TODO()
-fun maxSubarraySumCircular(nums: IntArray): Int = TODO()
-fun productExceptSelf(nums: IntArray): IntArray = TODO()
-fun subarraySum(nums: IntArray, k: Int): Int = TODO()
-fun findMaxLength(nums: IntArray): Int = TODO()
-fun lengthOfLongestSubstring(s: String): Int = TODO()
-fun characterReplacement(s: String, k: Int): Int = TODO()
-fun minSubArrayLen(target: Int, nums: IntArray): Int = TODO()
-fun findAnagrams(s: String, p: String): List<Int> = TODO()
-fun minWindow(s: String, t: String): String = TODO()
+fun findMaxAverage(nums: IntArray, k: Int): Double {
+    // TODO: fixed-window running sum
+    return 0.0
+}
+
+fun runningSum(nums: IntArray): IntArray {
+    // TODO: prefix sum in place
+    return intArrayOf()
+}
+
+fun maxSubArray(nums: IntArray): Int {
+    // TODO: Kadane's running max
+    return 0
+}
+
+fun totalFruit(fruits: IntArray): Int {
+    // TODO: sliding window with 2-type map
+    return 0
+}
+
+fun longestSubarray(nums: IntArray): Int {
+    // TODO: sliding window, one zero skippable
+    return 0
+}
+
+fun maxSatisfied(customers: IntArray, grumpy: IntArray, minutes: Int): Int {
+    // TODO: base sum + best grumpy window
+    return 0
+}
+
+fun maxProduct(nums: IntArray): Int {
+    // TODO: track max and min products
+    return 0
+}
+
+fun maxSubarraySumCircular(nums: IntArray): Int {
+    // TODO: Kadane + total − min-Kadane trick
+    return 0
+}
+
+fun productExceptSelf(nums: IntArray): IntArray {
+    // TODO: prefix × suffix products
+    return intArrayOf()
+}
+
+fun subarraySum(nums: IntArray, k: Int): Int {
+    // TODO: hashmap prefix-sum counts
+    return 0
+}
+
+fun findMaxLength(nums: IntArray): Int {
+    // TODO: hashmap on count(1) − count(0)
+    return 0
+}
+
+fun lengthOfLongestSubstring(s: String): Int {
+    // TODO: sliding window, last-seen index
+    return 0
+}
+
+fun characterReplacement(s: String, k: Int): Int {
+    // TODO: window sized by max-frequency letter
+    return 0
+}
+
+fun minSubArrayLen(target: Int, nums: IntArray): Int {
+    // TODO: shrink window while sum ≥ target
+    return 0
+}
+
+fun findAnagrams(s: String, p: String): List<Int> {
+    // TODO: fixed-window char counts
+    return listOf()
+}
+
+fun minWindow(s: String, t: String): String {
+    // TODO: two pointers + need/have counts
+    return ""
+}
