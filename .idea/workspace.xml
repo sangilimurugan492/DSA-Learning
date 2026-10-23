@@ -5,27 +5,54 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63e6e312-ba97-461c-9408-efe0eb739fb1" name="Changes" comment="Added Interview prep documents in weekly basis">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week04_Practice.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week05_Practice.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week06_Practice.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week07_Practice.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week08_Practice.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week04Tests.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week05Tests.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week06Tests.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week07Tests.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week08Tests.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week04.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week05.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week06.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week07.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week08.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week04.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week05.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week06.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week07.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week08.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week09.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week10.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week11.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Daily_Topic_Prep/weeks/Week12.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/MASTER_PLAN.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week04_Practice.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week05_Practice.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week06_Practice.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week07_Practice.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week08_Practice.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week04.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week05.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week06.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week07.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week08.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week04.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week05.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week06.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week07.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week08.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week09.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week10.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week11.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week12.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/matrix/game_of_life/GameOfLife.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/matrix/game_of_life/GameOfLife.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/matrix/game_of_life/GameOfLife.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/matrix/game_of_life/GameOfLife.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/linked_list/single/remove_nth_node_from_last/RemoveNthNodeFromLast.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/linked_list/single/remove_nth_node_from_last/RemoveNthNodeFromLast.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/tree/bst/SearchInBST.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/tree/bst/SearchInBST.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android_questions/advanced/Testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/android_questions/advanced/Testing.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Learning/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/Revision_Notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/Revision_Notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/hashset_lookup/valid_sudoku/ValidSudoku.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/hashset_lookup/valid_sudoku/ValidSudoku.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/matrix/game_of_life/GameOfLife.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/matrix/game_of_life/GameOfLife.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/matrix/rotate_image/RotateImage.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/matrix/rotate_image/RotateImage.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/linked_list/single/remove_nth_node_from_last/RemoveNthNodeFromLast.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/linked_list/single/remove_nth_node_from_last/RemoveNthNodeFromLast.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Learning/META-INF/Learning.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/META-INF/Learning.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/hashset_lookup/valid_sudoku/ValidSudokuKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/hashset_lookup/valid_sudoku/ValidSudokuKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/matrix/game_of_life/GameOfLifeKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/matrix/game_of_life/GameOfLifeKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/array/matrix/rotate_image/RotateImageKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/array/matrix/rotate_image/RotateImageKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/daily/Week5_Daily_Checklist.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/interview_schedule/daily/Week5_Daily_Checklist.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/interview_schedule/daily/Week6_Daily_Checklist.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/interview_schedule/daily/Week6_Daily_Checklist.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/middle_of_linked_list/MiddleOfLinkedListKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/linked_list/single/remove_nth_node_from_last/RemoveNthNodeFromLastKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/linked_list/single/remove_nth_node_from_last/RemoveNthNodeFromLastKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/tree/bst/SearchInBSTKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/tree/bst/SearchInBSTKt.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +71,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Problem_explanation" />
+        <entry key="$PROJECT_DIR$" value="Interview_prep_1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -107,6 +134,7 @@
     "Kotlin.HeightCheckerKt.executor": "Debug",
     "Kotlin.InsertIntervalKt.executor": "Debug",
     "Kotlin.IntegerToRomanKt.executor": "Run",
+    "Kotlin.IntersectionOfTwoArraysKt.executor": "Run",
     "Kotlin.IntersectionTwoArrayIIKt.executor": "Run",
     "Kotlin.IntervalGroupsKt.executor": "Run",
     "Kotlin.IsSubSequenceKt.executor": "Run",
@@ -157,6 +185,7 @@
     "Kotlin.StringCompressionKt.executor": "Run",
     "Kotlin.StringToIntegerKt.executor": "Run",
     "Kotlin.SubArrayWithKDifferentIntegerKt.executor": "Debug",
+    "Kotlin.TestRunnerKt.executor": "Run",
     "Kotlin.TextJustificationKt.executor": "Debug",
     "Kotlin.ThreeSumKt.executor": "Run",
     "Kotlin.TopKFrequentElementsKt.executor": "Debug",
@@ -170,9 +199,9 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Interview__prep__1",
+    "git-widget-placeholder": "Interview__prep__2",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/d2c-sangili.murugan/IdeaProjects/Learning/simulation",
+    "last_opened_file_path": "/Users/d2c-sangili.murugan/IdeaProjects/Learning/behavioral_questions",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -181,6 +210,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/behavioral_questions" />
       <recent name="$PROJECT_DIR$/simulation" />
       <recent name="$PROJECT_DIR$/two_pointer_technique" />
     </key>
@@ -191,7 +221,7 @@
       <recent name="$PROJECT_DIR$/array_hashing_technique" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.FindMedianFromDataStreamKt">
+  <component name="RunManager" selected="Kotlin.TestRunnerKt">
     <configuration name="simulation.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
       <option name="filePath" value="$PROJECT_DIR$/simulation/bin/simulation.dart" />
       <option name="workingDirectory" value="$PROJECT_DIR$/simulation" />
@@ -204,8 +234,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GameOfLifeKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="array.matrix.game_of_life.GameOfLifeKt" />
+    <configuration name="IntersectionOfTwoArraysKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.set_operations.intersection_of_two_arrays.IntersectionOfTwoArraysKt" />
       <module name="Learning" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -218,15 +248,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MergeTwoSortedListsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="linked_list.single.merge_two_sorted_lists.MergeTwoSortedListsKt" />
+    <configuration name="PermutationInStringKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.sliding_window.permutation_in_string.PermutationInStringKt" />
       <module name="Learning" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SearchInBSTKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="tree.bst.SearchInBSTKt" />
+    <configuration name="TestRunnerKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="testrunner.TestRunnerKt" />
       <module name="Learning" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -234,11 +264,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.TestRunnerKt" />
+        <item itemvalue="Kotlin.IntersectionOfTwoArraysKt" />
+        <item itemvalue="Kotlin.PermutationInStringKt" />
         <item itemvalue="Kotlin.FindMedianFromDataStreamKt" />
         <item itemvalue="Kotlin.MergeKSortedListsKt" />
-        <item itemvalue="Kotlin.SearchInBSTKt" />
-        <item itemvalue="Kotlin.GameOfLifeKt" />
-        <item itemvalue="Kotlin.MergeTwoSortedListsKt" />
       </list>
     </recent_temporary>
   </component>
@@ -386,7 +416,31 @@
       <option name="project" value="LOCAL" />
       <updated>1789549927035</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Added Interview prep documents in weekly basis">
+      <option name="closed" value="true" />
+      <created>1791178849015</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1791178849015</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Added Interview prep documents in weekly basis">
+      <option name="closed" value="true" />
+      <created>1792728455445</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1792728455445</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added Interview prep documents in weekly basis">
+      <option name="closed" value="true" />
+      <created>1792728478425</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1792728478425</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
