@@ -1,6 +1,6 @@
 # 📅 Week 5 — Tree + Heap + Trie
 
-> **Dates:** Nov 13 (Fri) – Nov 19 (Thu)
+> **Dates:** Nov 16 (Mon) – Nov 22 (Sun)
 > **Pattern Focus:** Binary Tree (DFS/BFS), BST, Heap/Priority Queue, Trie
 > **Reminder:** Try each problem 10–25 min WITHOUT hints. Reveal hints one at a time. Compare with your solutions in `DSA/tree/`, `DSA/heap/`, `DSA/trie/` only AFTER solving.
 
@@ -13,16 +13,16 @@
 
 | Day | Date | Problems | Time |
 |-----|------|----------|------|
-| Fri | Nov 13 | #1–#8 (Easy binary tree DFS) | 2 hrs |
-| Sat | Nov 14 | #9–#16 (Medium tree + BST) | 2 hrs |
-| Sun | Nov 15 | #17–#19 (Heap) | 2 hrs |
-| Mon | Nov 16 | #19–#22 (Hard heap + trie) | 2 hrs |
-| Wed | Nov 18 | Revision: weakest 4 + Weeks 1–4 mixed | 2 hrs |
-| Thu | Nov 19 | 🧪 Mock Test 5 + Review | 3 hrs |
+| Mon | Nov 16 | #1–#8 (Easy binary tree DFS) | 2 hrs |
+| Tue | Nov 17 | #9–#16 (Medium tree + BST) | 2 hrs |
+| Wed | Nov 18 | #17–#19 (Heap) | 2 hrs |
+| Thu | Nov 19 | #19–#22 (Hard heap + trie) | 2 hrs |
+| Sat | Nov 21 | Revision: weakest 4 + Weeks 1–4 mixed | 2 hrs |
+| Sun | Nov 22 | 🧪 Mock Test 5 + Review | 3 hrs |
 
 ---
 
-## 🟢 FRIDAY, Nov 13 — Easy Binary Tree (DFS)
+## 🟢 MONDAY, Nov 16 — Easy Binary Tree (DFS)
 
 ### 1. Maximum Depth of Binary Tree — 🟢
 **LeetCode #104** | Solution: `DSA/tree/binary_tree/MaximumDepthOfBinaryTree.kt`
@@ -235,7 +235,7 @@ fun inorderTraversal(root: TreeNode?): List<Int> {
 
 ---
 
-## 🟡 SATURDAY, Nov 14 — Medium Tree + BST
+## 🟡 TUESDAY, Nov 17 — Medium Tree + BST
 
 ### 9. Diameter of Binary Tree — 🟡
 **LeetCode #543** | Solution: `DSA/tree/binary_tree/DiameterOfBinaryTree.kt`
@@ -457,7 +457,7 @@ fun rightSideView(root: TreeNode?): List<Int> {
 
 ---
 
-## 🟡 SUNDAY, Nov 15 — Heap
+## 🟡 WEDNESDAY, Nov 18 — Heap
 
 ### 17. Kth Largest Element — 🟡
 **LeetCode #215** | Solution: `DSA/heap/kth_largest_element/KthLargestElement.kt`
@@ -473,7 +473,7 @@ Push all; when size > k → poll (smallest evicted). Heap top = kth largest.
 </details>
 
 <details><summary>💡 Hint 3</summary>
-1. heap = PriorityQueue<Int>()
+1. heap = PriorityQueue&lt;Int&gt;()
 2. For num: offer(num); if (heap.size > k) poll()
 3. Return heap.peek()
 </details>
@@ -527,7 +527,7 @@ Pop smallest → append; push its next node if non-null.
 </details>
 
 <details><summary>💡 Hint 3</summary>
-PriorityQueue<ListNode>(compareBy { it.`val` }); dummy tail; loop pop/append/push.
+PriorityQueue&lt;ListNode&gt;(compareBy { it.`val` }); dummy tail; loop pop/append/push.
 </details>
 
 ```kotlin
@@ -539,7 +539,7 @@ fun mergeKLists(lists: Array<ListNode?>): ListNode? {
 
 ---
 
-## 🟡 MONDAY, Nov 16 — Hard Heap + Trie
+## 🟡 THURSDAY, Nov 19 — Hard Heap + Trie
 
 ### 20. Find Median from Data Stream — 🔴
 **LeetCode #295** | Solution: `DSA/heap/find_median_from_data_stream/FindMedianFromDataStream.kt`
@@ -575,7 +575,7 @@ class MedianFinder() {
 **Problem:** Implement insert, search, startsWith for a trie.
 
 <details><summary>💡 Hint 1</summary>
-Node = HashMap<Char, Node> children + isEnd flag.
+Node = HashMap&lt;Char, Node&gt; children + isEnd flag.
 </details>
 
 <details><summary>💡 Hint 2</summary>
@@ -583,7 +583,7 @@ insert: walk/create nodes, mark isEnd. search: walk, check isEnd. startsWith: wa
 </details>
 
 <details><summary>💡 Hint 3</summary>
-1. class Node { val children = HashMap<Char, Node>(); var isEnd = false }
+1. class Node { val children = HashMap&lt;Char, Node&gt;(); var isEnd = false }
 2. Walk char by char from root for each operation
 </details>
 
@@ -626,7 +626,7 @@ fun findWords(board: Array<CharArray>, words: Array<String>): List<String> {
 
 ---
 
-## 🟢 WEDNESDAY, Nov 18 — Revision + Mixed Practice
+## 🟢 SATURDAY, Nov 21 — Revision + Mixed Practice
 
 1. Re-solve the 3–4 hardest problems this week (from scratch, no hints)
 2. Mixed practice from Weeks 1–4:
@@ -638,7 +638,7 @@ fun findWords(board: Array<CharArray>, words: Array<String>): List<String> {
 
 ---
 
-## 🧪 THURSDAY, Nov 19 — Mock Test 5 (3 hrs)
+## 🧪 SUNDAY, Nov 22 — Mock Test 5 (3 hrs)
 
 **Part 1 — Timed Test (2 hrs, no hints for first 30 min):**
 

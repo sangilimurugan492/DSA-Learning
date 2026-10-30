@@ -1,4 +1,4 @@
-package DSA.PatternWise_Prep.mocktest
+package mocktest
 
 /**
  * Week11Mock.kt — MOCK TEST Week 11: Monotonic Stack + Design

@@ -1,4 +1,4 @@
-package DSA.PatternWise_Prep.mocktest
+package mocktest
 
 /**
  * Week03Mock.kt — MOCK TEST Week 3: HashMap + Stack

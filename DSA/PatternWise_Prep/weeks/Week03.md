@@ -17,6 +17,7 @@
 | Tue | Nov 3 | #9–#16 (Medium HashMap + Frequency) | 2 hrs |
 | Wed | Nov 4 | #17–#22 (Stack basics + monotonic) | 2 hrs |
 | Thu | Nov 5 | #23–#26 (Hard stack) | 2 hrs |
+| Fri | Nov 6 | #27–#28 (Bonus: frequency count + hard stack) | 2 hrs |
 | Sat | Nov 7 | Revision: weakest 4 + Week 1–2 mixed | 2 hrs |
 | Sun | Nov 8 | 🧪 Mock Test 3 + Review | 3 hrs |
 
@@ -25,7 +26,7 @@
 ## 🟢 MONDAY, Nov 2 — Easy HashSet / Set Operations Warm-up
 
 ### 1. Contains Duplicates — 🟢
-**LeetCode #217** | Solution: `DSA/array/hashset_lookup/ContainsDuplicates.kt`
+**LeetCode #217** | Solution: `DSA/array/hashset_lookup/contains_duplicates/ContainsDuplicates.kt`
 
 **Problem:** Return true if any value appears at least twice.
 
@@ -38,7 +39,7 @@ Add each element to a set; if add() returns false (already present) → true.
 </details>
 
 <details><summary>💡 Hint 3</summary>
-val seen = HashSet<Int>(); for num: if (!seen.add(num)) return true; return false.
+val seen = HashSet&lt;Int&gt;(); for num: if (!seen.add(num)) return true; return false.
 </details>
 
 ```kotlin
@@ -51,7 +52,7 @@ fun containsDuplicate(nums: IntArray): Boolean {
 ---
 
 ### 2. Check if N and 2N Exist — 🟢
-**LeetCode #1346** | Solution: `DSA/array/hashset_lookup/CheckIfNDoubleExits.kt`
+**LeetCode #1346** | Solution: `DSA/array/hashset_lookup/check_if_n_double_exits/CheckIfNDoubleExits.kt`
 
 **Problem:** Return true if there exist indices i ≠ j with arr[i] == 2 × arr[j].
 
@@ -79,7 +80,7 @@ fun checkIfExist(arr: IntArray): Boolean {
 ---
 
 ### 3. Count Distinct Elements — 🟢
-**Solution:** `DSA/array/hashset_lookup/CountDistinctElements.kt`
+**Solution:** `DSA/array/hashset_lookup/count_distinct_elements/CountDistinctElements.kt`
 
 **Problem:** Count distinct elements in the array.
 
@@ -105,7 +106,7 @@ fun countDistinct(nums: IntArray): Int {
 ---
 
 ### 4. Valid Anagrams — 🟢
-**LeetCode #242** | Solution: `DSA/array/hashset_lookup/ValidAnagrams.kt`
+**LeetCode #242** | Solution: `DSA/array/hashset_lookup/valid_anagrams/ValidAnagrams.kt`
 
 **Problem:** Return true if t is an anagram of s (same chars, same counts).
 
@@ -134,7 +135,7 @@ fun isAnagram(s: String, t: String): Boolean {
 ---
 
 ### 5. Intersection of Two Arrays — 🟢
-**LeetCode #349** | Solution: `DSA/array/set_operations/IntersectionOfTwoArrays.kt`
+**LeetCode #349** | Solution: `DSA/array/set_operations/intersection_of_two_arrays/IntersectionOfTwoArrays.kt`
 
 **Problem:** Return unique intersection of two arrays.
 
@@ -160,7 +161,7 @@ fun intersection(nums1: IntArray, nums2: IntArray): IntArray {
 ---
 
 ### 6. Find Difference Between Two Arrays — 🟢
-**LeetCode #2215** | Solution: `DSA/array/set_operations/FindTheDifferenceBetweenTwoArray.kt`
+**LeetCode #2215** | Solution: `DSA/array/set_operations/find_the_difference_between_two_array/FindTheDifferenceBetweenTwoArray.kt`
 
 **Problem:** Return [nums1-only elements, nums2-only elements] (unique).
 
@@ -187,7 +188,7 @@ fun findDifference(nums1: IntArray, nums2: IntArray): List<List<Int>> {
 ---
 
 ### 7. Two Sum (Unsorted) — 🟢
-**LeetCode #1** | Solution: `DSA/array/complement_search/TwoSumLevelOneWithoutSortedArray.kt`
+**LeetCode #1** | Solution: `DSA/array/complement_search/two_sum_level_one_without_sorted_array/TwoSumLevelOneWithoutSortedArray.kt`
 
 **Problem:** Return indices of two numbers summing to target (unsorted array).
 
@@ -200,7 +201,7 @@ For each num, complement = target - num. If complement in map → done. Else sto
 </details>
 
 <details><summary>💡 Hint 3</summary>
-1. map = HashMap<Int, Int>()
+1. map = HashMap&lt;Int, Int&gt;()
 2. For (i, num): if map has target - num → return [map[comp], i]; map[num] = i
 </details>
 
@@ -214,7 +215,7 @@ fun twoSum(nums: IntArray, target: Int): IntArray {
 ---
 
 ### 8. Valid Parentheses — 🟢
-**LeetCode #20** | Solution: `DSA/stack/ValidParentheses.kt`
+**LeetCode #20** | Solution: `DSA/stack/valid_parentheses/ValidParentheses.kt`
 
 **Problem:** Given a string of ()[]{} — is it valid (properly matched & nested)?
 
@@ -244,7 +245,7 @@ fun isValid(s: String): Boolean {
 ## 🟡 TUESDAY, Nov 3 — Medium HashMap + Frequency
 
 ### 9. Two Sum II (Sorted) — 🟡
-**LeetCode #167** | Solution: `DSA/array/complement_search/TwoSumII.kt`
+**LeetCode #167** | Solution: `DSA/array/two_pointer/two_sum_level_two_with_sorted_array/TwoSumLevelTwoWithSortedArray.kt`
 
 **Problem:** (Re-solve from Week 1 — this time also think about the HashMap approach vs two pointers.)
 
@@ -270,7 +271,7 @@ fun twoSum(numbers: IntArray, target: Int): IntArray {
 ---
 
 ### 10. Finding Pairs with Certain Sum — 🟡
-**LeetCode #1865** | Solution: `DSA/array/complement_search/FindingPairsWithCertainSum.kt`
+**LeetCode #1865** | Solution: `DSA/array/complement_search/finding_pairs_with_certain_sum/FindingPairsWithCertainSum.kt`
 
 **Problem:** Design: count(nums1[i] + nums2[j] == tot). Count queries repeatedly.
 
@@ -297,7 +298,7 @@ class FindSumPairs(nums1: IntArray, nums2: IntArray) {
 ---
 
 ### 11. Longest Consecutive Sequence — 🟡
-**LeetCode #128** | Solution: `DSA/array/hashset_lookup/LongestConsecutiveSequence.kt`
+**LeetCode #128** | Solution: `DSA/array/hashset_lookup/longest_consecutive_sequence/LongestConsecutiveSequence.kt`
 
 **Problem:** Find length of the longest run of consecutive integers (e.g., 4,5,6,7) in O(n). Order doesn't matter.
 
@@ -324,7 +325,7 @@ fun longestConsecutive(nums: IntArray): Int {
 ---
 
 ### 12. Valid Sudoku — 🟡
-**LeetCode #36** | Solution: `DSA/array/hashset_lookup/ValidSudoku.kt`
+**LeetCode #36** | Solution: `DSA/array/hashset_lookup/valid_sudoku/ValidSudoku.kt`
 
 **Problem:** Check a 9×9 board is valid: no repeats in any row, column, or 3×3 box.
 
@@ -364,7 +365,7 @@ Sorted string as key: "eat" and "tea" both → "aet". Group words by key.
 </details>
 
 <details><summary>💡 Hint 3</summary>
-1. map = HashMap<String, MutableList<String>>()
+1. map = HashMap&lt;String, MutableList&lt;String&gt;&gt;()
 2. For word: key = word.toCharArray().sorted().joinToString(""); map[key].add(word)
 3. Return map.values
 </details>
@@ -379,7 +380,7 @@ fun groupAnagrams(strs: Array<String>): List<List<String>> {
 ---
 
 ### 14. Count the Number of Pairs — 🟡
-**LeetCode #2006** | Solution: `DSA/array/frequency_count/CountTheNumberOfPairs.kt`
+**LeetCode #2006** | Solution: `DSA/array/frequency_count/count_the_number_of_pairs/CountTheNumberOfPairs.kt`
 
 **Problem:** Count pairs (i, j) with |nums[i] - nums[j]| == k.
 
@@ -406,7 +407,7 @@ fun countKDifference(nums: IntArray, k: Int): Int {
 ---
 
 ### 15. Finding Fair Pairs — 🟡
-**LeetCode #2563** | Solution: `DSA/array/frequency_count/FindingFairPairs.kt`
+**LeetCode #2563** | Solution: `DSA/array/frequency_count/finding_fair_pairs/FindingFairPairs.kt`
 
 **Problem:** Count pairs (i < j) with lower <= nums[i] + nums[j] <= upper.
 
@@ -433,7 +434,7 @@ fun countFairPairs(nums: IntArray, lower: Int, upper: Int): Long {
 ---
 
 ### 16. Top K Frequent Elements — 🟡
-**LeetCode #347** | Solution: `DSA/array/frequency_count/TopKFrequentElements.kt`
+**LeetCode #347** | Solution: `DSA/array/frequency_count/top_k_frequent_elements/TopKFrequentElements.kt`
 
 **Problem:** Return the k most frequent elements.
 
@@ -464,7 +465,7 @@ fun topKFrequent(nums: IntArray, k: Int): IntArray {
 ## 🟡 WEDNESDAY, Nov 4 — Stack Basics + Monotonic Stack
 
 ### 17. Min Stack — 🟡
-**LeetCode #155** | Solution: `DSA/stack/MinStack.kt`
+**LeetCode #155** | Solution: `DSA/stack/min_stack/MinStack.kt`
 
 **Problem:** Design a stack supporting push, pop, top, and getMin — all O(1).
 
@@ -495,7 +496,7 @@ class MinStack() {
 ---
 
 ### 18. Next Greater Element I — 🟡
-**LeetCode #496** | Solution: `DSA/stack/NextGreaterElementI.kt`
+**LeetCode #496** | Solution: `DSA/stack/next_greater_element_i/NextGreaterElementI.kt`
 
 **Problem:** For each element of nums1 (subset of nums2), find its next greater element in nums2, or -1.
 
@@ -508,7 +509,7 @@ Stack holds elements waiting for their next greater. When current > stack top �
 </details>
 
 <details><summary>💡 Hint 3</summary>
-1. stack, map = HashMap<Int, Int>()
+1. stack, map = HashMap&lt;Int, Int&gt;()
 2. For num in nums2: while stack not empty && num > stack.peek() → map[stack.pop()] = num
 3. stack.push(num)
 4. For n in nums1 → map[n] ?: -1
@@ -524,7 +525,7 @@ fun nextGreaterElement(nums1: IntArray, nums2: IntArray): IntArray {
 ---
 
 ### 19. Next Greater Element II (Circular) — 🟡
-**LeetCode #503** | Solution: `DSA/stack/NextGreaterElementII.kt`
+**LeetCode #503** | Solution: `DSA/stack/next_greater_element_ii/NextGreaterElementII.kt`
 
 **Problem:** Same as above but nums2 is circular — next greater can wrap around.
 
@@ -580,7 +581,7 @@ fun dailyTemperatures(temperatures: IntArray): IntArray {
 ---
 
 ### 21. Online Stock Span — 🟡
-**LeetCode #901** | Solution: `DSA/stack/OnlineStockSpan.kt`
+**LeetCode #901** | Solution: `DSA/stack/online_stock_span/OnlineStockSpan.kt`
 
 **Problem:** Span today = number of consecutive days (including today) with price <= today's price.
 
@@ -637,7 +638,7 @@ fun evalRPN(tokens: Array<String>): Int {
 ## 🟡 THURSDAY, Nov 5 — Hard Stack Problems
 
 ### 23. Minimum Parentheses to Remove — 🟡
-**LeetCode #1249** | Solution: `DSA/stack/MinimumParentheseToRemove.kt`
+**LeetCode #1249** | Solution: `DSA/stack/minimum_parentheses_to_remove/MinimumParentheseToRemove.kt`
 
 **Problem:** Make the string valid by removing the minimum number of parentheses; return the result.
 
@@ -650,7 +651,7 @@ Scan: '(' → push index. ')' → pop if possible, else mark for removal. At end
 </details>
 
 <details><summary>💡 Hint 3</summary>
-1. stack of indices, remove = HashSet<Int>()
+1. stack of indices, remove = HashSet&lt;Int&gt;()
 2. For i: '(' → push(i); ')' → if stack empty → remove.add(i) else pop
 3. Add remaining stack indices to remove
 4. Build result skipping removed indices
@@ -750,6 +751,63 @@ fun largestRectangleArea(heights: IntArray): Int {
 
 ---
 
+### 27. How Many Numbers Are Smaller Than the Current Number — 🟢
+**LeetCode #1365** | Solution: `DSA/array/frequency_count/how_many_numbers_are_smaller/HowManyNumbersAreSmaller.kt`
+
+**Problem:** For each element, count how many elements in the array are strictly smaller than it.
+
+<details><summary>💡 Hint 1</summary>
+Brute force O(N²) works, but a frequency count does it in O(N + K).
+</details>
+
+<details><summary>💡 Hint 2</summary>
+Build counts[101] (values are 0..100), then prefix-sum it: prefix[c] = how many values are < c.
+</details>
+
+<details><summary>💡 Hint 3</summary>
+1. counts[v]++ for each num
+2. running = 0; for c in 0..100: tmp = counts[c]; counts[c] = running; running += tmp
+3. Answer for num = counts[num]
+</details>
+
+```kotlin
+fun smallerNumbersThanCurrent(nums: IntArray): IntArray {
+    // TODO: Frequency array + prefix sums
+    return intArrayOf()
+}
+```
+
+---
+
+### 28. Car Fleet II — 🔴
+**LeetCode #1776** | Solution: `DSA/stack/car_fleet_2/CarFleet2.kt`
+
+**Problem:** Cars on a single lane heading to a target (sorted by position). For each car, return when it first crashes into the car ahead (or the fleet it joins), or −1 if it never crashes.
+
+<details><summary>💡 Hint 1</summary>
+Process cars from the one closest to the target backwards. A car either keeps its own arrival time or crashes into the car/fleet ahead.
+</details>
+
+<details><summary>💡 Hint 2</summary>
+Keep a stack of cars ahead. Collision time with the car directly ahead = (pos_ahead − pos) / (speed − speed_ahead) — only valid if speed > speed_ahead AND the crash happens before that ahead car's own crash/arrival.
+</details>
+
+<details><summary>💡 Hint 3</summary>
+1. ans[last] = −1; stack = [last car]
+2. For i from n−2 down to 0: t = ∞ if speed[i] <= speed[stack.top] else (pos[top] − pos[i]) / (speed[i] − speed[top])
+3. If the top car crashes earlier (ans[top] != −1 && t > ans[top]) → pop and re-test against the next fleet leader. If never valid → t = −1.
+4. ans[i] = t; push(i)
+</details>
+
+```kotlin
+fun getCollisionTimes(cars: Array<IntArray>): DoubleArray {
+    // TODO: Iterate from the last car, stack of "fleet leaders"
+    return DoubleArray(0)
+}
+```
+
+---
+
 ## 🟢 SATURDAY, Nov 7 — Revision + Mixed Practice
 
 1. Re-solve the 3–4 hardest problems this week (from scratch, no hints)
@@ -783,6 +841,7 @@ fun largestRectangleArea(heights: IntArray): Int {
 - [ ] Tue: 8 HashMap/Frequency problems
 - [ ] Wed: 6 stack problems
 - [ ] Thu: 4 hard stack problems
+- [ ] Fri: 2 bonus problems (#27–#28)
 - [ ] Sat: Revision + Weeks 1–2 mixed practice
 - [ ] Sun: Mock Test 3 completed & logged
 - [ ] Progress Tracker updated

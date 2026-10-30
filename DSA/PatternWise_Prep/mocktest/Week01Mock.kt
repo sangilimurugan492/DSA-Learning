@@ -1,9 +1,9 @@
-package DSA.PatternWise_Prep.mocktest
+package mocktest
 
 /**
  * Week01Mock.kt — MOCK TEST Week 1: Two Pointer
  * 5 problems · suggested time 120 min total. Re-solve from scratch — no peeking at Week01Tests!
- * Run:  kotlinc MockTestRunner.kt Week01Mock.kt -d out && kotlin -cp out Week01MockKt
+ * Run:  kotlinc mocktest/MockTestRunner.kt mocktest/Week01Mock.kt -d out && kotlin -cp out mocktest.Week01MockKt
  * Stub names are w1m-prefixed so all 12 mock files can compile together.
  */
 

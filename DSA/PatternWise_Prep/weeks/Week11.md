@@ -419,7 +419,7 @@ Binary search on the list for rightmost timestamp ≤ target.
 </details>
 
 <details><summary>💡 Hint 3</summary>
-1. map: key → ArrayList<Pair<Int,String>>. 2. get: binary search lo/hi for rightmost ≤ t; empty → ""
+1. map: key → ArrayList&lt;Pair&lt;Int,String&gt;&gt;. 2. get: binary search lo/hi for rightmost ≤ t; empty → ""
 </details>
 
 ```kotlin

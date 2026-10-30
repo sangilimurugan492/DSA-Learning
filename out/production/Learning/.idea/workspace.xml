@@ -4,20 +4,80 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63e6e312-ba97-461c-9408-efe0eb739fb1" name="Changes" comment="Added Interview prep documents in weekly basis">
-      <change afterPath="$PROJECT_DIR$/behavioral_questions/critical_issues_star_report.md" afterDir="false" />
+    <list default="true" id="63e6e312-ba97-461c-9408-efe0eb739fb1" name="Changes" comment="12 Weeks plan added for preparation for Date wise.">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Permanent_Script_Dependencies.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/RevisionStudy.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/PatternWiseProblems.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWiseProblems.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/MockTestRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/MockTestRunner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week01Mock.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week01Mock.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week02Mock.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week02Mock.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week03Mock.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week03Mock.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week04Mock.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week04Mock.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week05Mock.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week05Mock.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week08Mock.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week08Mock.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week09Mock.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week09Mock.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week10Mock.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week10Mock.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week11Mock.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week11Mock.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week12Mock.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/mocktest/Week12Mock.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week02_Practice.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week02_Practice.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week03_Practice.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week03_Practice.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week05_Practice.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/practice/Week05_Practice.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/TestRunner.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/TestRunner.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week01Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week01Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week02Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week02Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week03Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week03Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week04Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week04Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week05Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week05Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week06Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week06Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week07Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week07Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week08Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week08Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week09Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week09Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week10Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week10Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week11Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week11Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week12Tests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week12Tests.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week01.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week02.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week02.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week03.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week03.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week04.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week04.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week05.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week05.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week07.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week07.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week08.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week08.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week11.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/PatternWise_Prep/weeks/Week11.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DSA/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/sliding_window/longest_repeating_character_replacement/LongestRepeatingCharacterReplacement.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/sliding_window/longest_repeating_character_replacement/LongestRepeatingCharacterReplacement.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DSA/array/sliding_window/permutation_in_string/PermutationInString.md" beforeDir="false" afterPath="$PROJECT_DIR$/DSA/array/sliding_window/permutation_in_string/PermutationInString.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Learning/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWiseProblems.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWiseProblems.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/MASTER_PLAN.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/MASTER_PLAN.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/Mock_Test_Log.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/Mock_Test_Log.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/Progress_Tracker.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/Progress_Tracker.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week02_Practice.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week02_Practice.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week03_Practice.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week03_Practice.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week05_Practice.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/practice/Week05_Practice.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week01.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week02.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week02.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week03.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week03.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week04.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week04.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week05.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week05.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week06.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week06.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week07.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week07.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week08.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/PatternWise_Prep/weeks/Week08.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/sliding_window/longest_repeating_character_replacement/LongestRepeatingCharacterReplacement.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/sliding_window/longest_repeating_character_replacement/LongestRepeatingCharacterReplacement.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/DSA/array/sliding_window/permutation_in_string/PermutationInString.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/DSA/array/sliding_window/permutation_in_string/PermutationInString.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/MASTER_PLAN.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/MASTER_PLAN.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/Progress_Tracker.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/Progress_Tracker.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week01.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week01.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week02.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week02.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week03.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week03.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week04.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week04.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week05.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week05.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week06.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week06.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week07.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week07.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week08.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week08.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week09.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week09.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week10.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week10.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week11.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week11.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week12.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/Daily_Topic_Prep/weeks/Week12.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Learning/META-INF/Learning.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/META-INF/Learning.kotlin_module" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Learning/android_questions/advanced/Testing.md" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/android_questions/advanced/Testing.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/testrunner/MedianFinder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/testrunner/MedianFinder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/testrunner/Week03Tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/testrunner/Week03Tests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Learning/testrunner/Week03TestsKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Learning/testrunner/Week03TestsKt.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,13 +90,14 @@
         <option value="Class" />
         <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="kotlin.jupyter.empty" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Problem_explanation" />
+        <entry key="$PROJECT_DIR$" value="Interview_prep_2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -61,118 +122,120 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.TestJavaProblem.executor": "Run",
-    "Application.TestProblem.executor": "Run",
-    "Kotlin.AddBinaryKt.executor": "Debug",
-    "Kotlin.AddDigitsKt.executor": "Run",
-    "Kotlin.AddStringKt.executor": "Run",
-    "Kotlin.AddTowNumbersKt.executor": "Run",
-    "Kotlin.AssignCookiesKt.executor": "Run",
-    "Kotlin.BackspaceStringCompareKt.executor": "Run",
-    "Kotlin.BestTimeToBuyAndSellStockIIKt (1).executor": "Run",
-    "Kotlin.BestTimeToBuyAndSellStockIIKt.executor": "Run",
-    "Kotlin.BestTimeToBuyAndSellStockIKt.executor": "Debug",
-    "Kotlin.BoatsToSaveKt.executor": "Run",
-    "Kotlin.CheckArraySortedOrRotateKt.executor": "Debug",
-    "Kotlin.CheckIfNDoubleExitsKt.executor": "Run",
-    "Kotlin.ContainerWithMostWaterKt.executor": "Run",
-    "Kotlin.CountDistinctElementsKt.executor": "Run",
-    "Kotlin.CountFrequencyOfElementKt.executor": "Run",
-    "Kotlin.CountNegativesInMatrixKt.executor": "Debug",
-    "Kotlin.CountNumberOfNiceSubarraysKt.executor": "Debug",
-    "Kotlin.CountTheNumberOfPairsKt.executor": "Debug",
-    "Kotlin.DailyTemperaturesKt.executor": "Debug",
-    "Kotlin.FindAllAnagramInStringKt.executor": "Run",
-    "Kotlin.FindMedianFromDataStreamKt.executor": "Debug",
-    "Kotlin.FindMinimumInRotatedSortedArrayKt.executor": "Run",
-    "Kotlin.FindingPairsWithCertainSumKt.executor": "Run",
-    "Kotlin.FindingPivotIndexKt.executor": "Run",
-    "Kotlin.FirstRepeatingElementKt.executor": "Run",
-    "Kotlin.FizzBuzzKt.executor": "Run",
-    "Kotlin.FlatternDoubleLLMultiLevelKt.executor": "Run",
-    "Kotlin.FruitsIntoBasketsKt.executor": "Run",
-    "Kotlin.GameOfLifeKt.executor": "Run",
-    "Kotlin.GroupAnagramsKt.executor": "Debug",
-    "Kotlin.GrumpyBookStoreOwnerKt.executor": "Run",
-    "Kotlin.HeightCheckerKt.executor": "Debug",
-    "Kotlin.InsertIntervalKt.executor": "Debug",
-    "Kotlin.IntegerToRomanKt.executor": "Run",
-    "Kotlin.IntersectionOfTwoArraysKt.executor": "Run",
-    "Kotlin.IntersectionTwoArrayIIKt.executor": "Run",
-    "Kotlin.IntervalGroupsKt.executor": "Run",
-    "Kotlin.IsSubSequenceKt.executor": "Run",
-    "Kotlin.JumpGameKt.executor": "Debug",
-    "Kotlin.LargestRectangleInHistogramKt.executor": "Run",
-    "Kotlin.LeadersInArrayKt.executor": "Run",
-    "Kotlin.LeastFrequentlyUsedLFUKt.executor": "Run",
-    "Kotlin.LeastRecentlyUsedLRUKt.executor": "Run",
-    "Kotlin.LetterAndCombinationPhoneNumberKt.executor": "Run",
-    "Kotlin.LinkedListBinaryToIntegerKt.executor": "Run",
-    "Kotlin.LongestPalidromStringKt.executor": "Debug",
-    "Kotlin.LongestPalindromSubStringKt.executor": "Run",
-    "Kotlin.LongestRepeatingCharcterReplacementKt.executor": "Run",
-    "Kotlin.LongestSubArrayAfterDeletingOneKt.executor": "Run",
-    "Kotlin.LongestSubStringWithoutRepeatingCharacterKt.executor": "Run",
-    "Kotlin.LongestSubstringWithoutRepeatingCharactersKt.executor": "Debug",
-    "Kotlin.LongestValidParenthesesKt.executor": "Run",
-    "Kotlin.MajorityOfElementsKt.executor": "Run",
-    "Kotlin.MaximumAverageSubArrayKt.executor": "Run",
-    "Kotlin.MedianOfTwoSortedSubArrayKt.executor": "Run",
-    "Kotlin.MergeKSortedListsKt.executor": "Debug",
-    "Kotlin.MergeTwoSortedListsKt.executor": "Run",
-    "Kotlin.MinimumPairRemovaltoSortArrayIKt.executor": "Run",
-    "Kotlin.MinimumSizeSubArraySumKt.executor": "Run",
-    "Kotlin.MissingNumberInArrayKt.executor": "Run",
-    "Kotlin.MyLinkedListKt.executor": "Run",
-    "Kotlin.NonOverlappingIntervalsKt.executor": "Run",
-    "Kotlin.PatiotionListKt.executor": "Run",
-    "Kotlin.PermutationInStringKt.executor": "Run",
-    "Kotlin.PlusOneKt.executor": "Debug",
-    "Kotlin.RemoveElementInAnArrayKt.executor": "Run",
-    "Kotlin.RemoveElementKt.executor": "Run",
-    "Kotlin.RemoveNthNodeFromLastKt.executor": "Debug",
-    "Kotlin.ReplaceGratestElementOnRightKt.executor": "Run",
-    "Kotlin.ReverseLinkedListIIKt.executor": "Debug",
-    "Kotlin.ReverseLinkedListKGroupKt.executor": "Run",
-    "Kotlin.ReverseLinkedListKt.executor": "Run",
-    "Kotlin.RotateLinkedListKt.executor": "Run",
-    "Kotlin.RunningSum1DArrayKt.executor": "Run",
-    "Kotlin.SearchInBSTKt.executor": "Run",
-    "Kotlin.SearchInRotatedSortedArrayKt.executor": "Run",
-    "Kotlin.SearchInsertPositionKt.executor": "Run",
-    "Kotlin.SortColorsDutchNationalFlagKt.executor": "Run",
-    "Kotlin.SortedSquaresKt.executor": "Run",
-    "Kotlin.SortingTestKt.executor": "Run",
-    "Kotlin.SpiralMatrixIIKt.executor": "Run",
-    "Kotlin.SpiralMatrixKt.executor": "Run",
-    "Kotlin.StringCompressionKt.executor": "Run",
-    "Kotlin.StringToIntegerKt.executor": "Run",
-    "Kotlin.SubArrayWithKDifferentIntegerKt.executor": "Debug",
-    "Kotlin.TestRunnerKt.executor": "Run",
-    "Kotlin.TextJustificationKt.executor": "Debug",
-    "Kotlin.ThreeSumKt.executor": "Run",
-    "Kotlin.TopKFrequentElementsKt.executor": "Debug",
-    "Kotlin.TrappingRainWaterIKt.executor": "Run",
-    "Kotlin.TwoSumIIKt.executor": "Run",
-    "Kotlin.TwoSumLevelTwoWithSortedArrayKt.executor": "Run",
-    "Kotlin.ValidAnagramsKt.executor": "Debug",
-    "Kotlin.ValidParenthesesKt.executor": "Run",
-    "Kotlin.ZigZagConversionStringKt.executor": "Coverage",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "Interview__prep__1",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/d2c-sangili.murugan/IdeaProjects/Learning/behavioral_questions",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.TestJavaProblem.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TestProblem.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.AddBinaryKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.AddDigitsKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.AddStringKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.AddTowNumbersKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.AssignCookiesKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.BackspaceStringCompareKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.BestTimeToBuyAndSellStockIIKt (1).executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.BestTimeToBuyAndSellStockIIKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.BestTimeToBuyAndSellStockIKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.BoatsToSaveKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.CheckArraySortedOrRotateKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.CheckIfNDoubleExitsKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.ContainerWithMostWaterKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.CountDistinctElementsKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.CountFrequencyOfElementKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.CountNegativesInMatrixKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.CountNumberOfNiceSubarraysKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.CountTheNumberOfPairsKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.DailyTemperaturesKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.FindAllAnagramInStringKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.FindMedianFromDataStreamKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.FindMinimumInRotatedSortedArrayKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.FindingPairsWithCertainSumKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.FindingPivotIndexKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.FirstRepeatingElementKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.FizzBuzzKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.FlatternDoubleLLMultiLevelKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.FruitsIntoBasketsKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.GameOfLifeKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.GroupAnagramsKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.GrumpyBookStoreOwnerKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.HeightCheckerKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.InsertIntervalKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.IntegerToRomanKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.IntersectionOfTwoArraysKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.IntersectionTwoArrayIIKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.IntervalGroupsKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.IsSubSequenceKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.JumpGameKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.LargestRectangleInHistogramKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.LeadersInArrayKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.LeastFrequentlyUsedLFUKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.LeastRecentlyUsedLRUKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.LetterAndCombinationPhoneNumberKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.LinkedListBinaryToIntegerKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.LongestPalidromStringKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.LongestPalindromSubStringKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.LongestRepeatingCharcterReplacementKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.LongestSubArrayAfterDeletingOneKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.LongestSubStringWithoutRepeatingCharacterKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.LongestSubstringWithoutRepeatingCharactersKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.LongestValidParenthesesKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MajorityOfElementsKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MaximumAverageSubArrayKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MedianOfTwoSortedSubArrayKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MergeKSortedListsKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.MergeTwoSortedListsKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MinimumPairRemovaltoSortArrayIKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MinimumSizeSubArraySumKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MissingNumberInArrayKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MyLinkedListKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.NonOverlappingIntervalsKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.PatiotionListKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.PermutationInStringKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.PlusOneKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.PrefixSumQueryKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.RemoveElementInAnArrayKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.RemoveElementKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.RemoveNthNodeFromLastKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.ReplaceGratestElementOnRightKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.ReverseLinkedListIIKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.ReverseLinkedListKGroupKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.ReverseLinkedListKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.RotateLinkedListKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.RunningSum1DArrayKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.SearchInBSTKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.SearchInRotatedSortedArrayKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.SearchInsertPositionKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.SortColorsDutchNationalFlagKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.SortedSquaresKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.SortingTestKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.SpiralMatrixIIKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.SpiralMatrixKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.StringCompressionKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.StringToIntegerKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.SubArrayWithKDifferentIntegerKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.TestRunnerKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.TextJustificationKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.ThreeSumKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.TopKFrequentElementsKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.TrappingRainWaterIKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.TwoSumIIKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.TwoSumLevelTwoWithSortedArrayKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.ValidAnagramsKt.executor&quot;: &quot;Debug&quot;,
+    &quot;Kotlin.ValidParenthesesKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.ZigZagConversionStringKt.executor&quot;: &quot;Coverage&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Plan__12__Weeks&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/d2c-sangili.murugan/IdeaProjects/Learning/behavioral_questions&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/behavioral_questions" />
@@ -206,15 +269,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MergeKSortedListsKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="heap.merge_k_sorted_lists.MergeKSortedListsKt" />
+    <configuration name="PermutationInStringKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.sliding_window.permutation_in_string.PermutationInStringKt" />
       <module name="Learning" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PermutationInStringKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="array.sliding_window.permutation_in_string.PermutationInStringKt" />
+    <configuration name="PrefixSumQueryKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="array.prefix_sum.prefix_sum_query.PrefixSumQueryKt" />
       <module name="Learning" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -230,10 +293,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.TestRunnerKt" />
+        <item itemvalue="Kotlin.PrefixSumQueryKt" />
         <item itemvalue="Kotlin.IntersectionOfTwoArraysKt" />
         <item itemvalue="Kotlin.PermutationInStringKt" />
         <item itemvalue="Kotlin.FindMedianFromDataStreamKt" />
-        <item itemvalue="Kotlin.MergeKSortedListsKt" />
       </list>
     </recent_temporary>
   </component>
@@ -389,7 +452,39 @@
       <option name="project" value="LOCAL" />
       <updated>1791178849015</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Added Interview prep documents in weekly basis">
+      <option name="closed" value="true" />
+      <created>1792728455445</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1792728455445</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Added Interview prep documents in weekly basis">
+      <option name="closed" value="true" />
+      <created>1792728478425</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1792728478425</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Added Interview prep documents in weekly basis">
+      <option name="closed" value="true" />
+      <created>1792729845754</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1792729845754</updated>
+    </task>
+    <task id="LOCAL-00021" summary="12 Weeks plan added for preparation for Date wise.">
+      <option name="closed" value="true" />
+      <created>1792755652255</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1792755652255</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -410,7 +505,8 @@
     <MESSAGE value="Added All Mobile related Topic and Interview Preparation Concepts." />
     <MESSAGE value="Added All problems with explanation." />
     <MESSAGE value="Added Interview prep documents in weekly basis" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Interview prep documents in weekly basis" />
+    <MESSAGE value="12 Weeks plan added for preparation for Date wise." />
+    <option name="LAST_COMMIT_MESSAGE" value="12 Weeks plan added for preparation for Date wise." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -512,9 +608,14 @@
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/DSA/PatternWise_Prep/testrunner/Week01Tests.kt</url>
-          <line>415</line>
+          <url>file://$PROJECT_DIR$/DSA/array/prefix_sum/prefix_sum_query/PrefixSumQuery.kt</url>
+          <line>7</line>
           <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/DSA/array/prefix_sum/prefix_sum_query/PrefixSumQuery.kt</url>
+          <line>13</line>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

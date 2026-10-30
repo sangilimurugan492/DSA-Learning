@@ -1,4 +1,4 @@
-package DSA.PatternWise_Prep.mocktest
+package mocktest
 
 /**
  * Week08Mock.kt — MOCK TEST Week 8: Graph + Matrix + String Simulation

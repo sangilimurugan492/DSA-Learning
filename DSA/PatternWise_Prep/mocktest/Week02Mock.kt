@@ -1,4 +1,4 @@
-package DSA.PatternWise_Prep.mocktest
+package mocktest
 
 /**
  * Week02Mock.kt — MOCK TEST Week 2: Sliding Window + Prefix Sum

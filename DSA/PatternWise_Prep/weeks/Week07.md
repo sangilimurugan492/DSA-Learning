@@ -638,7 +638,7 @@ For each empty cell, try 1-9; if valid → place, recurse; if recursion fails �
 </details>
 
 <details><summary>💡 Hint 3</summary>
-1. rows/cols/boxes = Array(9) { HashSet<Char> }
+1. rows/cols/boxes = Array(9) { HashSet&lt;Char&gt; }
 2. Collect empty cells. backtrack(index): index == empties.size → true
 3. Try each digit; check sets; place, recurse, on failure remove
 </details>

@@ -1,6 +1,6 @@
 # 📅 Week 6 — Greedy + Binary Search + Bit Manipulation
 
-> **Dates:** Nov 20 (Fri) – Nov 26 (Thu)
+> **Dates:** Nov 23 (Mon) – Nov 29 (Sun)
 > **Pattern Focus:** Greedy (intervals, jumps, stocks), Binary Search (rotated arrays), Bit Manipulation (XOR, bit counting)
 > **Reminder:** Try each problem 10–25 min WITHOUT hints. Reveal hints one at a time. Compare with your solutions in `DSA/array/greedy/`, `DSA/array/binary_search/`, `DSA/array/bit_manipulation/`, `DSA/array/voting_floyd/` only AFTER solving.
 
@@ -13,16 +13,16 @@
 
 | Day | Date | Problems | Time |
 |-----|------|----------|------|
-| Fri | Nov 20 | #1–#7 (Easy greedy + bit) | 2 hrs |
-| Sat | Nov 21 | #8–#14 (Medium greedy: intervals) | 2 hrs |
-| Sun | Nov 22 | #15–#20 (Greedy + binary search) | 2 hrs |
-| Mon | Nov 23 | #21–#28 (Bit manipulation + voting) | 2 hrs |
-| Wed | Nov 25 | Revision: weakest 4 + Weeks 1–5 mixed | 2 hrs |
-| Thu | Nov 26 | 🧪 Mock Test 6 + Review | 3 hrs |
+| Mon | Nov 23 | #1–#7 (Easy greedy + bit) | 2 hrs |
+| Tue | Nov 24 | #8–#14 (Medium greedy: intervals) | 2 hrs |
+| Wed | Nov 25 | #15–#20 (Greedy + binary search) | 2 hrs |
+| Thu | Nov 26 | #21–#28 (Bit manipulation + voting) | 2 hrs |
+| Sat | Nov 28 | Revision: weakest 4 + Weeks 1–5 mixed | 2 hrs |
+| Sun | Nov 29 | 🧪 Mock Test 6 + Review | 3 hrs |
 
 ---
 
-## 🟢 FRIDAY, Nov 20 — Easy Greedy + Bit
+## 🟢 MONDAY, Nov 23 — Easy Greedy + Bit
 
 ### 1. Best Time to Buy & Sell Stock I — 🟢
 **LeetCode #121** | Solution: `DSA/array/greedy/BestTimeToBuyAndSellStockI.kt`
@@ -209,7 +209,7 @@ fun isPowerOfTwo(n: Int): Boolean {
 
 ---
 
-## 🟡 SATURDAY, Nov 21 — Medium Greedy: Intervals & Jumps
+## 🟡 TUESDAY, Nov 24 — Medium Greedy: Intervals & Jumps
 
 ### 8. Best Time to Buy & Sell Stock II — 🟡
 **LeetCode #122** | Solution: `DSA/array/greedy/BestTimeToBuyAndSellStockII.kt`
@@ -403,7 +403,7 @@ fun canAttendMeetings(intervals: Array<IntArray>): Boolean {
 
 ---
 
-## 🟡 SUNDAY, Nov 22 — Greedy + Binary Search
+## 🟡 WEDNESDAY, Nov 25 — Greedy + Binary Search
 
 ### 15. Non-Overlapping Intervals — 🟡
 **LeetCode #435** | Solution: `DSA/array/greedy/NonOverlappingIntervals.kt`
@@ -569,7 +569,7 @@ fun findMin(nums: IntArray): Int {
 
 ---
 
-## 🟡 MONDAY, Nov 23 — Bit Manipulation + Voting
+## 🟡 THURSDAY, Nov 26 — Bit Manipulation + Voting
 
 ### 21. Single Number II — 🟡
 **LeetCode #137** | Solution: `DSA/array/bit_manipulation/single_number_ii/SingleNumberII.kt`
@@ -787,7 +787,7 @@ fun majorityElement(nums: IntArray): List<Int> {
 
 ---
 
-## 🟢 WEDNESDAY, Nov 25 — Revision + Mixed Practice
+## 🟢 SATURDAY, Nov 28 — Revision + Mixed Practice
 
 1. Re-solve the 3–4 hardest problems this week (from scratch, no hints)
 2. Mixed practice from Weeks 1–5:
@@ -800,7 +800,7 @@ fun majorityElement(nums: IntArray): List<Int> {
 
 ---
 
-## 🧪 THURSDAY, Nov 26 — Mock Test 6 (3 hrs)
+## 🧪 SUNDAY, Nov 29 — Mock Test 6 (3 hrs)
 
 **Part 1 — Timed Test (2 hrs, no hints for first 30 min):**
 

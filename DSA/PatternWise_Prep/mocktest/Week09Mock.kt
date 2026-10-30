@@ -1,4 +1,4 @@
-package DSA.PatternWise_Prep.mocktest
+package mocktest
 
 /**
  * Week09Mock.kt — MOCK TEST Week 9: Advanced Graphs + Intervals

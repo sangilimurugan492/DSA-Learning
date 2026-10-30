@@ -1,4 +1,4 @@
-package DSA.PatternWise_Prep.mocktest
+package mocktest
 
 /**
  * Week05Mock.kt — MOCK TEST Week 5: Tree + Heap + Trie

@@ -1,4 +1,4 @@
-package DSA.PatternWise_Prep.mocktest
+package mocktest
 
 /**
  * Week04Mock.kt — MOCK TEST Week 4: Linked List

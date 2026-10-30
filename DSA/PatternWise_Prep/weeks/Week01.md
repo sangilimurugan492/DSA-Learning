@@ -311,7 +311,7 @@ fun fourSum(nums: IntArray, target: Int): List<List<Int>> {
 Two Pointer — opposite ends, always move the SHORTER line inward.
 </details>
 
-<details>💡 Hint 2</summary>
+<details><summary>💡 Hint 2</summary>
 Area = min(height[left], height[right]) × (right - left). Moving the shorter pointer is the only way to possibly increase area.
 </details>
 

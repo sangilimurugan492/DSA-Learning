@@ -1,16 +1,16 @@
-# 📅 Week 3 — Foundations (Oct 30 – Nov 5)
+# 📅 Week 3 — Foundations (Nov 2 – Nov 8)
 
 > Phase 1: Foundations · Difficulty: `beginner/` folders
 
 | Day | Date | Topic | Files to Study | Question Bank |
 |-----|------|-------|-----------------|---------------|
-| Fri | Oct 30 | **System Design** | [Mobile_System_Design_Cheat_Sheet.md](../../system_design/mobile/Mobile_System_Design_Cheat_Sheet.md) · [STUDY_ROADMAP.md](../../system_design/STUDY_ROADMAP.md) (scalability sections) | [system_design/](../../system_design/) |
-| Sat | Oct 31 | **Android** | [RecyclerView.md](../../android_questions/beginner/RecyclerView.md) · [UILayouts.md](../../android_questions/beginner/UILayouts.md) | [android_questions/beginner](../../android_questions/beginner/) |
-| Sun | Nov 1 | **Kotlin** | [TypeChecksAndSmartCasts.md](../../kotlin_questions/beginner/TypeChecksAndSmartCasts.md) · [ExceptionHandling.md](../../kotlin_questions/beginner/ExceptionHandling.md) · [Arrays.md](../../kotlin_questions/beginner/Arrays.md) | [kotlin_questions/beginner](../../kotlin_questions/beginner/) |
-| Mon | Nov 2 | **Flutter** | [StateManagement.md](../../flutter_questions/beginner/StateManagement.md) · [Widgets.md](../../flutter_questions/beginner/Widgets.md) (review) | [flutter_questions/beginner](../../flutter_questions/beginner/) |
-| Tue | Nov 3 | 🛑 REST | — | — |
-| Wed | Nov 4 | **Java** | [OOPBasics.md](../../java_questions/beginner/OOPBasics.md) (review) · [Basics.md](../../java_questions/beginner/Basics.md) (review) | [java_questions/beginner](../../java_questions/beginner/) |
-| Thu | Nov 5 | **Testing** 🎯 | [UnitTesting.md](../../testing_questions/UnitTesting.md) · [TDD.md](../../testing_questions/TDD.md) | [testing_questions/](../../testing_questions/) |
+| Mon | Nov 2 | **System Design** | [Mobile_System_Design_Cheat_Sheet.md](../../system_design/mobile/Mobile_System_Design_Cheat_Sheet.md) · [STUDY_ROADMAP.md](../../system_design/STUDY_ROADMAP.md) (scalability sections) | [system_design/](../../system_design/) |
+| Tue | Nov 3 | **Android** | [RecyclerView.md](../../android_questions/beginner/RecyclerView.md) · [UILayouts.md](../../android_questions/beginner/UILayouts.md) | [android_questions/beginner](../../android_questions/beginner/) |
+| Wed | Nov 4 | **Kotlin** | [TypeChecksAndSmartCasts.md](../../kotlin_questions/beginner/TypeChecksAndSmartCasts.md) · [ExceptionHandling.md](../../kotlin_questions/beginner/ExceptionHandling.md) · [Arrays.md](../../kotlin_questions/beginner/Arrays.md) | [kotlin_questions/beginner](../../kotlin_questions/beginner/) |
+| Thu | Nov 5 | **Flutter** | [StateManagement.md](../../flutter_questions/beginner/StateManagement.md) · [Widgets.md](../../flutter_questions/beginner/Widgets.md) (review) | [flutter_questions/beginner](../../flutter_questions/beginner/) |
+| Fri | Nov 6 | 🛑 REST | — | — |
+| Sat | Nov 7 | **Java** | [OOPBasics.md](../../java_questions/beginner/OOPBasics.md) (review) · [Basics.md](../../java_questions/beginner/Basics.md) (review) | [java_questions/beginner](../../java_questions/beginner/) |
+| Sun | Nov 8 | **Testing** 🎯 | [UnitTesting.md](../../testing_questions/UnitTesting.md) · [TDD.md](../../testing_questions/TDD.md) | [testing_questions/](../../testing_questions/) |
 
 ## ✅ Daily Checklist
 - [ ] Read the day's questions (10 min)

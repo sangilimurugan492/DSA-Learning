@@ -695,7 +695,7 @@ hash(key) = key % capacity. Bucket holds keys. add/remove/contains scan the buck
 </details>
 
 <details><summary>💡 Hint 3</summary>
-1. buckets = Array(capacity) { mutableListOf<Int>() }
+1. buckets = Array(capacity) { mutableListOf&lt;Int&gt;() }
 2. add: if !bucket.contains(key) → bucket.add(key)
 3. remove: bucket.remove(key); contains: bucket.contains(key)
 </details>
@@ -983,7 +983,7 @@ Push all heads. Pop smallest → append to result; push its next. Repeat.
 </details>
 
 <details><summary>💡 Hint 3</summary>
-1. heap = PriorityQueue<ListNode>(compareBy { it.`val` })
+1. heap = PriorityQueue&lt;ListNode&gt;(compareBy { it.`val` })
 2. Push all non-null heads. dummy/tail
 3. While heap not empty: node = poll; tail.next = node; tail = node; if node.next != null → push(node.next)
 </details>

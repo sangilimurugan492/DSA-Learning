@@ -1,4 +1,4 @@
-package DSA.PatternWise_Prep.mocktest
+package mocktest
 
 /**
  * Week12Mock.kt — MOCK TEST Week 12: GRAND FINALE — mixed set across all weeks

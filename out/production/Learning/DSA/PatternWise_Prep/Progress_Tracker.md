@@ -5,7 +5,7 @@
 
 ---
 
-## Week 1 — Two Pointer + Two Pointer In-Place (Oct 13 – Oct 22)
+## Week 1 — Two Pointer + Two Pointer In-Place (Oct 13 – Oct 25)
 
 | # | Problem | Difficulty | Status | Notes |
 |---|---------|-----------|--------|-------|
@@ -37,7 +37,7 @@
 
 ---
 
-## Week 2 — Sliding Window + Prefix Sum + Kadane's (Oct 23 – Oct 29)
+## Week 2 — Sliding Window + Prefix Sum + Kadane's (Oct 26 – Nov 1)
 
 | # | Problem | Difficulty | Status | Notes |
 |---|---------|-----------|--------|-------|
@@ -62,7 +62,7 @@
 
 ---
 
-## Week 3 — HashMap/HashSet + Complement + Set Ops + Frequency + Stack (Oct 30 – Nov 5)
+## Week 3 — HashMap/HashSet + Complement + Set Ops + Frequency + Stack (Nov 2 – Nov 8)
 
 | # | Problem | Difficulty | Status | Notes |
 |---|---------|-----------|--------|-------|
@@ -95,7 +95,7 @@
 
 ---
 
-## Week 4 — Linked List (Nov 6 – Nov 12)
+## Week 4 — Linked List (Nov 9 – Nov 15)
 
 | # | Problem | Difficulty | Status | Notes |
 |---|---------|-----------|--------|-------|
@@ -139,7 +139,7 @@
 
 ---
 
-## Week 5 — Tree + Heap + Trie (Nov 13 – Nov 19)
+## Week 5 — Tree + Heap + Trie (Nov 16 – Nov 22)
 
 | # | Problem | Difficulty | Status | Notes |
 |---|---------|-----------|--------|-------|
@@ -168,7 +168,7 @@
 
 ---
 
-## Week 6 — Greedy + Binary Search + Bit Manipulation (Nov 20 – Nov 26)
+## Week 6 — Greedy + Binary Search + Bit Manipulation (Nov 23 – Nov 29)
 
 | # | Problem | Difficulty | Status | Notes |
 |---|---------|-----------|--------|-------|
@@ -203,7 +203,7 @@
 
 ---
 
-## Week 7 — Backtracking + Dynamic Programming (Nov 27 – Dec 3)
+## Week 7 — Backtracking + Dynamic Programming (Nov 30 – Dec 6)
 
 | # | Problem | Difficulty | Status | Notes |
 |---|---------|-----------|--------|-------|
@@ -233,7 +233,7 @@
 
 ---
 
-## Week 8 — Graph + Simulation + Matrix + String Parsing + Revision (Dec 4 – Dec 10)
+## Week 8 — Graph + Simulation + Matrix + String Parsing + Revision (Dec 7 – Dec 13)
 
 | # | Problem | Difficulty | Status | Notes |
 |---|---------|-----------|--------|-------|
@@ -265,6 +265,100 @@
 
 ---
 
+## Week 9 — Advanced Graphs: Dijkstra + Union-Find + Topo Sort + Intervals (Dec 14 – Dec 20)
+
+| # | Problem | Difficulty | Status | Notes |
+|---|---------|-----------|--------|-------|
+| 1 | Network Delay Time | 🟡 | ⬜ | |
+| 2 | Cheapest Flights Within K Stops | 🟡 | ⬜ | |
+| 3 | Path With Minimum Effort | 🟡 | ⬜ | |
+| 4 | Path With Maximum Probability | 🟡 | ⬜ | |
+| 5 | Swim in Rising Water | 🔴 | ⬜ | |
+| 6 | Redundant Connection | 🟡 | ⬜ | |
+| 7 | Redundant Connection II | 🔴 | ⬜ | |
+| 8 | Network Connected (Operations) | 🟡 | ⬜ | |
+| 9 | Most Stones Removed | 🟡 | ⬜ | |
+| 10 | Accounts Merge | 🟡 | ⬜ | |
+| 11 | Regions Cut By Slashes | 🔴 | ⬜ | |
+| 12 | Min Cost to Connect All Points (MST) | 🟡 | ⬜ | |
+| 13 | Course Schedule IV | 🟡 | ⬜ | |
+| 14 | Alien Dictionary | 🔴 | ⬜ | |
+| 15 | Minimum Height Trees | 🟡 | ⬜ | |
+| 16 | Merge Intervals | 🟡 | ⬜ | |
+| 17 | Insert Interval | 🟡 | ⬜ | |
+| 18 | Non-overlapping Intervals | 🟡 | ⬜ | |
+| 19 | Meeting Rooms II | 🟡 | ⬜ | |
+| 20 | Interval List Intersections | 🟡 | ⬜ | |
+
+---
+
+## Week 10 — Advanced DP: 2D / Strings / Grids (Dec 21 – Dec 27)
+
+| # | Problem | Difficulty | Status | Notes |
+|---|---------|-----------|--------|-------|
+| 1 | Edit Distance | 🔴 | ⬜ | |
+| 2 | Longest Common Subsequence | 🟡 | ⬜ | |
+| 3 | Longest Palindromic Subsequence | 🟡 | ⬜ | |
+| 4 | Distinct Subsequences | 🔴 | ⬜ | |
+| 5 | Interleaving String | 🟡 | ⬜ | |
+| 6 | Minimum Path Sum | 🟡 | ⬜ | |
+| 7 | Unique Paths II | 🟡 | ⬜ | |
+| 8 | Maximal Square | 🟡 | ⬜ | |
+| 9 | Maximal Rectangle | 🔴 | ⬜ | |
+| 10 | Cherry Pickup II | 🔴 | ⬜ | |
+| 11 | Burst Balloons | 🔴 | ⬜ | |
+| 12 | Palindromic Substrings | 🟡 | ⬜ | |
+| 13 | Decode Ways | 🟡 | ⬜ | |
+| 14 | Word Break | 🟡 | ⬜ | |
+| 15 | Perfect Squares | 🟡 | ⬜ | |
+| 16 | Coin Change II | 🟡 | ⬜ | |
+| 17 | Longest Increasing Path in a Matrix | 🔴 | ⬜ | |
+| 18 | Dungeon Game | 🔴 | ⬜ | |
+| 19 | Largest Divisible Subset | 🟡 | ⬜ | |
+| 20 | Number of Longest Increasing Subsequence | 🟡 | ⬜ | |
+
+---
+
+## Week 11 — Monotonic Stack + Design + Advanced Trie/Strings (Dec 28 – Jan 3)
+
+| # | Problem | Difficulty | Status | Notes |
+|---|---------|-----------|--------|-------|
+| 1 | Daily Temperatures | 🟡 | ⬜ | |
+| 2 | Next Greater Element II | 🟡 | ⬜ | |
+| 3 | Largest Rectangle in Histogram | 🔴 | ⬜ | |
+| 4 | Sum of Subarray Minimums | 🟡 | ⬜ | |
+| 5 | Online Stock Span | 🟡 | ⬜ | |
+| 6 | Remove K Digits | 🟡 | ⬜ | |
+| 7 | 132 Pattern | 🟡 | ⬜ | |
+| 8 | Sum of Subarray Ranges | 🟡 | ⬜ | |
+| 9 | Max Chunks To Make Sorted | 🟡 | ⬜ | |
+| 10 | Remove All Adjacent Duplicates II | 🟡 | ⬜ | |
+| 11 | LRU Cache | 🟡 | ⬜ | |
+| 12 | LFU Cache | 🔴 | ⬜ | |
+| 13 | Min Stack | 🟡 | ⬜ | |
+| 14 | Insert Delete GetRandom O(1) | 🟡 | ⬜ | |
+| 15 | Time Based Key-Value Store | 🟡 | ⬜ | |
+| 16 | Design Add and Search Words | 🟡 | ⬜ | |
+| 17 | Word Search II | 🔴 | ⬜ | |
+| 18 | Maximum XOR of Two Numbers | 🟡 | ⬜ | |
+| 19 | Basic Calculator | 🔴 | ⬜ | |
+| 20 | Decode String | 🟡 | ⬜ | |
+
+---
+
+## Week 12 — Full Revision + Company-Style Mixed Sets (Jan 4 – Jan 10)
+
+| # | Problem | Difficulty | Status | Notes |
+|---|---------|-----------|--------|-------|
+| 1 | Meta Set (6 problems) | 🟡 | ⬜ | |
+| 2 | Google Set (6 problems) | 🟡 | ⬜ | |
+| 3 | Amazon Set (6 problems) | 🟡 | ⬜ | |
+| 4 | Weak-Pattern Re-Drill | 🟡 | ⬜ | |
+| 5 | Speed Round (8 problems) | 🟢 | ⬜ | |
+| 6 | Final Grand Mock (5 problems) | 🔴 | ⬜ | |
+
+---
+
 ## 📊 Summary
 
 | Week | Pattern | Solved | Total | % |
@@ -277,4 +371,8 @@
 | 6 | Greedy + Binary Search + Bit Manip | 0 | 28 | 0% |
 | 7 | Backtracking + DP | 0 | 23 | 0% |
 | 8 | Graph + Simulation + Revision | 0 | 25 | 0% |
-| **TOTAL** | | **0** | **204** | **0%** |
+| 9 | Advanced Graphs + Intervals | 0 | 20 | 0% |
+| 10 | Advanced DP (2D/Strings/Grids) | 0 | 20 | 0% |
+| 11 | Monotonic Stack + Design + Trie | 0 | 20 | 0% |
+| 12 | Final Revision + Mixed Sets | 0 | 6 | 0% |
+| **TOTAL** | | **0** | **270** | **0%** |

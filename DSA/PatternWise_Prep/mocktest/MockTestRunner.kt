@@ -1,10 +1,10 @@
-package DSA.PatternWise_Prep.mocktest
+package mocktest
 
 /**
  * MockTestRunner.kt — Standalone mock-test harness. Zero class dependencies.
  *
  * Self-contained: needs NO project files or imports — only the Kotlin stdlib.
- * Its package is DSA.PatternWise_Prep.mocktest; week mock files (WeekNNMock.kt)
+ * Its package is mocktest; week mock files (WeekNNMock.kt)
  * in the same folder declare the same package and reuse this engine directly.
  *
  * How to use:

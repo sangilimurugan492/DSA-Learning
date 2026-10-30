@@ -1,4 +1,4 @@
-package DSA.PatternWise_Prep.mocktest
+package mocktest
 
 /**
  * Week10Mock.kt — MOCK TEST Week 10: Advanced DP (2D / Strings / Grids)

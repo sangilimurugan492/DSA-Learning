@@ -190,6 +190,20 @@
 | 2 | [2,4] | 4 | Two bars |
 | 3 | [6,2,5,4,5,1,6] | 12 | Mixed |
 
+### 27. How Many Numbers Are Smaller Than the Current Number — LC 1365
+| # | Input | Expected | Tests |
+|---|-------|----------|-------|
+| 1 | [8,1,2,2,3] | [4,0,1,1,3] | Basic |
+| 2 | [6,5,4,8] | [2,1,0,3] | Mixed |
+| 3 | [7,7,7,7] | [0,0,0,0] | All same |
+
+### 28. Car Fleet II — LC 1776
+| # | Input | Expected | Tests |
+|---|-------|----------|-------|
+| 1 | target=10, cars=[[1,2],[5,1]] | [4.00000,-1.00000] | Rear catches front |
+| 2 | target=10, cars=[[3,1],[6,1]] | [-1.00000,-1.00000] | Same speed, no catch |
+| 3 | target=12, cars=[[1,2],[2,1],[4,3],[7,2]] | [1.00000,-1.00000,-1.00000,-1.00000] | Mixed |
+
 ---
 
 ## Part B — 10 Complex Test Cases (Complexity Validation)

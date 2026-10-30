@@ -1,53 +1,183 @@
 package testrunner
 
-import array.two_pointer_inplace.next_permutation.reverseP
-import array.two_pointer_inplace.next_permutation.swap
 import kotlin.math.abs
 
 /**
  * Week01Tests.kt — Week 1: Two Pointer + Two Pointer In-Place
  * Test class + solution stubs. Implement the stubs at the bottom as you solve.
+ *
+ * Test numbering (W1 #1 … #25) matches weeks/Week01.md; the input/expected pairs come
+ * from practice/Week01_Practice.md (Part A) — every problem has all 3 cases wired up —
+ * and the 10 timed cases (W1-B1 … W1-B10) come from its Part B. Part B is commented out
+ * in runAll(); call complexityAll() to time-check the O(N)/O(N log N) solutions.
  */
 
 class Week01Tests {
     fun runAll() {
         println("\n━━━━━━━ WEEK 1 — Two Pointer ━━━━━━━")
+        // Problems #1–#23 — 3 Part-A cases each (practice/Week01_Practice.md)
         twoSumSorted(); validPalindrome(); isSubsequence(); moveZeroes(); mergeSortedArray()
         removeElement(); intersectII(); threeSum(); threeSumClosest(); fourSum()
         containerWithMostWater(); sortColors(); backspaceCompare(); twoSumLessThanK(); kSumPairs()
         boatsToSavePeople(); trappingRainWater(); removeDuplicatesI(); removeDuplicatesII()
         replaceGreatestRight(); sortedSquares(); rotateArray(); nextPermutation()
-        // Complexity validation (Part B):
-//        trappingRainWaterBig(); threeSumBig()
+        // Re-solves: #24 Sort Colors, #25 Remove Element (same cases as #12 / #6)
+        sortColorsRe(); removeElementRe()
+        // Complexity validation (Part B, cases 1–10) — uncomment to time-check against budgets:
+        // complexityAll()
     }
 
-    fun twoSumSorted() = TestRunner.check("W1 #1 Two Sum II (Sorted)", block = { twoSumSorted(intArrayOf(2, 7, 11, 15), 9) }, verify = { it.contentEquals(intArrayOf(1, 2)) })
-    fun validPalindrome() = TestRunner.check("W1 #2 Valid Palindrome", block = { isPalindrome("A man, a plan, a canal: Panama") }, verify = { it })
-    fun isSubsequence() = TestRunner.check("W1 #3 Is Subsequence", block = { isSubsequence("abc", "ahbgdc") }, verify = { it })
-    fun moveZeroes() = TestRunner.check("W1 #4 Move Zeroes", block = { val a = intArrayOf(0, 1, 0, 3, 12); moveZeroes(a); a.toList() }, verify = { it == listOf(1, 3, 12, 0, 0) })
-    fun mergeSortedArray() = TestRunner.check("W1 #5 Merge Sorted Array", block = { val a = intArrayOf(1,2,3,0,0,0); merge(a, 3, intArrayOf(2,5,6), 3); a.toList() }, verify = { it == listOf(1,2,2,3,5,6) })
-    fun removeElement() = TestRunner.check("W1 #6 Remove Element", block = { removeElement(intArrayOf(3, 2, 2, 3), 3) }, verify = { it == 2 })
-    fun intersectII() = TestRunner.check("W1 #7 Intersection II", block = { intersect(intArrayOf(1, 2, 2, 1), intArrayOf(2, 2)).sorted() }, verify = { it == listOf(2, 2) })
-    fun threeSum() = TestRunner.check("W1 #8 Three Sum", block = { threeSum(intArrayOf(-1, 0, 1, 2, -1, -4)).map { it.sorted() }.sortedBy { it.joinToString() } }, verify = { it == listOf(listOf(-1, -1, 2), listOf(-1, 0, 1)) })
-    fun threeSumClosest() = TestRunner.check("W1 #9 Three Sum Closest", block = { threeSumClosest(intArrayOf(-1, 2, 1, -4), 1) }, verify = { it == 2 })
-    fun fourSum() = TestRunner.check("W1 #10 Four Sum", block = { fourSum(intArrayOf(1, 0, -1, 0, -2, 2), 0).map { it.sorted() }.sortedBy { it.joinToString() } }, verify = { it.size == 3 })
-    fun containerWithMostWater() = TestRunner.check("W1 #11 Container With Most Water", block = { maxArea(intArrayOf(1, 8, 6, 2, 5, 4, 8, 3, 7)) }, verify = { it == 49 })
-    fun sortColors() = TestRunner.check("W1 #12 Sort Colors", block = { val a = intArrayOf(2, 0, 2, 1, 1, 0); sortColors(a); a.toList() }, verify = { it == listOf(0, 0, 1, 1, 2, 2) })
-    fun backspaceCompare() = TestRunner.check("W1 #13 Backspace Compare", block = { backspaceCompare("ab##", "c#d#") }, verify = { it })
-    fun twoSumLessThanK() = TestRunner.check("W1 #14 Two Sum < K", block = { twoSumLessThanK(intArrayOf(34, 23, 1, 24, 75, 33, 54, 8), 60) }, verify = { it == 58 })
-    fun kSumPairs() = TestRunner.check("W1 #15 K-Sum Pairs", block = { maxOperations(intArrayOf(1, 2, 3, 4), 5) }, verify = { it == 2 })
-    fun boatsToSavePeople() = TestRunner.check("W1 #16 Boats to Save", block = { numRescueBoats(intArrayOf(3, 2, 2, 1), 3) }, verify = { it == 3 })
-    fun trappingRainWater() = TestRunner.check("W1 #17 Trapping Rain Water", block = { trap(intArrayOf(0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1)) }, verify = { it == 6 })
-    fun removeDuplicatesI() = TestRunner.check("W1 #18 Remove Duplicates I", block = { val a = intArrayOf(1, 1, 2); val k = removeDuplicatesI(a); a.copyOf(k).toList() }, verify = { it == listOf(1, 2) })
-    fun removeDuplicatesII() = TestRunner.check("W1 #19 Remove Duplicates II", block = { val a = intArrayOf(1, 1, 1, 2, 2, 3); val k = removeDuplicatesII(a); a.copyOf(k).toList() }, verify = { it == listOf(1, 1, 2, 2, 3) })
-    fun replaceGreatestRight() = TestRunner.check("W1 #20 Replace Greatest Right", block = { replaceElements(intArrayOf(17, 18, 5, 4, 6, 1)).toList() }, verify = { it == listOf(18,6,6,6,1,-1) })
-    fun sortedSquares() = TestRunner.check("W1 #21 Sorted Squares", block = { sortedSquares(intArrayOf(-4, -1, 0, 3, 10)).toList() }, verify = { it == listOf(0, 1, 9, 16, 100) })
-    fun rotateArray() = TestRunner.check("W1 #22 Rotate Array", block = { val a = intArrayOf(1, 2, 3, 4, 5, 6, 7); rotate(a, 3); a.toList() }, verify = { it == listOf(5, 6, 7, 1, 2, 3, 4) })
-    fun nextPermutation() = TestRunner.check("W1 #23 Next Permutation", block = { val a = intArrayOf(3, 2, 1); nextPermutation(a); a.toList() }, verify = { it == listOf(1, 2, 3) })
+    fun complexityAll() {
+        trapBig(); trapIncreasingBig(); threeSumZerosBig(); threeSumConsecutiveBig(); maxAreaBig()
+        sortColorsBig(); mergeBig(); sortedSquaresBig(); rotateBig(); nextPermutationBig()
+    }
 
-    // Part B — complexity validation
-    fun trappingRainWaterBig() = TestRunner.check("W1-B Trapping Rain Water [3,0,3]×100k", budgetMs = 100, block = { trap(IntArray(100_000) { if (it % 3 == 1) 0 else 3 }) }, verify = { it == 100_002 })
-    fun threeSumBig() = TestRunner.check("W1-B Three Sum all-zeros 3k", budgetMs = 500, block = { threeSum(IntArray(3000)) }, verify = { it == listOf(listOf(0, 0, 0)) })
+    fun twoSumSorted() {
+        TestRunner.check("W1 #1 Two Sum II (Sorted), basic", block = { twoSumSorted(intArrayOf(2, 7, 11, 15), 9) }, verify = { it.contentEquals(intArrayOf(1, 2)) })
+        TestRunner.check("W1 #1b Two Sum II (Sorted), even length", block = { twoSumSorted(intArrayOf(2, 3, 4), 6) }, verify = { it.contentEquals(intArrayOf(1, 3)) })
+        TestRunner.check("W1 #1c Two Sum II (Sorted), negatives", block = { twoSumSorted(intArrayOf(-1, 0), -1) }, verify = { it.contentEquals(intArrayOf(1, 2)) })
+    }
+    fun validPalindrome() {
+        TestRunner.check("W1 #2 Valid Palindrome, mixed case + punctuation", block = { isPalindrome("A man, a plan, a canal: Panama") }, verify = { it })
+        TestRunner.check("W1 #2b Valid Palindrome, near miss", block = { isPalindrome("race a car") }, verify = { !it })
+        TestRunner.check("W1 #2c Valid Palindrome, only spaces", block = { isPalindrome(" ") }, verify = { it })
+    }
+    fun isSubsequence() {
+        TestRunner.check("W1 #3 Is Subsequence, basic", block = { isSubsequence("abc", "ahbgdc") }, verify = { it })
+        TestRunner.check("W1 #3b Is Subsequence, out of order", block = { isSubsequence("axc", "ahbgdc") }, verify = { !it })
+        TestRunner.check("W1 #3c Is Subsequence, empty s", block = { isSubsequence("", "ahbgdc") }, verify = { it })
+    }
+    fun moveZeroes() {
+        TestRunner.check("W1 #4 Move Zeroes, basic", block = { val a = intArrayOf(0, 1, 0, 3, 12); moveZeroes(a); a.toList() }, verify = { it == listOf(1, 3, 12, 0, 0) })
+        TestRunner.check("W1 #4b Move Zeroes, single zero", block = { val a = intArrayOf(0); moveZeroes(a); a.toList() }, verify = { it == listOf(0) })
+        TestRunner.check("W1 #4c Move Zeroes, leading zeros", block = { val a = intArrayOf(0, 0, 1); moveZeroes(a); a.toList() }, verify = { it == listOf(1, 0, 0) })
+    }
+    fun mergeSortedArray() {
+        TestRunner.check("W1 #5 Merge Sorted Array, basic", block = { val a = intArrayOf(1, 2, 3, 0, 0, 0); merge(a, 3, intArrayOf(2, 5, 6), 3); a.toList() }, verify = { it == listOf(1, 2, 2, 3, 5, 6) })
+        TestRunner.check("W1 #5b Merge Sorted Array, empty nums2", block = { val a = intArrayOf(1); merge(a, 1, intArrayOf(), 0); a.toList() }, verify = { it == listOf(1) })
+        TestRunner.check("W1 #5c Merge Sorted Array, empty nums1", block = { val a = intArrayOf(0); merge(a, 0, intArrayOf(1), 1); a.toList() }, verify = { it == listOf(1) })
+    }
+    fun removeElement() {
+        TestRunner.check("W1 #6 Remove Element, basic", block = { val a = intArrayOf(3, 2, 2, 3); val k = removeElement(a, 3); k to a.copyOf(k).sorted() }, verify = { it == (2 to listOf(2, 2)) })
+        TestRunner.check("W1 #6b Remove Element, scattered", block = { val a = intArrayOf(0, 1, 2, 2, 3, 0, 4, 2); val k = removeElement(a, 2); k to a.copyOf(k).sorted() }, verify = { it == (5 to listOf(0, 0, 1, 3, 4)) })
+        TestRunner.check("W1 #6c Remove Element, empty", block = { val a = intArrayOf(); val k = removeElement(a, 0); k to a.copyOf(k).sorted() }, verify = { it == (0 to emptyList<Int>()) })
+    }
+    fun intersectII() {
+        TestRunner.check("W1 #7 Intersection II, duplicates count", block = { intersect(intArrayOf(1, 2, 2, 1), intArrayOf(2, 2)).sorted() }, verify = { it == listOf(2, 2) })
+        TestRunner.check("W1 #7b Intersection II, partial overlap (any order)", block = { intersect(intArrayOf(4, 9, 5), intArrayOf(9, 4, 9, 8, 4)).sorted() }, verify = { it == listOf(4, 9) })
+        TestRunner.check("W1 #7c Intersection II, empty", block = { intersect(intArrayOf(), intArrayOf(1)).sorted() }, verify = { it == emptyList<Int>() })
+    }
+    fun threeSum() {
+        TestRunner.check("W1 #8 Three Sum, basic", block = { threeSum(intArrayOf(-1, 0, 1, 2, -1, -4)).map { it.sorted() }.toSet() }, verify = { it == setOf(listOf(-1, -1, 2), listOf(-1, 0, 1)) })
+        TestRunner.check("W1 #8b Three Sum, all same", block = { threeSum(intArrayOf(0, 0, 0, 0)).map { it.sorted() }.toSet() }, verify = { it == setOf(listOf(0, 0, 0)) })
+        TestRunner.check("W1 #8c Three Sum, no triplet", block = { threeSum(intArrayOf(1, 2, 3)).map { it.sorted() }.toSet() }, verify = { it == emptySet<List<Int>>() })
+    }
+    fun threeSumClosest() {
+        TestRunner.check("W1 #9 Three Sum Closest, basic", block = { threeSumClosest(intArrayOf(-1, 2, 1, -4), 1) }, verify = { it == 2 })
+        TestRunner.check("W1 #9b Three Sum Closest, far target", block = { threeSumClosest(intArrayOf(0, 0, 0), 1) }, verify = { it == 0 })
+        TestRunner.check("W1 #9c Three Sum Closest, extreme target", block = { threeSumClosest(intArrayOf(1, 1, 1, 0), -100) }, verify = { it == 2 })
+    }
+    fun fourSum() {
+        TestRunner.check("W1 #10 Four Sum, basic", block = { fourSum(intArrayOf(1, 0, -1, 0, -2, 2), 0).map { it.sorted() }.toSet() }, verify = { it == setOf(listOf(-2, -1, 1, 2), listOf(-2, 0, 0, 2), listOf(-1, 0, 0, 1)) })
+        TestRunner.check("W1 #10b Four Sum, all same", block = { fourSum(intArrayOf(2, 2, 2, 2, 2), 8).map { it.sorted() }.toSet() }, verify = { it == setOf(listOf(2, 2, 2, 2)) })
+        TestRunner.check("W1 #10c Four Sum, empty", block = { fourSum(intArrayOf(), 0).map { it.sorted() }.toSet() }, verify = { it == emptySet<List<Int>>() })
+    }
+    fun containerWithMostWater() {
+        TestRunner.check("W1 #11 Container With Most Water, basic", block = { maxArea(intArrayOf(1, 8, 6, 2, 5, 4, 8, 3, 7)) }, verify = { it == 49 })
+        TestRunner.check("W1 #11b Container With Most Water, two bars", block = { maxArea(intArrayOf(1, 1)) }, verify = { it == 1 })
+        TestRunner.check("W1 #11c Container With Most Water, symmetric", block = { maxArea(intArrayOf(4, 3, 2, 1, 4)) }, verify = { it == 16 })
+    }
+    fun sortColors() {
+        TestRunner.check("W1 #12 Sort Colors, basic", block = { val a = intArrayOf(2, 0, 2, 1, 1, 0); sortColors(a); a.toList() }, verify = { it == listOf(0, 0, 1, 1, 2, 2) })
+        TestRunner.check("W1 #12b Sort Colors, single", block = { val a = intArrayOf(2); sortColors(a); a.toList() }, verify = { it == listOf(2) })
+        TestRunner.check("W1 #12c Sort Colors, two elems", block = { val a = intArrayOf(1, 0); sortColors(a); a.toList() }, verify = { it == listOf(0, 1) })
+    }
+    fun backspaceCompare() {
+        TestRunner.check("W1 #13 Backspace Compare, both reduce to ac", block = { backspaceCompare("ab#c", "ad#c") }, verify = { it })
+        TestRunner.check("W1 #13b Backspace Compare, both empty", block = { backspaceCompare("ab##", "c#d#") }, verify = { it })
+        TestRunner.check("W1 #13c Backspace Compare, different results", block = { backspaceCompare("a#c", "b") }, verify = { !it })
+    }
+    fun twoSumLessThanK() {
+        TestRunner.check("W1 #14 Two Sum < K, basic", block = { twoSumLessThanK(intArrayOf(34, 23, 1, 24, 75, 33, 54, 8), 60) }, verify = { it == 58 })
+        TestRunner.check("W1 #14b Two Sum < K, no pair under k", block = { twoSumLessThanK(intArrayOf(10, 20, 30), 15) }, verify = { it == -1 })
+        TestRunner.check("W1 #14c Two Sum < K, sum equals k (not <)", block = { twoSumLessThanK(intArrayOf(1, 2), 3) }, verify = { it == -1 })
+    }
+    fun kSumPairs() {
+        TestRunner.check("W1 #15 K-Sum Pairs, basic", block = { maxOperations(intArrayOf(1, 2, 3, 4), 5) }, verify = { it == 2 })
+        TestRunner.check("W1 #15b K-Sum Pairs, leftover element", block = { maxOperations(intArrayOf(3, 1, 3, 4, 3), 6) }, verify = { it == 1 })
+        TestRunner.check("W1 #15c K-Sum Pairs, all same", block = { maxOperations(intArrayOf(1, 1, 1, 1), 2) }, verify = { it == 2 })
+    }
+    fun boatsToSavePeople() {
+        TestRunner.check("W1 #16 Boats to Save, pair fits", block = { numRescueBoats(intArrayOf(1, 2), 3) }, verify = { it == 1 })
+        TestRunner.check("W1 #16b Boats to Save, mixed", block = { numRescueBoats(intArrayOf(3, 2, 2, 1), 3) }, verify = { it == 3 })
+        TestRunner.check("W1 #16c Boats to Save, pairs + singles", block = { numRescueBoats(intArrayOf(1, 2, 3, 4), 4) }, verify = { it == 3 })
+    }
+    fun trappingRainWater() {
+        TestRunner.check("W1 #17 Trapping Rain Water, classic", block = { trap(intArrayOf(0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1)) }, verify = { it == 6 })
+        TestRunner.check("W1 #17b Trapping Rain Water, deep valley", block = { trap(intArrayOf(4, 2, 0, 3, 2, 5)) }, verify = { it == 9 })
+        TestRunner.check("W1 #17c Trapping Rain Water, increasing (no water)", block = { trap(intArrayOf(1, 2, 3, 4)) }, verify = { it == 0 })
+    }
+    fun removeDuplicatesI() {
+        TestRunner.check("W1 #18 Remove Duplicates I, basic", block = { val a = intArrayOf(1, 1, 2); val k = removeDuplicatesI(a); k to a.copyOf(k).toList() }, verify = { it == (2 to listOf(1, 2)) })
+        TestRunner.check("W1 #18b Remove Duplicates I, many dups", block = { val a = intArrayOf(0, 0, 1, 1, 1, 2, 2, 3, 3, 4); val k = removeDuplicatesI(a); k to a.copyOf(k).toList() }, verify = { it == (5 to listOf(0, 1, 2, 3, 4)) })
+        TestRunner.check("W1 #18c Remove Duplicates I, single", block = { val a = intArrayOf(1); val k = removeDuplicatesI(a); k to a.copyOf(k).toList() }, verify = { it == (1 to listOf(1)) })
+    }
+    fun removeDuplicatesII() {
+        TestRunner.check("W1 #19 Remove Duplicates II, triple run", block = { val a = intArrayOf(1, 1, 1, 2, 2, 3); val k = removeDuplicatesII(a); k to a.copyOf(k).toList() }, verify = { it == (5 to listOf(1, 1, 2, 2, 3)) })
+        TestRunner.check("W1 #19b Remove Duplicates II, mixed runs", block = { val a = intArrayOf(0, 0, 1, 1, 1, 1, 2, 3, 3); val k = removeDuplicatesII(a); k to a.copyOf(k).toList() }, verify = { it == (7 to listOf(0, 0, 1, 1, 2, 3, 3)) })
+        TestRunner.check("W1 #19c Remove Duplicates II, single", block = { val a = intArrayOf(1); val k = removeDuplicatesII(a); k to a.copyOf(k).toList() }, verify = { it == (1 to listOf(1)) })
+    }
+    fun replaceGreatestRight() {
+        TestRunner.check("W1 #20 Replace Greatest Right, basic", block = { replaceElements(intArrayOf(17, 18, 5, 4, 6, 1)).toList() }, verify = { it == listOf(18, 6, 6, 6, 1, -1) })
+        TestRunner.check("W1 #20b Replace Greatest Right, single", block = { replaceElements(intArrayOf(400)).toList() }, verify = { it == listOf(-1) })
+        TestRunner.check("W1 #20c Replace Greatest Right, two elems", block = { replaceElements(intArrayOf(2, 1)).toList() }, verify = { it == listOf(1, -1) })
+    }
+    fun sortedSquares() {
+        TestRunner.check("W1 #21 Sorted Squares, negatives", block = { sortedSquares(intArrayOf(-4, -1, 0, 3, 10)).toList() }, verify = { it == listOf(0, 1, 9, 16, 100) })
+        TestRunner.check("W1 #21b Sorted Squares, mixed", block = { sortedSquares(intArrayOf(-5, -3, 2, 3)).toList() }, verify = { it == listOf(4, 9, 9, 25) })
+        TestRunner.check("W1 #21c Sorted Squares, single", block = { sortedSquares(intArrayOf(0)).toList() }, verify = { it == listOf(0) })
+    }
+    fun rotateArray() {
+        TestRunner.check("W1 #22 Rotate Array, basic", block = { val a = intArrayOf(1, 2, 3, 4, 5, 6, 7); rotate(a, 3); a.toList() }, verify = { it == listOf(5, 6, 7, 1, 2, 3, 4) })
+        TestRunner.check("W1 #22b Rotate Array, no rotation", block = { val a = intArrayOf(1); rotate(a, 0); a.toList() }, verify = { it == listOf(1) })
+        TestRunner.check("W1 #22c Rotate Array, k > n", block = { val a = intArrayOf(-1); rotate(a, 2); a.toList() }, verify = { it == listOf(-1) })
+    }
+    fun nextPermutation() {
+        TestRunner.check("W1 #23 Next Permutation, basic", block = { val a = intArrayOf(1, 2, 3); nextPermutation(a); a.toList() }, verify = { it == listOf(1, 3, 2) })
+        TestRunner.check("W1 #23b Next Permutation, last permutation wraps", block = { val a = intArrayOf(3, 2, 1); nextPermutation(a); a.toList() }, verify = { it == listOf(1, 2, 3) })
+        TestRunner.check("W1 #23c Next Permutation, duplicates", block = { val a = intArrayOf(1, 1, 5); nextPermutation(a); a.toList() }, verify = { it == listOf(1, 5, 1) })
+    }
+
+    // Re-solves (Week01_Practice.md #24 / #25 — same cases as #12 / #6)
+    fun sortColorsRe() {
+        TestRunner.check("W1 #24 Sort Colors (re-solve), basic", block = { val a = intArrayOf(2, 0, 2, 1, 1, 0); sortColors(a); a.toList() }, verify = { it == listOf(0, 0, 1, 1, 2, 2) })
+        TestRunner.check("W1 #24b Sort Colors (re-solve), single", block = { val a = intArrayOf(2); sortColors(a); a.toList() }, verify = { it == listOf(2) })
+        TestRunner.check("W1 #24c Sort Colors (re-solve), two elems", block = { val a = intArrayOf(1, 0); sortColors(a); a.toList() }, verify = { it == listOf(0, 1) })
+    }
+    fun removeElementRe() {
+        TestRunner.check("W1 #25 Remove Element (re-solve), basic", block = { val a = intArrayOf(3, 2, 2, 3); val k = removeElement(a, 3); k to a.copyOf(k).sorted() }, verify = { it == (2 to listOf(2, 2)) })
+        TestRunner.check("W1 #25b Remove Element (re-solve), scattered", block = { val a = intArrayOf(0, 1, 2, 2, 3, 0, 4, 2); val k = removeElement(a, 2); k to a.copyOf(k).sorted() }, verify = { it == (5 to listOf(0, 0, 1, 3, 4)) })
+        TestRunner.check("W1 #25c Remove Element (re-solve), empty", block = { val a = intArrayOf(); val k = removeElement(a, 0); k to a.copyOf(k).sorted() }, verify = { it == (0 to emptyList<Int>()) })
+    }
+
+    // ── Part B — complexity validation (Week01_Practice.md cases 1–10) ─────────────
+    // Expectations re-derived; the doc's values were wrong in 4 places:
+    //   B1: 99,999 (33,333 valleys × 3 water units each — doc said 100,000, old test 100_002)
+    //   B4: 499,500 unique triplets for -1000..999 (doc's 999 only counted the (a,0,-a) form)
+    //   B5: heights are divided by 100 — on a raw 1..100k ramp the true max area is
+    //       50,000 × 50,000 = 2.5e9, which overflows Int, and the doc's 99,999 is only the
+    //       end-to-end area, not the maximum. Scaled ramp → 50,000 × 500 = 25,000,000.
+    //   B9: rotating right by k = n - 1 is a shift LEFT by 1 (doc said "shifted right by 1")
+    fun trapBig() = TestRunner.check("W1-B1 Trapping Rain Water, [3,0,3]×100k", budgetMs = 100, block = { trap(IntArray(100_000) { if (it % 3 == 1) 0 else 3 }) }, verify = { it == 99_999 })
+    fun trapIncreasingBig() = TestRunner.check("W1-B2 Trapping Rain Water, strictly increasing 200k", budgetMs = 100, block = { trap(IntArray(200_000) { it }) }, verify = { it == 0 })
+    fun threeSumZerosBig() = TestRunner.check("W1-B3 Three Sum, 3k zeros → one triplet", budgetMs = 500, block = { threeSum(IntArray(3000)).map { it.sorted() }.toSet() }, verify = { it == setOf(listOf(0, 0, 0)) })
+    fun threeSumConsecutiveBig() = TestRunner.check("W1-B4 Three Sum, -1000..999 → 499,500 triplets", budgetMs = 1000, block = { threeSum(IntArray(2000) { it - 1000 }) }, verify = { it.size == 499_500 && it.all { t -> t.size == 3 && t.sum() == 0 } })
+    fun maxAreaBig() = TestRunner.check("W1-B5 Container With Most Water, decreasing 100k", budgetMs = 100, block = { maxArea(IntArray(100_000) { (100_000 - it) / 100 }) }, verify = { it == 25_000_000 })
+    fun sortColorsBig() = TestRunner.check("W1-B6 Sort Colors, 1M random 0/1/2", budgetMs = 300, block = { val rnd = kotlin.random.Random(42); val a = IntArray(1_000_000) { rnd.nextInt(3) }; val sum = a.sum(); sortColors(a); sum to a }, verify = { it.first == it.second.sum() && it.second.size == 1_000_000 && isSorted(it.second) })
+    fun mergeBig() = TestRunner.check("W1-B7 Merge Sorted Array, m=n=500k", budgetMs = 300, block = { val n1 = IntArray(1_000_000); for (i in 0 until 500_000) n1[i] = i + 1; merge(n1, 500_000, IntArray(500_000) { 500_001 + it }, 500_000); n1 }, verify = { isSorted(it) && it[0] == 1 && it[999_999] == 1_000_000 })
+    fun sortedSquaresBig() = TestRunner.check("W1-B8 Sorted Squares, 500k ascending", budgetMs = 300, block = { sortedSquares(IntArray(500_000) { it / 6 - 41_000 }) }, verify = { isSorted(it) && it.size == 500_000 && it[0] == 0 && it[499_999] == 1_792_082_889 })
+    fun rotateBig() = TestRunner.check("W1-B9 Rotate Array, 1M k=999,999 (≡ shift left by 1)", budgetMs = 200, block = { val a = IntArray(1_000_000) { it + 1 }; rotate(a, 999_999); a }, verify = { it[0] == 2 && it[1] == 3 && it[999_999] == 1 })
+    fun nextPermutationBig() = TestRunner.check("W1-B10 Next Permutation, descending 500k → ascending", budgetMs = 200, block = { val a = IntArray(500_000) { 500_000 - it }; nextPermutation(a); a }, verify = { it[0] == 1 && isSorted(it) && it[499_999] == 500_000 })
 }
 
 // ═══════════════════════════════════════════════════════════
@@ -250,7 +380,7 @@ fun fourSum(nums: IntArray, target: Int): List<List<Int>> {
         if (i > 0 && nums[i] == nums[i - 1]) continue
 
         for (j in i + 1 until n - 2) {
-            if (j > 0 && nums[j - 1] == nums[j]) continue
+            if (j > i + 1 && nums[j - 1] == nums[j]) continue
 
             var left = j + 1
             var right = n - 1
@@ -479,7 +609,7 @@ fun sortedSquares(nums: IntArray): IntArray {
     var left = 0
     var right = nums.size - 1
     var i = nums.size - 1
-    while (left < right) {
+    while (left <= right) {
         val leftS = nums[left] * nums[left]
         val rightS = nums[right] * nums[right]
         if (leftS < rightS) {

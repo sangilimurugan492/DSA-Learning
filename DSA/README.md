@@ -4,10 +4,10 @@ A comprehensive Kotlin-based Data Structures & Algorithms learning repository, o
 
 ---
 
-> ## 🎯 [PatternWise_Prep — 12-Week Structured Preparation Plan](PatternWise_Prep/MASTER_PLAN.md)
-> **New structured prep (Oct 13, 2026 – Jan 10, 2027):** 5 days/week (Mon–Thu 2 hrs, Sat 2 hrs, Sun 3 hrs mock test) covering all patterns week-by-week with progressive hints.
-> - 📋 [Master Plan](PatternWise_Prep/MASTER_PLAN.md) | 📈 [Progress Tracker](PatternWise_Prep/Progress_Tracker.md) | 🧪 [Mock Test Log](PatternWise_Prep/Mock_Test_Log.md)
-> - Weekly plans: [W1](PatternWise_Prep/weeks/Week01.md) · [W2](PatternWise_Prep/weeks/Week02.md) · [W3](PatternWise_Prep/weeks/Week03.md) · [W4](PatternWise_Prep/weeks/Week04.md) · [W5](PatternWise_Prep/weeks/Week05.md) · [W6](PatternWise_Prep/weeks/Week06.md) · [W7](PatternWise_Prep/weeks/Week07.md) · [W8](PatternWise_Prep/weeks/Week08.md) · [W9](PatternWise_Prep/weeks/Week09.md) · [W10](PatternWise_Prep/weeks/Week10.md) · [W11](PatternWise_Prep/weeks/Week11.md) · [W12](PatternWise_Prep/weeks/Week12.md)
+> ## 🎯 [PatternWise_Prep — 24-Week Structured Preparation Plan](PatternWise_Prep/MASTER_PLAN_24W.md)
+> **Active prep (Nov 2, 2026 – Apr 18, 2027):** 5 days/week (Mon–Thu 2 hrs, Sat 2 hrs, Sun 3 hrs mock test) — ~271 problems across all 30+ patterns. Within every pattern you climb 🟢 Easy → 🟡 Medium → 🔴 Hard, at a calmer ~12 problems/week.
+> - 📋 [24-Week Master Plan](PatternWise_Prep/MASTER_PLAN_24W.md) | 📈 [Progress Tracker](PatternWise_Prep/Progress_Tracker.md) | 🧪 [Mock Test Log](PatternWise_Prep/Mock_Test_Log.md)
+> - Hints/solutions per problem still live in the original week files: [W1](PatternWise_Prep/weeks/Week01.md) · [W2](PatternWise_Prep/weeks/Week02.md) · [W3](PatternWise_Prep/weeks/Week03.md) · [W4](PatternWise_Prep/weeks/Week04.md) · [W5](PatternWise_Prep/weeks/Week05.md) · [W6](PatternWise_Prep/weeks/Week06.md) · [W7](PatternWise_Prep/weeks/Week07.md) · [W8](PatternWise_Prep/weeks/Week08.md) · [W9](PatternWise_Prep/weeks/Week09.md) · [W10](PatternWise_Prep/weeks/Week10.md) · [W11](PatternWise_Prep/weeks/Week11.md) · [W12](PatternWise_Prep/weeks/Week12.md)
 
 ---
 

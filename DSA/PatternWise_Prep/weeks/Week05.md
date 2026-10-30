@@ -473,7 +473,7 @@ Push all; when size > k → poll (smallest evicted). Heap top = kth largest.
 </details>
 
 <details><summary>💡 Hint 3</summary>
-1. heap = PriorityQueue<Int>()
+1. heap = PriorityQueue&lt;Int&gt;()
 2. For num: offer(num); if (heap.size > k) poll()
 3. Return heap.peek()
 </details>
@@ -527,7 +527,7 @@ Pop smallest → append; push its next node if non-null.
 </details>
 
 <details><summary>💡 Hint 3</summary>
-PriorityQueue<ListNode>(compareBy { it.`val` }); dummy tail; loop pop/append/push.
+PriorityQueue&lt;ListNode&gt;(compareBy { it.`val` }); dummy tail; loop pop/append/push.
 </details>
 
 ```kotlin
@@ -575,7 +575,7 @@ class MedianFinder() {
 **Problem:** Implement insert, search, startsWith for a trie.
 
 <details><summary>💡 Hint 1</summary>
-Node = HashMap<Char, Node> children + isEnd flag.
+Node = HashMap&lt;Char, Node&gt; children + isEnd flag.
 </details>
 
 <details><summary>💡 Hint 2</summary>
@@ -583,7 +583,7 @@ insert: walk/create nodes, mark isEnd. search: walk, check isEnd. startsWith: wa
 </details>
 
 <details><summary>💡 Hint 3</summary>
-1. class Node { val children = HashMap<Char, Node>(); var isEnd = false }
+1. class Node { val children = HashMap&lt;Char, Node&gt;(); var isEnd = false }
 2. Walk char by char from root for each operation
 </details>
 

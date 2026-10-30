@@ -171,7 +171,7 @@ If node already cloned → return the clone. Else create clone, recurse neighbor
 </details>
 
 <details><summary>💡 Hint 3</summary>
-1. map = HashMap<Node, Node>()
+1. map = HashMap&lt;Node, Node&gt;()
 2. clone(node): map[node] ?: Node(node.val).also { c -> map[node] = c; c.neighbors = node.neighbors.map { clone(it) } }
 </details>
 

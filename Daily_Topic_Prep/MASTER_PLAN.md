@@ -1,5 +1,10 @@
 # 📚 Daily Topic Study Plan — Interview Cross-Course (12 Weeks)
 
+> ℹ️ **Prefer a topic-by-topic sprint instead of a daily rotation?** See the newer
+> **[Topic-Wise 24-Week Master Plan](../Topic_Wise_Prep/MASTER_PLAN_24W.md)** — same question banks, 1 topic per week,
+> aligned with the [DSA 24-week plan](../DSA/PatternWise_Prep/MASTER_PLAN_24W.md). This 12-week plan stays as the fast-track option.
+
+
 > **Start Date:** Tuesday, Oct 13, 2026
 > **End Date:** Sunday, Jan 10, 2027 (12 Weeks)
 > **Pace:** 1 topic per day, ~45–60 min/day (runs alongside [DSA PatternWise Prep](../DSA/PatternWise_Prep/MASTER_PLAN.md))

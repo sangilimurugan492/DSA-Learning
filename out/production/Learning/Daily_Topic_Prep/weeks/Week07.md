@@ -1,16 +1,16 @@
-# 📅 Week 7 — Intermediate (Nov 27 – Dec 3)
+# 📅 Week 7 — Intermediate (Nov 30 – Dec 6)
 
 > Phase 2: Intermediate · Difficulty: `intermediate/` folders
 
 | Day | Date | Topic | Files to Study | Question Bank |
 |-----|------|-------|-----------------|---------------|
-| Fri | Nov 27 | **System Design** | [example_social_media_feed_design.md](../../system_design/mobile/example_social_media_feed_design.md) · [example_video_streaming_app_design.md](../../system_design/mobile/example_video_streaming_app_design.md) | [system_design/](../../system_design/) |
-| Sat | Nov 28 | **Android** | [ArchitecturePatterns.md](../../android_questions/intermediate/ArchitecturePatterns.md) · [Retrofit.md](../../android_questions/intermediate/Retrofit.md) | [android_questions/intermediate](../../android_questions/intermediate/) |
-| Sun | Nov 29 | **Kotlin + KMP** | [Coroutines.md](../../kotlin_questions/advanced/Coroutines.md) (deep-dive) · [Flows.md](../../kotlin_questions/advanced/Flows.md) (review) · KMP: [Coroutines.md](../../kmp_questions/intermediate/Coroutines.md) · [Database.md](../../kmp_questions/intermediate/Database.md) | [kotlin_questions/advanced](../../kotlin_questions/advanced/) · [kmp_questions/intermediate](../../kmp_questions/intermediate/) |
-| Mon | Nov 30 | **Flutter** | [PlatformChannels.md](../../flutter_questions/advanced/PlatformChannels.md) · [CustomWidgets.md](../../flutter_questions/intermediate/CustomWidgets.md) | [flutter_questions/advanced](../../flutter_questions/advanced/) |
-| Tue | Dec 1 | 🛑 REST | — | — |
-| Wed | Dec 2 | **Java** | [JVMInternals.md](../../java_questions/advanced/JVMInternals.md) · [GarbageCollection.md](../../java_questions/advanced/GarbageCollection.md) | [java_questions/advanced](../../java_questions/advanced/) |
-| Thu | Dec 3 | **Jetpack Compose** 🎯 | [Basics.md](../../jetpack_compose_questions/beginner/Basics.md) · [State.md](../../jetpack_compose_questions/beginner/State.md) · [Composables.md](../../jetpack_compose_questions/beginner/Composables.md) | [jetpack_compose_questions/](../../jetpack_compose_questions/) |
+| Mon | Nov 30 | **System Design** | [example_social_media_feed_design.md](../../system_design/mobile/example_social_media_feed_design.md) · [example_video_streaming_app_design.md](../../system_design/mobile/example_video_streaming_app_design.md) | [system_design/](../../system_design/) |
+| Tue | Dec 1 | **Android** | [ArchitecturePatterns.md](../../android_questions/intermediate/ArchitecturePatterns.md) · [Retrofit.md](../../android_questions/intermediate/Retrofit.md) | [android_questions/intermediate](../../android_questions/intermediate/) |
+| Wed | Dec 2 | **Kotlin + KMP** | [Coroutines.md](../../kotlin_questions/advanced/Coroutines.md) (deep-dive) · [Flows.md](../../kotlin_questions/advanced/Flows.md) (review) · KMP: [Coroutines.md](../../kmp_questions/intermediate/Coroutines.md) · [Database.md](../../kmp_questions/intermediate/Database.md) | [kotlin_questions/advanced](../../kotlin_questions/advanced/) · [kmp_questions/intermediate](../../kmp_questions/intermediate/) |
+| Thu | Dec 3 | **Flutter** | [PlatformChannels.md](../../flutter_questions/advanced/PlatformChannels.md) · [CustomWidgets.md](../../flutter_questions/intermediate/CustomWidgets.md) | [flutter_questions/advanced](../../flutter_questions/advanced/) |
+| Fri | Dec 4 | 🛑 REST | — | — |
+| Sat | Dec 5 | **Java** | [JVMInternals.md](../../java_questions/advanced/JVMInternals.md) · [GarbageCollection.md](../../java_questions/advanced/GarbageCollection.md) | [java_questions/advanced](../../java_questions/advanced/) |
+| Sun | Dec 6 | **Jetpack Compose** 🎯 | [Basics.md](../../jetpack_compose_questions/beginner/Basics.md) · [State.md](../../jetpack_compose_questions/beginner/State.md) · [Composables.md](../../jetpack_compose_questions/beginner/Composables.md) + 🎤 SD Drill (15 min) | [jetpack_compose_questions/](../../jetpack_compose_questions/) |
 
 ## ✅ Daily Checklist
 - [ ] Read the day's questions (10 min)

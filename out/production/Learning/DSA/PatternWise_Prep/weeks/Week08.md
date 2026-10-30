@@ -1,6 +1,6 @@
 # 📅 Week 8 — Graph + Simulation + Matrix + String Parsing + Final Revision
 
-> **Dates:** Dec 4 (Fri) – Dec 10 (Thu)
+> **Dates:** Dec 7 (Mon) – Dec 13 (Sun)
 > **Pattern Focus:** Graph (BFS/DFS, topological sort, union-find), Simulation, Matrix, String Parsing + FULL SYLLABUS REVISION
 > **Reminder:** Try each problem 10–25 min WITHOUT hints. Reveal hints one at a time. Compare with your solutions in `DSA/graph/`, `DSA/simulation/`, `DSA/array/matrix/`, `DSA/array/string_parsing/` only AFTER solving.
 
@@ -13,16 +13,16 @@
 
 | Day | Date | Problems | Time |
 |-----|------|----------|------|
-| Fri | Dec 4 | #1–#8 (Simulation + easy graph) | 2 hrs |
-| Sat | Dec 5 | #9–#13 (Graph BFS/DFS + shortest path) | 2 hrs |
-| Sun | Dec 6 | #14–#20 (Matrix + string parsing) | 2 hrs |
-| Mon | Dec 7 | #21–#23 (Hard) + revision plan | 2 hrs |
-| Wed | Dec 9 | FULL REVISION: weakest problems across all 8 weeks | 2 hrs |
-| Thu | Dec 10 | 🧪 FINAL MOCK TEST (Full Syllabus) + Review | 3 hrs |
+| Mon | Dec 7 | #1–#8 (Simulation + easy graph) | 2 hrs |
+| Tue | Dec 8 | #9–#13 (Graph BFS/DFS + shortest path) | 2 hrs |
+| Wed | Dec 9 | #14–#20 (Matrix + string parsing) | 2 hrs |
+| Thu | Dec 10 | #21–#23 (Hard) + revision plan | 2 hrs |
+| Sat | Dec 12 | FULL REVISION: weakest problems across all 8 weeks | 2 hrs |
+| Sun | Dec 13 | 🧪 FINAL MOCK TEST (Full Syllabus) + Review | 3 hrs |
 
 ---
 
-## 🟢 FRIDAY, Dec 4 — Simulation + Easy Graph
+## 🟢 MONDAY, Dec 7 — Simulation + Easy Graph
 
 ### 1. Add Binary — 🟢
 **LeetCode #67** | Solution: `DSA/simulation/add_binary/AddBinary.kt`
@@ -171,7 +171,7 @@ If node already cloned → return the clone. Else create clone, recurse neighbor
 </details>
 
 <details><summary>💡 Hint 3</summary>
-1. map = HashMap<Node, Node>()
+1. map = HashMap&lt;Node, Node&gt;()
 2. clone(node): map[node] ?: Node(node.val).also { c -> map[node] = c; c.neighbors = node.neighbors.map { clone(it) } }
 </details>
 
@@ -240,7 +240,7 @@ fun orangesRotting(grid: Array<IntArray>): Int {
 
 ---
 
-## 🟡 SATURDAY, Dec 5 — Graph Algorithms
+## 🟡 TUESDAY, Dec 8 — Graph Algorithms
 
 ### 9. Dijkstra's Algorithm — 🟡
 **Solution:** `DSA/graph/shortest_path/Dijkstra.kt`
@@ -380,7 +380,7 @@ fun validTree(n: Int, edges: Array<IntArray>): Boolean {
 
 ---
 
-## 🟡 SUNDAY, Dec 6 — Matrix + String Parsing
+## 🟡 WEDNESDAY, Dec 9 — Matrix + String Parsing
 
 ### 14. Set Matrix Zeroes — 🟡
 **LeetCode #73** | Solution: `DSA/array/matrix/SetMatrixZeroes.kt`
@@ -570,7 +570,7 @@ fun convert(s: String, numRows: Int): String {
 
 ---
 
-## 🟡 MONDAY, Dec 7 — Hard Problems
+## 🟡 THURSDAY, Dec 10 — Hard Problems
 
 ### 21. Spiral Matrix II — 🟡
 **LeetCode #59** | Solution: `DSA/simulation/spiral_matrix_ii/SpiralMatrixII.kt`
@@ -654,7 +654,7 @@ fun fullJustify(words: Array<String>, maxWidth: Int): List<String> {
 
 ---
 
-## 🟢 WEDNESDAY, Dec 9 — FULL REVISION (All 8 Weeks)
+## 🟢 SATURDAY, Dec 12 — FULL REVISION (All 8 Weeks)
 
 Pick your 6–8 weakest problems across the whole plan (from [Progress_Tracker.md](../Progress_Tracker.md) and [Mock_Test_Log.md](../Mock_Test_Log.md)) and re-solve them from scratch. Suggested focus areas:
 
@@ -671,7 +671,7 @@ Pick your 6–8 weakest problems across the whole plan (from [Progress_Tracker.m
 
 ---
 
-## 🧪 THURSDAY, Dec 10 — FINAL MOCK TEST (Full Syllabus, 3 hrs)
+## 🧪 SUNDAY, Dec 13 — FINAL MOCK TEST (Full Syllabus, 3 hrs)
 
 **Part 1 — Timed Test (2 hrs, no hints for first 30 min):**
 

@@ -1,4 +1,4 @@
-package DSA.PatternWise_Prep.mocktest
+package mocktest
 
 /**
  * Week07Mock.kt — MOCK TEST Week 7: Backtracking + DP

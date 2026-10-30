@@ -1,7 +1,7 @@
 # 🧪 Week 02 Practice — Sliding Window + Prefix Sum + Kadane's (Test Cases & Complexity Validation)
 
 > **Part A:** Sample test cases for every Week 2 problem.
-> **Part B:** 10 complex test cases to validate time complexity. Use [TestRunner.kt](../testrunner/TestRunner.kt).
+> **Part B:** 13 complex test cases to validate time complexity. Use [TestRunner.kt](../testrunner/TestRunner.kt).
 
 ---
 
@@ -133,9 +133,95 @@
 | 2 | s="a", t="a" | "a" | Exact |
 | 3 | s="a", t="aa" | "" | Not enough chars |
 
+### 19. Max Consecutive Ones III — LC 1004
+| # | Input | Expected | Tests |
+|---|-------|----------|-------|
+| 1 | [1,1,1,0,0,0,1,1,1,1,0], k=2 | 6 | Classic |
+| 2 | [0,0,1,1,0,0,1,1,1,0,0,0,1,1,0,0,0,1,0,0], k=0 | 3 | k=0 (no flips) |
+| 3 | [1,1,1,1], k=0 | 4 | All ones |
+
+### 20. Permutation in String — LC 567
+| # | Input | Expected | Tests |
+|---|-------|----------|-------|
+| 1 | s1="ab", s2="eidbaooo" | true | Classic |
+| 2 | s1="ab", s2="eidboaoo" | false | No permutation |
+| 3 | s1="adc", s2="dcda" | true | Duplicate chars |
+
+### 21. Best Sightseeing Pair — LC 1014
+| # | Input | Expected | Tests |
+|---|-------|----------|-------|
+| 1 | [8,1,5,2,6] | 11 | Classic |
+| 2 | [1,2,2] | 3 | Small |
+| 3 | [2,2,2] | 3 | Uniform values |
+
+### 22. Binary Subarrays With Sum — LC 930
+| # | Input | Expected | Tests |
+|---|-------|----------|-------|
+| 1 | [1,0,1,0,1], goal=2 | 4 | Classic |
+| 2 | [0,0,0,0,0], goal=0 | 15 | All zeros (5×6/2) |
+| 3 | [0,0,0], goal=1 | 0 | Goal unreachable |
+
+### 23. Maximum Points You Can Obtain from Cards — LC 1423
+| # | Input | Expected | Tests |
+|---|-------|----------|-------|
+| 1 | [1,2,3,4,5,6,1], k=3 | 12 | Take from left |
+| 2 | [2,2,2], k=2 | 4 | Uniform |
+| 3 | [1,79,80,1,1,1,200,1], k=3 | 202 | Mostly right end |
+
+### 24. Maximum Erasure Value — LC 1695
+| # | Input | Expected | Tests |
+|---|-------|----------|-------|
+| 1 | [4,2,4,5,6] | 17 | Skip first 4 |
+| 2 | [5,2,1,2,5,2,1,2,5] | 9 | Window 5,2,1 |
+| 3 | [1,1,1,1,1] | 1 | All duplicates |
+
+### 25. Sliding Window Maximum — LC 239
+| # | Input | Expected | Tests |
+|---|-------|----------|-------|
+| 1 | [1,3,-1,-3,5,3,6,7], k=3 | [3,3,5,5,6,7] | Classic |
+| 2 | [1], k=1 | [1] | Single |
+| 3 | [9,9,9], k=2 | [9,9] | All equal |
+
+### 26. Find Pivot Index — LC 724
+| # | Input | Expected | Tests |
+|---|-------|----------|-------|
+| 1 | [1,7,3,6,5,6] | 3 | Classic |
+| 2 | [1,2,3] | -1 | No pivot |
+| 3 | [2,1,-1] | 0 | Pivot at start |
+
+### 27. Range Sum Query 2D — Immutable — LC 304
+Matrix = [[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]]
+
+| # | Input | Expected | Tests |
+|---|-------|----------|-------|
+| 1 | sumRegion(2,1,4,3) | 8 | Classic |
+| 2 | sumRegion(1,1,2,2) | 11 | Interior block |
+| 3 | sumRegion(1,2,2,4) | 12 | Right edge |
+
+### 28. Continuous Subarray Sum — LC 523
+| # | Input | Expected | Tests |
+|---|-------|----------|-------|
+| 1 | [23,2,4,6,7], k=6 | true | 2+4 = 6 |
+| 2 | [23,2,6,4,7], k=6 | true | Whole-run multiple |
+| 3 | [23,2,6,4,7], k=13 | false | No length-≥2 multiple |
+
+### 29. Maximum Absolute Sum of Any Subarray — LC 1749
+| # | Input | Expected | Tests |
+|---|-------|----------|-------|
+| 1 | [1,-3,2,3,-4] | 6 | Positive wins |
+| 2 | [2,-5,1,-4,3,-2] | 8 | Negative wins (abs) |
+| 3 | [-1,-2,-3,-4] | 10 | All negative |
+
+### 30. Maximum Length of Subarray With Positive Product — LC 1567
+| # | Input | Expected | Tests |
+|---|-------|----------|-------|
+| 1 | [1,-2,-3,4] | 4 | Even negatives |
+| 2 | [0,1,-2,-3,-4] | 3 | Zero resets |
+| 3 | [-1,-2,-3,0,1] | 2 | Odd negatives |
+
 ---
 
-## Part B — 10 Complex Test Cases (Complexity Validation)
+## Part B — 13 Complex Test Cases (Complexity Validation)
 
 | # | Problem | Input (generated) | Expected | Budget | Detects |
 |---|---------|-------------------|----------|--------|---------|
@@ -149,8 +235,12 @@
 | 8 | Maximum Sum Circular Subarray | N=100,000: alternating [5,-1] pattern | (N/2)×5 − 1 = **249,999** | < 200 ms | O(N²) wraparound scan |
 | 9 | Contiguous Array | N=200,000 alternating 0,1 | **200,000** | < 200 ms | O(N²) subarray scan |
 | 10 | Longest Repeating Char Replacement | 500,000 chars "abab...", k=250,000 | **500,000** | < 300 ms | Recomputing maxFreq by scanning window |
+| 11 | Sliding Window Maximum | N=200,000: `IntArray(200_000) { it % 1000 }`, k=1000 | Every window spans one full cycle → **999** in all 199,001 outputs | < 300 ms | O(N·k) re-scan; heap without lazy deletion |
+| 12 | Binary Subarrays With Sum | N=100,000 all 1s, goal=100 | Subarrays of length 100 = 100,000 − 100 + 1 = **99,901** | < 200 ms | O(N²) recount instead of prefix-frequency |
+| 13 | Continuous Subarray Sum | N=200,000 all 1s, k=1000 | **true** (any 1000-length run sums to 1000) | < 200 ms | O(N²) pair scan; forgetting the length ≥ 2 rule |
 
 ### 📝 Notes
+- **Case 11 (why 999):** `it % 1000` repeats a full 0..999 cycle every 1000 positions, so any 1000-wide window contains each residue exactly once → the max is always 999.
 - **Case 1 (verify expected):** For a periodic array, the max subarray repeats with period 7 — brute-force one window of ~14 elements to find the per-period best, or cross-check your O(N) solution against a trusted O(N log N) implementation on N=10,000.
 - **Overflow warning:** Cases 4 & 7 use N=60 so results fit in Long — Int would overflow. Structure (not magnitude) is what's being tested.
 - **Case 8 math:** [5,-1,5,-1,...] circular: best is take all 5s and one -1 → 50,000×5 − 1 = 249,999.

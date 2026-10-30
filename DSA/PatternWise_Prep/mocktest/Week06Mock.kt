@@ -1,4 +1,4 @@
-package DSA.PatternWise_Prep.mocktest
+package mocktest
 
 /**
  * Week06Mock.kt — MOCK TEST Week 6: Greedy + Binary Search + Bit

@@ -170,9 +170,9 @@
 |---|---------|-------------------|----------|--------|---------|
 | 1 | Max Depth | Degenerate tree (linked list) of 100,000 nodes | **100,000** | < 200 ms | Recursion → StackOverflow |
 | 2 | Validate BST | Degenerate tree of 100,000 nodes: values 100,000..1 (decreasing) | true | < 200 ms | StackOverflow / missing bounds |
-| 3 | Validate BST | Tree with values near Int.MAX_VALUE: root=Int.MAX_VALUE, left=Int.MIN_VALUE | false | instant | Int overflow in min/max bounds |
+| 3 | Validate BST | Tree with values near Int.MAX_VALUE: root=Int.MAX_VALUE, left=Int.MIN_VALUE | true (a sentinel-bound impl wrongly says false) | instant | Int overflow in min/max bounds |
 | 4 | Level Order | Perfect binary tree of depth 17 (131,071 nodes) | 17 levels, last has 65,536 nodes | < 500 ms | DFS-based level tracking |
-| 5 | Kth Largest Element | N=1,000,000 shuffled 1..1,000,000, k=500,000 | **500,000** | < 500 ms | Full sort O(N log N) ok; O(N²) selection sort hangs |
+| 5 | Kth Largest Element | N=1,000,000 shuffled 1..1,000,000, k=500,000 | **500,001** (= N+1−k) | < 500 ms | Full sort O(N log N) ok; O(N²) selection sort hangs |
 | 6 | Top K Frequent | N=500,000: values 1..1000 cycling, k=10 | 10 most frequent (991..1000 by count) | < 500 ms | Sorting all unique pairs |
 | 7 | Merge K Sorted Lists | K=1,000 lists × 1,000 nodes (interleaved values) | 1..1,000,000 sorted | < 1 s | Sequential merge O(NK) |
 | 8 | Find Median from Data Stream | 500,000 addNum calls (shuffled 1..500,000), findMedian after each | Correct median each time | < 2 s | Re-sorting per query |
